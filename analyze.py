@@ -32,7 +32,13 @@ def _ask_json(model, prompt, max_tokens=1500, temperature=0.4):
     m = re.search(r"\{.*\}", text, re.DOTALL)
     if not m:
         raise ValueError(f"JSON을 찾지 못함:\n{text[:300]}")
-    return json.loads(m.group(0))
+    block = m.group(0)
+    try:
+        return json.loads(block)
+    except json.JSONDecodeError:
+        # 흔한 오류(후행 콤마)를 제거하고 1회 재시도
+        cleaned = re.sub(r",(\s*[}\]])", r"\1", block)
+        return json.loads(cleaned)
 
 
 # ---------- 선별: 관련성 게이트 + 6축 루브릭 ----------
@@ -190,13 +196,14 @@ def deep_analyze(cfg, paper, references, full_text=""):
 
     model = cfg["models"]["deep"]
     # 1차 생성 → 검증. 기준 미달이면 이유를 알려주고 1회 재시도(일관성 보장).
-    result = _ask_json(model, prompt, max_tokens=3000, temperature=0.3)
+    # max_tokens는 v2의 풍부한 출력이 잘리지 않도록 넉넉히(잘리면 JSON이 깨짐).
+    result = _ask_json(model, prompt, max_tokens=4500, temperature=0.3)
     ok, reason = _validate_deep(result)
     if not ok:
         print(f"[통역] 품질 기준 미달({reason}) — 1회 재생성")
         retry_prompt = prompt + f"\n\n[재작성 지시] 직전 출력이 기준 미달이었습니다: {reason}. " \
             "소제목+본문 항목 수와 분량 기준을 반드시 지켜 다시 작성하세요."
-        result2 = _ask_json(model, retry_prompt, max_tokens=3000, temperature=0.3)
+        result2 = _ask_json(model, retry_prompt, max_tokens=4500, temperature=0.3)
         ok2, _ = _validate_deep(result2)
         if ok2:
             result = result2
