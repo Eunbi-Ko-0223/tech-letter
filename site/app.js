@@ -23,6 +23,16 @@
         <p class="summary">이 날은 추천된 논문이 없습니다. ☕<br>(품질 기준선 미달 — 억지 추천 대신 쉬어가는 날)</p>`;
       return;
     }
+    if (rec.no_recommendation) {
+      pane.innerHTML = `
+        <div class="eyebrow"><span class="tag 중립">추천 없음</span>
+          <span class="date">${esc(date)} · 쉬어가는 날</span></div>
+        <h2 class="paper-title">오늘은 추천할 만한 논문이 없어요 ☕</h2>
+        <div class="block"><div class="summary">${esc(rec.reason || "품질 기준선 미달")}로 인해,
+          억지로 별로인 논문을 추천하기보다 오늘은 쉬어갑니다.
+          내일 아침 더 좋은 논문으로 다시 찾아올게요!</div></div>`;
+      return;
+    }
     const d = rec.deep || {};
     const tag = rec.tag || "중립";
     const isToday = date === latest;
@@ -124,6 +134,13 @@
     view.innerHTML = dates.slice().reverse().map(ds => {
       const rec = DATA[ds];
       const sel = ds === selected ? "sel" : "";
+      if (rec.no_recommendation) {
+        return `<div class="list-item ${sel}" data-date="${ds}">
+          <div class="li-date">${ds}</div>
+          <div class="li-title">☕ 추천 없음 (쉬어가는 날)</div>
+          <span class="tag 중립">없음</span>
+        </div>`;
+      }
       return `<div class="list-item ${sel}" data-date="${ds}">
         <div class="li-date">${ds}</div>
         <div class="li-title">${esc(rec.paper.title)}</div>

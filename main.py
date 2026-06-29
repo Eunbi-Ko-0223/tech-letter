@@ -123,7 +123,17 @@ def run(dry_run=False):
     # ── best pick 선정 ──
     scored.sort(key=lambda p: p["analysis"]["final_score"], reverse=True)
     winner = scored[0]
-    print(f"\n[선정] 오늘의 논문: {winner['title']}")
+
+    # ── 품질 기준선: 최고점조차 기준 미만이면 '오늘은 추천 없음' ──
+    min_score = cfg["rubric"].get("min_score", {}).get("value", 0)
+    top = winner["analysis"]["final_score"]
+    if top < min_score:
+        print(f"\n[기준선] 최고점 {top} < 기준선 {min_score} → 오늘은 추천 없음 ☕ "
+              "(억지 추천 대신 쉬어가기)")
+        save_skip(today, top, min_score)
+        return
+
+    print(f"\n[선정] 오늘의 논문: {winner['title']} (점수 {top} ≥ 기준선 {min_score})")
 
     # ── 학습 패키지: 참고문헌 조회 ──
     refs = learning.get_references(winner["arxiv_id"])
@@ -150,6 +160,22 @@ def run(dry_run=False):
         "deep": deep,
     }
     save_and_report(record)
+
+
+def save_skip(date, top_score, min_score):
+    """품질 기준선 미달인 날 — '추천 없음' 기록을 남겨 사이트가 쉬어가는 날을 표시하게 한다."""
+    out_dir = os.path.join(HERE, "output")
+    os.makedirs(out_dir, exist_ok=True)
+    rec = {
+        "date": date,
+        "no_recommendation": True,
+        "reason": "품질 기준선 미달",
+        "top_score": top_score,
+        "min_score": min_score,
+    }
+    with open(os.path.join(out_dir, f"{date}.json"), "w", encoding="utf-8") as f:
+        json.dump(rec, f, ensure_ascii=False, indent=2)
+    print(f"💾 '추천 없음' 기록 저장: {os.path.join(out_dir, date + '.json')}")
 
 
 def save_and_report(record):
