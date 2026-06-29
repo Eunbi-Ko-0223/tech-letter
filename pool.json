@@ -1,0 +1,1884 @@
+{
+  "2606.27350": {
+    "arxiv_id": "2606.27350",
+    "title": "CHIA: An open-source framework for principled, agentic AI-driven hardware/software co-design research",
+    "abstract": "Agentic artificial intelligence shows great promise for radically improving the pace of innovation in hardware/software co-design research across computer architecture, systems, compilers, and VLSI. Thus far, however, applications of AI in these contexts have generally been demonstrated in isolated settings on small-scale problems, due to the difficulty of designing and deploying complex AI-infused hardware and software development workflows.   This paper introduces CHIA, an open-source hardware/software co-design framework for agile and principled research on the application of AI to co-design. CHIA treats the productive construction and scalable deployment of the co-design flow itself as a first-class objective. In CHIA, agentic AI-driven hardware and software design flows are expressed as \\textit{CHIA loops}: directed cyclic graphs whose nodes execute various system-on-chip design tools, microarchitectural simulators, software build systems, AI models, evolutionary coding agents, and more. The \\textit{CHIA library} provides node implementations for many popular tools, including Chipyard, gem5, ChampSim, FireSim, Hammer (thus several commercial ASIC CAD tools), Vivado, AlphaEvolve, AdaEvolve, and many others.   CHIA also provides a broad set of features to conduct principled science around these flows. These include isolation between AI models and hardware tools, profiling mechanisms, fault-tolerant execution, and reliability at scale across hundreds of heterogeneous systems (CPUs, FPGAs, GPUs, etc., across public cloud/on-prem.).   To showcase CHIA, we present five CHIA loops as case studies: (1) automatic RTL-to-gem5 simulator alignment, (2) LLM-driven implementation of microarchitectural features in RTL, (3) agentic, IPC-aware critical path optimization, (4) evolutionary architectural discovery, and (5) maintainer-friendly agentic GitHub issue fixing.",
+    "authors": [
+      "Angela Cui",
+      "Ferran Hermida-Rivera",
+      "Jack Toubes",
+      "Raghav Gupta",
+      "Jim Fang",
+      "Chengyi Lux Zhang",
+      "Ella Schwarz",
+      "Junha Kim",
+      "Yakun Sophia Shao",
+      "Borivoje Nikolic",
+      "Christopher W. Fletcher",
+      "Sagar Karandikar"
+    ],
+    "published": "2026-06-25",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.27350v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 기반 하드웨어/소프트웨어 협설계 자동화 프레임워크로, 메모리 아키텍처·마이크로아키텍처 최적화 및 RTL 설계 자동화에 직접 적용 가능한 도구",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "AI 에이전트 기반 설계 자동화는 메모리 칩 개발 사이클 단축과 아키텍처 최적화 경쟁력 강화에 기여할 수 있으나, 현재는 학술 프레임워크 수준으로 실제 양산 설계 도입까지는 검증 필요",
+      "final_score": 4.05
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.27319": {
+    "arxiv_id": "2606.27319",
+    "title": "An Instruction Set Architecture for IMPLY-based Memristive Processing-in-Array",
+    "abstract": "The push towards expanded ultra-low-power edge computing necessitates hardware capable of operating under extremely strict energy constraints. Traditional Complementary Metal-Oxide-Semiconductor (CMOS) microcontrollers are fundamentally limited in this domain by the von Neumann bottleneck and by the static power leakage inherent to volatile memory. Memristive In-Memory Computing (IMC) offers a promising solution to these inefficiencies by unifying data storage and computation into a single non-volatile component. However, the State of the Art (SoA) predominantly focuses on accelerators designed to be a co-processor for data-intensive computation. This leaves the prospect of standalone, general-purpose IMC microcontroller architectures underexplored. This thesis proposes such an architecture tailored for ultra-low-power edge devices, alongside an instruction set closely derived from the RV32I standard. Using the IMPLY stateful logic paradigm, a complete implementation of the proposed instruction set is provided, and the novel addressing schema required to support computation in the memristive crossbar array is described as well. Then, the energy use and other circuit-level metrics of the proposed architecture are evaluated through simulation and compared against those of traditional microcontrollers. Finally, the functional viability of the design is demonstrated through an application case study, describing how the proposed design could be used in an intelligent environmental sensor node.",
+    "authors": [
+      "Liam Splittgerber",
+      "Fabian Seiler",
+      "Nima TaheriNejad"
+    ],
+    "published": "2026-06-25",
+    "primary_category": "cs.ET",
+    "url": "http://arxiv.org/abs/2606.27319v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Memristive In-Memory Computing (IMC) 기반 프로세싱-인-메모리 아키텍처로, PIM과 비휘발성 메모리 소자 기술에 직접 연관됨.",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "Memristor 기반 PIM의 학술적 개념 검증 논문이나, 상용화 거리가 멀고 엣지 디바이스 중심이라 SK하이닉스의 HBM/DRAM/NAND 주력 사업과의 직접 영향은 제한적.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.27240": {
+    "arxiv_id": "2606.27240",
+    "title": "Evaluating Architectural Trade-offs in CGRAs: The Impact of Scratchpad Memory and Heterogeneity on Compute-Intensive Kernels",
+    "abstract": "Modern edge computing applications, particularly high-throughput stream processing like Vision Transformers (ViTs), demand massive spatial parallelism and efficient data movement under tight power and area constraints. Coarse-Grained Reconfigurable Architectures (CGRAs) offer a promising paradigm to balance performance, flexibility, and energy efficiency. This paper analyzes the impact of two critical CGRA design choices: processing element heterogeneity and local data reuse support. We evaluate essential computational kernels (Fast Fourier Transform (FFT) and General Matrix Multiply (GEMM)) alongside an end-to-end seizure detection transformer workload across two distinct configurations: a baseline homogeneous architecture and a heterogeneous evolution integrating specialized functional units with an Scratchpad Memory (SPM). Our evaluation demonstrates that the SPM significantly optimizes data movement, reducing memory traffic eightfold compared to a memory-less design. While the heterogeneous architecture achieves superior energy efficiency for data-shuffling tasks, the homogeneous design minimizes area overhead by 4.4x to 8.2x relative to state-of-the-art CGRAs. Furthermore, it sustains a 700 MHz operating frequency, enabling up to a 5x execution speedup over the heterogeneous configuration during matrix computations. Ultimately, this work provides an architectural roadmap for selecting CGRA fabrics based on the arithmetic intensity, performance goals, and resource envelopes of edge-scale workloads.",
+    "authors": [
+      "María José Belda",
+      "Lara Orlandic",
+      "Fernando Castro",
+      "Miguel Peón-Quirós",
+      "Katzalin Olcoz",
+      "David Atienza"
+    ],
+    "published": "2026-06-25",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.27240v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지 AI 가속기의 온칩 메모리(Scratchpad) 아키텍처 설계 최적화를 다루며, 메모리 대역폭과 전력 효율성이 핵심인 CGRA 기반 컴퓨팅 플랫폼의 메모리 계층 설계 문제를 다룬다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "엣지 AI 워크로드의 온칩 메모리 최적화 연구로 향후 PIM/CXL 같은 메모리 확장 아키텍처 설계에 참고 가치는 있으나, 현재는 학술 수준의 CGRA 아키텍처 탐색 단계로 SK하이닉스의 메모리 칩/패키징 사업과의 직접 영향은 제한적이다.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.27098": {
+    "arxiv_id": "2606.27098",
+    "title": "Residual GPU Cache State on Apple M4 Pro",
+    "abstract": "Apple silicon exposes unified CPU-GPU memory, but the cache state left after a completed GPU command is not documented. This paper characterizes that phase boundary on a 14-core Apple M4 Pro. We validate the measurement pipeline against unmodified STREAM 5.10 and BabelStream 5.0, then adapt an 8192-byte system-level-cache occupancy pattern to a synchronized Metal experiment. A GPU kernel touches 0 to 512 MiB and finishes before a 16 MiB CPU probe begins. The first CPU traversal is slower after large GPU footprints, while a second traversal removes most of the cost, showing residual shared-cache displacement rather than simultaneous DRAM contention. A separate matched-block experiment measures GPU slowdown under high-priority CPU traffic and finds background QoS close to baseline. Root PMU measurements and public IOReport histograms provide hardware grounding: they distinguish L1D refill sectors from software cache-line size, expose page-offset-dependent conflict behavior, and separate performance-core, efficiency-core, and AGX demand. The results identify a reproducible post-GPU cache-displacement window on M4 Pro and quantify a simple one-pass software recovery mechanism.",
+    "authors": [
+      "Faruk Alpay",
+      "Baris Basaran"
+    ],
+    "published": "2026-06-25",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.27098v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Apple M4 Pro의 통합 CPU-GPU 메모리 아키텍처에서 캐시 상태 특성화는 unified memory 설계와 메모리 계층 최적화에 직접 관련.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "Apple의 통합 메모리 아키텍처 특성 분석은 학술적 가치는 있으나, SK하이닉스의 HBM/DRAM/CXL 전략과 직접적 비즈니스 임팩트는 제한적이며 경쟁 위협 신호도 약함.",
+      "final_score": 2.2
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.26426": {
+    "arxiv_id": "2606.26426",
+    "title": "Nanoelectromechanical Systems (NEMS) for Hardware Security in Advanced Packaging",
+    "abstract": "As hardware security threats escalate across semiconductor manufacturing and advanced packaging, there is a growing need for novel physical mechanisms to counter sophisticated attacks such as tampering, counterfeiting, and supply chain infiltration. This paper presents Nanoelectromechanical Systems (NEMS) as an emerging class of hardware security primitives that enable physical assurance, tamper detection, and authentication at the device level. Leveraging mechanisms such as NEMS-based Physically Unclonable Functions (PUFs), shape memory materials, resonance-based fingerprints, and physical unlocking architectures, these systems offer enhanced resilience to reverse engineering, side-channel attacks, and environmental degradation. By harnessing mechanical unpredictability and fabrication-induced nanoscale variability, NEMS technologies introduce a physically robust and low-power alternative to conventional digital security methods. Their seamless integration into standard semiconductor workflows paves the way for scalable, verifiable, and secure solutions across defense, aerospace, critical infrastructure, and consumer electronics.",
+    "authors": [
+      "Himanandhan Reddy Kottur",
+      "Pavanbabu Arjunamahanthi",
+      "M. Shafkat M. Khan",
+      "Liton Kumar Biswas",
+      "Nitin Varshney",
+      "Navid Asadizanjani"
+    ],
+    "published": "2026-06-24",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.26426v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Advanced packaging 내 물리적 보안 메커니즘으로서 NEMS 기반 PUF 및 tamper detection이 HBM/3D 패키징 환경에서의 하드웨어 보안 위협 대응 기술",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 1,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "Advanced packaging 보안은 실제 산업 니즈이나, NEMS 기반 솔루션은 기초 연구 단계이며 기존 디지털/암호화 방식 대비 메모리 제조사 입장에서 직접 도입 경로가 불명확함.",
+      "final_score": 1.8
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.26176": {
+    "arxiv_id": "2606.26176",
+    "title": "Toward Mitigating Process-Induced Performance Degradation in 3.5D Heterogeneous Packages via Pre-Silicon Firmware Co-Optimization",
+    "abstract": "This paper presents a pre-silicon analysis of XRM-SSD V24/V7.0, a physics-aware predictive firmware scheduling layer for Intel's 3.5D heterogeneous integrated packages (Foveros Direct 3D + PowerVia + EMIB-T + UCIe + HBM5). Using detailed thermal-electrical co-simulation over a 90,000-step LLM inference dataset, we show that proactive workload-density-driven thermal hinting (20-50 ms look-ahead) enables pre-positioning of PowerVia voltage rails. Key results include a thermal-load correlation of R^2 = 0.9911, compensated CPO spectral drift below 0.36 nm (21% of TSMC tolerance budget), and HBM leakage current clamped below 1 MB/hr across all load states. Monte Carlo analysis (N=2,000 trials) confirms robustness under process variation. V7.0 extends the framework to multi-tile architectures with an N x N thermal coupling matrix and two-pole kernel. The approach demonstrates potential for 20-30% released compute and 65-68% EDA guard-band reduction. All metrics are engineering projections from pre-silicon characterization. Silicon validation on Intel 18A platforms is pending. This work highlights firmware-hardware co-optimization as an effective approach to mitigating physical limits in advanced 3.5D packaging.",
+    "authors": [
+      "Chi Fei Chung"
+    ],
+    "published": "2026-06-24",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.26176v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Intel의 3.5D 이종 패키징(Foveros+PowerVia+EMIB+HBM5)에서 열-전기 공동최적화를 통한 성능 저하 완화 기술로, SK하이닉스의 어드밴스드 패키징 및 HBM 사업과 직접 연관.",
+      "scores": {
+        "business": 4,
+        "threat": 3,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "3.5D 패키징 열관리 펌웨어 최적화는 HBM 고성능화의 핵심 과제이나, 저자 신뢰도 부족과 미검증 예측값으로 인해 실제 영향력 평가는 Intel 18A 실리콘 검증 후 재판단 필요.",
+      "final_score": 4.5
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.24860": {
+    "arxiv_id": "2606.24860",
+    "title": "Mechanism of Band Gap Formation in Beam Networks",
+    "abstract": "Band gaps are commonly attributed to Bragg scattering or local resonance, yet it remains unclear whether these mechanisms govern band gap formation in beam networks. In this work, we explain band gap formation in beam networks in terms of a new mechanism, geometry-induced coupling between deformation modes. Specifically, band gap onset arises from axial-bending coupling at lattice nodes and scales with the axial cutoff frequency of a one-dimensional periodic beam, whereas band gap termination is primarily governed by high-frequency rotational branches associated with beam geometry. This mechanism holds for both periodic and disordered beam networks. In periodic lattices, it manifests through beam orientations at lattice nodes, whereas in disordered networks it manifests through short-beam statistics arising from variations in beam length. Together, these results establish a unified mechanism for band gap formation across both periodic and disordered beam networks, providing new insight into the physical origin of band gaps in beam-network materials.",
+    "authors": [
+      "Kwangmin Lee",
+      "Charles Emmett Maher",
+      "Katherine A. Newhall",
+      "Ryan C. Hurley"
+    ],
+    "published": "2026-06-23",
+    "primary_category": "cond-mat.mtrl-sci",
+    "url": "http://arxiv.org/abs/2606.24860v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "재료 과학의 기초 연구로, 메모리 반도체 소자·공정·아키텍처·패키징과 직접적 관련성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "메커니컬 메타머터리얼의 밴드갭 물리를 다룬 기초 재료 과학 논문으로, HBM/DRAM/NAND 메모리 설계·제조·패키징 전략과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.24046": {
+    "arxiv_id": "2606.24046",
+    "title": "Rapid FinFET Modelling Using an Autoencoder",
+    "abstract": "This work presents a machine learning framework that leverages an autoencoder (AE) for the efficient modeling of FinFET. We first calibrated a BSIM-CMG model to generate a dataset of current-voltage (ID-VG) characteristics. This data was used to train an autoencoder that compresses full I-V curves into a low-dimensional latent space, which intrinsically encodes key device physics. A key innovation is the explicit incorporation of parameter such as drain to source voltage (VDS) as an input feature, enhancing the model ability to capture bias dependent variation. The trained model successfully reconstructs full I-V curves and directly extracts critical device metrics including threshold voltage (VTH), subthreshold slope (SS), and peak transconductance (gm). This approach demonstrates that data driven compact models, built from actual characterization data, can achieve high accuracy with minimal training data, providing a powerful tool for rapid device characterization, modelling and circuit level simulation.",
+    "authors": [
+      "Amit Sarkar Suman Sau",
+      "Swagata Mandal"
+    ],
+    "published": "2026-06-23",
+    "primary_category": "cs.LG",
+    "url": "http://arxiv.org/abs/2606.24046v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "FinFET 소자 모델링 자동화는 반도체 설계·공정 최적화의 핵심 기술로, 메모리 및 어드밴스드 패키징 개발 사이클 단축에 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "FinFET 컴팩트 모델링 자동화는 공정 개발 효율성 향상에 유용하나, 학계 기초연구 수준이며 메모리 제조사의 직접 경쟁력 차별화 요소는 아님.",
+      "final_score": 2.05
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.24934": {
+    "arxiv_id": "2606.24934",
+    "title": "Unprivileged Topology Certificates for Cloud GPU Attestation",
+    "abstract": "Cloud GPU tenants receive a model name and a region, but cannot directly inspect the physical accelerator that runs their job. We present a software-only attestation primitive for this setting. A CUDA probe measures an SM-by-memory-region latency matrix using physical SM labels and dependent global loads. A streaming reducer commits sufficient statistics, configuration, code hashes, network evidence, and a compressed raw data archive into a certificate that a verifier can check without a GPU. The certificate supports three claims. First, the per-SM latency map is a stable physical fingerprint. Over a six-hour full-load RTX 5090 run, its median temporal jitter is 0.09 cycles, while shape-only leave-one-out classification separates distinct Blackwell dies with 100.0% accuracy. Second, cache-bypassing HBM sweeps recover hardware-class topology across generations, including a unified Volta V100 memory domain, a two-way Hopper H200 L2 split, and a Blackwell B200 two-die NV-HBI package whose 74/74 SM partition carries a 30-cycle, 15.5 ns cross-die penalty. Third, public network landmarks bind the same certificate to a coarse location. In the B200 run, 169 RIPE Atlas probes place the server within 44 km of its claimed datacentre and reject all 11 decoy sites. Together, these measurements check cloud-GPU identity, class, and coarse location without privileged access or a vendor key.",
+    "authors": [
+      "Faruk Alpay",
+      "Taylan Alpay"
+    ],
+    "published": "2026-06-22",
+    "primary_category": "cs.CR",
+    "url": "http://arxiv.org/abs/2606.24934v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "클라우드 GPU 테넌트의 물리적 메모리 토폴로지 검증 기술로, HBM/L2 캐시 아키텍처 특성(Volta/Hopper/Blackwell의 메모리 도메인 분할, NV-HBI 크로스다이 레이턴시)을 직접 측정·증명하는 소프트웨어 기반 방식을 제시한다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "메모리 아키텍처 특성을 역공학적으로 추출·검증하는 기술로 학술적 참신성은 높으나, 우리의 HBM/패키징 설계 사업과 직접 연관은 제한적이며 클라우드 고객의 신뢰/보안 요구에만 부분 관련된다.",
+      "final_score": 2.4
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22968": {
+    "arxiv_id": "2606.22968",
+    "title": "MOCAP: Wafer-Scale-Chip-Oriented Memory-Orchestrated Chunked Pipelining Framework for Prefill-Only LLM Inference",
+    "abstract": "Large language models (LLMs) are increasingly used in prefill-only workloads, where end-to-end latency is dominated by the prefill phase. For long-context prefill, communication overhead grows with sequence length and quickly becomes a bottleneck on conventional GPU systems, making wafer-scale chips (WSCs) a promising substrate due to their high communication bandwidth and large aggregate compute and memory capacity. A natural way to accelerate prefill is to partition a long input sequence into multiple chunks and execute them in a finer-grained pipeline across devices. However, directly applying this idea to long-context prefill on WSCs remains challenging. First, causal dependency across chunks causes KV cache to accumulate unevenly across pipeline stages, creating severe memory imbalance and limiting the feasible sequence length. Second, later chunks require more attention computation because each chunk depends on preceding chunks, leading to chunk-level latency imbalance.   To address these challenges, we present MOCAP, a memory-orchestrated chunked pipelining framework for prefill-only LLM inference on WSCs. MOCAP introduces Memory-Balanced KV Reallocation (MBKR) to alleviate memory imbalance by redistributing KV cache across pipeline stages, thereby extending the feasible sequence length. It further incorporates Latency-Balanced Chunk Partitioning (LBCP) to balance chunk execution cost under both attention-cost growth and KV reallocation overhead, improving pipeline efficiency. Experimental results show that, compared with GPipe, MOCAP achieves 76.4\\% lower end-to-end latency and 3.24$\\times$ higher throughput on average. MOCAP also extends the maximum supported sequence length by up to 1.31$\\times$ compared with Terapipe.",
+    "authors": [
+      "Zichuan Wang",
+      "Huizheng Wang",
+      "Yuheng Xiao",
+      "Haonan Zuo",
+      "Taiquan Wei",
+      "Jinyi Deng",
+      "Chao Li",
+      "Yang Hu",
+      "Shouyi Yin"
+    ],
+    "published": "2026-06-22",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.22968v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Wafer-scale chip 기반 LLM 추론 최적화로 HBM/고대역폭 메모리 수요와 어드밴스드 패키징(chiplet 통신) 아키텍처 설계에 직접 영향",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 5,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "WSC 기반 장문맥 LLM 추론의 메모리-통신 병목 해결 알고리즘으로 HBM 수요와 chiplet 간 고대역폭 인터커넥트(CXL/TSV) 필요성을 강화하는 긍정 신호",
+      "final_score": 4.15
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22812": {
+    "arxiv_id": "2606.22812",
+    "title": "Clutch: High Performance Vector-Scalar Comparison using DRAM via Chunked Temporal Coding",
+    "abstract": "Vector-scalar comparison is a fundamental computation primitive that compares each element in a vector against a single scalar value. It is widely used in various data-intensive workloads from databases to machine learning. Due to its low computational intensity, its execution tends to be memory-bound, limiting the utilization of compute resources. Processing-using-DRAM (PuD) is an emerging computing paradigm that performs massively parallel bitwise operations directly inside DRAM arrays, alleviating off-chip data movement. Existing PuD-based approaches require many DRAM commands because the comparison's algorithmic complexity grows with operand bit-width in the bit-serial execution model. This command overhead becomes the dominant bottleneck, limiting application-level speedup.   We propose Clutch, a data representation and comparison algorithm that accelerates vector-scalar comparisons in PuD systems with high efficiency and scalability. Clutch first uses temporal coding, encoding each vector value as a sequence of leading ones, which enables lookup-based comparison against a scalar by accessing the corresponding DRAM row. To avoid the prohibitive memory footprint of lookup tables at high precision, Clutch partitions operands into multiple multi-bit chunks, compares chunks independently using compact lookup tables, and merges the per-chunk results with a PuD-efficient procedure. By adjusting the number of chunks, Clutch provides a flexible tradeoff between throughput and memory usage. Across predicate evaluation and decision tree inference, Clutch improves end-to-end application throughput and energy efficiency by an average of 12x and 69x over highly optimized CPU and GPU execution, and by 2.9x and 3.0x over the state-of-the-art bit-serial PuD implementation. We also present the first mapping of decision tree inference to PuD execution, extending PuD to a new application domain.",
+    "authors": [
+      "Daichi Tokuda",
+      "Tatsuya Kubo",
+      "Ismail Emir Yuksel",
+      "Ataberk Olgun",
+      "Haocong Luo",
+      "Tomoya Nagatani",
+      "Geraldo F. Oliveira",
+      "Abdullah Giray Yağlıkçı",
+      "Mohammad Sadrosadati",
+      "Onur Mutlu",
+      "Shinya Takamaeda-Yamazaki"
+    ],
+    "published": "2026-06-22",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.22812v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Processing-using-DRAM(PuD) 기술을 통해 DRAM 내부에서 직접 연산을 수행하는 메모리 컴퓨팅 패러다임으로, SK하이닉스의 PIM/메모리 확장 전략과 직접 연관.",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "DRAM 기반 in-memory 연산으로 데이터센터 AI 워크로드의 메모리 병목을 해결하는 기술로, PIM/메모리 확장 포트폴리오 강화에 직결되는 차세대 메모리 컴퓨팅 솔루션.",
+      "final_score": 4.4
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22791": {
+    "arxiv_id": "2606.22791",
+    "title": "Integrating Heterogeneous Digital Twins in Federated Ecosystems",
+    "abstract": "Digital Twins (DTs) are increasingly used to virtualise physical systems at different scales, enabling monitoring, simulation, and predictions to support decision-making. However, while individual DTs are effective in stand-alone settings, ecosystem-scale deployments require multiple autonomous and distributed DTs to cooperate across system boundaries despite differences in modelling approaches or software technologies, making interoperability and runtime coordination critical challenges. Although \\textit{Federated Digital Twin Ecosystems} have emerged as a promising direction, existing research remains at the conceptual stage, offering high-level architectures while leaving the practical integration of heterogeneous DTs underexplored. This paper proposes the \\textit{Federation Node Manager}, a modular integration mechanism that connects local DTs to a federated environment through controlled capability exposure, protocol and schema adaptation, and timely state and event exchange for coordinated operations. We present a conceptual design and a prototype implementation, and demonstrate their feasibility in the smart mobility domain for emergency response scenarios. The proposed mechanism serves as an enabling component within a broader service-oriented federated DT ecosystem.",
+    "authors": [
+      "Christian Vergara-Marcillo",
+      "Rami Bahsoon",
+      "Nikos Tziritas",
+      "Wendy Yanez-Pazmino",
+      "Panagiotis Oikonomou",
+      "Georgios Theodoropoulos"
+    ],
+    "published": "2026-06-22",
+    "primary_category": "cs.SE",
+    "url": "http://arxiv.org/abs/2606.22791v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Digital Twin 통합 및 페더레이션 아키텍처 논문으로, 메모리 반도체 소자·공정·패키징·아키텍처와 직접적 기술 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "스마트 모빌리티 도메인의 소프트웨어 아키텍처 논문으로, HBM/DRAM/NAND/CXL/PIM 같은 메모리 반도체 기술 개발 및 사업 전략과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22635": {
+    "arxiv_id": "2606.22635",
+    "title": "Design and Development of a Neuromorphic Silicon Suite: PVT Sensing, Stochastic LIF Inference, On-Chip STDP Learning, and Crossbar Programming",
+    "abstract": "Edge neuromorphic systems need compact, configurable hardware that combines probabilistic inference, local learning, and an interface to emerging analogue memory. We present four interface-compatible digital IP blocks implemented as standard-cell CMOS on the SkyWater 130 nm process: a process, voltage and temperature (PVT) sensor built from five selectable ring oscillators that also provides a jitter-based true-random-number generator and a frequency-bounds health monitor; a stochastic leaky integrate-and-fire (LIF) neuron with a configurable LFSR, a programmable activation table, and a refractory period; an on-chip spike-timing-dependent plasticity (STDP) controller with a programmable curve and reward-modulated, eligibility-trace, and anti-Hebbian modes; and a memristive-crossbar controller supporting forming, set, reset, read, and automated current-voltage sweep with current-compliance limiting and half-select biasing. All four blocks share a common serial peripheral interface (SPI) register file; the sensor also exposes a parallel readout. Each occupies a single tile at a 50 MHz target. The suite was verified with 99 cocotb tests at register-transfer and gate level (all passing) and taken through an open standard-cell flow, then submitted for tapeout via the Tiny Tapeout shared-silicon programme. Mapped to the open cell library, each block occupies a post-synthesis cell area of 9.3 to 10.6 thousand square micrometres, places at 61 to 70 per cent tile utilisation, meets the 50 MHz constraint with positive setup and hold margin after clock-tree synthesis, and draws an estimated 0.64 to 0.70 mW under a default switching-activity assumption. The contribution is a coherent, openly released set of building blocks unified by one register interface and one verification flow. All results are from simulation and the implementation flow; no fabricated silicon is reported.",
+    "authors": [
+      "Poornima Kumaresan",
+      "Santhosh Sivasubramani"
+    ],
+    "published": "2026-06-21",
+    "primary_category": "cs.ET",
+    "url": "http://arxiv.org/abs/2606.22635v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "뉴로모픽 칩의 온칩 학습·추론·메모리 인터페이스 설계로, PIM(Processing-in-Memory)과 어드밴스드 패키징(크로스바 메모리 컨트롤러) 기술 영역과 직접 연관.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "뉴로모픽 엣지 칩의 학습·추론 IP 블록 설계는 PIM 아키텍처 선행 연구로 의미 있으나, 130nm 공정·시뮬레이션 수준·학계 주도로 단기 사업 임팩트는 제한적.",
+      "final_score": 1.65
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22632": {
+    "arxiv_id": "2606.22632",
+    "title": "ColumnKeeper: Efficient Solutions to the ColumnDisturb Vulnerability in DRAM-based Systems",
+    "abstract": "Modern DRAM chips are vulnerable to read disturbance phenomena such as RowHammer and RowPress, which induce bitflips after accessing nearby rows a certain number of times (the read disturbance threshold). ColumnDisturb is a new, fundamentally different DRAM read disturbance phenomenon. Specifically, ColumnDisturb (i) disturbs DRAM columns instead of rows, and (ii) increases the number of affected DRAM cells from those in only a few neighboring rows to all cells across three consecutive DRAM subarrays.   We propose ColumnKeeper, the first set of ColumnDisturb mitigations, in two variants: ColumnKeeper-D (CK-D), a deterministic mechanism, and ColumnKeeper-P (CK-P), a probabilistic one. CK-D exploits DRAM's open-bitline architecture to provide deterministic security guarantees at low performance and energy overheads: it uses two counters per subarray to track activations affecting the odd and even columns, and refreshes one row in a subarray when either counter reaches a predetermined threshold. CK-P instead refreshes one row in three consecutive subarrays upon a row activation in the middle subarray, with a predetermined probability, providing configurable security guarantees at low area overhead.   Both mechanisms prevent ColumnDisturb bitflips at low performance, energy, and area overheads. At the current experimentally-demonstrated ColumnDisturb threshold (1M), CK-D and CK-P incur very low average single-core performance overheads of 0.15% and 0.36%, respectively. For near-future thresholds (128K), these rise to a still low average of 1.70% and 2.73%. Mitigating ColumnDisturb at low thresholds (e.g., 16K) remains possible by adopting smaller subarray sizes or enabling subarray-level parallelism. CK-D and CK-P require low area overheads of 0.1 mm^2 and 0.03 mm^2, respectively. ColumnKeeper is freely available at https://github.com/CMU-SAFARI/ColumnKeeper .",
+    "authors": [
+      "Andreas Kosmas Kakolyris",
+      "F. Nisa Bostanci",
+      "Ataberk Olgun",
+      "Ismail Emir Yuksel",
+      "Harsh Songara",
+      "Konstantinos Marios Sgouras",
+      "Umut Baser",
+      "Konstantinos Kanellopoulos",
+      "A. Giray Yaglikci",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-21",
+    "primary_category": "cs.CR",
+    "url": "http://arxiv.org/abs/2606.22632v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM의 새로운 보안 취약점(ColumnDisturb)과 그 완화 기술을 다루며, 메모리 칩 설계 및 신뢰성에 직접 영향을 미침.",
+      "scores": {
+        "business": 4,
+        "threat": 3,
+        "demand": 2,
+        "maturity": 3,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "RowHammer 이후 새로운 DRAM 물리 공격 벡터(ColumnDisturb)의 발견과 저오버헤드 완화 기술 제시로, SK하이닉스의 DRAM 설계 강화 및 차별화 기회를 제공함.",
+      "final_score": 3.45
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22621": {
+    "arxiv_id": "2606.22621",
+    "title": "Multi-Level Resistive Synapses for On-Chip Neural Networks: A Physics-Based Design of a Memristive Crossbar Fabric with Quasi-Continuous Conductance States",
+    "abstract": "Building on resistive communication, this paper presents a physics-based design of an on-chip neural network with multi-level memristive synapses supporting a dense spectrum of conductance states. Derived from ionic transport physics, we develop a state-variable model and quantify storable sub-levels under thermal noise, drift, and quantized conductance. We assemble these devices into a 1T1R crossbar fabric, derive the linear algebra of analog vector-matrix multiplication (VMM) under wire resistance, and design a differential synapse for signed weights. A multilayer pipeline executes inference, backpropagation, and weight updates physically in the analog domain. We derive the in-situ outer-product learning rule, its discretization onto the conductance lattice, and the resulting quantization noise. We provide energy, area, capacity, and inter-tile models, showing this substrate is ideally suited for large language models (LLMs). Our design eliminates weight movement, surpassing binary ReRAM and traditional CMOS. We detail the material stack (HfO_2-based), the FEOL/BEOL CMOS foundry-integration flow, a self-contained SPICE model, the complete memristive-FPGA neuromorphic system, and an in-memory self-attention engine with current-mode translinear softmax. Finally, a ternary BitNet datapath shows projected per-token efficiency orders of magnitude better than advanced CPUs or GPUs. The result is a self-contained hardware-native blueprint for a high-density, analog, in-memory neural processor.",
+    "authors": [
+      "David Alejandro Trejo Pizzo"
+    ],
+    "published": "2026-06-21",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.22621v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "메모리스터 기반 아날로그 인-메모리 신경망 프로세서로, PIM과 어드밴스드 패키징 기술을 결합한 차세대 메모리 컴퓨팅 아키텍처 제안",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론 효율화를 위한 아날로그 인-메모리 신경망 기술로 장기적 수요 가능성은 높으나, 현재는 기초 연구 단계이며 양산 경로와 신뢰성 검증이 미흡함",
+      "final_score": 3.9
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22482": {
+    "arxiv_id": "2606.22482",
+    "title": "NeutronSparse: Coordinating Heterogeneous Engines for Sparse Matrix Multiplication on NPUs",
+    "abstract": "Sparse matrix-matrix multiplication (SpMM) is a fundamental data operation for large-scale sparse data processing. With NPUs increasingly deployed in data centers for their performance and energy efficiency, accelerating SpMM on these platforms is a natural choice. However, high-performance SpMM on NPUs poses a data management challenge, as irregular sparsity demands efficient data organization and scheduling. On Ascend 910B, the official MindSpore implementation achieves only 36.3% of the performance of GPU-based sparse libraries such as cuSPARSE on NVIDIA A100. To this end, we conduct an in-depth architectural analysis of SpMM execution on NPUs versus GPU and identify that the key performance bottleneck for SpMM on NPUs lies in the lack of efficient coordination across heterogeneous compute units under tile-based execution model. Therefore, we propose NeutronSparse, a coordination-first SpMM framework for NPUs. NeutronSparse integrates two key techniques: (i) Sparsity-aware coordination of heterogeneous engines, which adaptively partitions and balances workloads between heterogeneous compute units to keep them busy, and (ii) Locality-aware tile orchestrating, which reorganizes and reuses data tiles to reduce redundant computation and memory movement overhead. Evaluations on Ascend 910B show that NeutronSparse achieves 1.26x-7.78x speedup over NPU baselines and 1.03x-3.07x speedup over leading GPU libraries on NVIDIA A100, revealing untapped potential of NPUs for sparse computation.",
+    "authors": [
+      "Xin Ai",
+      "Zeyu Ling",
+      "Hao Yuan",
+      "Qiange Wang",
+      "Yanfeng Zhang",
+      "Yutao Peng",
+      "Ge Yu"
+    ],
+    "published": "2026-06-21",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.22482v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "NPU 기반 희소행렬 연산 최적화는 AI 가속기 메모리 대역폭 활용도와 데이터센터 메모리 수요 패턴에 직접 영향을 미치는 컴퓨팅 아키텍처 연구",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "NPU 기반 희소 연산 최적화 기술은 AI 가속기의 메모리 대역폭 수요를 증대시키고 HBM/고성능 메모리 채용을 촉진하는 긍정 신호이나, 현재는 학술 단계로 SK하이닉스 메모리 제품 전략에 직접 영향은 제한적",
+      "final_score": 3.55
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22297": {
+    "arxiv_id": "2606.22297",
+    "title": "DejaVu: Why You Should Write to Your DRAM Rows Twice, Carefully",
+    "abstract": "We provide the first experimental demonstration of DejaVu, a phenomenon where the data previously written to DRAM cells affects DRAM's vulnerability to read disturbance. Our experimental characterization using 112 COTS DDR4 DRAM chips from all three major manufacturers shows that, compared to the baseline where we initialize the victim row by writing to it only once, 1) overwriting it with the opposite data reduces ACmin, the minimum aggressor row activation count to induce a bitflip, and 2) writing the same data twice increases ACmin. We provide two hypotheses to explain DejaVu. First, we hypothesize that overwriting the victim row with opposite data values causes under-restoration of charge in DRAM cells. Second, we hypothesize that overwriting the victim row changes charge trap states in the active region, affecting read-disturbance-induced cell leakage current. We conduct controlled characterization to provide insight into these hypotheses. We further characterize the reliability of Processing-Using-DRAM (PUD) operations with DRAM rows initialized with DejaVu patterns. Our characterization of 32-row MAJ-3 operation shows that overwriting the DRAM rows used in the operation reduces the number of bitlines that fail to reliably perform MAJ-3 by 32.7% on average compared to the baseline where rows are written only once. Based on our observations, we describe two major implications of DejaVu. We show how DRAM testing and characterization methodologies should account for DejaVu to accurately characterize read disturbance vulnerability under fixed data patterns and rigorously study data-pattern effects without unintended interference from DejaVu. We also evaluate the performance overhead of read disturbance mitigation techniques when thresholds need to be lowered to be secure against DejaVu, showing a 6.3% overhead when reducing the threshold by 20%.",
+    "authors": [
+      "Haocong Luo",
+      "İsmail Emir Yüksel",
+      "Ataberk Olgun",
+      "Nisa Bostanci",
+      "Orhun Ecemiş",
+      "Abdullah Giray Yağlıkçı",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-21",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.22297v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DDR4 DRAM의 read disturbance 취약성과 PIM(Processing-in-DRAM) 신뢰성에 직접 영향을 미치는 물리적 현상을 규명한 논문",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "DRAM 신뢰성 설계 및 PIM 상용화 단계에서 필수적인 데이터 패턴 의존성 현상을 최초 규명하여 제품 검증 방법론과 마진 설정에 직접 영향을 줄 수 있는 실무적 가치가 높음",
+      "final_score": 3.3
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22198": {
+    "arxiv_id": "2606.22198",
+    "title": "2.5D Root of Trust: Securing the Chiplet Ecosystem",
+    "abstract": "The semiconductor industry is rapidly transitioning from monolithic systems-on-chip toward heterogeneous, multi-vendor 2.5D chiplet ecosystems integrated via silicon interposers. While this paradigm shift offers immense benefits in yield, cost, and time-to-market, it radically expands the attack surface. Integrating chiplets from untrusted foundries and design houses introduces vulnerabilities to hardware Trojans, IP piracy, and system-level communication exploits. Critically, chip-level security features and conventional Root of Trust (RoT) proposals are insufficient in this context: any component, including the interconnect fabric itself, may be sourced from an untrusted vendor. This perspective paper surveys state-of-the-art security strategies for interposer-based 2.5D integration, focusing on three threat categories: interconnect attacks (snooping, spoofing, and man-in-the-middle), cache coherence exploits including complex forging attacks, and microarchitectural side-channel threats. We examine design-time defenses via 2.5D split manufacturing and, more crucially, runtime defenses that establish an active interposer as a physically isolated 2.5D RoT. By embedding so-called transaction monitors and coherence message checkers within the trusted interposer fabric, the system enforces memory access permissions by construction and neutralizes coherence-level attacks without need for modifying/securing the commodity chiplets. Finally, we review the EDA flows required to realize these defenses and show they concurrently improve power and signal integrity while reducing overall system footprint.",
+    "authors": [
+      "Charles Williams",
+      "Mohammed Nabeel",
+      "Gino Chacon",
+      "Ozgur Sinanoglu",
+      "Paul V. Gratz",
+      "Johann Knechtel"
+    ],
+    "published": "2026-06-20",
+    "primary_category": "cs.CR",
+    "url": "http://arxiv.org/abs/2606.22198v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2.5D 칩렛 생태계의 보안 아키텍처는 SK하이닉스의 어드밴스드 패키징(TSV, 2.5D/3D), HBM, CXL 메모리 등 핵심 사업과 직결된 기술 영역",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "2.5D 칩렛 기반 HBM/메모리 확장 제품의 신뢰성·보안 설계가 고객(엔비디아 등) 채택의 필수 조건이 되면서 차별화 기술 기회로 작용할 수 있음",
+      "final_score": 4.4
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.22140": {
+    "arxiv_id": "2606.22140",
+    "title": "Superconducting cavity probes sliding ferroelectricity in small-angle twisted WSe$_2$",
+    "abstract": "Ferroelectricity is a property of materials that exhibit spontaneous charge polarization. Ferroelectricity in 2D materials is interesting because of their applications in memory devices and field-effect transistors. Recently, a new type of ferroelectricity, known as sliding ferroelectricity, has been discovered, in which parallel-stacked bilayers of hexagonal boron nitride (hBN) or transition metal dichalcogenides (TMDCs) develop an out-of-plane electric polarization. In this work, we probe the polarization of small-angle parallel stacked WSe$_2$ by measuring its high-frequency AC response, achieved by embedding it into a half-wave superconducting coplanar waveguide cavity. We observe a hysteretic response in the capacitance of the stack and quality factor of the cavity, confirming ferroelectric switching in the system. Our results further reveal relaxation effects associated with ferroelectric domain-wall motion. This cavity-based technique has potential applications in probing domain-wall dynamics in a ferroelectric system at high frequencies.",
+    "authors": [
+      "Krishnendu Maji",
+      "Supriya Mandal",
+      "Sriram H.",
+      "Rishiraj Rajkhowa",
+      "Malhar Date",
+      "Sayani Pal",
+      "Meghan P. Patankar",
+      "Kenji Watanabe",
+      "Takashi Taniguchi",
+      "Vibhor Singh",
+      "Mandar M. Deshmukh"
+    ],
+    "published": "2026-06-20",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.22140v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2D 강유전체 메모리 소자의 물성 측정 기술로, 차세대 메모리 디바이스 개발의 기초 연구에 해당",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "Sliding ferroelectricity는 차세대 메모리 후보이나, 본 논문은 초전도 캐비티를 이용한 물성 측정 기초 연구로 상용화까지 5년 이상 거리가 있으며 직접적 사업 영향은 제한적",
+      "final_score": 1.9
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.21772": {
+    "arxiv_id": "2606.21772",
+    "title": "Solid-state transcapacitor, a new gain element for logic, memory and interconnects",
+    "abstract": "Today's transistors dictate the voltage and charge scales for both logic and memory. While AI systems are recognized to be limited by memory energy, the dominant share of the energy is expended in the intrachip interconnects whose voltage and charge scales are set by transistors. The energy scaling challenges of transistors can be attributed to simultaneously meeting high current density, high current/impedance modulation, and the inability to lower voltages. Hence, a new logic element that lowers the voltage and charge needs is a priority, not only for lowering logic power but also memory access power. Here, we propose a novel 3-terminal logic element for low energy computing, a solid-state transcapacitor (TCAP). A TCAP is a solid state displacement current modulator realized by a gate which controls the charge-voltage relationship of the channel. Unlike transistors, TCAPs eliminate the dissipative transport current, are not bound by the Boltzmann current modulation limit, and operate with displacement currents limited only by the polarization response and contact resistance. Hence, TCAP circuits may simultaneously overcome the voltage, current density, and current modulation limits of CMOS. We describe a solid state TCAP using a piezoelectric transcapacitor in which a gate-controlled stressor modulates the capacitance of a polar channel via electromechanical coupling. This device achieves inversion and gain, essential for logic, and is functionally equivalent to a 1T-1C memory cell, enabling dense memory. Using voltage scaling, capacitive energy recovery, and high polarization densities of polar materials, the logic based on TCAP offers a pathway to 100 fold lower energy consumption with a delay comparable to ultimately scaled CMOS devices. This approach provides a new potential pathway for low-energy computing beyond the limits of transistors using electro-mechanics and multiferroics.",
+    "authors": [
+      "Amrita Mathuriya",
+      "Roza Kotlyar",
+      "Neal Reynolds",
+      "Rafael Rios",
+      "Alan Kalitsov",
+      "Peter B. Meisenheimer",
+      "James Clarkson",
+      "Noriyuki Sato",
+      "Tanay Gosavi",
+      "Ramamoorthy Ramesh",
+      "Dmitri E. Nikonov",
+      "Sasikanth Manipatruni"
+    ],
+    "published": "2026-06-19",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.21772v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "트랜지스터 기반 로직/메모리의 에너지 한계를 극복하는 신소자(TCAP) 제안으로, 메모리 접근 전력과 온칩 인터커넥트 에너지 문제를 직접 겨냥한 기초 연구",
+      "scores": {
+        "business": 1,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "압전 기반 신소자로 메모리 전력 문제 해결 가능성을 제시하나, 기초 연구 단계로 상용화까지 기술적·공정적 장벽이 매우 크며 현재 SK하이닉스 제품 포트폴리오에 직접 영향은 미미함.",
+      "final_score": 2.05
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.21767": {
+    "arxiv_id": "2606.21767",
+    "title": "Row-Based Layout Synthesis for Analog Circuits Using Height-Quantized Primitives",
+    "abstract": "Restrictive design rules and strong layout-dependent effects have tightened the coupling between physical layout decisions and electrical performance in advanced process nodes, such as FinFET, making analog and mixed-signal (AMS) layout automation increasingly difficult. This paper presents a quantized row-height layout synthesis methodology for AMS circuits, a methodology that has previously been shown to reduce the simulation-to-silicon gap. The proposed flow optimizes a row height fabric from circuit requirements and layout constraints while mapping analog building blocks into quantized-height rows. Results on multiple testcases demonstrate that the proposed flow synthesizes layouts with similar postlayout performance relative to less-constrained custom baseline designs, with comparable performance metrics. Our quantized-height designs are shown to reduce the schematic-to-postlayout performance gap by up to 68.5% and result in lower area for most of our testcases, with a maximum area reduction of 24.1%.",
+    "authors": [
+      "Endalk Y. Gebru",
+      "Ramprasath S.",
+      "Ramesh Harjani",
+      "Sachin S. Sapatnekar"
+    ],
+    "published": "2026-06-19",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.21767v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "아날로그/혼합신호 회로의 물리 설계 자동화 기술로, 고급 공정(FinFET)에서 레이아웃-성능 간극을 줄이는 방법론이며 메모리 및 패키징 설계 최적화와 간접 연관성 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "아날로그 회로 레이아웃 자동화 기술이지만 메모리 소자 설계보다는 주변 아날로그 블록(PLL, 센서, 신호처리)에 국한되어 있어 HBM/DRAM/NAND 핵심 기술과의 직접 영향은 제한적.",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.24916": {
+    "arxiv_id": "2606.24916",
+    "title": "SPORT: Spherical-PSNR-Optimized tRuncaTion for Power-Efficient 360-Degree Video Systems",
+    "abstract": "Memory bandwidth accounts for 30-40% of total power consumption in standalone virtual reality (VR) headsets, yet existing systems typically store the entire 360-degree frame at a uniform resolution regardless of viewer gaze. This paper presents SPORT (Spherical-PSNR Optimized tRuncaTion), a bit-truncation framework that reduces display-path memory power by storing only the most significant bits of pixels outside the user's field of view (FoV). Specifically, a new bit-truncation framework is developed to use weighted-to-spherically-uniform PSNR (WS-PSNR) directly in the optimization constraint, eliminating the metric inconsistency that arises when standard PSNR is used for a WS-PSNR quality target. Also, gaze-predictive tile classification compensates for the 9.33 ms end-to-end pipeline latency, reducing boundary misclassifications by 5.2 percentage points at a cost of only 0.01 ms. In addition, the developed SPORT-B variant, which keeps the FoV lossless, achieves 47.9% memory power saving and 47.9% bandwidth reduction across different 4K video sequences while satisfying all three per-region WS-PSNR thresholds and maintaining SSIM = 1.000 in the attended region. The full adaptive variant SPORT-A reaches 51.6% power saving, 3.1percentage points more than a PSNR-based optimizer at equal measured quality. SPORT is validated on the TrunMEM360 flexible SRAM Application-Specific Integrated Circuit (ASIC) fabricated in SkyWater 130 nm CMOS, confirming byte-exact silicon-software agreement, with WS-PSNR and SSIM matching within 0.1 dB and 0.001. CACTI-based analysis confirms 48.72% DRAM leakage reduction and 36.4%/36.7% read/write energy reduction. The total motion-to-photon latency of 9.33 ms satisfies the 20 ms VR comfort budget with a 53.3% safety margin.",
+    "authors": [
+      "Md. Sajjad Hossain",
+      "Hasibur Rahman Hemel",
+      "Kyle Mooney",
+      "Yiwen Xu",
+      "William Oswald",
+      "Mario Renteria-Pinon",
+      "Hritom Das",
+      "Zhenlin Pei",
+      "Jinhui Wang",
+      "Na Gong"
+    ],
+    "published": "2026-06-19",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.24916v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "VR 헤드셋의 메모리 대역폭/전력 최적화를 위한 SRAM/DRAM 기반 시스템 설계 논문으로, 메모리 전력 효율성과 아키텍처 혁신에 직접 관련됨.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "VR 니치 애플리케이션의 메모리 전력 최적화 기술이지만, 대량 수요처(AI/데이터센터)와 무관하고 SPORT 알고리즘 자체는 메모리 소자/공정 혁신이 아닌 소프트웨어 레벨 최적화에 불과함.",
+      "final_score": 2.2
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.21206": {
+    "arxiv_id": "2606.21206",
+    "title": "Local Conformity-Based Evolutionary Game Modeling of UAV Swarm Under Byzantine Attack",
+    "abstract": "Leveraging their flexible and efficient deployment capabilities, unmanned aerial vehicle (UAV) swarms have been widely applied in various mission scenarios. However, the open communication environment also exposes them to the threat of Byzantine attacks. Most existing studies assume independent decision-making by each UAV, neglecting that local conformity amplifies false information propagation. This paper constructs an evolutionary game model for UAV swarm under malicious attacks based on graph evolutionary game theory, revealing how local conformity rules govern the spread of deceptive strategies. Using death-birth updating rules, we derive the macroscopic dynamic equation for the fraction of deceptive strategies and the analytical solutions to its evolutionary stable states. Sim ulations reveal observation errors weaken malicious induction, while higher proportions of malicious nodes and greater attack intensity drastically amplify attack impacts. Moreover, the model exhibits strong topological robustness across regular, scale-free and random networks.",
+    "authors": [
+      "Ruixing Ren",
+      "Junhui Zhao",
+      "He Fang"
+    ],
+    "published": "2026-06-19",
+    "primary_category": "eess.SY",
+    "url": "http://arxiv.org/abs/2606.21206v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "UAV 군집의 Byzantine 공격 방어를 다루는 분산 시스템 이론 논문으로, 메모리 반도체 제조·설계·아키텍처과 직접적 기술 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "게임 이론 기반 UAV 보안 모델링 연구로, HBM/DRAM/NAND/CXL/PIM/패키징 사업 전략과 무관하며 메모리 반도체 수요나 기술 경쟁에 영향을 주지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.26138": {
+    "arxiv_id": "2606.26138",
+    "title": "The Kernel's Write: Application Read-Only Memory",
+    "abstract": "Alongside power, DRAM has become a major limiting factor in datacenter growth. As DRAM's cost-per-bit has plateaued over the past decade, a class of emerging memory technologies, called Long-term RAM (LtRAM), offers a path to denser and cheaper main memory.   However, LtRAM has three main drawbacks: asymmetric read/write latencies, limited endurance, and coarse write granularity. In an attempt to isolate software from these drawbacks, LtRAM technologies such as Intel Optane copy an approach from flash devices and introduce a translation layer that manages wear-leveling, address remapping, and read/write caching. Prior experimental studies have found these operations add significantly to LtRAM latency.   Rather than making LtRAM look like DRAM, we propose redesigning the hardware/software interface to offload more responsibility to the operating system. This design hinges on one central property, Application Read-Only Memory (AROM): LtRAM pages are read-only to applications and written only by the OS during page migrations. AROM is enforced by leveraging copy-on-write (CoW): application writes to LtRAM trigger a fault that migrates the page back to DRAM before the store is applied. This invariant allows us to shift LtRAM management from the on-DIMM controller to the operating system, drastically simplifying the DIMM's hardware. With this approach, we aim to match the performance of pure DRAM on read-mostly workloads while delivering LtRAM's density and cost advantages.",
+    "authors": [
+      "Hui Sub Shim",
+      "Katherine Mohr",
+      "Philip Levis"
+    ],
+    "published": "2026-06-18",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.26138v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LtRAM(Long-term RAM) 기술의 OS 레벨 관리 아키텍처 제안으로, DRAM 대체 메모리 기술의 실용화 경로를 다루는 메모리 시스템 논문",
+      "scores": {
+        "business": 3,
+        "threat": 3,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "DRAM 비용 한계를 극복하는 LtRAM 기술의 실용적 소프트웨어 인터페이스 설계로, 데이터센터 메모리 밀도 향상 기회를 제시하지만 아직 학술 단계이고 Intel Optane 실패 사례를 재검토하는 수준",
+      "final_score": 4.1
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.20786": {
+    "arxiv_id": "2606.20786",
+    "title": "Memory-Centric Computing: Security Benefits and Challenges of Processing-in-DRAM",
+    "abstract": "Today's computing systems are processor-centric: they require frequent data movement between processing elements (e.g., CPU) and main memory (DRAM), leading to significant inefficiencies in performance and energy consumption. Memory-centric computing instead moves computation to the data, enabling computation capability in and near all places where data is generated and stored, and greatly reducing the performance and energy overheads of data access and data movement. This shift from a processor-centric to a memory-centric paradigm has important and underexplored consequences for system security. Turning memory from a dumb, inactive store into an active computing substrate introduces benefits as well as challenges for system security: it can provide new in-memory security primitives and also reduce data exposure, but it can also expose new attack surfaces. This work discusses the security benefits and challenges of memory-centric computing, specifically Processing-in-DRAM (PiD), a paradigm where the operational characteristics of a DRAM chip are exploited and enhanced to perform computation on data stored in DRAM. Specifically, we describe 1) new state-of-the-art DRAM-based true random number generators that provide up to 16.05 Gb/s throughput and physical unclonable functions with 5.75% lower evaluation latency than the prior state-of-the-art, both on real DRAM chips and 2) two key security challenges of PiD: amplified DRAM read disturbance (e.g., 158x reduction in the minimum number of DRAM accesses required to induce the first bitflip) and high throughput memory timing channels (e.g., a communication throughput of 14.8Mb/s). We believe it is time to design, use, and program DRAM, and in general memory, not as an inactive storage substrate, but as a combined computation, storage, and security substrate, where computational capability, storage density, and security are all key goals.",
+    "authors": [
+      "Ismail Emir Yuksel",
+      "F. Nisa Bostanci",
+      "Ataberk Olgun",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-18",
+    "primary_category": "cs.CR",
+    "url": "http://arxiv.org/abs/2606.20786v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Processing-in-DRAM(PiD)은 SK하이닉스의 핵심 전략인 PIM(Processing-in-Memory)의 직접적 구현 기술이며, DRAM 칩 자체의 연산 능력 활용을 다룬다.",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "PiD 기반 메모리 보안 프리미티브(TRNG, PUF)와 공격 표면 분석은 SK하이닉스의 PIM 상용화 전략에서 보안 차별화 요소로 활용 가능하지만, DRAM 취약성 증폭(read disturbance 158배)은 제품 신뢰성 설계 시 반드시 해결해야 할 과제다.",
+      "final_score": 4.5
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.20339": {
+    "arxiv_id": "2606.20339",
+    "title": "Diagnosing the origin of quantum oscillation beating in graphene",
+    "abstract": "Magnetic quantum oscillations are usually periodic in inverse magnetic field, and their amplitude can show beating when two nearby frequencies interfere. In graphene-based hexagonal systems, such beating can arise from strain-induced pseudomagnetic fields, unequal valley populations, valley-dependent energy shifts, spin-orbit coupling-induced band splitting, or Kekulé distortions. Here, we show that the carrier density and magnetic field dependence of the beating nodes can distinguish these mechanisms. Starting from Onsager's quantization relation, we derive scaling relations for the critical carrier density $N_c$ for the beating nodes as a function of critical magnetic field $B_c$. A pseudomagnetic field gives $N_c\\propto B_c^2$, whereas a density-independent valley imbalance gives $N_c\\propto B_c$. A constant Dirac-band energy splitting by Zeeman-like spin-orbit coupling also gives quadratic field scaling, but with a different node sequence: $N_{c,j}\\propto(2j+1)B_{c,j}^2$ for a pseudomagnetic field and $N_{c,j}\\propto(2j+1)^2B_{c,j}^2$ for energy splitting, where $j$ labels the beating node indices. These results provide quantitative constraints on different microscopic origins of valley- and spin-dependent band splittings in graphene-based systems.",
+    "authors": [
+      "Akash Adhikary",
+      "Sunit Das",
+      "Divya Sahani",
+      "Aveek Bid",
+      "Amit Agarwal"
+    ],
+    "published": "2026-06-18",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.20339v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "그래핀의 양자 진동 현상에 대한 기초 물리학 연구로, 메모리 반도체 제조·설계·패키징 및 상용 소자 개발과 직접적인 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "그래핀 밴드 구조의 기초 물리 진단 논문으로, HBM/DRAM/NAND/CXL/PIM 등 현재 메모리 사업 포트폴리오와 무관하며 상용화 경로도 명확하지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.20060": {
+    "arxiv_id": "2606.20060",
+    "title": "Nodal Braess's Paradox and Inertia Destabilization with Dynamic Node and Line Failures in Power Grids",
+    "abstract": "Large-scale power outages are typically caused by cascading failures. These unfold dynamically through complex interactions between network dynamics and individual component failures. In contrast, the study of cascading failures in physics has focused on analyzing line overloads in the quasi-static regime. We introduce a new model that integrates the dynamics of node and line failures with a paradigmatic oscillator model for power grid synchronization. This enables us to investigate the collective cascading behavior of coupled failures for the first time. We study the impact of nodal robustness, the ability of nodes to tolerate transient disturbances, and inertia, the ability of nodes to resist frequency deviations, on cascade sizes. We discover two novel mechanisms driving system fragility: i) While low inertia is widely considered a major challenge for power grids, we find that high inertia can amplify cascade sizes unless accompanied by appropriate adjustments of other dynamical properties. ii) Further, we find that an increase in the robustness of individual nodes can paradoxically lead to larger cascades. This latter phenomenon constitutes a novel type of Braess's paradox. Understanding such counterintuitive collective effects may become central for achieving resilient future power grids.",
+    "authors": [
+      "Nubius Brandner",
+      "Frank Hellmann",
+      "Hans Würfel",
+      "Jürgen Kurths",
+      "Anton Plietzsch",
+      "Anna Büttner"
+    ],
+    "published": "2026-06-18",
+    "primary_category": "nlin.AO",
+    "url": "http://arxiv.org/abs/2606.20060v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "전력망 동적 안정성과 캐스케이딩 실패 분석으로, 메모리 반도체 제조·설계·아키텍처와 직접적 기술 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "전력계통 물리학 연구로 반도체 메모리 사업 전략과 무관하며, 데이터센터 전력 인프라 설계 참고 자료로서도 실무적 가치가 제한적임.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.19918": {
+    "arxiv_id": "2606.19918",
+    "title": "A Novel FeFET Differential Bit-Cell With Hybrid Volatile and Non-Volatile Memory Modes",
+    "abstract": "Non-volatile SRAM (nvSRAM) designs have been investigated to address the high leakage power of CMOS-based SRAM and the large write latency of emerging non-volatile memory (eNVM) technologies. However, prior nvSRAM designs that combine SRAM with eNVM devices typically require backup and restore (B\\&R) operations and incur significant cell-area overhead. Here, we propose a differential memory bit-cell consisting of a pair of cross-coupled ferroelectric field-effect transistors (FeFETs) and a pair of access transistors, resulting in a four-transistor (4T) structure, which is smaller than conventional 6T SRAM and many prior nvSRAM designs. The proposed bit-cell can be configured to operate in either volatile or non-volatile mode by adjusting the write conditions. In the non-volatile mode, the proposed nvSRAM achieves a store power of 0.13~$μ$W with a 2~ns store time, and no explicit B\\&R operation is required. The proposed bit-cell can also be viewed as a cross-coupled gain cell, enabling further applications.",
+    "authors": [
+      "Jianze Wang",
+      "Wei Zhang",
+      "Xuanyao Fong"
+    ],
+    "published": "2026-06-18",
+    "primary_category": "cs.ET",
+    "url": "http://arxiv.org/abs/2606.19918v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "FeFET 기반 nvSRAM은 SRAM의 누설전력 문제를 해결하는 신흥 비휘발성 메모리 기술로, DRAM/SRAM 대체 가능성과 저전력 메모리 솔루션 수요와 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "FeFET 기반 4T nvSRAM은 저전력·소면적 특성으로 AI 가속기 온칩 메모리 응용에 잠재력이 있으나, 학계 초기 연구 단계로 상용화까지 기술 성숙도 및 공정 검증이 필요함.",
+      "final_score": 2.55
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.19119": {
+    "arxiv_id": "2606.19119",
+    "title": "PuDGhost: Experimental Analysis of Computation Result Corruption in Processing-using-DRAM Operations on Real DRAM Chips and Implications for Future Systems",
+    "abstract": "Processing-using-DRAM (PuD) is a promising computation paradigm that alleviates frequent data movement between main memory and processing units by using each DRAM column as a computation engine via simultaneous multiple-row activation (SiMRA). Unfortunately, DRAM density scaling may hinder PuD's benefits: denser cell arrays bring rows and columns closer, making regular DRAM operations susceptible to noise and interference from neighboring cells. Yet no prior work investigates whether interference from rows or columns not intended to participate in computation can compromise PuD robustness.   In this work, we reveal PuDGhost, an interference phenomenon where a PuD operation in a given column produces erroneous results due to interference from 1) data in non-activated DRAM rows and 2) data in other columns that compute concurrently under the same SiMRA operation. PuDGhost violates the ideal picture that each column's computation depends solely on its own operand data, threatening future PuD systems. We present the first extensive characterization of PuDGhost using 96 real DDR4 DRAM chips from 12 modules, quantifying these two interference sources under various conditions. Among our 15 new empirical observations, we highlight two major results: 1) data in adjacent non-activated rows affects SiMRA outputs by up to 10% for random inputs, and 2) data in concurrently computing columns affects SiMRA outputs by up to 48% for random inputs. Guided by these findings, we propose countermeasures across multiple layers of the PuD computing stack. Specifically, we evaluate on real DDR4 DRAM chips: 1) robust column screening that reduces the risk of using unreliable columns in the presence of PuDGhost, and 2) a compute row layout that mitigates PuDGhost via dedicated rows between compute rows. Our solutions greatly improve PuD computation accuracy and provide a foundation for robust future PuD systems.",
+    "authors": [
+      "Daichi Tokuda",
+      "İsmail Emir Yüksel",
+      "Tatsuya Kubo",
+      "Ataberk Olgun",
+      "Haocong Luo",
+      "Nisa Bostanci",
+      "Jikun Wang",
+      "A. Giray Yağlıkçı",
+      "Shinya Takamaeda-Yamazaki",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-17",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.19119v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "PIM(Processing-in-Memory) 기술의 DRAM 기반 구현 시 발생하는 간섭 현상을 실제 칩에서 규명한 연구로, SK하이닉스의 PIM/어드밴스드 메모리 제품 신뢰성 설계에 직접 영향",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "PuD/PIM 상용화 단계에서 DRAM 밀도 증가로 인한 간섭 문제를 실칩 기반으로 정량화하고 해결책을 제시함으로써, 차세대 메모리 컴퓨팅 제품의 신뢰성 설계 기준 수립에 필수적 기초 연구",
+      "final_score": 3.45
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.19025": {
+    "arxiv_id": "2606.19025",
+    "title": "FoMoE: Breaking the Full-Replica Barrier with a Federation of MoEs",
+    "abstract": "Pre-training Large Language Models (LLMs) typically demands large-scale infrastructure with tightly coupled hardware accelerators. Mixture-of-Experts (MoEs) architectures partially decouple model capacity from per-token compute. This efficiency alone does not make MoE training feasible over ordinary Internet links or loosely connected commodity hardware since active expert routing still assumes high-speed datacenter fabrics. Low-communication methods such as DiLoCo and Photon reduce synchronization frequency across distributed sites, mitigating bandwidth constraints, yet still require full model replicas at every site. This creates a mismatch: modern MoEs have sparse data paths, but their distributed training infrastructure remains communication-dense and memory-inefficient, limiting attempts to pool geographically distributed compute. In this work, we introduce FoMoE, a system that breaks the full-replica paradigm by partitioning expert layers across workers and skipping non-resident experts during local training. We demonstrate that FoMoE: (I) reduces communication costs by up to 1.42x over efficient baselines and 45.44x over Distributed Data Parallelism (DDP) via partial expert replication in controlled regimes; (II) achieves empirical throughput speedups of up to 1.4x through the skip-token mechanism; and (III) shows stable routing in the trained regimes and projects the communication/memory benefits to 100B-scale configurations through system modeling.",
+    "authors": [
+      "Lorenzo Sani",
+      "Zeyu Cao",
+      "Meghdad Kurmanji",
+      "Alex Iacob",
+      "Andrej Jovanovic",
+      "Yan Gao",
+      "Wanru Zhao",
+      "Nicholas D. Lane"
+    ],
+    "published": "2026-06-17",
+    "primary_category": "cs.LG",
+    "url": "http://arxiv.org/abs/2606.19025v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "분산 LLM 학습 인프라의 메모리/통신 효율성 개선으로, HBM/DRAM 수요 패턴과 데이터센터 메모리 아키텍처 설계에 직접 영향을 미치는 시스템 논문",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "지리적으로 분산된 AI 학습 인프라에서 메모리 복제 오버헤드를 줄이는 기술로, 향후 HBM/DRAM 수요 구조(고대역폭 vs 용량 균형)와 CXL 같은 메모리 확장 기술의 필요성을 강화하는 신호",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.18978": {
+    "arxiv_id": "2606.18978",
+    "title": "Nanoscale memristive devices: Threats and solutions",
+    "abstract": "Due to their incentivizing features, memristors are a promising candidate for replacing CMOS-based memories, which are faced with various functional challenges in deep submicron process technologies. Memristors are nonvolatile, have low leakage, and are dense in comparison to CMOS-based memories like SRAM. In this regard, resistive RAM (ReRAM) and spin-transfer-torque RAM (STT-RAM) memristors are distinguished among other memristor-based memory technologies, due to their superiority in process maturity and metrics such as memory operation energy, memory latency, and area. Hence, this chapter focuses on these two memristor-based memory technologies. Despite the good features of these types of memory, they suffer from some reliability threats. Reliability parameters affect each other, and examining their positive and negative effects has a significant impact on the effectiveness of the proposed solutions. In one view, the threats can be categorized into two classes: (1) read/write error and (2) soft error. In this chapter, we comprehensively describe these threats and present the state-of-the-art solutions that enable the widespread use of memristors, particularly ReRAM and STT-RAM, in different applications. Finally, we introduce the emerging ability of memristors as a computing unit aiming to minimize data restoration in computing, and we show how to perform logic and arithmetic computation in a crossbar array.",
+    "authors": [
+      "Amir M. Hajisadeghi",
+      "Javad Talafy",
+      "Hamid R. Zarandi"
+    ],
+    "published": "2026-06-17",
+    "primary_category": "cs.ET",
+    "url": "http://arxiv.org/abs/2606.18978v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "ReRAM과 STT-RAM 같은 차세대 비휘발성 메모리 기술의 신뢰성 문제와 솔루션을 다루며, PIM(Processing-in-Memory) 응용까지 포함해 우리의 메모리 기술 로드맵과 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 3,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "ReRAM/STT-RAM의 신뢰성 문제는 실제 상용화 장벽이지만, 논문의 학술적 깊이와 저자 신뢰도가 낮아 전략 의사결정 근거로는 제한적.",
+      "final_score": 2.55
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.17471": {
+    "arxiv_id": "2606.17471",
+    "title": "ReRAM-aware Model Finetuning addressing I-V Non-linearity and Retention Errors",
+    "abstract": "Traditional CPU, GPU, and NPU architectures are increasingly limited by the von Neumann bottleneck. While In-Memory Computing (IMC) using ReRAM crossbar arrays offers a high-density, energy-efficient alternative, its practical deployment is constrained through their non-idealities. Existing hardware-aware training frameworks often require training from scratch, which is computationally prohibitive for modern large-scale models. In this work, we propose a finetuning-based hardware-aware training algorithm that enables robust DNN deployment on ReRAM with minimal training overhead. Our approach mitigates I-V non-linearity by applying a range-shrunk sinh transformation and incorporates retention errors directly into a regularization loss during the finetuning process. We evaluate our framework across models and tasks such as image classification and question-answering (QA). Experimental results demonstrate that our method achieves similar accuracy on large-scale models like ResNet18 and DeiT-Tiny as the base model. In-case of ImageNet for MobileNetV3 families the technique has only less than 2% accuracy degradation. Further, applying the technique on the SQuAD v2 dataset results in only 1 point degradation of F-1 score.",
+    "authors": [
+      "Ching-Yi Lin",
+      "Shamik Kundu",
+      "Arnab Raha",
+      "Sahil Shah"
+    ],
+    "published": "2026-06-16",
+    "primary_category": "cs.LG",
+    "url": "http://arxiv.org/abs/2606.17471v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "ReRAM 기반 In-Memory Computing은 PIM(Processing-in-Memory) 아키텍처의 핵심 구현 기술로, SK하이닉스의 차세대 메모리 컴퓨팅 전략과 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "ReRAM 기반 IMC의 실용화 장벽(비선형성, 데이터 유지 오류)을 파인튜닝으로 해결하는 방법론으로, PIM 상용화 시 소프트웨어-하드웨어 협최적화 전략의 선행 연구 가치가 있으나 저자 신뢰도와 기술 성숙도는 아직 낮음.",
+      "final_score": 3.9
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.17395": {
+    "arxiv_id": "2606.17395",
+    "title": "Surface-switchable nonreciprocity protected by Fermi arcs in Weyl semimetal TaAs",
+    "abstract": "Weyl semimetals host topologically protected surface states, known as Fermi arcs, which connect bulk Weyl nodes in momentum space. Both bulk Weyl nodes and Fermi arcs are anticipated to be chiral. The chirality of bulk bands has been confirmed through observations of the chiral anomaly and Weyl orbits. In contrast, despite their discovery more than a decade ago, the chiral nature of Fermi arcs has remained unresolved. Here we report Fermi-arc-induced nonlinear transport in the archetypal Weyl semimetal TaAs. Using focused ion beam techniques, we fabricated micro-scale devices that enable simultaneous transport measurements on opposing topological surfaces. While linear transport remains dominated by bulk conduction, nonlinear transport uncovers surface-specific contributions, including an exceptionally large third-order nonreciprocal response that exceeds conventional expectations and highlights the crucial role of the singular arc endpoints. Our findings unambiguously demonstrate the chiral nature of Fermi arcs and establish nonlinear transport as a direct probe of these topological surface states. By revealing a surface-switchable, room-temperature nonlinear response that is topologically protected, this work introduces a new functionality in Weyl semimetals. Given the abundance of natural materials predicted to host topological semimetal states, these results open opportunities for exploring nonlinear transport phenomena and device concepts across a broad class of systems.",
+    "authors": [
+      "Dong Li",
+      "Yuki M. Itahashi",
+      "Ying-Ming Xie",
+      "Menghu Zhou",
+      "Yukako Fujishiro",
+      "Kunjie Zheng",
+      "Yao Guang",
+      "Max T. Birch",
+      "Ilya Belopolski",
+      "Max Hirschberger",
+      "Takahiro Morimoto",
+      "Xiao-Xiao Zhang",
+      "Zhi-An Ren",
+      "Naoto Nagaosa",
+      "Yoshihiro Iwasa"
+    ],
+    "published": "2026-06-16",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.17395v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "위상 물질(Weyl semimetal) 기초 물리 연구로, 메모리/패키징/컴퓨팅 아키텍처 사업과 직접 연관성 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "TaAs의 Fermi arc 위상 특성과 비선형 수송 현상을 규명한 기초 물리 논문으로, HBM/DRAM/NAND/PIM 등 메모리 반도체 제조 전략과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.17249": {
+    "arxiv_id": "2606.17249",
+    "title": "From Compression to Deployment: Real-Time and Energy-Efficient FastGRNN on Ultra-Constrained Microcontrollers",
+    "abstract": "The dominant trajectory of modern machine learning has been to scale up: larger models, larger accelerators, larger memory budgets. Yet a multi-year global semiconductor supply constraint and the growing energy and carbon cost of always-online inference expose the fragility of this trajectory and motivate the opposite direction: refactoring AI and ML algorithms to fit the small, ubiquitous microcontrollers already in mass production in wearables, sensors, and edge appliances. We present an end-to-end open-source reproduction of FastGRNN, a compact gated recurrent cell, deployed on two bare-metal targets: the 8-bit Arduino (ATmega328P) and the 16-bit MSP430 (no hardware multiplier; 16 KB Flash; 512 B SRAM). Our compression pipeline combines low-rank weight factorization, iterative hard-thresholding sparsity, and per-tensor Q15 post-training quantization with explicit activation calibration. The deployed model occupies 566 bytes of weights and achieves macro F1 = 0.918 (seed 0; five-seed Q15 mean 0.853+-0.107) on the HAPT test set. It matches a PyTorch reference at 100% prediction agreement across 3,399 test windows (MCU seed 0; 99.91-100% C-equivalent across five seeds). Both platforms sustain real-time 50 Hz streaming inference (9.21 ms per sample on Arduino; 13 ms on MSP430), where a 256-entry sigmoid/tanh look-up table delivers a 30.5x speedup on the multiplier-less MSP430. Four contributions extend the original FastGRNN paper: (i) cross-platform bit-equivalent deterministic inference; (ii) characterization of recurrent warm-up latency (median 74 samples, 1.48 s; worst-case 125 samples, 2.50 s over 100 test windows); (iii) a deployable look-up-table recipe for multiplier-less embedded targets; and (iv) hardware energy characterization showing 17.7 mW active inference power, <0.09 mW idle power, and 96.7% energy reduction with the LUT.",
+    "authors": [
+      "Emre Can Kizilates"
+    ],
+    "published": "2026-06-15",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.17249v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "극저전력 마이크로컨트롤러(512B SRAM, 16KB Flash)에서의 AI 추론 최적화는 엣지 디바이스의 메모리 효율성과 저전력 아키텍처 설계 트렌드를 반영하며, SRAM/Flash 수요 특성과 PIM 같은 메모리 최적화 기술의 실제 응용 시나리오를 보여줌.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 4,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "극저전력 엣지 추론은 장기 트렌드이나, 본 논문은 마이크로컨트롤러 수준의 니치 응용으로 SK하이닉스의 HBM/DRAM/고대역폭 메모리 주력 사업과는 직접 연관성이 제한적이며, 오히려 저용량 SRAM/Flash 최적화 기술 개발의 필요성을 시사하는 수준.",
+      "final_score": 2.2
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.17026": {
+    "arxiv_id": "2606.17026",
+    "title": "Bath memory as a precision resource in quantum transport",
+    "abstract": "Structured baths can reshape transport fluctuations in mesoscopic quantum devices, yet a predictive criterion for when this enhances precision has been lacking. We propose a route towards such precision advantages by utilizing bath memory in coherent fermionic transport through a noninteracting quantum-dot chain. Using the Landauer-Büttiker formalism, we derive a dual impedance-matching condition that synchronizes the conductor mode splitting, boundary dissipation, and bath bandwidth, and sustains constructive multimode interference across the transmission window. The analytical predictions for the optimal bath bandwidths show excellent agreement with exact nonequilibrium Green's function calculations of the transport for Lorentzian, Gaussian, and Newns spectral densities. The prescription yields an optimal bath bandwidth at which the current Fano factor is minimized and the thermodynamic and kinetic precision coefficients are simultaneously enhanced beyond their Markovian limits. The alignment of the optimal precision regime with the experimentally accessible current Fano factor minimum thus provides a practical strategy for designing precision-enhanced transport in mesoscopic platforms such as semiconductor quantum-dot arrays and ultracold fermionic channels.",
+    "authors": [
+      "José Molina",
+      "Sheikh Parvez Mandal",
+      "Mahasweta Pandit",
+      "Javier Prior"
+    ],
+    "published": "2026-06-15",
+    "primary_category": "quant-ph",
+    "url": "http://arxiv.org/abs/2606.17026v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "양자 수송 현상의 기초 물리학 연구로, 메모리 반도체 제조·패키징·상용 소자 설계와 무관한 이론 물리 논문",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "양자 닷 체인의 비평형 그린함수 계산과 페르미온 수송 정밀도 최적화는 학술적 기여이나, HBM/DRAM/NAND 양산 기술, CXL/PIM 아키텍처, 어드밴스드 패키징 전략과는 직결되지 않는 기초 물리 연구",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.16896": {
+    "arxiv_id": "2606.16896",
+    "title": "Neural dynamical systems on ferroelectric compute-in-memory for real-time forecasting",
+    "abstract": "Neural dynamical systems are expressive temporal predictors that capture continuous-time dynamics through fine-grained state updates. However, this sequential structure maps poorly onto digital hardware optimized for dense matrix operations, a mismatch that analog neuromorphic computing, with its native continuous-time dynamics, can resolve. We introduce FerroNDS, a neuromorphic system built from two analog primitives: an integrator for temporal accumulation and an oscillator for frequency-selective filtering. We map this system onto compute-in-memory hardware based on multi-bit ferrodiodes. A 128-neuron instance of FerroNDS computes short-time Fourier transform and forecasts a 500-ms horizon for periodic, quasi-periodic, and chaotic signals. The system achieves sub-watt real-time operation with per-neuron per-inference energy of 1.64 $μ$J (200 Hz) and 0.29 $μ$J (10 kHz), 25-40$\\times$ area reduction over SRAM-based digital systems, and per-layer latency of 3.18 ms (200 Hz) and 63.87 $μ$s (10 kHz). To our knowledge, this is the first end-to-end integration of a ferrodiode into a neuromorphic computational framework, establishing ferroelectric compute-in-memory as a practical substrate for analog neural dynamical systems.",
+    "authors": [
+      "Keshava Katti",
+      "Adithya Selvakumar",
+      "Pratik Chaudhari",
+      "Deep Jariwala"
+    ],
+    "published": "2026-06-15",
+    "primary_category": "cs.ET",
+    "url": "http://arxiv.org/abs/2606.16896v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Ferroelectric compute-in-memory 기반 아날로그 뉴로모픽 시스템으로, PIM/어드밴스드 메모리 소자 기술과 에지 AI 컴퓨팅 아키텍처에 직접 연관됨.",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "Ferroelectric 기반 아날로그 CIM은 혁신적이나 128뉴런 프로토타입 수준으로 상용화 거리가 멀고, DRAM/NAND 주력사업과의 직접 시너지는 제한적이며 에지 AI 응용 수요는 아직 불명확함.",
+      "final_score": 2.55
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.16146": {
+    "arxiv_id": "2606.16146",
+    "title": "When Proofs Meet Hardware: Comparing NTT and SumCheck in Zero-Knowledge Systems",
+    "abstract": "In the ZKP community, it has long been discussed that the SumCheck protocol is asymptotically more efficient than the Number Theoretic Transform (NTT), requiring only $O(N)$ arithmetic versus $O(N \\log N)$. At the same time, hardware accelerator designers propose that NTT is more hardware-friendly, benefiting from locality and data reuse, while SumCheck suffers from sequential, dependent rounds. Despite these competing intuitions, the hardware-system-level trade-offs between NTT- and SumCheck-based proving primitives remain insufficiently understood.   Beyond individual accelerator design, this work presents, to our knowledge, the first hardware-system-level direct comparison of NTT- and SumCheck-based proving primitives under a unified architectural framework. We study them in the context of the ZeroCheck protocol, a common building block in zkSNARKs. We implement optimized systems for both primitives. Both are evaluated under the same level on-chip SRAM and off-chip bandwidth budgets. Our results show that there is no universal winner. Generally, SumCheck outperforms NTT for high-degree polynomials. For low-degree polynomials, performance depends on memory availability: under given SRAM budgets, NTT might deliver better performance for medium-sized workloads by exploiting data reuse.   These findings, bridging cryptographic protocol design and hardware architecture, offer practical guidance for understanding the proving cost of NTT- and SumCheck-based zero-knowledge proof systems.",
+    "authors": [
+      "Jianqiao Mo",
+      "Alhad Daftardar",
+      "Barath GaneshKumar",
+      "Kaiyue Guo",
+      "Hong Wang",
+      "Benedikt Bunz",
+      "Siddharth Garg",
+      "Brandon Reagen"
+    ],
+    "published": "2026-06-15",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.16146v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Zero-Knowledge Proof 시스템의 하드웨어 가속 설계에서 메모리 대역폭, SRAM 활용, 데이터 지역성 등 반도체 아키텍처 최적화 문제를 다루고 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "암호화 증명 시스템의 하드웨어 효율성 연구로 데이터센터 가속기 설계 참고 가치는 있으나, 메모리 반도체 제조사의 핵심 사업(HBM/DRAM/NAND 칩 설계·공정)과는 직접 연관성이 제한적이고 상용화 시점도 불명확함.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.16016": {
+    "arxiv_id": "2606.16016",
+    "title": "SparseCol: A 1320 BTOPS/W Precision-scalable NPU Exploiting Training-free Structured Bit-level Sparsity and Dynamic Dataflow",
+    "abstract": "Bit-serial computation enables sequential processing of data at the bit level, providing several advantages, such as scalable computational precision. This approach has gained significant attention, especially for exploiting bit-level sparsity in AI workloads. While current bit-serial processors leverage bit-level sparsity to eliminate the computation associated with zero bits, they face a fundamental trade-off: either they suffer from low memory-access and computation efficiency caused by irregular patterns of non-zero bits, or they incur substantial area overhead from complex online scheduling mechanisms required to reorganize bit-level data and preserve memory access and computation regularity. Therefore, we present the SparseCol processor, designed to harness extensive bit sparsity while maintaining high hardware utilization across various AI applications, including CNNs, RNNs, and transformers. In contrast to traditional methods, SparseCol exploits structured bit-level sparsity, denoted by bit-column sparsity, without requiring any re-training. Furthermore, SparseCol implements a dynamic dataflow architecture that tackles hardware under-utilization issues commonly found in existing bit-serial solutions. Fabricated in 16nm CMOS node, SparseCol delivers 1320 BTOPS/W (BTOPS represents Binary Tera-Operations Per Second, calculated as #W bits x #A bits TOPS) peak efficiency while maintaining accuracy, outperforming SotA sparse processors in terms of efficiency by 6.8x. Comprehensive evaluations on CNN classification tasks and transformer architectures demonstrate system-level efficiencies of 745.02 BTOPS/W and 850.5 BTOPS/W, respectively.",
+    "authors": [
+      "Man Shi",
+      "Vikram Jain",
+      "Weijie Jiang",
+      "Chao Fang",
+      "Antony Joseph",
+      "Wim Dehaene",
+      "Marian Verhelst"
+    ],
+    "published": "2026-06-14",
+    "primary_category": "eess.SY",
+    "url": "http://arxiv.org/abs/2606.16016v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Bit-serial NPU 아키텍처와 구조화된 비트 레벨 스파시티 활용은 AI 가속기의 메모리 대역폭 효율성과 전력 소비에 직결되며, HBM/DRAM 수요 및 PIM 아키텍처 설계와 밀접한 관련이 있음.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "AI 가속기의 메모리 효율성 혁신을 통해 HBM/DRAM 대역폭 수요를 재정의할 수 있는 아키텍처 혁신이지만, 아직 학술 단계이며 엔비디아 등 고객사의 실제 채택 가능성은 불명확함.",
+      "final_score": 4.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.15470": {
+    "arxiv_id": "2606.15470",
+    "title": "In-DRAM Signature Generation Using Simultaneous Multiple-Row Activation: An Experimental Study of Off-The-Shelf DRAM Chips",
+    "abstract": "We experimentally demonstrate that it is possible to generate unique, repeatable, and device-specific signatures suitable for use as Physical Unclonable Function (PUF) responses in commercial off-the-shelf (COTS) DRAM chips by leveraging simultaneous multiple-row activation (SiMRA). Based on a rigorous experimental characterization of 112 modern DDR4 DRAM chips (from 10 modules), we introduce SiMRA-PUF, the first DRAM-based PUF that uses SiMRA-generated signatures as PUF responses. We analyze SiMRA-PUF in terms of reliability, uniqueness, and evaluation latency for varying numbers of simultaneously activated DRAM rows (i.e., 2, 4, 8, 16, and 32), DRAM chip density & die revision, and evaluate how temperature affects the similarity of SiMRA-generated responses. Among our 8 key experimental observations, we highlight two major results. First, SiMRA-PUF provides average intra-Jaccard indices of 89.02%, 89.81%, 93.03%, 94.06%, and 94.86%, and average inter-Jaccard indices of 3.98%, 2.37%, 3.44%, 2.92%, and 3.24% for 2-, 4-, 8-, 16-, and 32-row activations, respectively, showing that SiMRA-generated signatures are both repeatable within a device and unique across devices. Second, 2-row activation-based SiMRA-PUF provides 5.75% lower evaluation latency than the state-of-the-art DRAM-based PUF. We open-source our infrastructure and datasets at https://github.com/CMU-SAFARI/SiMRA-PUF.",
+    "authors": [
+      "Umut Baser",
+      "Ismail Emir Yuksel",
+      "F. Nisa Bostanci",
+      "Konstantinos Sgouras",
+      "Ataberk Olgun",
+      "Emre Hakan Demirli",
+      "Zhiheng Yue",
+      "Harsh Songara",
+      "Oguz Ergin",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-13",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.15470v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM 칩의 물리적 특성(SiMRA)을 활용한 PUF 기술로, 메모리 소자 수준의 신규 보안 기능 구현 사례",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "DRAM 기반 PUF는 보안 시장 기회이나 메모리 제조사의 핵심 사업(용량·성능·원가)과는 직접 연관성 낮고, 상용화 경로 불명확함",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.15463": {
+    "arxiv_id": "2606.15463",
+    "title": "DarkFlow: Hierarchical Digital SiPM Architecture with Low-Loss Dataflow Readout for Dark Matter Detection",
+    "abstract": "Direct dark matter detection experiments require large-scale photon sensing arrays with hundreds of thousands of synchronized readout channels. Silicon photomultipliers (SiPMs) have emerged as a leading candidate for these detectors due to their high integration density, low bias voltage, and superior radiopurity. However, existing digital SiPM readout architectures struggle to simultaneously preserve nanosecond-level temporal resolution for sparse scintillation events and sustain data integrity during high-intensity photon bursts. We propose DarkFlow, a hierarchical digital SiPM architecture that features local data aggregation, compact relative-time encoding, consumer-driven backpressure, and occupancy-aware eDRAM burst buffering within a unified dataflow framework. We show that DarkFlow maintains ultra-low packet loss at billion-photon event rates, where conventional architectures can exceed 80% data loss. Besides, the occupancy-aware refresh achieves a 2.14x improvement in effective refresh rate over conventional global refresh. Hardware evaluation in GlobalFoundries 22nm node confirms that the digital readout datapath accounts for less than 0.86% of the detector area and complies with the strict power budget in liquid argon environments.",
+    "authors": [
+      "Zirui Wang",
+      "Aras Repond",
+      "Shawn Westerdale",
+      "Wantong Li"
+    ],
+    "published": "2026-06-13",
+    "primary_category": "physics.ins-det",
+    "url": "http://arxiv.org/abs/2606.15463v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "eDRAM 버스트 버퍼링, 저전력 데이터 경로 설계, 고속 동기화 읽기 아키텍처 등 메모리 인터페이스 및 패키징 기술과 직접 연관.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 1,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "고에너지물리 검출기용 특수 메모리 아키텍처로 eDRAM 최적화 기법은 참고 가치가 있으나, 극도로 니치한 응용(암흑물질 검출)이므로 SK하이닉스의 주력 메모리 사업 전략과는 직접 영향 미미.",
+      "final_score": 1.85
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.15181": {
+    "arxiv_id": "2606.15181",
+    "title": "Revisiting The PBH Test: Fast Uncontrollability Certificates via Krylov Methods",
+    "abstract": "This letter revisits the classical PBH test through the lens of finite-horizon reachability. By casting state transfer as a minimum energy, primal optimization problem, we show that unreachable state-space maneuvers admit dual infeasibility certificates. These certificates are computable without forming the controllability matrix meaning that uncontrollability can be efficiently certified. We prove that any such certificate is a linear combination of uncontrollable generalized eigenvectors, thereby providing a spectral interpretation without a global eigendecomposition. We also devise algorithms based on Krylov sub-space methods that extract some of the uncontrollable PBH modes from a certificate and demonstrate favorable scaling on large dynamic networks with thousands of nodes.",
+    "authors": [
+      "Ahmad F. Taha",
+      "Mohamad H. Kazma",
+      "Abdallah A. Albustami"
+    ],
+    "published": "2026-06-13",
+    "primary_category": "math.OC",
+    "url": "http://arxiv.org/abs/2606.15181v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "제어 이론의 PBH 테스트와 Krylov 부분공간 방법론에 관한 순수 수학/제어 이론 논문으로, 메모리 반도체 소자·아키텍처·패키징·제조공정과 직접적인 관련성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "대규모 동적 네트워크의 제어 가능성 검증 알고리즘 논문이나, 메모리 반도체 제조·설계·응용과는 무관한 순수 제어 이론 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.14566": {
+    "arxiv_id": "2606.14566",
+    "title": "Extended Abstract: Re-Evaluating the Real-System Modeling Accuracy of Ramulator 2.0",
+    "abstract": "Cycle-level DRAM simulators provide accurate and flexible models for DRAM and memory controller operations and enable research on current and future memory systems. Therefore, they are critical for improving the performance, efficiency, and robustness of DRAM-based memory systems. Ramulator 2.0 (successor of Ramulator) is a highly modular and extensible cycle-accurate DRAM simulator that enables rapid exploration of new ideas in DRAM-based memory systems.   A MICRO 2024 best paper runner-up publication, A Mess of Memory System Benchmarking, Simulation and Application Profiling, which we refer to as \"the Mess paper,\" with all three artifact badges awarded (including \"Reproducible\"), proposes a new benchmark to evaluate real and simulated memory system performance. While doing so, it makes strong negative claims about Ramulator 2.0 and shows unexpected results.   In this talk and the associated extended abstract, we demonstrate that these results and claims in the Mess paper are incorrect and are due to configuration and simulator usage errors made in the Mess paper. We describe four best practices to aid users and developers of simulation tools to avoid such issues in the future. We emphasize the importance of contacting simulator authors and developers when unexpected results are observed (especially and importantly before publishing such results), to ensure these simulators are used with correct configurations and as intended. Our investigation also aims to stimulate discussion on artifact evaluation practices and on mechanisms for correcting results and artifacts after publication. To aid future works and reproduction of all our results, we open source all our code and scripts at https://github.com/CMU-SAFARI/Cleaning-up-the-Mess. We refer the reader to our full ISPASS 2026 paper and its artifact for the complete analysis, detailed methodology, and extended results.",
+    "authors": [
+      "F. Nisa Bostanci",
+      "Haocong Luo",
+      "Ataberk Olgun",
+      "Maria Makeenkova",
+      "Geraldo F. Oliveira",
+      "A. Giray Yaglikci",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-12",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.14566v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM 시뮬레이터(Ramulator 2.0)의 정확성 검증으로 메모리 시스템 설계 및 성능 평가 방법론에 직접 관련",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 4,
+        "credibility": 5,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "메모리 시뮬레이션 도구의 신뢰성 강화는 차세대 DRAM/HBM 설계 검증에 필수적이지만, 학술 논쟁 성격으로 직접적 사업 영향은 제한적",
+      "final_score": 2.75
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.13844": {
+    "arxiv_id": "2606.13844",
+    "title": "Ramulator 2.1: A Composable Memory System Simulator for Modern DRAM Systems",
+    "abstract": "Ramulator 2.1 is a major overhaul of Ramulator 2.0 that substantially improves the simulator in three directions: 1) support of modern and emerging DRAM and memory-controller features, 2) better usability and extensibility of the simulator, and 3) more comprehensive tests and validation workflows. Ramulator 2.1 adds support for advanced features in recent and emerging DRAM standards and memory controllers, including HBM3/4, LPDDR5/6, and GDDR7. To improve usability and extensibility, Ramulator 2.1 introduces a Python-based modeling and configuration interface backed by a two-way code-generation framework that 1) hides low-level C++ code behind high-level DRAM specifications written in Python, and 2) automatically creates Python proxies for all components of the simulator. Doing so enables users to rapidly create variants of DRAM standards and automate design-space-exploration workflows. To improve trustworthiness in simulation results, Ramulator 2.1 provides a comprehensive testing and validation infrastructure that covers both 1) fine-grained validation of specific DRAM timing constraints and memory-controller scheduling behavior, and 2) system-level performance evaluation using latency-throughput curves. To aid performance analysis and debugging, Ramulator 2.1 also includes an easy-to-use and high-performance DRAM command trace visualizer. Ramulator 2.1 is open-source on GitHub and under active development.",
+    "authors": [
+      "Haocong Luo",
+      "F. Nisa Bostancı",
+      "Ataberk Olgun",
+      "Maria Makeenkova",
+      "Ziad Malik",
+      "Ipek Akdeniz",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-11",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.13844v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM/HBM/LPDDR/GDDR 등 주력 메모리 제품의 성능 시뮬레이션 및 설계 검증 도구로서 제품 개발 사이클에 직접 영향",
+      "scores": {
+        "business": 4,
+        "threat": 0,
+        "demand": 3,
+        "maturity": 4,
+        "credibility": 4,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "HBM3/4, LPDDR5/6, GDDR7 등 차세대 메모리 표준의 설계·검증·최적화를 가속화하는 오픈소스 시뮬레이터로서 R&D 생산성 향상 및 설계 리스크 감소에 기여하는 실무 도구",
+      "final_score": 2.9
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.13511": {
+    "arxiv_id": "2606.13511",
+    "title": "Spectrum Sharing Across Terrestrial and Non-Terrestrial Services in the FR3 Upper Midband",
+    "abstract": "The frequency bands between 7 and 24 GHz, also known as upper midband or Frequency Range (FR) 3, are being considered as an enabler of 6th Generation (6G) mobile networks. This portion of the spectrum exhibits different propagation characteristics compared to frequencies above 24 GHz, while also offering the potential to provide larger bandwidth allocations for mobile systems than those available in the sub-6 GHz range. 6G technology and spectrum policy, however, will need to guarantee coexistence with the incumbents that already use these frequency bands, which include a variety of services, from radiolocation to satellite-based communications, remote sensing, and radioastronomy. In this paper, we consider the challenge of coexistence between 6G terrestrial systems and satellite incumbents in different portions of the FR3 bands. Using a large-scale 3D model of a terrestrial deployment in the city of Boston and an open-source ray tracing solution, we evaluate the level of Radio Frequency Interference (RFI) that tens of terrestrial Next Generation Node Bs (gNBs) generate toward satellites at different elevation angles. Our model, based on realistic obstruction, clutter, diffraction, and reflections, shows that sidelobes and Non-Line-of-Sight (NLoS) paths can significantly contribute to RFI. Besides directionality, the spatial distribution of gNBs also plays a key role in defining the RFI levels, suggesting that a careful design and operation of terrestrial deployments can create coexistence opportunities.",
+    "authors": [
+      "Paolo Testolina",
+      "Ergest Beshaj",
+      "Michele Polese",
+      "Tommaso Melodia"
+    ],
+    "published": "2026-06-11",
+    "primary_category": "eess.SY",
+    "url": "http://arxiv.org/abs/2606.13511v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "6G 무선통신 스펙트럼 공존 문제로, 메모리 반도체 소자·아키텍처·패키징·수요와 직접적 관련이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "RF 간섭 분석 논문으로 통신 인프라 정책 영역이며, HBM/DRAM/NAND/CXL/PIM/패키징 사업 전략과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.13328": {
+    "arxiv_id": "2606.13328",
+    "title": "Non-Parametric Dual-Manifold Mapping via 8-Bit Bounded Transformation Matrices: Challenging FP-centric Hardware Paradigms in Low-Energy AI",
+    "abstract": "Modern deep learning hardware paradigms rely heavily on computationally expensive floating-point arithmetic (FP32, FP16, and FP8), requiring massive thermal and energetic overheads to maintain gradient-based optimization. This paper introduces a non-parametric, training-free computational framework for dual-manifold mapping that operates strictly within an 8-bit signed integer boundary and leverages simple bitwise and accumulation logic. By mapping a Spatial Manifold (N_spatial = 8192 neurons) and a Gabor-pooled Structural Manifold (N_structural = 4096 neurons) through an integer-based transformation matrix (Z-matrix), we eliminate the need for floating-point multipliers. Inference is achieved via cache-friendly pointer offsets and bitwise masks, accumulating directional sign-charges using fixed thresholds (theta_reject = 8.0, theta_cut = 2.0). Learning is executed through a localized, bounded update mechanism restricted strictly within [-127, 127], modulated by stochastic noise injection. Both architectures demonstrate extreme holographic resilience, preserving near-perfect reconstruction via a global scaling factor under 90% truncation sparsity and 20% random node destruction. By reducing core AI inference to 8-bit boundaries and boolean-like execution, this framework outlines a paradigm shift toward neuromorphic edge-computing, directly questioning the long-term necessity of dense, floating-point-centric GPU accelerators.",
+    "authors": [
+      "Lars Kopp"
+    ],
+    "published": "2026-06-11",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.13328v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "8비트 정수 연산 기반 신경망 알고리즘 논문으로, 반도체 하드웨어 아키텍처·메모리 설계·패키징 기술과 직접적 관련성이 없음.",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 1,
+        "maturity": 0,
+        "credibility": 0,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "ML 알고리즘 최적화 논문일 뿐 메모리 반도체 제조·아키텍처·소자 기술과 무관하며, 저자 신뢰도·기관 정보 부재로 검증 불가.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.13725": {
+    "arxiv_id": "2606.13725",
+    "title": "A Modern Large-Scale Memory Characterization Laboratory",
+    "abstract": "Real memory chip characterization yields insights into fundamental operational characteristics of modern memory, enabling new mechanisms that improve memory performance, robustness, security, and energy efficiency. We describe our large-scale DRAM characterization laboratory for understanding DRAM. A key building block of this laboratory is DRAM Bender, a versatile and easy-to-use modern DRAM characterization infrastructure. We have updated DRAM Bender to i) introduce support for new types of characterization experiments, ii) expand on its DRAM interface standard support, and iii) make it easier to use at large scale. This paper introduces these updates for the first time. We hope our infrastructure enables the community to discover new problems and solve critical memory scaling issues, enabling the overcoming of the huge memory bottleneck that plagues modern computing systems.",
+    "authors": [
+      "Ataberk Olgun",
+      "Haocong Luo",
+      "Ismail Emir Yuksel",
+      "F. Nisa Bostanci",
+      "A. Giray Yaglikci",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-11",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.13725v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM 칩 수준의 실제 특성화 및 성능/신뢰성/보안 개선 메커니즘 연구로 메모리 제조사의 제품 개발 및 검증 프로세스와 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 4,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "DRAM 특성화 인프라 고도화는 수율/신뢰성/성능 최적화의 핵심 도구이나, 학계 중심의 기초 연구 수준으로 상용화 임박도는 낮음.",
+      "final_score": 2.95
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.12968": {
+    "arxiv_id": "2606.12968",
+    "title": "Quantum-Driven Neuromorphic Computing for Million-Qubit-Scale Workloads",
+    "abstract": "We introduce Apollo, a 10000 node p-qubit neuromorphic processor fabricated in 16 nm mixed signal CMOS and operating fully at room temperature with a typical analog core power envelope of about 0.5 W. Its fundamental element, the p-qubit, is a bistable stochastic unit whose continuous time state fluctuations are driven by integrated quantum entropy units that inject true quantum derived randomness. This enables ultrafast stochastic transitions at low energy while preserving a classical state representation. Apollo combines these p-qubits with a high degree Hyperion 256 interconnect topology, allowing efficient embedding of dense Ising and QUBO problems with substantially reduced minor embedding overhead compared with sparse annealing platforms. We show that, through the Suzuki Trotter correspondence, the equilibrium statistics and annealing dynamics of the p-qubit network reproduce key properties of transverse field quantum annealing without cryogenic cooling, long lived coherence, or microwave control. Beyond device level validation, Apollo is evaluated on a three dimensional spin glass benchmark previously used to study quantum advantage in superconducting annealers. Across 300 disorder realizations, Apollo reaches substantially lower ground state energies than reported cryogenic quantum annealing hardware, while remaining distinct from classical simulated annealing and simulated quantum annealing. A 350 nm release candidate device experimentally validates the core p-qubit dynamics, thermodynamic sampling correctness, and continuous time annealing behavior. These results establish Apollo as a room temperature, industrially scalable platform for quantum driven energy based optimization, probabilistic inference, generative modeling, and hybrid classical quantum workflows.",
+    "authors": [
+      "Adams Ivanov",
+      "Samer Rahmeh",
+      "Erick Giovani Sperandio Nascimento",
+      "Daniela Herrmann"
+    ],
+    "published": "2026-06-11",
+    "primary_category": "quant-ph",
+    "url": "http://arxiv.org/abs/2606.12968v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "양자 기반 확률적 컴퓨팅 칩이 CMOS 공정(16nm)으로 구현되며, 메모리 집약적 최적화 워크로드 처리를 위해 고밀도 상호연결 토폴로지와 아날로그 코어 설계를 활용하는 신규 컴퓨팅 아키텍처.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "혁신적 양자-신경형 칩 아키텍처이나 아직 기초 검증 단계이며, HBM/DRAM/NAND 주력 사업과의 직접 시너지는 제한적이나 차세대 AI 최적화 칩 시장 진입 기회는 존재.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.12726": {
+    "arxiv_id": "2606.12726",
+    "title": "Stable, bidirectional electro-optic transduction in thin film lithium tantalate",
+    "abstract": "Efficient and stable microwave-optical transduction is a key enabling technology for distributed superconducting quantum computing and heterogeneous quantum networks. Electro-optic transducers based on thin-film lithium niobate (TFLN) have shown strong promise, but demonstrations to date have been limited by various factors such as low frequency bias drift, low efficiency, fabrication complexity, and scalability. Here we demonstrate the first integrated electro-optic microwave-optical transducers realized in thin-film lithium tantalate (TFLT), a material platform offering Pockels nonlinearity comparable to TFLN together with improved bias stability and high-power handling. We fabricate superconducting microwave resonators coupled to tunable photonic-molecule optical resonators using wafer-scale deep ultraviolet lithography, offering high-throughput production of hundreds of devices per wafer. Across six devices we observe coherent bidirectional conversion between C-band optical photons and 4.9-5.5 GHz microwave photons, with measured on-chip efficiencies and inferred single-photon coupling rates g_0/2π ~ 1 kHz consistent with theory. Continuous operation over multiple days is achieved using a static bias field with minimal feedback, demonstrating a major operational advantage. We further characterize optical loss statistics, microwave resonator performance, and optically induced added noise under pulsed pumping, finding less than one added photon for 100 microsecond pulses at the highest measured efficiencies. These results establish TFLT as a scalable and robust electro-optic platform for future quantum interconnects and modular quantum processors.",
+    "authors": [
+      "Christopher J. Axline",
+      "Stephan Gamper",
+      "Phoebe M. Tengdin",
+      "Moritz Businger",
+      "Guilhem Alma",
+      "Marina A. Roquet",
+      "Nicola Brusadin",
+      "Robin Giroud",
+      "Luis G. Villanueva"
+    ],
+    "published": "2026-06-10",
+    "primary_category": "quant-ph",
+    "url": "http://arxiv.org/abs/2606.12726v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "양자 컴퓨팅 인터커넥트 기술로서 차세대 고성능 컴퓨팅 아키텍처의 핵심 인프라이며, 메모리-프로세서 간 신호 변환 기술로 CXL/PIM과 유사한 이종 시스템 통합 패러다임과 연결됨.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "양자-고전 컴퓨팅 하이브리드 시스템의 필수 인터페이스 기술로, 10년 이상 선행 투자가 필요하지만 메모리 확장/이종 통합 아키텍처 시장의 장기 수요처가 될 가능성이 있음.",
+      "final_score": 2.6
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.11954": {
+    "arxiv_id": "2606.11954",
+    "title": "Boron Co-Alloying in AlScN Wurtzite Ferroelectrics: Insights from an 850-Sample Combinatorial Study",
+    "abstract": "AlScN wurtzite ferroelectrics are promising candidates for energy-efficient non-volatile memory. However, AlScN suffers from a high coercive field and reduced cycling endurance, and the limited tunability of its properties constrains further optimization. Co-doping AlScN with boron offers the promise of independently tailoring the chemical and structural properties, making AlScBN an attractive quaternary system. This material has already been explored for a few selected compositions, however, no systematic study of the full AlScBN compositional space exists. A combinatorial approach consisting of gradient deposition with HiPIMS at low temperatures of 250°C and automatic analysis of film properties allowed us to analyze a total of 850 unique samples within the AlScBN phase space. In addition to a full screening of the materials' chemical and structural properties, we fabricate and characterize combinatorial device libraries. XPS charge transfer analysis experimentally confirms that bond ionicity correlates with a reduction in the coercive field for AlScN and AlScBN systems, opposite trends are instead observed for AlBN. While the films maintain a high remanent polarization of 130-150 μC/cm2, Sc and B co-doping reduces the coercive field from 7 MV/cm to 3 MV/cm. Notably, B co-alloying lowers the amount of Sc needed to lower the coercive field, reducing reliance on this scarce element. In addition, we find that co-alloying with B, notably improves cycling endurance, which is related to a reduction in defect density. These results establish AlScBN as a scalable, CMOS-compatible ferroelectric, positioning it as an interesting alternative to AlScN.",
+    "authors": [
+      "Federica Messi",
+      "Nathan Rodkey",
+      "Manuel Kober-Czerny",
+      "Sebastian Siol"
+    ],
+    "published": "2026-06-10",
+    "primary_category": "cond-mat.mtrl-sci",
+    "url": "http://arxiv.org/abs/2606.11954v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "강유전체 메모리(FeRAM) 소재 혁신으로 비휘발성 메모리의 새로운 경로를 제시하며, CMOS 호환성과 저전력 특성이 차세대 메모리 아키텍처와 관련 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "AlScBN 강유전체는 흥미로운 소재 혁신이나 FeRAM 시장 자체가 극히 제한적이고 상용화 거리가 멀어 SK하이닉스의 HBM/DRAM/NAND 주력 사업에 직접적 영향은 낮음.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.11912": {
+    "arxiv_id": "2606.11912",
+    "title": "Robust Spin Logic Enabled by Generalized $\\mathrm{SU}(2)$ Symmetry in $p$-Wave Magnets",
+    "abstract": "Unconventional magnets combine the vanishing stray fields of antiferromagnets with the strong spin-splitting of ferromagnets, offering a unique material platform for spintronics. However, a critical challenge in realizing functional spin-logic devices lies in preserving long-range spin coherence against momentum-degrading scattering and gate-induced dephasing. Here, we demonstrate that the intrinsic momentum-dependent exchange field of a three-dimensional $p$-wave magnet can be precisely tuned against gate-induced Rashba spin-orbit coupling to establish a \\textit{generalized} $\\mathrm{SU}(2)$ spin-rotation symmetry. This emergent conservation law generates a symmetry-protected Persistent Spin Helix (PSH), effectively integrating the high energy scales of 3D bulk magnetic exchange with the macroscopic coherence of symmetry protection. By modeling a synergistic $p$-wave magnetic spin field-effect transistor (spin-FET), we reveal high-visibility Datta-Das conductance oscillations controlled purely by electrical gating. Crucially, our quantum transport simulations confirm that this symmetry-engineered transport regime exhibits exceptional resilience against strong non-magnetic Anderson disorder and geometric variations. These results establish a synergistic paradigm for non-magnetized spintronics, demonstrating how the active integration of spin-orbit coupling and unconventional magnetism can yield disorder-resilient spintronic logic.",
+    "authors": [
+      "Hao-Kun Ke",
+      "Gong Zhao",
+      "Siqing Li",
+      "Ruixiang Chen",
+      "Chui-Zhen Chen"
+    ],
+    "published": "2026-06-10",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.11912v2",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "기초 물리학 기반의 스핀트로닉스 소자 이론으로, 메모리 반도체 제조·패키징·아키텍처와 직접적인 사업 연관성이 없음.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "p-파동 자석의 스핀 헬릭스 현상을 다루는 순수 응축물질 물리 논문으로, SK하이닉스의 HBM/DRAM/NAND/CXL/PIM 등 기존 메모리 사업이나 어드밴스드 패키징 전략과 무관하며, 상용 스핀트로닉 메모리 소자로의 경로도 불명확함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.11718": {
+    "arxiv_id": "2606.11718",
+    "title": "Making Locality-aware GEMM Compatible with Page-Granularity Placement on Chiplet GPUs",
+    "abstract": "Multi-chiplet GPUs scale compute throughput and high-bandwidth memory (HBM) capacity, but their non-uniform memory system makes locality between chiplets and their data critical to the GPU's performance and energy efficiency. Locality-aware scheduling and data placement identify which data should reside near each chiplet. However, in general matrix multiplication (GEMM), locality-aware data placement often becomes incompatible with a fixed page-granularity data interleaving, since the optimal granularity for mapping data across chiplets varies widely across workloads. We propose Chiplet-Contiguous Layout, a global memory layout that stores chiplet-local data contiguously. Chiplet-Contiguous Layout enables locality-aware placement compatible with page-granularity placement across diverse large language model (LLM) GEMM shapes, without changes to the operating system or hardware. On representative LLM inference and training GEMMs from Qwen 3 30B and Llama 3.1 70B, Chiplet-Contiguous Layout on average reduces remote HBM traffic by 13.0x on Qwen and 20.7x on Llama over 4\\,KB interleaving, and by 3.3x and 3.7x over coarse locality-aware placement.",
+    "authors": [
+      "Euijun Chung",
+      "Jae Hyung Ju",
+      "Hyesoon Kim"
+    ],
+    "published": "2026-06-10",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.11718v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Multi-chiplet GPU의 NUMA 메모리 시스템에서 HBM 접근성과 데이터 배치 최적화를 다루는 아키텍처 수준의 메모리 성능 연구",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 5,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론/학습 워크로드에서 chiplet GPU의 HBM 효율성을 13~20배 개선하는 메모리 배치 기법으로, HBM 수요 증대와 고객(엔비디아) 차세대 아키텍처 설계에 직접 영향을 미칠 수 있는 실무적 가치가 높음",
+      "final_score": 4.35
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.11716": {
+    "arxiv_id": "2606.11716",
+    "title": "A Fast Locality Simulator for GEMM Design-Space Exploration on Multi-Chiplet GPUs",
+    "abstract": "Multi-chiplet GPUs split memory into local and remote HBM regions across a silicon interposer, and reducing the remote HBM traffic is crucial for the performance and energy efficiency of multi-chiplet GPUs. For general matrix multiplication (GEMM), the dominant operator in large language models (LLMs), the resulting inter-chiplet traffic depends strongly on kernel choices such as operand layout, CTA traversal order, and data placement, and the optimal strategy to minimize remote accesses is nontrivial. We present a fast, functional, tile-level locality simulator that models CTA scheduling, per-chiplet L2 caches, and local/remote HBM accesses to evaluate a full-size LLM GEMM configuration. Across representative LLM GEMMs, the simulator shows that remote traffic varies by up to 58x across the design space for the same GEMM dimensions. Moreover, using the simulator as feedback, an agentic AI discovers that a 2D block-swizzle CTA traversal reduces remote traffic over the best 1D traversal by up to 5.1x under round-robin placement, identifying CTA traversal order as a first-order, GEMM-dependent design knob for inter-chiplet traffic.",
+    "authors": [
+      "Euijun Chung",
+      "Hyesoon Kim"
+    ],
+    "published": "2026-06-10",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.11716v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Multi-chiplet GPU의 HBM 로컬/원격 트래픽 최적화는 SK하이닉스의 HBM, 어드밴스드 패키징(TSV/2.5D/3D), CXL 메모리 사업과 직결된 핵심 아키텍처 과제",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 5,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "LLM 시대 multi-chiplet GPU의 HBM 성능 최적화 설계 공간을 정량화하여, 고대역폭 메모리와 인터포저 기반 패키징 수요 확대를 뒷받침하는 실무적 가이드 제공",
+      "final_score": 4.35
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.11076": {
+    "arxiv_id": "2606.11076",
+    "title": "Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design",
+    "abstract": "Reliable large-scale quantum computation relies on fault-tolerant architectures, where quantum error correction (QEC) continuously extracts and decodes error syndromes in real time. A critical component in QEC is the decoder, a classical subsystem that must simultaneously deliver high logical accuracy and ultra-low latency. This paper presents a novel algorithm-hardware co-design that improves the accuracy-latency trade-off over existing approaches such as vanilla Minimum-Weight Perfect Matching (MWPM) and Union-Find (UF) decoders. At the algorithmic level, we introduce coset ensemble decoding, which improves UF decoding by explicitly exploiting logically equivalent cosets. Our method performs ensemble forest exploration to generate multiple coset-consistent candidates and aggregates them to approximate coset-level maximum-likelihood decoding. We further reduce computational and memory complexity via reverse-order elimination and lossless graph compression, without sacrificing accuracy. At the hardware level, we design a domain-specific architecture that temporally reuses resources, avoiding the code-distance-proportional resource growth in prior spatial architectures. Several optimizations, such as multi-bank memory hashing and hierarchical ID mapping, are proposed to mitigate pipeline stalls and memory conflicts under highly concurrent access patterns. Under a circuit-level depolarizing noise model, our co-design approach achieves a better accuracy-latency trade-off than prior MWPM- and UF-based decoders, while reducing FPGA LUT consumption by up to 8.2 times compared with reported UF-based decoder resources. The tunable candidate number further exposes a flexible design knob, enabling users to tailor decoding performance to the requirements of different fault-tolerant workloads. Our implementation is publicly available at https://github.com/IMSeonL/coset-ensemble-decoder.",
+    "authors": [
+      "Shuang Liang",
+      "Jubo Xu",
+      "Giulio Bassanino",
+      "Qianzhou Wang",
+      "Yidong Zhou",
+      "Yuncheng Lu",
+      "Zhiwen Mo",
+      "Paul H. J. Kelly",
+      "Bo Yuan",
+      "Wayne Luk",
+      "Hongxiang Fan"
+    ],
+    "published": "2026-06-09",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.11076v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "양자 오류 정정(QEC) 디코더의 알고리즘-하드웨어 협설계는 향후 양자 컴퓨팅 상용화 시 메모리 및 고성능 컴퓨팅 아키텍처 수요를 창출할 수 있는 신흥 기술 영역이다.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "양자 컴퓨팅 인프라의 핵심 부품(QEC 디코더)이지만 현재 상용 메모리 사업과의 직접 연관성은 제한적이며, 장기적 기회 신호로만 평가됨.",
+      "final_score": 1.7
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.10822": {
+    "arxiv_id": "2606.10822",
+    "title": "A 185 TOPS/W/mm2 Bayesian Inference Engine with 640 aJ Write-Free FeFET GRNG for Uncertainty-Aware Aerial Search and Rescue",
+    "abstract": "Aerial search and rescue missions require fast and reliable victim detection under uncertain and rapidly changing environments. Deterministic deep learning models can produce overconfident false positives, forcing unmanned aircraft systems to perform costly verification maneuvers that reduce search coverage and increase rescue delay. Bayesian neural networks provide uncertainty-aware detection, but their sampling overhead is challenging for battery-constrained edge platforms. This work presents a FeFET-based Bayesian inference engine with a write-free central limit theorem Gaussian random number generator embedded in a compute-in-memory macro. By summing currents from a randomly selected subset of minimum-sized, programmed-once FeFETs, the proposed architecture eliminates energy- and endurance-intensive write operations during inference while maintaining scalable Gaussian sampling. The CLT-GRNG consumes 640 aJ per sample, providing a 560x energy-efficiency improvement over prior BNN accelerators, while the CIM tile achieves 185 TOPS/W/mm2. Evaluated on aerial search and rescue detection, the Bayesian model improves uncertainty calibration and robustness under environmental corruption, reducing risk and enabling low-confidence detections to be filtered before costly verification. These results demonstrate an energy-efficient and uncertainty-aware edge AI engine for autonomous search and rescue systems.",
+    "authors": [
+      "Zephan M. Enciso",
+      "Xuezhong Niu",
+      "Xingtian Wang",
+      "Mohammad Mehdi Sharifi",
+      "Subhasish Mukherjee",
+      "Likai Pei",
+      "Halid Mulaosmanovic",
+      "Stefan Duenkel",
+      "Sven Beyer",
+      "Michael Niemier",
+      "Kai Ni",
+      "Ningyuan Cao"
+    ],
+    "published": "2026-06-09",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.10822v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "FeFET 기반 메모리 소자와 CIM(Compute-in-Memory) 아키텍처를 활용한 엣지 AI 가속기 설계로, 메모리 소자·패키징·컴퓨팅 아키텍처 전 영역과 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "FeFET 기반 Write-Free CIM 아키텍처는 엣지 AI 메모리 효율성의 새로운 패러다임을 제시하지만, 상용화 시간과 시장 검증이 필요한 초기 단계 기술.",
+      "final_score": 4.15
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.10262": {
+    "arxiv_id": "2606.10262",
+    "title": "Filamentary Transport and Thermoelectric Effects in Mushroom Phase Change Memory Cells",
+    "abstract": "We performed a 2D finite-element electrothermal computational study of thermoelectric effects and filamentary electronic transport in Ge$_2$Sb$_2$Te$_5$ mushroom phase change memory cells during Reset and Set operations, accounting for spatial activation energy variations in amorphous Ge$_2$Sb$_2$Te$_5$ and phase-change dynamics. Reset operations with current going from the top electrode to the narrow 4 nm bottom electrode require $\\sim$3x less energy and power, and $\\sim$2x lower current to achieve the same Reset resistance, compared to the opposite polarity, due to thermoelectric effects. Filamentary conduction, electrical breakdown, thermal runaway, and local crystallization of amorphous Ge$_2$Sb$_2$Te$_5$ depend on current polarity and thermal boundary conditions, and determine the location, shape, and volume of the programming region, which may be significantly smaller than the semi-cylindrical mushroom region. The programming volume does not scale with contact dimensions larger than 10 nm. Larger contact areas introduce increased device-to-device and cycle-to-cycle variability due to filamentary conduction but are expected to lead to higher reliability and endurance.",
+    "authors": [
+      "Md Samzid Bin Hafiz",
+      "Helena Silva",
+      "Ali Gokirmak"
+    ],
+    "published": "2026-06-09",
+    "primary_category": "physics.app-ph",
+    "url": "http://arxiv.org/abs/2606.10262v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Phase Change Memory(PCM)의 소자 물리 및 동작 메커니즘 연구로, 차세대 메모리 기술 개발의 기초 과학에 해당.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 1,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "PCM의 기초 물리 이해도는 높으나 현재 SK하이닉스의 HBM/DRAM/NAND 주력 사업과 직접 연관성이 낮고, PCM 상용화 가능성도 제한적이어서 전략적 우선순위는 낮음.",
+      "final_score": 1.7
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.09244": {
+    "arxiv_id": "2606.09244",
+    "title": "Correlation enhanced resistance hysteresis near half filling in MoS2/WSe2 heterobilayer",
+    "abstract": "Ferroelectricity, typically arising from ionic displacements in noncentrosymmetric lattices, enabling applications in memory devices and sensors. Recent advances in two-dimensional materials and van der Waals heterostructures have revealed novel ferroelectric phenomena, including sliding ferroelectricity and correlation-driven ferroelectricity in moire superlattices. In this work, we fabricate and study a MoS2/WSe2 moire superlattice device exhibiting a high field-effect mobility of 17,650 $cm^2V^{-1}s^{-1}$. Electrical transport measurements reveal correlated insulating states accompanied by a prominent and reproducible resistance hysteresis near half filling. Temperature and displacement field dependence further confirms the correlation-enhanced nature of the hysteresis. Our analysis suggests that displacement field-induced metal-to-insulator transition at correlated insulating state coupled with interfacial dipoles enables the observed resistance hysteresis. These results establish correlation enhanced resistance hysteresis near half filling in a MoS2/WSe2 heterobilayer, offering opportunities for exploring emergent quantum phases and device functionalities.",
+    "authors": [
+      "Yong Chen",
+      "Weikang Zhang",
+      "Meizhen Huang",
+      "Shengling Xiang",
+      "Zishu Zhou",
+      "Yaqi Ma",
+      "Chenxuan Lou",
+      "Haoxi Ji",
+      "Aoqian Zhang",
+      "Yifei Jin",
+      "Liheng An",
+      "Zefei Wu",
+      "Chun Cheng",
+      "Ning Wang"
+    ],
+    "published": "2026-06-08",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.09244v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2D van der Waals 헤테로구조 기반 신규 메모리 소자 원리 연구로, 차세대 메모리 기술 플랫폼 가능성 평가 필요",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 1,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "MoS2/WSe2 모아레 구조의 상관-강화 저항 이력 현상은 학술적으로 흥미롭지만, HBM/DRAM/NAND 대체 가능성이 낮고 상용화까지 10년 이상 소요될 기초연구 단계",
+      "final_score": 1.9
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.08955": {
+    "arxiv_id": "2606.08955",
+    "title": "Valley Engineering in Bilayer WSe$_2$ Gate-All-Around Transistors",
+    "abstract": "In bilayer WSe$_2$, interlayer coupling reduces the K--$Γ$ valley splitting to $Δ_{KΓ} \\approx k_BT$ at room temperature, placing two hole-transport channels of markedly different effective mass in near-thermal equilibrium. We combine density functional theory (DFT) with spin--orbit coupling and an analytical two-valley device model to quantify how this near-degeneracy governs hole transport in gate-all-around (GAA) field-effect transistors. Three main results are obtained: (i)~the subthreshold swing is protected near $60$~mV~dec$^{-1}$ by quantum-capacitance screening independently of layer number; (ii)~the effective mobility is set by the K-to-$Γ$ valley occupation ratio and decreases monotonically with layer number; and (iii)~in the bilayer, compressive biaxial strain \\emph{simultaneously} enhances the on-current, suppresses the off-current, and improves the on/off ratio from ${\\approx}69$ to ${\\approx}156$, while the subthreshold swing remains near the thermionic limit. This decoupling of on-state performance from switching slope is inaccessible through conventional mobility engineering and establishes a concrete design principle: \\emph{valley-engineering sensitivity is maximized when $Δ_{KΓ} \\approx k_BT$}, the condition most naturally satisfied by bilayer WSe$_2$ at room temperature and zero strain, making it the optimal channel for valley-engineered GAA transistors.",
+    "authors": [
+      "Katsunori Wakabayashi",
+      "Souren Adhikary",
+      "Kazuhito Tsukagoshi"
+    ],
+    "published": "2026-06-08",
+    "primary_category": "cond-mat.mes-hall",
+    "url": "http://arxiv.org/abs/2606.08955v4",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2D 반도체 소자의 밸리 엔지니어링을 통한 트랜지스터 성능 향상 기술로, 차세대 저전력 로직/메모리 소자 개발의 기초 연구에 해당",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 1,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "WSe₂ 기반 2D 트랜지스터의 물리적 성능 최적화 연구이나, SK하이닉스의 핵심 사업(HBM/DRAM/NAND)과는 직접 연관이 없으며 상용화까지 5년 이상 거리가 있는 기초 물성 연구",
+      "final_score": 1.45
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.08947": {
+    "arxiv_id": "2606.08947",
+    "title": "NeuDW-CIM: a 65-nm 0.8-pJ/Sop Reconfigurable Neuromorphic Compute-in-Memory Macro with Nonlinear Dendrites and K-Winners",
+    "abstract": "This work presents NeuDW-CIM, a highly efficient neuromorphic Compute-in-Memory (CIM) macro for Spiking Neural Networks (SNNs) implemented in 65 nm CMOS. The design introduces a custom twin 9T bit-cell for ternary in-puts/weights and a reconfigurable non-linear In-Memory ADC (IMA). The macro supports two specialized modes: 1) Nonlinear Dendrite (NLD) mode, which utilizes reconfigurable IMA to emulate biological dendritic functions, achieving measured accuracies of 97.2% on N-MNIST and 95.5% on DVS Gesture; and 2) Top-K Winner (KWN) mode, featuring an early-stopping mechanism that reduces IMA conversion latency by 30% and digital LIF latency by 10x. Benefiting from the sparse update in KWN mode, NeuDW-CIM achieves a measured energy efficiency (EE) of 0.8 pJ/SOP (1.6x improvement).",
+    "authors": [
+      "Junyi Yang",
+      "Yahan Yang",
+      "Shuai Dong",
+      "Biyan Zhou",
+      "Ye Ke",
+      "Zhengnan Fu",
+      "Xin Si",
+      "An Guo",
+      "Peng Zhou",
+      "Arindam Basu"
+    ],
+    "published": "2026-06-08",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.08947v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Compute-in-Memory 아키텍처와 뉴로모픽 칩 설계로, PIM(Processing-in-Memory) 사업과 고효율 메모리 매크로 기술에 직접 연관.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "PIM 기술 트렌드와 SNN 가속 수요는 유망하나, 65nm 노드의 낮은 성숙도와 학계 중심 연구로 단기 사업 임팩트는 제한적.",
+      "final_score": 2.7
+    },
+    "first_seen": "2026-06-29"
+  },
+  "2606.08891": {
+    "arxiv_id": "2606.08891",
+    "title": "PALUTE: Processing-In-Memory Acceleration via Lookup Table for Edge LLM Inference",
+    "abstract": "Large language models are increasingly deployed on edge devices with tight power and area budgets. While mixed-precision GEMM reduces arithmetic complexity, quantized inference is often dominated by dequantization and nonlinear operators. Lookup Table (LUT)-based method mitigates these costs by precomputing outputs and replacing repeated arithmetic with table lookups, but existing designs incur significant capacity and lookup-latency overheads. This paper presents PALUTE, a LUT-based Processing-In-Memory accelerator built on Monolithic 3D DRAM for efficient edge LLM inference. PALUTE enables in-DRAM LUT queries that exploit the vertical organization of M3D DRAM memory array tiles to achieve high parallelism with low area overhead. A near-memory LUT generator supports low-latency LUT generation for both GEMM and element-wise unary nonlinear operators, while a system-level tiering and scheduling strategy minimizes data movement across memory tiers. Evaluation using cycle-accurate simulation and RTL synthesis shows that PALUTE achieves 1,264 TPS end-to-end throughput at 0.16 W, improving energy efficiency by 12.8$\\times$ over CHIME and 1.6$\\times$ over FIGLUT, improving area efficiency by 2.0$\\times$ over PIMPAL under W4A4 across Qwen3-4B models.",
+    "authors": [
+      "Runyang Tian",
+      "Yanru Chen",
+      "Weihong Xu",
+      "Tajana Šimunić Rosing"
+    ],
+    "published": "2026-06-08",
+    "primary_category": "cs.AR",
+    "url": "http://arxiv.org/abs/2606.08891v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Monolithic 3D DRAM 기반 PIM 가속기로 엣지 LLM 추론을 타겟하며, 메모리 아키텍처·패키징·컴퓨팅 통합이 핵심 기술",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "M3D DRAM 기반 LUT-PIM은 엣지 AI 수요 증가 속에서 우리의 3D 패키징·PIM 포트폴리오 강화 기회이나, 아직 학술 단계로 상용화까지는 거리가 있음",
+      "final_score": 4.4
+    },
+    "first_seen": "2026-06-29"
+  }
+}

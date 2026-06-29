@@ -2,92 +2,94 @@ window.RADAR_DATA = {
   "2026-06-29": {
     "date": "2026-06-29",
     "paper": {
-      "title": "2.5D Root of Trust: Securing the Chiplet Ecosystem",
+      "title": "Google's Training Supercomputers from TPU v2 to Ironwood: Architectural Stability, Scale, Resilience, Power Efficiency, and Sustainability Across Five Generations",
       "authors": [
-        "Charles Williams",
-        "Mohammed Nabeel",
-        "Gino Chacon",
-        "Ozgur Sinanoglu",
-        "Paul V. Gratz",
-        "Johann Knechtel"
+        "Norman P. Jouppi",
+        "Sridhar Lakshmanamurthy",
+        "Cliff Young",
+        "David Patterson"
       ],
-      "published": "2026-06-20",
-      "url": "http://arxiv.org/abs/2606.22198v1",
-      "arxiv_id": "2606.22198"
+      "published": "2026-06-14",
+      "url": "http://arxiv.org/abs/2606.15870v1",
+      "arxiv_id": "2606.15870"
     },
     "tag": "기회",
     "scores": {
       "business": 4,
-      "threat": 3,
-      "demand": 4,
-      "maturity": 2,
-      "credibility": 4,
-      "novelty": 4
+      "threat": 2,
+      "demand": 5,
+      "maturity": 5,
+      "credibility": 5,
+      "novelty": 3
     },
-    "final_score": 4.7,
+    "final_score": 5.1,
     "based_on": "fulltext",
     "deep": {
       "summary_sections": [
         {
-          "heading": "칩 하나가 아니라 '여러 조각'을 붙이는 시대, 보안은 어떻게?",
-          "body": "AMD, Apple, Intel, Nvidia 모두 이미 채택한 '칩렛(chiplet)' 방식은 반도체를 하나의 큰 칩으로 만들지 않고 여러 작은 조각을 실리콘 인터포저(chiplet들을 연결하는 기판) 위에 붙여 완성합니다. 문제는 이 조각들이 서로 다른 회사, 심지어 신뢰할 수 없는 공급업체에서 만들어진다는 점입니다. 이 논문은 그 상황에서 어떤 공격이 가능한지, 그리고 어떻게 막을 수 있는지를 체계적으로 정리한 리뷰 논문입니다."
+          "heading": "8년 만에 3600배 — TPU가 걸어온 길",
+          "body": "이 논문은 Google이 2017년부터 2025년까지 만들어 온 AI 학습용 전용 칩 TPU의 5세대 발전사를 정리한 보고서입니다. 핵심 수치만 보면 이렇습니다. 칩 한 개의 연산 성능은 46 TFLOPS(TPU v2)에서 4614 TFLOPS(Ironwood)로 약 100배 올랐고, 슈퍼컴퓨터 전체 성능은 무려 3600배 뛰었습니다. 같은 기간 전력 대비 성능도 약 30배 개선됐습니다. 단순히 '칩이 빨라졌다'는 이야기가 아니라, AI 인프라가 어떤 방향으로 진화하는지를 보여주는 설계도입니다."
         },
         {
-          "heading": "기존 보안 방식이 왜 안 통하는가",
-          "body": "기존에는 ARM TrustZone이나 Intel SGX처럼 CPU 칩 안에 보안 기능을 심어두는 방식을 썼습니다. 그런데 칩렛 시스템에서는 그 CPU 칩 자체가 신뢰할 수 없는 공장에서 만들어질 수 있고, 칩들을 연결하는 통신망(NoC)조차 악성 코드가 심어진 부품일 수 있습니다. 논문은 세 가지 핵심 공격 유형을 제시합니다. 첫째, 통신선 도청·위장·중간자 공격, 둘째, 캐시 일관성 프로토콜을 악용해 권한 없는 메모리를 몰래 덮어쓰는 '위조 공격(Forging Attack)', 셋째, 공유 통신망의 지연 패턴을 관찰해 다른 칩의 작업을 추론하는 부채널 공격입니다."
+          "heading": "설계는 그대로, 부품만 키웠다 — 안정적 아키텍처의 힘",
+          "body": "보통 새 칩을 만들면 내부 구조를 크게 뜯어고칩니다. 그런데 TPU는 2017년 v2에서 정한 기본 설계 틀을 8년 내내 바꾸지 않았습니다. 대신 핵심 연산 블록(MXU)을 2개 128×128 배열에서 4개 256×256 배열로 키우고, HBM 스택 수를 2개에서 8개로 늘리는 방식으로 성능을 끌어올렸습니다. 이 전략 덕분에 AI 모델이 MLP → RNN → Transformer로 급변하는 동안에도 소프트웨어 최적화 비용을 낮게 유지할 수 있었습니다. 논문은 이를 '아키텍처 안정성'이라 부르며, 성공한 AI 가속기의 핵심 조건으로 꼽습니다."
         },
         {
-          "heading": "해법: '인터포저'를 신뢰의 뿌리로 삼는다",
-          "body": "논문이 제안하는 핵심 아이디어는 인터포저를 단순 배선판이 아니라 '능동형(active)' 보안 허브로 만드는 것입니다. 인터포저는 65nm·90nm 같은 성숙한 공정으로 만들어지기 때문에 국내 신뢰 공장에 맡기기 현실적으로 가능합니다. 여기에 트랜잭션 모니터(TRANSMON)와 캐시 일관성 검사기(CMC)를 심어두면, 개별 칩렛을 전혀 수정하지 않고도 모든 메모리 접근과 통신 메시지를 실시간으로 감시·차단할 수 있습니다."
+          "heading": "HBM이 없으면 TPU도 없다 — 메모리가 성능을 결정한다",
+          "body": "TPU 성능 도약의 물리적 토대는 HBM(고대역폭 메모리)입니다. TPU v2는 HBM2 스택 2개로 16GiB·700GB/s를 제공했지만, Ironwood는 HBM3E 스택 8개로 192GiB·7300GB/s를 달성했습니다. 용량은 12배, 대역폭은 10배 이상 늘었습니다. 슈퍼컴퓨터 전체로 보면 공유 메모리 총량이 4TB(v2)에서 1.77PB(Ironwood)로 400배 이상 확장됐으며, 이는 AI 슈퍼컴퓨터 사상 최대 기록입니다. 연산 칩이 아무리 빨라도 데이터를 제때 공급하지 못하면 의미가 없기 때문에, HBM의 세대 교체가 곧 TPU 세대 교체를 이끄는 구조입니다."
         }
       ],
       "key_terms": [
         {
-          "term": "칩렛(Chiplet)",
-          "explain": "하나의 큰 칩 대신 기능별로 나눠 만든 작은 반도체 조각으로, 여러 조각을 인터포저 위에 붙여 하나의 시스템을 완성합니다."
+          "term": "HBM (고대역폭 메모리, High Bandwidth Memory)",
+          "explain": "D램 칩을 수직으로 여러 층 쌓아 데이터를 매우 빠르게 주고받을 수 있게 만든 메모리입니다. AI 칩이 초당 처리하는 데이터량을 결정하는 핵심 부품으로, SK하이닉스의 주력 제품입니다."
         },
         {
-          "term": "인터포저(Interposer)",
-          "explain": "여러 칩렛을 물리적으로 연결하는 실리콘 기판으로, 이 논문에서는 여기에 보안 로직을 심어 '신뢰의 뿌리'로 활용합니다."
+          "term": "MXU (행렬 곱셈 유닛, Matrix Multiply Unit)",
+          "explain": "AI 연산의 대부분을 차지하는 행렬 곱셈을 전담하는 TPU의 핵심 연산 블록입니다. TPU v2의 128×128 배열에서 Ironwood의 256×256·512×512 배열로 세대마다 커졌습니다."
         },
         {
-          "term": "Root of Trust (RoT, 신뢰의 뿌리)",
-          "explain": "시스템 전체 보안의 출발점이 되는 신뢰할 수 있는 하드웨어 구성 요소로, 이 논문은 인터포저를 RoT로 삼는 방식을 제안합니다."
+          "term": "BF16 / FP8 (부동소수점 숫자 형식)",
+          "explain": "숫자를 얼마나 정밀하게 표현할지 결정하는 형식입니다. 비트 수가 작을수록 정밀도는 낮지만 연산 속도가 빠릅니다. Google은 AI에서는 정밀도보다 범위가 중요하다고 판단해 BF16을 먼저 도입했고, Ironwood에서는 더 빠른 FP8까지 지원합니다."
         },
         {
-          "term": "하드웨어 트로이목마(Hardware Trojan)",
-          "explain": "칩 제조 과정에서 악의적으로 심어두는 숨겨진 회로로, 특정 조건에서 데이터를 빼내거나 시스템을 오작동시킵니다."
+          "term": "ICI (칩 간 연결망, Inter-Chip Interconnect)",
+          "explain": "수천 개의 TPU 칩을 하나의 슈퍼컴퓨터처럼 묶어주는 전용 고속 통신망입니다. Ironwood 기준으로 슈퍼컴퓨터 전체 대역폭이 76,800GB/s에 달합니다."
         },
         {
-          "term": "캐시 일관성(Cache Coherence)",
-          "explain": "여러 코어가 같은 메모리를 공유할 때 데이터가 항상 최신 상태로 일치하도록 맞춰주는 프로토콜로, 이 논문에서는 이 프로토콜 자체가 공격 경로가 될 수 있음을 보입니다."
+          "term": "SparseCore",
+          "explain": "추천 시스템·검색 등에 쓰이는 '희소 데이터' 처리를 전담하는 보조 연산 코어입니다. 칩 면적의 약 5%만 차지하지만, Transformer 시대에는 AllReduce 같은 집합 통신 작업도 분담해 TensorCore의 부담을 줄여줍니다."
         },
         {
-          "term": "트랜잭션 모니터(TRANSMON)",
-          "explain": "인터포저 안에 심어두는 감시 장치로, 각 칩렛의 메모리 읽기·쓰기 요청이 허가된 범위 안에 있는지 실시간으로 검사하고 위반 시 즉시 차단합니다."
+          "term": "XLA / JAX (TPU 소프트웨어 스택)",
+          "explain": "XLA는 TPU가 연산을 효율적으로 실행하도록 코드를 최적화하는 컴파일러이고, JAX는 그 위에서 AI 모델을 작성하는 프로그래밍 언어입니다. 아키텍처가 안정적이었기 때문에 소프트웨어 스택도 세대를 넘어 재사용할 수 있었습니다."
         }
       ],
       "implication_sections": [
         {
-          "heading": "HBM·인터포저 패키징이 '보안 인프라'로 격상되는 흐름",
-          "body": "이 논문은 인터포저가 단순한 배선 기판에서 시스템 보안의 핵심 허브로 진화하고 있음을 보여줍니다. SK하이닉스는 HBM을 인터포저 위에 탑재하는 2.5D 패키징 사업을 이미 영위하고 있습니다. 보안 기능이 인터포저 레벨로 내려오면, HBM과 인터포저를 함께 공급하는 업체가 보안 검증까지 책임지는 '신뢰 공급망'의 핵심 파트너가 될 수 있습니다. 이는 단순 메모리 공급을 넘어 패키징·보안 솔루션 통합 공급자로 포지셔닝할 수 있는 기회입니다."
+          "heading": "HBM 수요는 유행이 아니라 구조입니다",
+          "body": "이 논문이 보여주는 가장 중요한 사실은, TPU 세대 교체의 핵심 동력이 매번 HBM의 업그레이드였다는 점입니다. v2→v3에서 스택 수가 2→4개로, v5p→Ironwood에서 HBM2E→HBM3E로 바뀌며 대역폭이 2765→7300GB/s로 뛰었습니다. Google뿐 아니라 모든 AI 가속기가 같은 병목(연산 속도 대비 메모리 공급 속도)을 안고 있기 때문에, HBM 수요는 특정 고객사에 의존하는 것이 아니라 AI 인프라 전체의 구조적 수요입니다. SK하이닉스 입장에서는 HBM3E 이후 세대(HBM4 등)의 양산 타이밍과 수율이 곧 시장 점유율을 결정하는 변수가 됩니다."
         },
         {
-          "heading": "신뢰할 수 있는 제조 공장 요건 — 공급망 차별화 포인트",
-          "body": "논문은 능동형 인터포저를 '신뢰할 수 있는 국내 시설'에서 65nm·90nm 공정으로 만드는 것이 현실적이라고 명시합니다. 이는 첨단 공정이 아닌 성숙 공정 팹(fab)을 보유한 업체가 보안 인터포저 시장에서 경쟁력을 가질 수 있다는 의미입니다. SK하이닉스가 신뢰 공급망 인증을 선제적으로 확보한다면, 방산·AI 데이터센터 등 보안 민감 고객군에서 프리미엄 포지션을 차지할 수 있습니다."
+          "heading": "슈퍼컴퓨터 규모 확장이 곧 HBM 총량 확장입니다",
+          "body": "Ironwood 슈퍼컴퓨터 한 대의 HBM 총량은 1.77PB로, TPU v2(4TB) 대비 400배 이상입니다. 칩 한 개의 HBM 용량이 늘어나는 것과 동시에, 슈퍼컴퓨터를 구성하는 TPU 수도 256개(v2)에서 9216개(Ironwood)로 36배 늘었습니다. 즉 HBM 수요는 '칩당 용량 증가'와 '칩 수 증가'가 동시에 작용하는 이중 성장 구조입니다. 논문이 제시한 연평균 성능 성장률 약 100%가 유지된다면, SK하이닉스의 HBM 출하량 전망도 이 성장률에 연동해 볼 수 있습니다."
+        },
+        {
+          "heading": "HBM 세대 전환 속도가 SK하이닉스의 경쟁력을 가릅니다",
+          "body": "논문은 TPU v5p에서 HBM2E를, Ironwood에서 HBM3E를 채택했다고 명시합니다. Google이 차세대 TPU를 설계할 때 가장 먼저 확정하는 부품 중 하나가 HBM 사양이라는 뜻입니다. 이는 HBM 공급사가 고객의 칩 설계 일정보다 앞서 차세대 제품을 준비해야 한다는 의미이기도 합니다. SK하이닉스가 HBM4 이상의 개발·양산 일정에서 경쟁사보다 앞서 있다면, Google·NVIDIA 등 주요 고객의 차세대 플랫폼에 선탑재될 가능성이 높아집니다. 반대로 수율이나 공급 일정에서 뒤처지면 설계 단계부터 배제될 위험도 있습니다."
         }
       ],
       "background_papers": [
         {
-          "title": "A Survey on Hardware Security of 2.5D and 3D Integrated Circuits (관련 서베이 논문)",
-          "why": "2.5D/3D 통합 반도체의 하드웨어 보안 위협 전반을 먼저 조망해야 이 논문의 위협 분류와 방어 전략이 왜 필요한지 맥락이 잡힙니다."
+          "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit (Jouppi et al., 2017, ISCA)",
+          "why": "TPU v1의 설계 철학과 GPU 대비 30배 전력 효율의 근거를 담은 원조 논문으로, 이 보고서가 전제하는 모든 개념의 출발점입니다."
         },
         {
-          "title": "Split Manufacturing for 2.5D ICs: Security Analysis and Defenses (본문 [39] 인용 연구)",
-          "why": "이 논문이 설계 시점 방어의 출발점으로 삼는 '분할 제조(split manufacturing)' 개념을 구체적으로 다루므로, 3장 내용을 이해하기 전에 보면 좋습니다."
+          "title": "TPU v4: An Optically Reconfigurable Supercomputer for Machine Learning with Hardware Support for Embeddings (Jouppi et al., 2023)",
+          "why": "본문이 가장 많이 인용하는 직전 세대 논문으로, SparseCore·광학 스위치 등 Ironwood까지 이어지는 핵심 기술의 상세 설명이 담겨 있어 이 보고서의 '중간 다리' 역할을 합니다."
         }
       ],
-      "reading_order": "칩렛·인터포저 개념 → 하드웨어 트로이목마·공급망 보안 서베이 → 분할 제조 논문 → 본 논문 순으로 읽으면 위협 배경부터 해법까지 자연스럽게 이해됩니다."
+      "reading_order": "TPU v1 원조 논문(2017)으로 기본 개념을 잡은 뒤 TPU v4 논문(2023)으로 SparseCore·광학 스위치를 이해하고, 마지막으로 이 보고서를 읽으면 5세대 전체 흐름이 자연스럽게 연결됩니다."
     }
   }
 };
