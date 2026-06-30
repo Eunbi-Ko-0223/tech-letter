@@ -24,9 +24,13 @@ body {
 
 /* 헤더 */
 .site-header {
-  background: linear-gradient(120deg, var(--brand-red) 0%, var(--orange) 100%);
+  /* 무게감을 주는 따뜻한 차콜(near-black) — 남색(경쟁사 색) 아님 */
+  background: #1f1b19;
   color: #fff;
   padding: 22px 0;
+  /* 하단에 얇은 SK 레드→오렌지 액센트 라인으로 브랜드감 */
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--brand-red), var(--orange)) 1;
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; }
 .brand { display: flex; align-items: center; gap: 14px; }
