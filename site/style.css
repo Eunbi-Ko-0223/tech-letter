@@ -3,6 +3,8 @@
   --red: #e23b3b;
   --green: #1aa179;
   --blue: #2b6fff;
+  --brand-red: #e4002b;   /* SK 키컬러 레드 — '위협'과 헤더 브랜드 띠에만 */
+  --accent: #cc4a00;      /* 본문 액센트(소제목·용어) — 흰 배경에서 읽기 좋은 딥오렌지 */
   --ink: #1a1d24;
   --muted: #6b7280;
   --line: #e6e8ec;
@@ -22,7 +24,7 @@ body {
 
 /* 헤더 */
 .site-header {
-  background: linear-gradient(120deg, #16203a 0%, #243b6b 100%);
+  background: linear-gradient(120deg, var(--brand-red) 0%, var(--orange) 100%);
   color: #fff;
   padding: 22px 0;
 }
@@ -70,7 +72,7 @@ body {
 .sub-block:last-child { margin-bottom: 0; }
 .sub-block h4 { margin: 0 0 5px; font-size: 14.5px; font-weight: 700; }
 .sub-block p { margin: 0; }
-.summary .sub-block h4 { color: var(--blue); }
+.summary .sub-block h4 { color: var(--accent); }
 .why .sub-block h4 { color: var(--ink); }
 
 .why {
@@ -85,14 +87,14 @@ body {
 .term {
   border: 1px solid var(--line); border-radius: 9px; padding: 11px 14px; font-size: 14px;
 }
-.term b { color: var(--blue); }
+.term b { color: var(--accent); }
 
 /* 점수 막대 */
 .scores { display: grid; gap: 9px; }
 .score-row { display: grid; grid-template-columns: 92px 1fr 26px; align-items: center; gap: 10px; font-size: 13px; }
 .score-row .lab { color: var(--muted); }
 .bar { background: #eef0f3; border-radius: 999px; height: 9px; overflow: hidden; }
-.bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--green)); border-radius: 999px; }
+.bar > span { display: block; height: 100%; background: linear-gradient(90deg, #ffb84d, var(--orange)); border-radius: 999px; }
 .score-row .val { text-align: right; font-weight: 700; color: var(--ink); }
 
 /* 학습 패키지 */
