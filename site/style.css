@@ -31,10 +31,6 @@ body {
 .logo { font-size: 34px; }
 .site-header h1 { margin: 0; font-size: 22px; letter-spacing: -0.5px; }
 .tagline { margin: 2px 0 0; font-size: 13px; opacity: 0.8; }
-.brand-company {
-  font-weight: 700; font-size: 15px; letter-spacing: 1px;
-  border: 1px solid rgba(255,255,255,0.4); border-radius: 6px; padding: 6px 12px;
-}
 
 /* 레이아웃 */
 .layout {
