@@ -1,5 +1,6 @@
 {
   "date": "2026-06-29",
+  "track": "AI",
   "paper": {
     "title": "Google's Training Supercomputers from TPU v2 to Ironwood: Architectural Stability, Scale, Resilience, Power Efficiency, and Sustainability Across Five Generations",
     "authors": [

@@ -1,0 +1,84 @@
+{
+  "date": "2026-06-26",
+  "track": "AI",
+  "paper": {
+    "title": "KernelSight-LM: A Kernel-Level LLM Inference Simulator",
+    "authors": [
+      "Xiteng Yao",
+      "Taeho Kim",
+      "Hengzhi Pei",
+      "Xinle Liu",
+      "Kyle Ulrich",
+      "Leonard Lausen",
+      "Ashish Khetan",
+      "Xiang Song",
+      "George Karypis",
+      "Martin Herbordt"
+    ],
+    "published": "2026-06-26",
+    "url": "http://arxiv.org/abs/2606.28565v1",
+    "arxiv_id": "2606.28565"
+  },
+  "tag": "기회",
+  "scores": {
+    "business": 2,
+    "threat": 2,
+    "demand": 4,
+    "maturity": 3,
+    "credibility": 3,
+    "novelty": 3
+  },
+  "final_score": 3.9,
+  "based_on": "abstract",
+  "deep": {
+    "summary_sections": [
+      {
+        "heading": "LLM을 ‘실제로 돌릴 때’ 성능을 미리 예측하기",
+        "body": "LLM을 서비스로 운영하려면 ‘어떤 하드웨어에서, 어떤 설정으로, 얼마나 빠르고 비싸게 돌아가는지’를 빠르게 가늠해야 합니다. 그런데 실제로는 서빙 정책과 GPU의 저수준 동작이 복잡하게 얽혀, 매번 직접 벤치마크를 돌려야 하는 번거로움이 있었습니다."
+      },
+      {
+        "heading": "KernelSight-LM: 커널 수준까지 쪼개 시뮬레이션",
+        "body": "이 논문은 LLM 추론을 토큰 단위로 시뮬레이션해 ‘GPU 커널별 지연시간’까지 분해해 보여주는 도구를 제안합니다. 특히 실제 측정 데이터 없이도 하드웨어 사양만으로 새 GPU의 성능을 예측하는 모드가 있어, 하드웨어를 바꿔가며 비용·속도를 빠르게 비교할 수 있습니다."
+      }
+    ],
+    "key_terms": [
+      {
+        "term": "추론(inference)·서빙(serving)",
+        "explain": "학습된 AI 모델을 실제 사용자 요청에 응답시키는 운영 단계를 말합니다."
+      },
+      {
+        "term": "GPU 커널",
+        "explain": "GPU에서 실제 계산을 수행하는 작은 프로그램 단위로, 추론 성능의 핵심입니다."
+      },
+      {
+        "term": "루프라인(roofline) 모델",
+        "explain": "성능이 ‘연산 한계’ 때문인지 ‘메모리 대역폭 한계’ 때문인지 가늠하는 분석 틀입니다."
+      },
+      {
+        "term": "연속 배칭·프리픽스 캐싱",
+        "explain": "여러 요청을 효율적으로 묶고 공통 부분을 재사용해 LLM 서빙 효율을 높이는 대표 기법들입니다."
+      }
+    ],
+    "implication_sections": [
+      {
+        "heading": "메모리 대역폭이 추론 성능을 좌우한다",
+        "body": "이런 도구가 커널·루프라인 수준으로 분석한다는 건, LLM 추론 성능이 ‘연산’만이 아니라 ‘메모리 대역폭’에 크게 좌우된다는 방증입니다. HBM처럼 빠른 메모리가 추론 비용·속도의 핵심 변수라는 뜻이라, SK하이닉스에 우호적 신호입니다."
+      },
+      {
+        "heading": "AI 서빙 시장 확대 = 메모리 수요 확대",
+        "body": "LLM이 연구를 넘어 ‘대규모 서비스 운영’으로 넘어갈수록 추론 인프라가 커지고 그만큼 고성능 메모리 수요가 늘어납니다. 이 논문은 그 운영 단계의 고민을 보여주는 사례로, 추론 시장 성장이 메모리 수요 성장으로 이어진다는 흐름을 뒷받침합니다."
+      }
+    ],
+    "background_papers": [
+      {
+        "title": "Efficient Memory Management for LLM Serving with PagedAttention (vLLM)",
+        "why": "LLM 서빙에서 메모리(KV 캐시) 관리가 왜 핵심인지 보여주는 대표 연구입니다."
+      },
+      {
+        "title": "Roofline: An Insightful Visual Performance Model for Multicore Architectures",
+        "why": "이 논문이 쓰는 ‘루프라인’ 성능 분석의 기초 개념을 잡을 수 있습니다."
+      }
+    ],
+    "reading_order": "LLM 추론·서빙 기초 → 루프라인 성능 모델 → vLLM(서빙 메모리 관리) → 본 논문 순이 좋습니다."
+  }
+}

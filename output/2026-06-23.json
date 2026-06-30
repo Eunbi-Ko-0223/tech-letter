@@ -1,0 +1,88 @@
+{
+  "date": "2026-06-23",
+  "track": "반도체",
+  "paper": {
+    "title": "ColumnKeeper: Efficient Solutions to the ColumnDisturb Vulnerability in DRAM-based Systems",
+    "authors": [
+      "Andreas Kosmas Kakolyris",
+      "F. Nisa Bostanci",
+      "Ataberk Olgun",
+      "Ismail Emir Yuksel",
+      "Harsh Songara",
+      "Konstantinos Marios Sgouras",
+      "Umut Baser",
+      "Konstantinos Kanellopoulos",
+      "A. Giray Yaglikci",
+      "Onur Mutlu"
+    ],
+    "published": "2026-06-21",
+    "url": "http://arxiv.org/abs/2606.22632v2",
+    "arxiv_id": "2606.22632"
+  },
+  "tag": "위협",
+  "scores": {
+    "business": 5,
+    "threat": 4,
+    "demand": 1,
+    "maturity": 3,
+    "credibility": 5,
+    "novelty": 4
+  },
+  "final_score": 4.8,
+  "based_on": "abstract",
+  "deep": {
+    "summary_sections": [
+      {
+        "heading": "DRAM의 새로운 약점: ‘행’이 아니라 ‘열’이 흔들린다",
+        "body": "DRAM은 데이터를 무수한 칸(셀)에 저장하는데, 특정 행을 반복해서 읽으면 옆 셀 값이 뒤집히는 RowHammer가 잘 알려진 문제였습니다. 이 논문은 그와 근본적으로 다른 새 현상 ‘ColumnDisturb’를 발견했습니다. 행이 아니라 ‘열’ 방향으로 교란이 일어나고, 피해 범위도 인접 몇 행이 아니라 연속된 3개 서브어레이 전체로 훨씬 넓습니다."
+      },
+      {
+        "heading": "해법: 낮은 비용으로 막는 ColumnKeeper",
+        "body": "저자들은 이를 막는 첫 대응책 ColumnKeeper를 제안합니다. DRAM의 구조(오픈 비트라인)를 활용해 카운터로 교란을 추적하고, 위험해지면 해당 행을 새로고침(refresh)합니다. 성능 저하는 0.15~1.7% 수준으로 매우 낮고 추가 면적도 작습니다. 메모리 분야 최고 연구그룹(CMU SAFARI)의 성과라 신뢰도가 높습니다."
+      }
+    ],
+    "key_terms": [
+      {
+        "term": "DRAM",
+        "explain": "컴퓨터의 주기억장치로 쓰이는 휘발성 메모리로, SK하이닉스의 핵심 주력 제품입니다."
+      },
+      {
+        "term": "RowHammer",
+        "explain": "특정 행을 반복 접근하면 이웃 셀의 값이 뒤집히는 DRAM 교란 현상이자 보안 취약점입니다."
+      },
+      {
+        "term": "ColumnDisturb",
+        "explain": "이 논문이 처음 보고한 새 교란 현상으로, 열 방향으로 더 넓은 범위의 셀을 동시에 교란시킵니다."
+      },
+      {
+        "term": "서브어레이(subarray)",
+        "explain": "DRAM 내부를 잘게 나눈 셀 묶음 단위로, 이 현상은 3개 서브어레이에 걸쳐 영향을 줍니다."
+      },
+      {
+        "term": "리프레시(refresh)",
+        "explain": "DRAM이 데이터를 유지하려 주기적으로 값을 다시 써주는 동작으로, 대응책의 핵심 수단입니다."
+      }
+    ],
+    "implication_sections": [
+      {
+        "heading": "미세화될수록 새 결함이 나온다 — 제조사의 숙제",
+        "body": "ColumnDisturb는 DRAM을 더 촘촘히(미세하게) 만들수록 이런 새 교란 현상이 계속 나타날 수 있음을 보여줍니다. SK하이닉스 같은 DRAM 제조사에겐 직접적인 신뢰성 위협 신호이자, 양산 전에 선제적 대응 설계를 갖춰야 한다는 과제입니다."
+      },
+      {
+        "heading": "위협이자 기회 — 신뢰성이 곧 경쟁력",
+        "body": "다만 이런 결함을 먼저 이해하고 낮은 비용의 방어책을 칩에 내재화하면 ‘신뢰성 높은 메모리’가 차별화 포인트가 됩니다. 특히 서버·AI용 고신뢰 메모리 시장에서 결함 대응력은 곧 제품 경쟁력으로 이어집니다."
+      }
+    ],
+    "background_papers": [
+      {
+        "title": "Flipping Bits in Memory Without Accessing Them (Kim et al., 2014) — RowHammer 원조",
+        "why": "ColumnDisturb를 이해하려면 먼저 RowHammer가 무엇인지 알아야 합니다."
+      },
+      {
+        "title": "DRAM read disturbance 서베이/튜토리얼",
+        "why": "DRAM 교란 현상 전반과 대응책의 흐름을 조망할 수 있습니다."
+      }
+    ],
+    "reading_order": "RowHammer 기초 → DRAM 교란 현상 서베이 → 본 논문(ColumnDisturb) 순으로 보면 새 위협의 의미가 또렷해집니다."
+  }
+}

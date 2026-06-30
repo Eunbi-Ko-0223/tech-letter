@@ -1,0 +1,38 @@
+name: Deploy Site (no API)
+
+# 논문 수집/통역(API) 없이 '사이트만' 다시 빌드해 배포한다.
+# 디자인 변경·백필 등 데이터/정적 파일만 바꿨을 때 수동으로 돌린다(Actions 탭 → Run workflow).
+# arXiv·Anthropic API를 전혀 호출하지 않음.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 정적 사이트 데이터 빌드 (output → data.js)
+        run: python build_site.py
+      - name: Pages 아티팩트 업로드
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4
