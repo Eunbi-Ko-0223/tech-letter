@@ -61,11 +61,16 @@ def recommended_ids():
     return ids
 
 
+# 한국시간(KST = UTC+9, 서머타임 없음). GitHub 서버는 UTC라, 날짜를 KST로 계산해야
+# 'cron 23:00 UTC = 08:00 KST' 실행 시 날짜가 하루 밀리지 않는다.
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
+
 def run(dry_run=False):
     load_env()
     cfg = load_config()
-    today = datetime.date.today().isoformat()
-    print(f"\n=== 반도체 기술 레이더 · {today} ===\n")
+    today = datetime.datetime.now(KST).date().isoformat()
+    print(f"\n=== 반도체 기술 레이더 · {today} (KST) ===\n")
 
     # ── 멱등성: 오늘 이미 처리했으면 건너뜀(매일 1편/재실행 시 덮어쓰기 방지) ──
     today_file = os.path.join(HERE, "output", f"{today}.json")
