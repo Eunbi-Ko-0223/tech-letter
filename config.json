@@ -40,7 +40,7 @@
       "model quantization", "diffusion model", "multimodal model",
       "reasoning model", "test-time compute"
     ],
-    "ai_max_candidates": 25,
+    "ai_max_candidates": 100,
 
     "lookback_days": 30,
     "max_fetch": 120,
