@@ -108,39 +108,59 @@ def compute_score(cfg, result):
 
 # 매일 같은 톤·구조가 나오도록 모델에 보여주는 '모범답안(few-shot)'.
 # 실제로 호평받은 출력을 그대로 박아, 날마다 이 문체를 재현하게 한다.
-STYLE_EXAMPLE = """[좋은 출력 예시 — 이 톤과 구조, 분량을 그대로 따르세요]
+STYLE_EXAMPLE = """[좋은 출력 예시 — 이 깊이·분량·구조를 그대로 따르세요. 각 body는 3~5문장으로 충분히 풀어 씁니다. 특히 implication_sections는 ①직접 의미 ②균형(반론·한계) ③전략 시사점 3단으로 가장 깊게 씁니다.]
 {
   "summary_sections": [
     {"heading": "Google이 직접 만든 AI 전용 칩, TPU의 8년사",
-     "body": "TPU는 Google이 오직 AI 계산만을 위해 만든 전용 칩입니다. 2016년 처음 공개됐을 때 같은 시기 GPU보다 전력 대비 성능이 30배나 높아 큰 충격을 줬습니다. 이 논문은 2세대(2017년)부터 최신 7세대(2025년)까지 8년의 발전 과정을 정리한 보고서입니다."},
+     "body": "TPU는 Google이 오직 AI 계산만을 위해 만든 전용 칩입니다. 2016년 처음 공개됐을 때 같은 시기 GPU보다 전력 대비 성능이 30배나 높아 업계에 큰 충격을 줬어요. 소프트웨어 회사가 직접 칩을 설계했다는 점도 이례적이었습니다. 이 논문은 그중 'AI 학습'을 담당하는 2세대(2017년)부터 최신 7세대 Ironwood(2025년)까지 8년의 발전 과정을 한 편으로 정리한 보고서입니다."},
     {"heading": "비결은 '설계는 그대로 두고, 부품을 키우기'",
-     "body": "보통 새 칩은 설계를 뜯어고치지만, TPU는 기본 틀을 거의 바꾸지 않고 핵심 부품을 더 크게·많이 넣어 성능을 끌어올렸습니다. 그 결과 8년 만에 칩 성능 100배, 메모리 10배, 슈퍼컴퓨터 전체 3600배가 됐습니다."}
+     "body": "보통 새 칩은 설계를 뜯어고치지만, TPU는 처음의 기본 틀을 거의 바꾸지 않고 핵심 부품을 더 크게·더 많이 넣는 방식으로 성능을 끌어올렸습니다. 그 결과 8년 만에 칩 하나의 성능은 약 100배, 메모리(HBM)는 약 10배, 슈퍼컴퓨터 전체 성능은 3600배가 됐어요. '무어의 법칙이 끝나간다'는 시대에 이뤄낸 성과라 더 주목받습니다. 설계를 유지한 덕분에 예전 칩에 맞춰 짠 소프트웨어를 새 칩에서도 그대로 쓸 수 있다는 이점도 컸습니다."},
+    {"heading": "성능만이 아니라 '고장 견디기'와 '전기'까지",
+     "body": "수천~수만 개 칩을 묶으면 일부는 반드시 고장 납니다. Google은 광회로 스위치로 고장 난 칩을 우회하고, 계산 결과만 슬며시 틀리는 '조용한 오류'를 잡는 장치도 새로 넣었어요. 또 데이터센터 전력이 부족한 시대라 '전력 대비 성능'이 최우선 지표가 됐고, 논문은 탄소배출까지 함께 따지는 새 지표(CCI)를 제안합니다."}
+  ],
+  "key_terms": [
+    {"term": "HBM (고대역폭 메모리)", "explain": "D램을 위로 쌓아 데이터를 한꺼번에 빠르게 주고받게 만든 고성능 메모리입니다. AI 칩의 속도를 좌우하는 핵심 부품이자 SK하이닉스의 주력 제품입니다."},
+    {"term": "TPU (텐서 처리 장치)", "explain": "Google이 AI 계산만을 위해 만든 전용 칩입니다. 범용 칩보다 AI 작업을 훨씬 빠르고 전력 효율적으로 처리합니다."}
   ],
   "implication_sections": [
     {"heading": "HBM 수요는 '유행'이 아니라 '구조'입니다",
-     "body": "TPU 성능 폭증의 핵심 동력이 HBM입니다. 세대를 거듭할수록 더 많고 빠른 HBM이 필수가 되므로, SK하이닉스 주력 제품의 수요가 구조적으로 우상향한다는 강력한 신호입니다."}
-  ],
-  "key_terms": [
-    {"term": "HBM (고대역폭 메모리)", "explain": "D램을 위로 쌓아 데이터를 빠르게 주고받게 만든 고성능 메모리로, AI 칩 속도를 좌우하는 SK하이닉스 주력 제품입니다."}
+     "body": "TPU 성능 폭증의 핵심 동력 중 하나가 바로 HBM입니다. 세대를 거듭할수록 한 칩에 들어가는 HBM의 용량·속도가 커지고 쌓는 단수도 늘었어요. AI 칩이 발전할수록 더 많고 더 빠른 HBM이 '필수'가 된다는 뜻입니다. SK하이닉스 주력 제품의 수요가 잠깐의 유행이 아니라 구조적으로 우상향한다는 강력한 신호예요."},
+    {"heading": "엔비디아 너머, 고객을 넓힐 기회",
+     "body": "Google이 자체 칩을 만든다는 건, HBM이 엔비디아 GPU에만 실리는 게 아니라 빅테크 자체 칩에도 들어간다는 뜻입니다. 구글뿐 아니라 아마존·마이크로소프트도 자체 칩 대열에 있어요. SK하이닉스 입장에선 'HBM을 살 큰손'이 여러 곳으로 늘어나, 특정 고객 의존도를 낮추고 고객층을 넓힐 수 있습니다."},
+    {"heading": "다음 경쟁 기준은 '저전력·저탄소 메모리'",
+     "body": "다만 숙제도 던집니다. 전력이 부족한 시대라 '얼마나 적은 전력으로 성능을 내느냐'가 최우선이 됐고, 탄소배출까지 평가 잣대가 되고 있어요. 메모리도 용량·속도를 넘어 '저전력·저탄소' 경쟁력이 차별점이 될 것입니다. 이 흐름에 먼저 올라타면 위협이 아니라 기회가 됩니다."}
   ]
 }
 """
 
 
 def _validate_deep(d):
-    """v2 출력이 기준(소제목 개수·분량)을 만족하는지 검사. (ok, 이유) 반환."""
+    """v2 출력이 '깊이' 기준을 만족하는지 검사. (ok, 이유) 반환.
+    얕게/압축적으로 쓰는 것을 막기 위해 개수·본문 길이·총량을 모두 강제한다.
+    (기준은 호평받은 6/29 샘플을 토대로 설정)"""
+    MIN_BODY = 170          # 각 섹션 본문 최소 글자수(한 줄 요약 차단)
+    MIN_TERM = 45           # 각 용어 설명 최소 글자수(두 문장 유도)
+    MIN_TOTAL = 2600        # deep 전체 최소 글자수(전반적 깊이 보장)
+
     ss = d.get("summary_sections")
     isec = d.get("implication_sections")
-    if not isinstance(ss, list) or len(ss) < 2:
-        return False, "summary_sections가 2개 미만"
-    if not isinstance(isec, list) or len(isec) < 2:
-        return False, "implication_sections가 2개 미만"
+    if not isinstance(ss, list) or len(ss) < 3:
+        return False, "summary_sections가 3개 미만"
+    if not isinstance(isec, list) or len(isec) < 3:
+        return False, "implication_sections가 3개 미만(①직접 의미 ②균형 ③시사점 필요)"
     for sec in ss + isec:
         body = (sec.get("body") or "")
-        if len(body) < 60:
-            return False, f"본문이 너무 짧음(소제목: {sec.get('heading')})"
-    if len(d.get("key_terms") or []) < 4:
-        return False, "key_terms가 4개 미만"
+        if len(body) < MIN_BODY:
+            return False, f"본문이 너무 짧음({len(body)}자 < {MIN_BODY}, 소제목: {sec.get('heading')})"
+    terms = d.get("key_terms") or []
+    if len(terms) < 5:
+        return False, "key_terms가 5개 미만"
+    for t in terms:
+        if len((t.get("explain") or "")) < MIN_TERM:
+            return False, f"용어 설명이 너무 짧음(용어: {t.get('term')})"
+    total = len(json.dumps(d, ensure_ascii=False))
+    if total < MIN_TOTAL:
+        return False, f"전체 분량 부족({total}자 < {MIN_TOTAL})"
     return True, ""
 
 
@@ -165,9 +185,10 @@ def deep_analyze(cfg, paper, references, full_text=""):
 [글쓰기 원칙 — 매우 중요]
 - 비문학 교양서처럼 술술 읽히되, 읽고 나면 핵심 줄기와 세부 내용이 모두 이해되도록 '차근차근' 풀어 쓰세요.
 - 쓸데없는 비유로 도망가지 말고, 어려운 개념도 앞에서 한 걸음씩 설명해 자연스럽게 이해시키세요.
-- 각 항목은 줄글 하나로 길게 쓰지 말고 '소제목(heading) + 짧은 본문(body)' 2~3개로 구조화하세요.
-- 분량은 아침 뉴스레터처럼 가볍게. 전체를 3~5분 안에 읽을 수 있어야 합니다. 존댓말.
-- 추상적 표현은 피하고, 본문에 나온 구체적 수치·사실(예: 배수, 용량, 연도)을 근거로 쓰세요.
+- '소제목(heading) + 본문(body)' 구조로 쓰되, 각 body는 반드시 3~5문장으로 충분히 풀어 쓰세요. 한 줄 요약·압축 금지(깊이를 잃지 말 것).
+- 전체는 아침에 3~5분 안에 읽히도록 군더더기는 빼되, 각 섹션의 '내용 깊이'는 절대 줄이지 마세요. (짧게 != 얕게)
+- 추상적 표현은 피하고, 본문에 나온 구체적 수치·사실(배수, 용량, 연도, 실험 결과 등)을 반드시 근거로 인용하세요.
+- 특히 implication_sections('SK하이닉스에게 무슨 의미?')는 이 레터의 핵심입니다. 가장 깊고 구체적으로, ①직접적 의미 ②균형 잡힌 시각(반론·한계·불확실성) ③전략적 시사점의 3단으로 쓰세요.
 
 {STYLE_EXAMPLE}
 
@@ -184,32 +205,35 @@ def deep_analyze(cfg, paper, references, full_text=""):
 아래 JSON 형식으로만 답하세요(모든 설명은 쉬운 한국어):
 {{
   "summary_sections": [
-    {{"heading": "소제목", "body": "이 논문이 무엇을 했고 왜 중요한지 본문 근거로 풀어쓴 3~5문장"}}
+    {{"heading": "소제목", "body": "이 논문이 무엇을 했고 왜 중요한지 본문 근거로 풀어쓴 3~5문장(약 200자 이상)"}}
   ],
-  "key_terms": [{{"term": "전문용어", "explain": "한두 문장 쉬운 설명"}}],
+  "key_terms": [{{"term": "전문용어", "explain": "두 문장으로 맥락까지 담은 쉬운 설명"}}],
   "implication_sections": [
-    {{"heading": "소제목", "body": "{company['name']}에게 기회/위협인지, 사업적으로 무슨 의미인지 본문 근거로 풀어쓴 3~5문장"}}
+    {{"heading": "소제목", "body": "{company['name']}에게 무슨 의미인지 본문 근거로 풀어쓴 3~5문장(약 200자 이상)"}}
   ],
   "background_papers": [
     {{"title": "함께 보면 좋은 배경 논문 제목", "why": "왜 먼저/같이 보면 좋은지 한 문장"}}
   ],
   "reading_order": "어떤 순서로 공부하면 좋을지 한 문장"
 }}
-- summary_sections, implication_sections는 각각 2~3개 항목으로.
-- key_terms는 본문에 나온 핵심 용어 4~6개.
-- background_papers는 참고문헌 후보(없으면 본문 인용)에서 1~2개, survey/review 우선."""
+[분량·개수 규칙 — 반드시 준수]
+- summary_sections: 정확히 3개. 각 body 3~5문장(약 200자 이상).
+- implication_sections: 정확히 3개(①직접 의미 ②균형 잡힌 시각 ③전략 시사점). 각 body 3~5문장(약 200자 이상). 이 레터에서 가장 깊어야 하는 부분.
+- key_terms: 5~6개. 각 explain은 두 문장으로 맥락까지.
+- background_papers: 참고문헌 후보(없으면 본문 인용)에서 1~2개, survey/review 우선."""
 
     model = cfg["models"]["deep"]
-    # 1차 생성 → 검증. 기준 미달이면 이유를 알려주고 1회 재시도(일관성 보장).
-    # max_tokens는 v2의 풍부한 출력이 잘리지 않도록 넉넉히(잘리면 JSON이 깨짐).
-    result = _ask_json(model, prompt, max_tokens=4500, temperature=0.3)
-    ok, reason = _validate_deep(result)
-    if not ok:
-        print(f"[통역] 품질 기준 미달({reason}) — 1회 재생성")
-        retry_prompt = prompt + f"\n\n[재작성 지시] 직전 출력이 기준 미달이었습니다: {reason}. " \
-            "소제목+본문 항목 수와 분량 기준을 반드시 지켜 다시 작성하세요."
-        result2 = _ask_json(model, retry_prompt, max_tokens=4500, temperature=0.3)
-        ok2, _ = _validate_deep(result2)
-        if ok2:
-            result = result2
+    # 1차 생성 → 깊이 검증. 미달이면 구체적 이유를 주고 최대 2회 재생성(얕은 글 차단).
+    # max_tokens는 풍부한 출력이 잘리지 않도록 넉넉히(잘리면 JSON이 깨짐).
+    result = _ask_json(model, prompt, max_tokens=6000, temperature=0.3)
+    for attempt in range(2):
+        ok, reason = _validate_deep(result)
+        if ok:
+            break
+        print(f"[통역] 깊이 기준 미달({reason}) — 재생성 {attempt + 1}/2")
+        retry_prompt = prompt + (
+            f"\n\n[재작성 지시] 직전 출력이 기준 미달이었습니다: {reason}. "
+            "요약 3섹션·무슨의미 3섹션(①직접 의미 ②균형 잡힌 시각 ③전략 시사점)·용어 5~6개를 "
+            "반드시 모두 채우고, 각 본문을 3~5문장으로 더 깊고 구체적으로(수치·사실 인용) 다시 작성하세요.")
+        result = _ask_json(model, retry_prompt, max_tokens=6000, temperature=0.3)
     return result
