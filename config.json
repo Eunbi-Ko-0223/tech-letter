@@ -10,7 +10,10 @@
       "PIM (Processing-in-Memory)",
       "어드밴스드 패키징 (TSV, 2.5D/3D)"
     ],
-    "competitors": ["삼성전자", "마이크론(Micron)", "인텔", "엔비디아(고객이자 수요처)"]
+    "competitors": ["삼성전자", "마이크론(Micron)", "인텔", "엔비디아(고객이자 수요처)"],
+    "downstream_markets": [
+      "AI (대형 모델·생성형 AI·AI 인프라) — 메모리 수요를 견인하는 핵심 전방 시장"
+    ]
   },
 
   "arxiv": {
@@ -27,6 +30,18 @@
       {"term": "scaling", "anchors": ["transistor", "node", "lithography", "CMOS"]},
       {"term": "packaging", "anchors": ["chip", "die", "wafer", "interconnect"]}
     ],
+
+    "_ai_comment": "AI 전방시장 트랙 — 반도체 트랙과 별도 수집/상한(AI 논문이 반도체를 밀어내지 않도록)",
+    "ai_categories": ["cs.LG", "cs.AI", "cs.CL"],
+    "ai_terms": [
+      "large language model", "foundation model", "scaling law",
+      "mixture of experts", "long context", "KV cache",
+      "LLM inference", "LLM serving", "AI accelerator",
+      "model quantization", "diffusion model", "multimodal model",
+      "reasoning model", "test-time compute"
+    ],
+    "ai_max_candidates": 25,
+
     "lookback_days": 30,
     "max_fetch": 120,
     "max_candidates": 60

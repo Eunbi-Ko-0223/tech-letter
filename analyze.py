@@ -45,26 +45,31 @@ def _ask_json(model, prompt, max_tokens=1500, temperature=0.4):
 
 def score_paper(cfg, paper):
     company = cfg["company"]
+    downstream = company.get("downstream_markets", [])
+    downstream_line = ("전방 시장(관찰 대상): " + ", ".join(downstream) + "\n") if downstream else ""
     prompt = f"""당신은 {company['name']}의 기술 전략 애널리스트입니다.
 관점: {company['perspective']}
 주력 사업: {", ".join(company['business_areas'])}
 경쟁/고객: {", ".join(company['competitors'])}
-
+{downstream_line}
 아래 arXiv 논문을 평가하세요.
 
 제목: {paper['title']}
 초록: {paper['abstract']}
 저자: {", ".join(paper['authors'][:8])}
 
-먼저 이 논문이 반도체(특히 메모리/패키징/소자/컴퓨팅 아키텍처)와 실질적으로 관련 있는지 판단하세요.
-머신러닝의 'memory network', 모델 'scaling' 같은 무관한 논문이면 is_relevant=false 입니다.
+먼저 이 논문이 우리에게 의미 있는지(is_relevant) 판단하세요. 다음 중 하나면 관련 있음(true)입니다:
+ (a) 반도체(메모리/패키징/소자/컴퓨팅 아키텍처)와 실질적으로 관련, 또는
+ (b) AI 전방 시장의 변화·트렌드로서 메모리 수요·전략에 의미가 있는 것
+     (예: 대형 모델 규모·효율 변화, AI 인프라/추론 비용, 메모리·연산 수요를 바꾸는 기법).
+순수 언어학·무관한 응용 등 메모리 사업과 연결고리가 없으면 is_relevant=false 입니다.
 
 관련 있다면 아래 6개 축을 각 0~5점으로 채점하세요:
 - business: 우리 주력 사업(HBM/DRAM/NAND/CXL/PIM/패키징)과의 직접 연관성
 - threat: 기존 메모리를 대체할 신기술이거나 경쟁사 움직임인가 (위기 신호)
-- demand: AI 가속기·데이터센터 등 메모리 수요를 견인하는 응용인가 (기회 신호)
-- maturity: 상용화 임박도 (기초연구 0 ~ 양산 근접 5)
-- credibility: 저자/기관 신뢰도 (주요 기업·핵심 대학일수록 높음)
+- demand: AI 등 전방 시장이 메모리 수요를 견인하는 신호인가 (기회 신호)
+- maturity: 상용화/도입 임박도 (기초연구 0 ~ 양산·실전 근접 5)
+- credibility: 저자/기관 신뢰도 (주요 기업·핵심 대학·선도 AI랩일수록 높음)
 - novelty: 새로운 패러다임·화제성
 
 반드시 아래 JSON 형식으로만 답하세요:
