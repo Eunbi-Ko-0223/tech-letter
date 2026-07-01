@@ -294,16 +294,18 @@ def deep_analyze(cfg, paper, references, full_text=""):
 
     model = cfg["models"]["deep"]
     # 생성 → ①구조 점검(값싼 결정적) ②편집장 인사이트 심사(LLM) → 미달이면
-    # 구체적 지적으로 최대 3회 재생성. '길이'가 아니라 '내용'으로 품질을 강제한다.
+    # 구체적 지적으로 최대 2회 재생성(비용 절충: 대부분 1~2라운드에 개선됨).
+    # '길이'가 아니라 '내용'으로 품질을 강제한다.
+    MAX_REWRITES = 2
     result = _ask_json(model, prompt, max_tokens=6000, temperature=0.3)
-    for attempt in range(3):
+    for attempt in range(MAX_REWRITES):
         ok_s, reason = _validate_deep(result)            # ① 구조
         if ok_s:
             ok_q, critique = _judge_quality(cfg, paper, result)   # ② 인사이트
             if ok_q:
                 break
             reason = "인사이트·구체성 부족 → " + (critique or "더 구체적이고 비자명하게")
-        print(f"[통역] 품질 미달({reason}) — 재생성 {attempt + 1}/3")
+        print(f"[통역] 품질 미달({reason}) — 재생성 {attempt + 1}/{MAX_REWRITES}")
         retry_prompt = prompt + (
             f"\n\n[재작성 지시] 편집장 지적: {reason}\n"
             "분량을 채우려 군더더기를 넣지 말고, 지적된 부분을 '논문의 구체적 사실·수치'와 "
