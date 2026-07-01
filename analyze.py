@@ -17,16 +17,34 @@ def client():
     return _client
 
 
+# 일부 최신 모델(예: claude-opus-4-8)은 temperature 파라미터를 더 이상 받지 않는다
+# ('temperature is deprecated for this model' 400 에러). 한 번 걸린 모델은 여기 기록해
+# 두고, 이후로는 처음부터 temperature 없이 호출한다(매번 실패→재시도 낭비 방지).
+_NO_TEMPERATURE = set()
+
+
 def _ask_json(model, prompt, max_tokens=1500, temperature=0.4):
     """Claude를 호출하고 응답에서 JSON 객체를 파싱한다.
     temperature를 낮게 두면 날마다 문체가 덜 흔들려 일관성이 높아진다.
+    단, temperature를 지원하지 않는 모델이면 자동으로 빼고 호출한다.
     """
-    msg = client().messages.create(
+    kwargs = dict(
         model=model,
         max_tokens=max_tokens,
-        temperature=temperature,
         messages=[{"role": "user", "content": prompt}],
     )
+    if temperature is not None and model not in _NO_TEMPERATURE:
+        kwargs["temperature"] = temperature
+    try:
+        msg = client().messages.create(**kwargs)
+    except anthropic.BadRequestError as e:
+        # temperature 미지원 모델이면 그 파라미터만 빼고 1회 재시도(이후엔 기억)
+        if "temperature" in str(e) and "temperature" in kwargs:
+            _NO_TEMPERATURE.add(model)
+            kwargs.pop("temperature")
+            msg = client().messages.create(**kwargs)
+        else:
+            raise
     text = msg.content[0].text
     # ```json ... ``` 코드펜스나 잡텍스트가 섞여도 첫 JSON 블록을 추출
     m = re.search(r"\{.*\}", text, re.DOTALL)
