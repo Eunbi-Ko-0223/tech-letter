@@ -54,8 +54,30 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://eunbi-ko-0223.github.io/tech-letter/
+    # GitHub Pages 배포는 가끔 "Deployment failed, try again later" 서버측 일시 오류로 죽는다.
+    # (2026-07-06 이 오류로 build는 성공했는데 그날치가 사이트에 안 떴음.)
+    # → 코드/데이터 문제가 아니므로 최대 3회 자동 재시도로 흡수한다. 3번 다 실패하면 잡이 진짜 실패.
     steps:
-      - name: GitHub Pages 배포
-        id: deployment
+      - name: GitHub Pages 배포 (시도 1/3)
+        id: deploy1
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: 30초 대기 후 재시도
+        if: steps.deploy1.outcome == 'failure'
+        run: sleep 30
+
+      - name: GitHub Pages 배포 (시도 2/3)
+        id: deploy2
+        if: steps.deploy1.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: 60초 대기 후 재시도
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 60
+
+      - name: GitHub Pages 배포 (시도 3/3, 최종)
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v4
