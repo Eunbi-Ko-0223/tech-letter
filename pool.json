@@ -158,33 +158,6 @@
     },
     "first_seen": "2026-06-29"
   },
-  "2606.26176": {
-    "arxiv_id": "2606.26176",
-    "title": "Toward Mitigating Process-Induced Performance Degradation in 3.5D Heterogeneous Packages via Pre-Silicon Firmware Co-Optimization",
-    "abstract": "This paper presents a pre-silicon analysis of XRM-SSD V24/V7.0, a physics-aware predictive firmware scheduling layer for Intel's 3.5D heterogeneous integrated packages (Foveros Direct 3D + PowerVia + EMIB-T + UCIe + HBM5). Using detailed thermal-electrical co-simulation over a 90,000-step LLM inference dataset, we show that proactive workload-density-driven thermal hinting (20-50 ms look-ahead) enables pre-positioning of PowerVia voltage rails. Key results include a thermal-load correlation of R^2 = 0.9911, compensated CPO spectral drift below 0.36 nm (21% of TSMC tolerance budget), and HBM leakage current clamped below 1 MB/hr across all load states. Monte Carlo analysis (N=2,000 trials) confirms robustness under process variation. V7.0 extends the framework to multi-tile architectures with an N x N thermal coupling matrix and two-pole kernel. The approach demonstrates potential for 20-30% released compute and 65-68% EDA guard-band reduction. All metrics are engineering projections from pre-silicon characterization. Silicon validation on Intel 18A platforms is pending. This work highlights firmware-hardware co-optimization as an effective approach to mitigating physical limits in advanced 3.5D packaging.",
-    "authors": [
-      "Chi Fei Chung"
-    ],
-    "published": "2026-06-24",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.26176v2",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Intel의 3.5D 이종 패키징(Foveros+PowerVia+EMIB+HBM5)에서 열-전기 공동최적화를 통한 성능 저하 완화 기술로, SK하이닉스의 어드밴스드 패키징 및 HBM 사업과 직접 연관.",
-      "scores": {
-        "business": 4,
-        "threat": 3,
-        "demand": 4,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "3.5D 패키징 열관리 펌웨어 최적화는 HBM 고성능화의 핵심 과제이나, 저자 신뢰도 부족과 미검증 예측값으로 인해 실제 영향력 평가는 Intel 18A 실리콘 검증 후 재판단 필요.",
-      "final_score": 4.5
-    },
-    "first_seen": "2026-06-29"
-  },
   "2606.24860": {
     "arxiv_id": "2606.24860",
     "title": "Mechanism of Band Gap Formation in Beam Networks",
@@ -10519,5 +10492,93 @@
       "final_score": 1.85
     },
     "first_seen": "2026-07-06"
+  },
+  "2607.02070": {
+    "arxiv_id": "2607.02070",
+    "title": "A Time-to-Boundary Margin for Transient Stability: Unifying Critical Clearing Time and Operating-Point Drift",
+    "abstract": "The loading margin to voltage collapse -- the distance in parameter space to the closest saddle-node bifurcation -- is a standard proximity index for voltage stability. This paper develops its transient-stability counterpart: a margin M that measures the time to the synchronism boundary rather than a distance, and that unifies two limits usually treated separately. The critical clearing time (CCT) is the fast, fixed-parameter limit; the slow drift of the operating point toward a static loadability limit is the other. M is defined as the first-passage time of the joint state-parameter motion to the survival boundary. We prove and verify that M equals the CCT exactly on the one-machine-infinite-bus reduction (deviation <= 0.01% across loadings on a published benchmark), establishing a certified single-machine pillar. Under operating-point drift, M yields an operational lead time before faults become unclearable; we take the 28 April 2025 Iberian blackout timeline as an illustrative time scale for the drift rate. On the New England 39-bus system, an independent benchmark, the single-machine-equivalent reduction reproduces the CCT within 1.8-6.0% (conservatively), and a critical slowing-down signature flags proximity to the boundary. For the multimachine case we characterize the limits explicitly: the transfer-conductance work is tightly boundable, while the controlling unstable equilibrium is the binding obstruction to a certified margin.",
+    "authors": [
+      "Marián Mešter"
+    ],
+    "published": "2026-07-02",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.02070v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "전력망 안정성(전기 시스템의 과도 안정성·전압 붕괴)을 다루는 전력공학 논문으로, 메모리 반도체·AI 인프라 수요와 직접적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 0
+      },
+      "tag": "중립",
+      "one_line": "전력망 동적 안정성 이론 논문으로, 메모리 사업·AI 시장 수요·경쟁 동향과 무관하며 SK하이닉스 기술 전략에 입력값이 되지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-07"
+  },
+  "2607.01617": {
+    "arxiv_id": "2607.01617",
+    "title": "3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving",
+    "abstract": "Large language model (LLM) serving increasingly combines prefill-decode (PD) disaggregation with tensor parallelism (TP) to support large models and long contexts. In conventional 2D/2.5D chiplet architectures, layer-wise prefill-to-decode KV-cache transfer decode-side TP collectives share the same lateral die-to-die (D2D) interconnect, creating mixed-traffic contention on the decode critical path. This contention increases communication latency, prolongs token generation intervals, and degrades end-to-end serving performance. We propose 3DLS, a logic-on-logic 3D-stacked chiplet architecture that separates traffic classes by routing KV-cache transfers through vertical interconnects while preserving decode-side TP collectives on the lateral D2D fabric. 3DLS achieves up to 1.49$\\times$ throughput and 60.2\\% lower end-to-end (E2E) latency over the shared-fabric planar baseline, and still achieves up to 1.17$\\times$ throughput and 31.4\\% lower E2E latency over a workload-aware priority-managed planar baseline. These results highlight that physical isolation is an important design principle for future chiplet-based PD-disaggregated LLM serving systems.",
+    "authors": [
+      "Jaehun Lee",
+      "In-Jun Jung",
+      "Joo-Young Kim"
+    ],
+    "published": "2026-07-02",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.01617v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 시스템의 메모리 대역폭 병목을 3D 칩렛 아키텍처로 해결하는 논문으로, HBM/어드밴스드 패키징 기술 수요와 AI 인프라 메모리 효율화 트렌드를 직접 반영",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 5,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "Prefill-Decode 분리 추론 구조에서 KV-캐시 전송을 수직 인터커넥트로 물리적 분리하는 3D 칩렛 설계는 HBM 대역폭 수요와 TSV/3D 패키징 기술 도입을 강력히 정당화하는 신호",
+      "final_score": 4.4
+    },
+    "first_seen": "2026-07-07"
+  },
+  "2607.00104": {
+    "arxiv_id": "2607.00104",
+    "title": "An analog ac voltage amplifier based on a single straintronic magnetic tunnel junction",
+    "abstract": "Magnetic tunnel junctions (MTJs) are known for their digital applications (memory and logic). A special class of them called \"straintronic\" magnetic tunnel junctions (s-MTJ) has lately emerged as a potential platform for analog applications because their conductance can be varied continuously with mechanical strain generated with a gate voltage. The conductance versus gate voltage (transfer) characteristic always has a linear region and that can be leveraged for a variety of analog applications. Here, we discuss one such application, namely analog voltage amplification. If the s-MTJ's gate voltage is fixed around the midpoint of the linear region and a small ac voltage is superimposed on it, then the ac voltage can be amplified without distortion as long as its amplitude is small enough to avoid gate voltage excursion beyond the linear region. Unlike a transistor-based voltage amplifier whose amplification is determined solely by the transistor's internal parameters - namely the transconductance and Early resistance - here the amplification can be varied by an external power supply voltage. We examine the maximum allowed amplitude and frequency of input signal for distortion-free amplification by modeling the magnetization dynamics and derive an expression for the amplification.",
+    "authors": [
+      "Cael Johnson",
+      "Rahnuma Rahman",
+      "Supriyo Bandyopadhyay"
+    ],
+    "published": "2026-06-30",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.00104v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Straintronic MTJ 기반 아날로그 증폭기는 기초 물리 연구 수준이며, 메모리/AI 인프라 수요와 무관한 순수 소자 응용으로서 SK하이닉스의 주력 사업(HBM/DRAM/NAND/CXL/PIM) 및 전방 시장 전략과 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "MTJ 기반 아날로그 증폭기는 학술적 흥미로운 소자 물리이지만, 메모리 제조사의 핵심 사업 전략(대역폭·용량·전력·AI 인프라)과 무관한 기초연구로 평가 대상 외.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-07"
   }
 }
