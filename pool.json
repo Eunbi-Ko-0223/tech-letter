@@ -13902,5 +13902,449 @@
       "final_score": -1.0
     },
     "first_seen": "2026-07-08"
+  },
+  "2607.06219": {
+    "arxiv_id": "2607.06219",
+    "title": "Classical Reversible Computation by Quantum Coherence",
+    "abstract": "Rising energy demand from data-centre and AI applications has renewed interest in reversible computation, where logic need not dissipate heat at every step if information is uncomputed. Implementations have so far been classical: adiabatic CMOS reduces dissipation by slowing charge motion but is still limited by the threshold physics of transistors. Here we propose classical reversible logic implemented by coherent spin dynamics in a spin quantum-dot array, with inputs and outputs in classical basis states and no algorithmic use of superposition. The same spin stores, transports, and computes, with unitary rotation replacing irreversible switching. The universal building block is an iToffoli gate driven by DC voltage pulses and anisotropic exchange in Ge/Si hole spins. Simulations with experimental parameters reproduce the Toffoli truth table and yield a testable error landscape. Because shuttling transports the bit without measurement, logic and data movement remain reversible until readout. Millivolt pulses on femtofarad gates yield a gate energy below the 4~K Landauer scale, about five (eight) orders of magnitude below a room-temperature CMOS Toffoli with (without) 4 K cooling overhead. The same semiconductor hardware is therefore dual-use, supporting quantum algorithms when superposition is used and classical reversible logic otherwise.",
+    "authors": [
+      "Daniel Loss"
+    ],
+    "published": "2026-07-07",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.06219v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "에너지 효율적 역가능 컴퓨팅을 스핀 양자점으로 구현하는 기초연구로, AI 데이터센터의 전력 소비 문제와 차세대 메모리/연산 아키텍처 패러다임 전환에 관련됨.",
+      "scores": {
+        "business": 1,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "AI 데이터센터 전력 위기에 대한 근본적 대안으로 주목할 만하나, 스핀 양자점 기반 고전 역가능 로직은 현재 기초 시뮬레이션 단계로 SK하이닉스의 CMOS/HBM 주력 사업과는 직접 경쟁 관계가 아니며, 10년 이상의 장기 기초연구 과제임.",
+      "final_score": 2.4
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.06087": {
+    "arxiv_id": "2607.06087",
+    "title": "A Decomposition-Based Framework for Joint Optimization and Spatial Packaging of Interconnected Systems with Physical Interactions",
+    "abstract": "This paper presents an approach and application of optimization of spatial packaging of interconnected systems with physical interactions (SPI2) in three-dimensional component placement problems. To enable its application for an automotive use case, SPI2 must support both initial design generation, including component alignment, and robust system-level coordination, requiring improved solution reliability and tractable computational cost. To address these requirements, the proposed methodology improves convergence rate and solution quality by enhancing numerical robustness in gradient-based optimization while reducing computational load. Existing SPI2 approaches are extended through the addition of alignment capabilities, enabling the representation of port-to-port alignments between components. Furthermore, the applicability of SPI2 is expanded by treating component placement locations as design variables, allowing for penalty-based coordination to ensure design feasibility and enabling integration within system-level optimization. The approach is validated using a multi-objective optimization framework based on Nondominated Sorting Genetic Algorithm II (NSGA-II), applied to a combined powertrain optimization and battery chassis integration problem. This demonstrates the effectiveness of the SPI2 in a system-level design context. The results show a twofold application of SPI2 in an automotive use case: first, as a tool for initial design generation, and second, as part of a system-level design coordinator that outperforms a discretized exhaustive search while requiring lower computational cost.",
+    "authors": [
+      "Julien Bückmann",
+      "Jorn van Kampen",
+      "Theo Hofman"
+    ],
+    "published": "2026-07-07",
+    "primary_category": "cs.CE",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.06087v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "자동차 파워트레인·배터리 섀시 통합 최적화 논문으로, 반도체 메모리/패키징 기술 및 AI 인프라 메모리 수요와 실질적 연결고리 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "자동차 부품 공간 배치 최적화 방법론으로, SK하이닉스의 메모리 반도체·패키징·AI 사업 전략과 무관한 순수 기계공학 응용 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.05818": {
+    "arxiv_id": "2607.05818",
+    "title": "GPU-Accelerated Effective Resistance Analysis for 3D IC Power Delivery Network",
+    "abstract": "Three-dimensional (3D) integration is a critical technique for enhancing transistor density, improving power efficiency, and reducing interconnect delays. However, as current demands and design complexity increase, power deliver networks (PDNs) are facing growing challenges.Careful planning of through-silicon vias (TSVs) is essential for ensuring reliable PDNs, where effective resistance serves as a vital metric for the reliability. Ill-planned TSVs often cause 3D IC with unevenly distributed effective resistance and consequently severer IR Drop.In this paper, we propose a GPU-accelerated framework on accurate effective resistance analysis for early stage 3D IC PDNs. The proposed framework achieves a speedup of 5 to 6 orders of magnitude compared to the conventional direct solver, while maintaining negligible deviations in both maximum and average relative errors.",
+    "authors": [
+      "Jingchao Hu",
+      "Cheng Zhuo",
+      "Zhou Jin"
+    ],
+    "published": "2026-07-07",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.05818v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "3D IC 패키징의 TSV 설계 최적화는 SK하이닉스의 어드밴스드 패키징(TSV, 2.5D/3D) 전략과 직결되며, HBM 및 고밀도 메모리 제품의 신뢰성 향상에 필수적인 기술",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "3D IC PDN 설계의 계산 효율화는 HBM/고대역폭 메모리 제품의 수율·신뢰성 개선을 가속화하는 실무 도구로서 AI 인프라 수요 대응 시간 단축에 기여할 수 있음",
+      "final_score": 2.75
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.05789": {
+    "arxiv_id": "2607.05789",
+    "title": "Self-Heating and Radiation Hardness Studies of 3nm GAA-FET-Based SRAM with Different Substrate Isolation Techniques",
+    "abstract": "In this work, 3D full-domain 3 nm gate-all-around field-effect transistor (GAA-FET) static random access memories (SRAMs) with various substrate isolation techniques are simulated using Technology Computer-Aided Design (TCAD). In addition to the traditional bottom dielectric isolation (BDI), which isolates the source/drain (S/D) from the substrate (dubbed SDBDI), and the punch-through stopper (PTS), a novel channel-BDI (C-BDI) is proposed, allowing S/D-to-substrate connection. The self-heating effect and radiation hardness due to various isolation techniques are studied. It is found that, firstly, the increase in self-heating due to BDI is negligible. Secondly, in the novel CBDI, even without PTS, the increase in leakage current IOFF is minimal. Thirdly, for SD-BDI with underlap (to minimize stress relaxation), while IOFF increases, the static noise margin (SNM) remains unchanged and robust against single-event upset (SEU) even if the underlap is as much as 20 nm. Finally, all structures are immune to the alpha-particle SEU, and BDI enhances the radiation hardness substantially. Moreover, radiation hardness is insensitive to BDI thickness.",
+    "authors": [
+      "Albert Lu",
+      "Junipero Verbeke",
+      "Phil Oldiges",
+      "Reza Arghavani",
+      "Hiu Yung Wong"
+    ],
+    "published": "2026-07-07",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.05789v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "3nm GAA-FET 기반 SRAM의 자가열 및 방사선 내성 특성 연구로, 차세대 고밀도 메모리 소자 설계 및 신뢰성 평가에 직접 관련.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "3nm 공정 SRAM 신뢰성 최적화 연구로 미래 고집적 메모리 설계에 기여하나, 현재 SK하이닉스의 주력 사업(HBM/DRAM/NAND)과의 직접 수익 연관성은 제한적이며 기초 연구 단계.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.05240": {
+    "arxiv_id": "2607.05240",
+    "title": "Optimizing ML Workload Partitioning between CPUs and CIM Accelerators for Heterogeneous Computing",
+    "abstract": "Computing-in-Memory (CIM) accelerators execute Matrix-Vector Multiplications (MVMs) in memory, making them a compelling solution for Machine Learning (ML) workloads. However, existing ML workload partitioning approaches for CIM accelerators do not fully account for Resistive Random Access Memory (RRAM) constraints such as limited memory, high write latency, and limited endurance. They also neglect parallelism, low-level architectural effects, or the Central Processing Unit (CPU) as a complementary compute resource. To address these limitations, we propose an Integer Linear Programming (ILP)-based workload partitioning framework for heterogeneous CPU-CIM systems. It minimizes end-to-end inference latency under RRAM constraints, captures parallelism, and combines empirical profiling with analytical models. Using our framework, heterogeneous CPU-CIM execution achieves speedups of up to 30.9x over CPU-only execution on an edge CPU and 7.3x over a high-performance CPU. A Design Space Exploration (DSE) yields further design insights for future CIM accelerators.",
+    "authors": [
+      "Joel Klein",
+      "Rebecca Pelke",
+      "Roberto Laudani",
+      "Jan Moritz Joseph",
+      "Rainer Leupers"
+    ],
+    "published": "2026-07-06",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.05240v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "CIM(Computing-in-Memory) 가속기와 CPU 간 워크로드 분할 최적화는 PIM/메모리 확장 기술 개발 및 AI 추론 효율화 전략에 직결되는 아키텍처 연구",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "RRAM 기반 CIM 가속기의 실제 제약(쓰기 지연, 내구성, 메모리 용량)을 고려한 CPU-CIM 이질 시스템 최적화는 PIM/메모리 확장 제품 설계 및 AI 에지/추론 시장 수요 대응의 핵심 기술 검증",
+      "final_score": 4.25
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.05187": {
+    "arxiv_id": "2607.05187",
+    "title": "SMART: A Machine Learning and Monte Carlo Framework for Rapid Analysis of Stochastic Transistor Aging and Process Variation in Digital Circuits",
+    "abstract": "As CMOS technology scales into the deep nanometer regime, digital circuit reliability is increasingly threatened by the combined stochastic effects of Bias Temperature Instability (BTI) and Process Variation (PV). Traditional reliability analysis methods, which rely on computationally intensive simulations or extensive lookup tables, fail to scale efficiently for large designs, creating a critical bottleneck in design space exploration. To address this, we propose SMART, a novel framework that integrates Machine Learning (ML) with Monte Carlo simulation to enable rapid, high-fidelity reliability analysis. SMART employs Random Forest regression to predict gate delay distributions directly, bypassing time-consuming atomic model parameter extractions. Crucially, the model utilizes Bayesian Optimization for automated hyperparameter tuning, ensuring maximum predictive robustness across diverse libraries. Experimental validation on ISCAS85 benchmark circuits demonstrates that SMART achieves a 94.54% reduction in analysis time compared to state-of-the-art methods, while maintaining a remarkable average accuracy error of just 1.63%. By shifting computational complexity to an offline training phase, the proposed framework offers a scalable, accurate solution for designing resilient, reliability-aware digital systems.",
+    "authors": [
+      "Arash Esshaghi",
+      "Siavash Es'haghi",
+      "Gholamreza Shahabadi",
+      "Alireza Moradi"
+    ],
+    "published": "2026-07-06",
+    "primary_category": "cs.LG",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.05187v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "CMOS 심부 나노 공정에서 BTI와 공정 편차로 인한 신뢰성 분석 가속화는 고밀도 메모리(HBM, DRAM, NAND) 설계 검증 단계의 핵심 병목을 해결하는 기술.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "메모리 칩 설계 검증 효율을 개선하는 유용한 도구이나, 저자 신뢰도와 상용화 임박도가 낮고 AI 수요 견인과의 직접 연결고리가 약함.",
+      "final_score": 2.3
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.04876": {
+    "arxiv_id": "2607.04876",
+    "title": "A Unified Electrostatic-to-Spin Framework for Asymmetric Multi-Gate CMOS Quantum Devices",
+    "abstract": "In advanced complementary metal-oxide-semiconductor (CMOS) quantum chips, compact gate stacks make it difficult to connect lithographic geometry, electrostatic confinement and many-electron spin filling in one transparent model. This connection is central to design-technology co-optimization (DTCO). Here we develop a reduced-order analytical framework for asymmetric multigate silicon quantum-dot devices. Its electrostatic core, the Poisson-kernel coupled-interface Green-function (PK-GF) model, agrees with an independent finite-volume solution at the millivolt scale for the matched two-dimensional problem, without fitting to that solution. We then pass the gate-derived confinement, rather than a harmonic or fitted potential, to a spin-valley many-body calculation for a jellybean quantum dot with N = 2-17 electrons at B = 5 T. The unrestricted Hartree-Fock (UHF) solution supports occupation-dependent, Wigner-molecule-like charge localization but likely overestimates spin polarization. Complete active-space configuration interaction (CASCI) supports a low-spin branch within the tested active spaces, which aligns with the experiments. The workflow therefore connects CMOS layout, device electrostatics, and potential-determined quantum observables, providing an auditable modelling layer for CMOS-based qubit design and DTCO.",
+    "authors": [
+      "Zeheng Wang",
+      "Yan Liu",
+      "Yue Hao",
+      "Genquan Han"
+    ],
+    "published": "2026-07-06",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.04876v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "양자 컴퓨팅 큐빗 설계의 CMOS 기반 구현 프레임워크로, 차세대 양자 메모리/연산 아키텍처 개발에 필수적인 설계-공정 협최적화(DTCO) 기술을 제시.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "양자 큐빗의 CMOS 기반 설계 최적화는 장기 기초연구 단계이며, 현재 HBM/DRAM/NAND 주력 사업과 직접 연관은 낮지만 미래 양자-고전 하이브리드 메모리 아키텍처 선점을 위한 선행 기술 모니터링 대상.",
+      "final_score": 1.9
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.05445": {
+    "arxiv_id": "2607.05445",
+    "title": "BitFair: A 12nm Bit-Serial CNN Accelerator with Learnable Early Termination and Adaptive Bit Ordering for Ultra-Low-Power XR Vision",
+    "abstract": "Extended Reality (XR) wearables require always-on perception within tight power envelopes of a few watts and motion-to-photon latency budgets below 20 ms, leaving only a few milliseconds for neural-network inference. Bit-serial computing is attractive for such energy-efficient neural network acceleration, but many existing architectures still process all bits even when ReLU sets the final output to zero. This paper presents BitFair, a software-hardware co-designed bit-serial CNN accelerator with learnable bit-level early termination and adaptive bit ordering, working under the ultra-low-power and strict latency requirements of XR applications. BitFair exploits dynamic bit-level sparsity by learning per-layer thresholds that trigger early termination when partial sums reliably predict that the final ReLU output will be zero. Furthermore, it searches for layer-wise bit orders that prioritize informative bits, maximizing early termination without sacrificing accuracy. A GlobalFoundries 12nm FinFET implementation with a core area of 0.34 mm^2, 104 KB on-chip memory, and voltage scaling from 0.55 to 0.70 V achieves sub-millisecond latency, up to 117.0 BTOPS/W, and 0.07 pJ/SOP. On IBM DVS128 Gesture and N-MNIST, BitFair achieves 96.5% and 97.7% accuracy, respectively, while improving effective energy efficiency by 4.0-22.1x and accuracy by up to 9.2% over prior fabricated XR vision accelerators.",
+    "authors": [
+      "Ang Li",
+      "Chang Gao"
+    ],
+    "published": "2026-07-04",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.05445v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "XR 웨어러블의 초저전력 추론 가속기 설계로서 엣지 AI 인프라의 메모리-연산 효율성 트렌드를 반영하며, 비트 직렬 아키텍처와 동적 스파시티 활용이 메모리 대역폭 및 전력 최적화 전략과 연결됨.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "엣지 AI 추론 시장에서 메모리 효율성(대역폭·전력)이 핵심 경쟁축으로 부상하는 신호이나, 우리의 HBM/DRAM 주력 사업과의 직접 연관성은 제한적이고 학계 중심 연구로 상용화 거리가 있음.",
+      "final_score": 2.4
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.03652": {
+    "arxiv_id": "2607.03652",
+    "title": "ELiTeFormer: An Efficient Transformer for FPGAs",
+    "abstract": "Transformer blocks are prevalent in large language model (LLM) but present deployment challenges due to their challenging computational and memory demands. While prior work has typically optimized attention mechanisms or feed-forward networks (FFNs) separately, few hardware (HW) architecture have jointly addressed both components with co-designed hardware acceleration. We present ELiTeFormer (Efficient Linear Ternary Transformer), the first Transformer model architecture that unifies hybrid linear attention with ultra-low-precision (ternary) linear projections, specifically co-designed for field-programmable gate array (FPGA) deployment. ELiTeFormer achieves 10x model weight compression and 12.8x key-value (KV) cache compression compared to LLaMA 3, while maintaining competitive accuracy (31.9% on the MMLU benchmark, within 3.0% of BitNet b1.58). Our key architectural contribution is a novel processing element (PE) micro-architecture that eliminates all multiplications in ternary linear projections through bitmasking operations, significantly reducing resource utilization by completely avoiding dedicated digital signal processing (DSP) blocks. We simulate, synthesize, and deploy ELiTeFormer targeting a Xilinx VCK5000 Versal board using high-level synthesis (HLS) flows. Block-level simulations show 9.6x speedup for FFN operations and 4.4x speedup for attention compared to standard implementations. End-to-end deployment achieves up to 3.9x lower latency and 3.2x better energy efficiency than LLaMA 3 on an NVIDIA A100 graphics processing unit (GPU) at long context lengths. This represents the first FPGA realization combining linear attention with ternary quantization, demonstrating the viability of algorithm-architecture co-design for next-generation LLM acceleration.",
+    "authors": [
+      "Victor Agostinelli",
+      "Nicolas Bohm Agostini",
+      "Antonino Tumeo"
+    ],
+    "published": "2026-07-04",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.03652v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 효율화를 위한 메모리 압축·저정밀도 기술과 FPGA 기반 대체 가속 아키텍처 제시로, AI 인프라의 메모리 수요 패턴과 경쟁 가속기 생태계 변화를 시사",
+      "scores": {
+        "business": 2,
+        "threat": 3,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "위협",
+      "one_line": "FPGA 기반 저정밀도 LLM 추론이 GPU/메모리 의존도를 낮추고 엣지·특화 시장을 잠식할 수 있는 신호이나, 현재는 학술 프로토타입 수준으로 상용 위협은 제한적",
+      "final_score": 3.85
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.03601": {
+    "arxiv_id": "2607.03601",
+    "title": "ArchEval: Measuring AI Agents as Computer Architects",
+    "abstract": "Computer architecture has long used benchmarks to make progress measurable. LLM agents create a different measurement problem: success is not merely writing code or tuning parameters. The agent must interpret workloads, choose mechanisms, use simulators, predict performance, satisfy hard constraints, and decide which feasible design is worth evaluating. This paper introduces ArchEval, a benchmark and platform for evaluating LLM agents on computer architecture design and optimization. It contains 20 challenges across CPU core mechanisms, system architecture, memory systems, accelerators, and compute-in-memory, backed by eight simulators. Each challenge is posed under three settings: L1 full harness, with repeated simulator feedback; L2 simulator-code container, where simulator source is available but the agent must assemble its own workflow; and L3 agent-only, with no runnable feedback before submission. Each run reports baseline-normalized verifier performance and records the full trajectory, connecting results to workload analysis, simulator-tool use, prediction, constraint handling, and artifact integrity. Initial results show a sharp boundary in current agents. With L1 support, all four evaluated agents reach or exceed baseline and improve real designs across diverse simulators. Removing support exposes weaknesses: many agents fail to turn simulator source into useful experiments, and L3 predictions often disagree with verifier results. In L3, only GPT-5.5 + Codex remains above baseline, reaching 1.21x geomean performance and a 65% win rate; the other three fall below baseline. Even GPT-5.5 + Codex has only a 15% performance-modeling pass rate. ArchEval frames today's agents as useful optimization assistants rather than autonomous architects, and identifies capabilities needed next: simulator-tool use, calibrated prediction, pre-feedback judgment, and useful mechanism discovery.",
+    "authors": [
+      "Chenyu Wang",
+      "Zishen Wan",
+      "Jeffrey Ma",
+      "Shvetank Prakash",
+      "Zhenting Qi",
+      "Haebin Do",
+      "Andy Cheng",
+      "Arya Tschand",
+      "Jiahe Shi",
+      "Yilun Du",
+      "Vijay Janapa Reddi"
+    ],
+    "published": "2026-07-03",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.03601v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 에이전트가 컴퓨터 아키텍처(메모리 시스템, 가속기, PIM 포함)를 자동 설계·최적화하는 능력을 평가하는 벤치마크로, AI 인프라 설계 자동화 트렌드와 메모리 시스템 요구사항 변화를 시사한다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "AI 에이전트 기반 아키텍처 자동 최적화는 미래 메모리 시스템 설계 방식의 변화를 예고하지만, 현재는 보조 도구 수준이므로 중기 전략 신호로 주목할 가치가 있다.",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.03191": {
+    "arxiv_id": "2607.03191",
+    "title": "AIGOR: A Modular, Event-Driven Neuromorphic Architecture for Configurable SNN Inference",
+    "abstract": "Spiking neural networks (SNNs) run today on a fragmented landscape of hardware: dedicated neuromorphic processors, application-specific FPGA accelerators, and large-scale neuroscience simulators, each typically built around a fixed neuron model, execution strategy, or workload class. We present AIGOR, a modular, event-driven neuromorphic architecture for spiking neural network inference. AIGOR organizes neurons into timestep-synchronized processing cores that exchange spikes as packets over a packet-switched communication layer, and it is assembled from a library of parameterized compute, memory, and communication IP blocks rather than as a one-off design for a single network. The neuron model, numeric precision, the folding of neurons onto hardware, and the partitioning across cores are configured per instance rather than committed at design time; a single declarative specification then generates the cores, neuron kernels, and synaptic-memory images that realize a given network. We validate a first prototype on the AMD Versal VPK180 across two deliberately different workloads mapped onto the same cores: a feedforward image classifier trained in snnTorch and a recurrent bal anced random network modeled in NEST. The classifier reproduces its snnTorch reference accuracy, and the recurrent network matches its NEST reference at spike-level precision across multiple cores spanning two FPGAs. We report post-implementation resource utilization and validate the multi-node synchronization scheme in simulation up to one thousand cores on a three-dimensional torus. The prototype's measured limits localize the throughput bottleneck in the synaptic-delivery datapath and the global timestep barrier, and motivate a set of datapath refinements, now in development, that the configurable structure of the architecture admits as changes to the same cores.",
+    "authors": [
+      "Pierpaolo Perticaroli",
+      "Roberto Ammendola",
+      "Andrea Biagioni",
+      "Ottorino Frezza",
+      "Francesca Lo Cicero",
+      "Michele Martinelli",
+      "Pier Stanislao Paolucci",
+      "Elena Pastorelli",
+      "Luca Pontisso",
+      "Cristian Rossi",
+      "Francesco Simula",
+      "Piero Vicini",
+      "Alessandro Lonardo"
+    ],
+    "published": "2026-07-03",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.03191v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "SNN 추론 가속기의 모듈식 아키텍처는 AI 엣지·뉴로모픽 컴퓨팅 시장에서 메모리·패키징·통신 IP의 새로운 수요 패턴을 시사하며, 특히 PIM·CXL·어드밴스드 패키징 전략과 연결 가능성이 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "뉴로모픽 SNN 추론은 장기 AI 엣지 시장의 틈새 기회이나 현재 메모리 사업 포트폴리오에 직접 영향은 제한적이고, 프로토타입 단계로 상용화까지 거리가 멈.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.02842": {
+    "arxiv_id": "2607.02842",
+    "title": "Continuous-time nonlinear closed-loop in-memory computing for high-accuracy massive MIMO detection",
+    "abstract": "Analog in-memory computing (IMC) has emerged as a promising approach for accelerating matrix operations by exploiting the intrinsic physics of memory arrays. To date, however, most IMC architectures have focused on linear algebra workloads in which computation is encoded in the equilibrium state of a physical system. Extending these principles to nonlinear optimization remains challenging and typically relies on iterative algorithms composed of repeated linear operations. Here, we introduce a continuous-time nonlinear closed-loop IMC architecture for box-constrained zero-forcing (BCZF) decoding in massive multiple-input multiple-output (MIMO) systems. The proposed architecture embeds the decoding problem directly within the dynamics of a nonlinear feedback network of memory arrays and supply-limited operational amplifiers, allowing solutions to emerge through continuous-time physical optimization. We derive a compact analytical model of the circuit and show that its trajectories minimize an equivalent energy function. Experimental emulation using a fabricated IMC chip confirms the predicted dynamics under realistic hardware nonidealities for up to 16x16 MIMO systems. To overcome the finite precision of analog hardware, we extend mixed-precision iterative refinement from linear algebra to nonlinear continuous-time optimization, enabling reliable detection of high-order modulation formats including 256-QAM. Benchmark projections indicate operation from ultra-low-energy approximate decoding to high-accuracy massive MIMO detection. Together, these results extend closed-loop IMC from equilibrium-based linear algebra to continuous-time nonlinear optimization and establish a pathway toward efficient physical accelerators for high-accuracy wireless communications.",
+    "authors": [
+      "Piergiulio Mannocci",
+      "Giacomo Pedretti",
+      "Fabian Böhm",
+      "Thomas Van Vaerenbergh"
+    ],
+    "published": "2026-07-03",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.02842v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "아날로그 인메모리 컴퓨팅(IMC)을 통한 비선형 최적화 아키텍처로, PIM 및 어드밴스드 메모리 컴퓨팅 기술 진화의 신호이며 무선통신/AI 인프라 가속기 수요와 연결됨.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "PIM/IMC 기술의 비선형 최적화 확장은 개념적으로 흥미로우나, 현재 MIMO 디코딩 응용은 우리 주력 메모리 사업과의 직접 연관성이 제한적이고 상용화 거리가 멀어 단기 전략 영향은 낮음.",
+      "final_score": 2.5
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.02741": {
+    "arxiv_id": "2607.02741",
+    "title": "Optimality-Informed Neural Networks for Lunar Landing Trajectory Optimization",
+    "abstract": "This paper develops an Optimality-Informed Neural Network (OINN) approach for the energy-optimal, free-final-time powered descent of a lunar lander from any initial position, velocity, and mass within a bounded operating envelope to a fixed landing site with zero terminal velocity. Building on a recent framework that jointly embeds Pontryagin's minimum principle and the Hamilton-Jacobi-Bellman equation for general nonlinear optimal control, the proposed OINN approach specializes that idea to a lunar landing problem with free time of flight and fixed terminal state. Every boundary and transversality condition is hard-encoded into the network architecture by construction, the closed-form Pontryagin-optimal thrust magnitude and direction law is substituted directly rather than learned, and the remaining state, costate, and an auxiliary value-function output are trained against a physics-residual loss formed entirely from the necessary conditions of optimality, with no precomputed optimal trajectories required. A preliminary theoretical analysis is explored, establishing a stochastic-optimization stationarity guarantee for the offline training procedure, an explicit bound translating the achieved training residual into bounds on touchdown position, touchdown velocity, and flight-time error, and a fixed, input-independent onboard computational and memory cost suitable for real-time deployment. Numerical simulations evaluate the trained policy, with no retraining, against an independently solved indirect-method boundary-value problem at six representative initial states spanning the operating envelope and against eighty additional Monte Carlo simulation runs, demonstrating close agreement with the indirect-method solution and consistently small dynamics and transversality residuals throughout the envelope.",
+    "authors": [
+      "Zhenbo Wang"
+    ],
+    "published": "2026-07-02",
+    "primary_category": "math.OC",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.02741v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "달 착륙선 궤적 최적화는 우주항공 제어 문제로, 메모리 반도체 수요·기술·경쟁 구도와 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "신경망 기반 최적제어 기법은 학술적 기여가 있으나, HBM/DRAM/NAND 사업, AI 메모리 수요, 반도체 경쟁 구도와 무관한 순수 우주항공 응용 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-09"
+  },
+  "2607.02610": {
+    "arxiv_id": "2607.02610",
+    "title": "FAPlace: Joint Optimization of Chiplet Placement and Interposer Footprint for 2.5D Systems",
+    "abstract": "The placement of chiplets on a silicon interposer is a pivotal step in 2.5D system integration, yet existing placement approaches typically assume a pre-defined interposer footprint. This creates a circular dependency: the optimal footprint cannot be known without first solving the placement, while the placement itself is constrained by the given dimensions. An undersized interposer may exclude feasible placements, while an oversized one yields unnecessarily sparse solutions. Moreover, even when the footprint area is minimized, few existing approaches explicitly control the interposer's aspect ratio. To jointly address these challenges, we propose FAPlace, a footprint aware mask guided sequential placement framework. FAPlace operates on a sufficiently large canvas, eliminating the circular dependency by allowing the optimal interposer footprint to emerge as an output of the optimization rather than a pre-specified input. At its core is a novel footprint mask that fuses area compactness with an aspect ratio penalty into a unified spatial cost map. Integrated with wirelength and thermal guidance masks, FAPlace delivers holistic multi-physics optimization in a deterministic, single pass process. Experimental results demonstrate that FAPlace reduces wirelength and footprint area while achieving near-unity aspect ratios, without compromising on thermal performance.",
+    "authors": [
+      "Yubo Hou",
+      "Sezin Kircali Ata",
+      "Gen Liang Lim",
+      "Richard Chang",
+      "Mihai Dragos Rotaru",
+      "Rahul Dutta",
+      "Ashish James"
+    ],
+    "published": "2026-07-01",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.02610v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2.5D 칩렛 패키징의 최적화 기술로, SK하이닉스의 어드밴스드 패키징(TSV, 2.5D/3D) 및 HBM 제조 전략과 직접 연관.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "HBM/고대역폭 메모리의 2.5D 칩렛 배치 최적화 알고리즘으로, 수율·면적·열관리를 동시 개선하여 AI 인프라용 고성능 메모리 제조 경쟁력을 강화할 수 있는 실무적 가치가 있음.",
+      "final_score": 2.9
+    },
+    "first_seen": "2026-07-09"
   }
 }
