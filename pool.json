@@ -1051,39 +1051,6 @@
     },
     "first_seen": "2026-06-29"
   },
-  "2606.16016": {
-    "arxiv_id": "2606.16016",
-    "title": "SparseCol: A 1320 BTOPS/W Precision-scalable NPU Exploiting Training-free Structured Bit-level Sparsity and Dynamic Dataflow",
-    "abstract": "Bit-serial computation enables sequential processing of data at the bit level, providing several advantages, such as scalable computational precision. This approach has gained significant attention, especially for exploiting bit-level sparsity in AI workloads. While current bit-serial processors leverage bit-level sparsity to eliminate the computation associated with zero bits, they face a fundamental trade-off: either they suffer from low memory-access and computation efficiency caused by irregular patterns of non-zero bits, or they incur substantial area overhead from complex online scheduling mechanisms required to reorganize bit-level data and preserve memory access and computation regularity. Therefore, we present the SparseCol processor, designed to harness extensive bit sparsity while maintaining high hardware utilization across various AI applications, including CNNs, RNNs, and transformers. In contrast to traditional methods, SparseCol exploits structured bit-level sparsity, denoted by bit-column sparsity, without requiring any re-training. Furthermore, SparseCol implements a dynamic dataflow architecture that tackles hardware under-utilization issues commonly found in existing bit-serial solutions. Fabricated in 16nm CMOS node, SparseCol delivers 1320 BTOPS/W (BTOPS represents Binary Tera-Operations Per Second, calculated as #W bits x #A bits TOPS) peak efficiency while maintaining accuracy, outperforming SotA sparse processors in terms of efficiency by 6.8x. Comprehensive evaluations on CNN classification tasks and transformer architectures demonstrate system-level efficiencies of 745.02 BTOPS/W and 850.5 BTOPS/W, respectively.",
-    "authors": [
-      "Man Shi",
-      "Vikram Jain",
-      "Weijie Jiang",
-      "Chao Fang",
-      "Antony Joseph",
-      "Wim Dehaene",
-      "Marian Verhelst"
-    ],
-    "published": "2026-06-14",
-    "primary_category": "eess.SY",
-    "url": "http://arxiv.org/abs/2606.16016v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Bit-serial NPU 아키텍처와 구조화된 비트 레벨 스파시티 활용은 AI 가속기의 메모리 대역폭 효율성과 전력 소비에 직결되며, HBM/DRAM 수요 및 PIM 아키텍처 설계와 밀접한 관련이 있음.",
-      "scores": {
-        "business": 3,
-        "threat": 2,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "AI 가속기의 메모리 효율성 혁신을 통해 HBM/DRAM 대역폭 수요를 재정의할 수 있는 아키텍처 혁신이지만, 아직 학술 단계이며 엔비디아 등 고객사의 실제 채택 가능성은 불명확함.",
-      "final_score": 4.0
-    },
-    "first_seen": "2026-06-29"
-  },
   "2606.32029": {
     "arxiv_id": "2606.32029",
     "title": "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
@@ -22843,5 +22810,322 @@
       "final_score": -1.0
     },
     "first_seen": "2026-07-15"
+  },
+  "2607.12901": {
+    "arxiv_id": "2607.12901",
+    "title": "A 32-channel event-based bio-signal analog front-end with adaptive delta and pulse frequency encoding",
+    "abstract": "Low-power event-based Analog Front-Ends (AFEs) are essential for building efficient, end-to-end neuromorphic signal processing systems. In this paper, we present an event-based AFE Application-Specific Integrated Circuit (ASIC) optimized for biomedical signal acquisition and encoding. The chip features 32 independently programmable input channels with dual-mode encoding mechanism outputs, comprising Pulse Frequency Modulation (PFM) and adaptive Asynchronous Delta Modulator (aADM) circuits. The aADM encoder provides an auto-scaling mechanism that adapts the encoding data-rate based on the input signal envelope in real-time, enabling very high data compression for low-power information transmission. This approach paves the way toward adaptive wireless communication of neural signals for on-line processing in brain-computer interfaces. Fabricated in a 180 nm CMOS process, the proposed ASIC offers a highly configurable interface compatible with state-of-the-art Spiking Neural Network (SNN) neuromorphic processors.",
+    "authors": [
+      "Narayanan Shyam",
+      "Saptarshi Ghosh",
+      "Giacomo Indiveri"
+    ],
+    "published": "2026-07-14",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.12901v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "신경신호 처리용 저전력 이벤트 기반 AFE 칩은 뇌-컴퓨터 인터페이스(BCI)와 엣지 신경형 AI 시스템의 메모리·연산 수요 구조를 변화시키는 신기술로, PIM·SNN 프로세서와의 통합 시 메모리 아키텍처 수요에 영향을 미친다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "엣지 신경형 신호처리 칩의 등장은 저전력·고압축 데이터 흐름을 요구하므로 PIM·메모리 확장(CXL) 수요를 견인할 수 있으나, 현재는 기초연구 단계로 단기 사업 영향은 제한적이다.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.12707": {
+    "arxiv_id": "2607.12707",
+    "title": "Are gate-all-around 2D CFETs the optimal architecture for the A2 node and beyond?",
+    "abstract": "As logic scaling enters the angstrom era, vertically stacked complementary field-effect transistors (CFETs) based on atomically thin two-dimensional (2D) semiconductors offer a potential route to extend device scaling beyond the A2 node. Here, we develop an A2-oriented 2D CFET integration flow with a CPP of 36 nm and Lg of 10 nm and present initial demonstrations of several key process modules. Despite their atomically thin channels, 2D GAA CFETs do not provide a contacted poly pitch scaling advantage over Si GAA CFETs at the A2 node, because contact formation constraints impose a similar minimum CPP of 36 nm. We also combine a critical assessment with a multiscale power-performance-area (PPA) evaluation framework spanning quantum transport simulations, compact-model generation, A2-targeted 2D CFET gate-all-around (GAA) integration-flow definition, parasitic extraction and circuit-level benchmarking. Our analysis, however, shows that the expected benefits of 2D GAA CFETs are strongly constrained by non-idealities, in particular high contact resistance and dominant layout-induced parasitic capacitances. Although architectural optimization can improve the Ieff/Ceff ratio, the associated rise in absolute capacitance limits circuit-level gains. Meaningful progress will require co-optimization of contacts, transport and parasitics, together with 2D-specific CFET architectures.",
+    "authors": [
+      "Fengben Xi",
+      "Gautam Gaddemane",
+      "Anshul Gupta",
+      "Sheng Yang",
+      "Aryan Afzalian",
+      "Quentin Smets",
+      "Maarten Van de Put",
+      "Kaustuv Banerjee",
+      "Tom Schram",
+      "Devin Verreck",
+      "Ward Janssens",
+      "Juergen Boemmels",
+      "Xiangyu Wu",
+      "Thomas Chiarella",
+      "Jérôme Mitard",
+      "Gouri Sankar Kar",
+      "Geert Hellings",
+      "Cesar Javier Lockhart de la Rosa"
+    ],
+    "published": "2026-07-14",
+    "primary_category": "physics.app-ph",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.12707v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "로직 노드 A2 이후 스케일링을 위한 2D CFET 아키텍처 평가로, 차세대 고성능 컴퓨팅(AI 인프라 포함) 반도체의 핵심 소자 기술 트렌드를 다룸.",
+      "scores": {
+        "business": 3,
+        "threat": 3,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "2D CFET이 A2 노드에서 Si GAA 대비 실질적 이점 부족을 실증적으로 입증하여, 로직 스케일링 경로의 불확실성을 높이지만 메모리 수요 직접 영향은 제한적.",
+      "final_score": 3.05
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.12606": {
+    "arxiv_id": "2607.12606",
+    "title": "SynapticOS: An Inference-First Runtime Architecture for Neural Processing Units on Resource-Constrained Microcontrollers",
+    "abstract": "Microcontrollers with on-die neural processing units (NPUs) have become mainstream, but the system software hosting them has not: production combinations of Zephyr or FreeRTOS with TensorFlow Lite Micro treat AI inference as an application-layer library, leaving memory fragmentation, accelerator-state hygiene, and model-lifecycle guards as recurring application-developer concerns. We present the Phase 1 foundation of SynapticOS, an open-source runtime built on Zephyr that treats inference as a first-class workload. It contributes four cooperating subsystems: (1) a tensor-aware bump allocator with 16-byte DMA-aligned persistent and ephemeral lifetimes sharing a single arena, achieving constant-time allocation (~154 cycles per call, ~78,000 allocations per second at 150 MHz, invariant across tensor sizes) with zero fragmentation by construction; (2) a four-state hardware abstraction layer for the NPU and DSP, implemented by a deterministic software stub (for CI under QEMU) and a Neutron-flavoured backend (for the NXP MCXN947); (3) a three-state model lifecycle registry with duplicate-name detection, idempotent load/unload, and hot-swap guards; and (4) a four-mark cycle-accurate profiler. We evaluate on the NXP FRDM-MCXN947 (dual Cortex-M33 at 150 MHz) and the qemu_cortex_m3 emulator. Build footprints are 67 KB flash / 184 KB SRAM on FRDM (shell, 128 KB arena) and 24 KB flash / 28 KB SRAM on QEMU (no shell, 8 KB arena). End-to-end inference brackets through the deterministic stub kernel measure 1,038 us on FRDM and 781 us on QEMU for a 16x16x3 INT8 input; these are baseline overhead numbers, not Neutron silicon measurements, which arrive with the real SDK invoke path in Phase 2. A 61-test suite across 10 ZTEST suites passes 100% in 6.6 s on the CI emulator path. SynapticOS is released under Apache 2.0 at https://github.com/Dimitrios-Kafetzis/SynapticOS",
+    "authors": [
+      "Dimitrios Kafetzis"
+    ],
+    "published": "2026-07-14",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.12606v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "마이크로컨트롤러 기반 엣지 AI 추론 시스템의 메모리 관리 아키텍처로서, 임베디드 NPU 환경에서의 메모리 효율성과 단편화 문제 해결이 엣지 AI 인프라의 메모리 수요 패턴을 반영하는 신호.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "엣지 AI 추론 시장의 성장을 보여주는 신호이나, SK하이닉스의 고성능 메모리(HBM/DRAM) 사업과는 직접 연관성이 낮고 임베디드 소프트웨어 레벨의 최적화로 메모리 수요 증대 효과는 제한적.",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.12222": {
+    "arxiv_id": "2607.12222",
+    "title": "A Hierarchical Semi-Markov Load Model for AI Data Centers Coupling Job Scheduling with Bulk-Synchronous-Parallel Power Dynamics",
+    "abstract": "AI data centers are emerging as a dominant new load class with their power dynamics fundamentally from conventional industrial loads. Inside a training job, the bulk-synchronous-parallel algorithm moves each node through compute, sync, and checkpoint steps, which swings power between full load and near idle within seconds. Across the whole facility, jobs arrive, take blocks of nodes for hours to days, then leave, so the number of busy nodes changes daily, weekly, and yearly. This slower shift drives facility-wide swings and the peak demand that sets the size of the grid link. A model that looks only at within-job behavior, and treats the facility as a fixed set of busy nodes, smooths out these swings and misses the true peak-to-average ratio. This paper develops a hierarchical semi-Markov Data-Center (HSM-DC) load model that couples two layers across two timescales. A job-scheduling layer creates jobs through a non-homogeneous compound-Poisson process shaped by daily, weekly, and seasonal patterns, gives each job a heavy-tailed node count and length, and places jobs on a fixed pool of nodes on a first-come basis. A within-job layer moves each busy node through a five-state semi-Markov chain for the BSP steps, with state-based Ornstein-Uhlenbeck noise. Facility power comes from this changing node count and the per-node power, set to match measured node data and the facility's straight-line power-versus-load curve. Configured to the reference facility at the same scale, the model matches mean power, its spread, and the peak-to-average ratio across load levels, with fit scores of 0.9997, 0.92, and 0.82. It also matches the share of queued jobs to within one point at high load. Facility-wide swings and peak demand come from how jobs arrive and get scheduled, so grid planning must model that process, not just scale up a single node's power curve.",
+    "authors": [
+      "Chandan Chaudhary",
+      "Atri Bera",
+      "Cody Newlun",
+      "Mohammed Ben-Idris",
+      "Joydeep Mitra"
+    ],
+    "published": "2026-07-13",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.12222v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 데이터센터의 전력 동역학 모델링을 통해 메모리 수요 패턴(job scheduling, node allocation, BSP 워크로드)을 정량화하며, 이는 HBM/DRAM 용량 계획 및 고객 인프라 설계 전략에 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 0,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "AI 데이터센터의 실제 job scheduling 및 BSP 전력 패턴을 모델화하여 메모리 수요의 시간대별·계절별 변동성을 정량화함으로써, HBM/DRAM 용량 계획 및 고객 협상 근거를 제공하는 중요한 시장 인텔리전스.",
+      "final_score": 3.5
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.11153": {
+    "arxiv_id": "2607.11153",
+    "title": "Reliable Associative Lookup in Content-Addressable Memory",
+    "abstract": "Content Addressable Memory (CAM) is an important memory paradigm, which performs fast search by comparing an input query against all stored entries in parallel, achieving $O(1)$ lookup complexity. CAM is typically built upon conventional memory technologies, such as SRAM and Non-Volatile Memory (NVM). Accordingly, CAM can also be subject to the reliability challenges of these underlying technologies. In traditional memory systems, protection codes play a critical role in ensuring reliability and have been extensively studied. However, protection codes for CAM have remained largely unexplored. This paper takes an initial step toward addressing this longstanding gap by introducing a non-traditional code design.",
+    "authors": [
+      "Fan Li",
+      "Yanan Guo",
+      "Xin Xin"
+    ],
+    "published": "2026-07-13",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.11153v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "CAM의 신뢰성 보호 코드 설계는 AI 인프라의 고속 검색·매칭 요구(예: 벡터 DB, 어텐션 메커니즘)를 지원하는 메모리 기술로서 HBM/DRAM 신뢰성 전략과 연관성 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 0,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 1,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "CAM 신뢰성 코드는 학술적 기여도는 있으나 현재 SK하이닉스의 주력 제품 로드맵(HBM/DRAM/NAND)에 직접 적용 경로가 불명확하고, 저자 신뢰도·상용화 시점이 낮아 단기 사업 영향은 제한적.",
+      "final_score": 1.6
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.10893": {
+    "arxiv_id": "2607.10893",
+    "title": "Streaming Contraction Certificates for Nonlinear Networks: Topology-Aware Data Sufficiency with Partial Observation",
+    "abstract": "Certifying the safety of a control action in real time, from streaming partial observations of a nonlinear, interconnected system under non-stationary disturbances, is a problem no existing data-driven framework solves. Batch methods such as data-enabled predictive control require a pre-collected dataset and offer no stability certificate for nonlinear dynamics; informativity-based approaches characterize data sufficiency offline and non-recursively; neither exploits the known graph topology of networked systems as a structural prior. This paper addresses both limitations. First, we develop a streaming contraction certificate beta_cert(t) = beta_hat(t) - rho(t), where beta_hat(t) is estimated recursively via integral regression on a sliding window of partial input-output observations, and rho(t) is a data-dependent uncertainty radius mapping estimation error to a conservative bound on the true closed-loop contraction rate. The certificate issues a provably safe deployment signal the moment beta_cert(t) crosses and sustains above zero. Second, we introduce a topology-aware estimator enforcing known graph adjacency as exact zero constraints on the Jacobian, reducing the effective parameter count per row from O(N) to O(d_max) for maximum node degree d_max. On a five-node nonlinear benchmark under heavy-tailed Laplace disturbances with two observed nodes, the streaming certificate achieves certified deployment at t*=2.6s from 130 samples, 17 seconds earlier than an offline batch baseline, with 16x lower accumulated error during the unprotected window. The topology-aware estimator cuts certification time by 59% (1.62s vs 3.98s) and accumulated disturbance cost by 58%, with the advantage persisting across all window sizes below 40 samples. The framework is domain-agnostic and applies to any large-scale nonlinear networked system under streaming data and partial observations.",
+    "authors": [
+      "Faegheh K. Moazeni"
+    ],
+    "published": "2026-07-12",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.10893v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "제어 이론 기반의 비선형 네트워크 안전성 인증 알고리즘으로, 메모리 반도체 제조·아키텍처·AI 수요와 직접적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "순수 제어 이론 논문으로 메모리 사업 전략, AI 인프라 수요, 반도체 기술 로드맵과 무관하며 우리 의사결정에 참고 가치 없음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.10392": {
+    "arxiv_id": "2607.10392",
+    "title": "Dynamic Rowhammer Threshold Management:Temperature-Aware Threshold Degradation for In-DRAM Defenses",
+    "abstract": "In-DRAM Rowhammer defenses pin the mitigation threshold at manufacture time, yet the true Rowhammer Threshold (TRHD) varies with runtime temperature. We propose Dynamic Rowhammer Threshold Management, a defense-agnostic runtime layer that re-sources each defense's threshold from the observed temperature once per epoch via a linear-$T$ model with a VRD-motivated guardband $g$, projecting the result onto SALT-C, PRAC, and TRR through each defense's threshold parameter. A decoupled oracle that scales physical TRHD per-DIMM by $δ\\sim \\mathrm{N}(1, σ)$ breaks model self-consistency. The layer drives PRAC's 72 staleness breaches at 85$^\\circ$C to zero; at $σ{=}0.10$, sweeping $g$ collapses PRAC breaches from 38.4 ($g{=}1.0$) to 9.6 ($g{=}0.9$). SALT-C drops from 10 nominal-static breaches to 2 (Dynamic) to 0 (bootstrap), at $\\leq$5.1\\% latency. TRR is capacity-limited; the layer acts as a diagnostic.",
+    "authors": [
+      "Aziz Alajmi",
+      "Hoeseok Yang"
+    ],
+    "published": "2026-07-11",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.10392v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM 보안 취약점(Rowhammer)의 온도 의존성 완화 기술로, 고성능 서버/AI 인프라용 DRAM의 신뢰성과 방어 효율성을 직접 개선하는 실무적 과제",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "DRAM Rowhammer 방어 메커니즘의 온도 적응형 최적화로 서버/AI 인프라 DRAM의 신뢰성을 높이지만, 기초 방어 기술 개선 수준이며 수요 견인력은 제한적",
+      "final_score": 2.3
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.10109": {
+    "arxiv_id": "2607.10109",
+    "title": "Adaptive Model Compression (AMC): Saliency-Driven Resource Allocation for Ultra-Low-Power Transformer Inference",
+    "abstract": "Deploying large-scale transformer models on resource-constrained edge devices remains a challenge due to the high energy and memory overhead inherent in static inference, which processes simple and complex tokens with uniform intensity. To address this, we propose Adaptive Model Compression (AMC), a saliency-driven framework that dynamically allocates hardware resources based on token importance. By implementing a multi-tier architecture, our system identifies critical high-saliency information for full-precision processing while aggressively reducing the rank and bit-width of less significant data. Experimental results demonstrate that AMC achieves a 59.2% reduction in system energy and a 2.24x increase in throughput on 45nm CMOS hardware. This approach effectively extends the battery life of mobile devices by utilizing high-definition compute only where necessary, maintaining robust performance with a marginal 3.6% accuracy trade-off.",
+    "authors": [
+      "Jiayin Hu",
+      "Kai Yuan",
+      "Vanessa Hu",
+      "Xuetao Yin",
+      "Jianhua Li",
+      "Sean Suchter"
+    ],
+    "published": "2026-07-11",
+    "primary_category": "cs.IR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.10109v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지 디바이스의 트랜스포머 추론 효율화 기술로서 모바일·IoT 메모리 수요 패턴 변화와 저전력 메모리 아키텍처 설계 방향을 시사",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "엣지 AI 추론의 동적 자원할당 기법은 향후 저전력 메모리 수요 신호이나, 현재 우리의 HBM/고대역폭 메모리 주력 사업과는 직접 연관성이 제한적이고 학술 수준의 초기 연구 단계",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.10046": {
+    "arxiv_id": "2607.10046",
+    "title": "Kinetic Inductors Enable Reversible Logic",
+    "abstract": "Reversible logic has long promised substantial reductions in energy dissipation, yet prior demonstrations have not scaled to commercially relevant systems. This work presents a quantitative framework for evaluating reversible logic through a process termed CMOS conversion, in which a conventional CMOS design is transformed into a functionally equivalent reversible implementation and compared using common performance metrics. The framework combines planning equations, kinetic-inductor energy-storage models, a four-phase 4LC energy-recycling power supply, and RLC-based simulation methods that account for data-dependent loading effects. The analysis identifies inductor loss as a fundamental limitation of conventional approaches and shows that high-energy-density kinetic inductors provide essential design margin for scaling reversible systems. Using representative device parameters, the framework suggests that selected cryogenic CMOS qubit controller circuits could be converted to reversible logic using available or near-term technologies. Rather than claiming commercialization of reversible logic in general, the paper provides a methodology for assessing its feasibility and potential benefits across future applications.",
+    "authors": [
+      "Erik P. DeBenedictis"
+    ],
+    "published": "2026-07-10",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.10046v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "가역 논리(Reversible Logic)를 통한 에너지 효율 혁신은 고전력 소비 AI 인프라(HPC/GPU 클러스터)의 전력 제약을 완화할 수 있는 차세대 컴퓨팅 아키텍처 기술로, 메모리-연산 시스템의 전력 효율성 경쟁에 영향을 미칠 수 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "가역 논리의 에너지 효율 이득은 AI 인프라의 전력 병목 해결에 이론적 가능성을 제시하나, 현재는 극저온 큐빗 제어기 수준의 니치 응용만 가능하며 범용 메모리/연산 시스템 상용화까지는 5년 이상 거리가 있어 단기 전략 영향은 제한적.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-16"
+  },
+  "2607.09742": {
+    "arxiv_id": "2607.09742",
+    "title": "Chiplet3D: Pin- and Thermal-Aware 3D Chiplet Floorplanning via Convolution-Embedded MILP",
+    "abstract": "As traditional Moore's Law scaling slows down, 3D-ICs stack multiple active dies vertically to sustain performance scaling. However, this vertical stacking traps heat inside, making temperature a design concern. Although we can fix thermal issues at different design steps, floorplanning is the earliest and most cost-effective stage to solve it. Previous methods handle this by assuming wires connect to block centers and estimating temperature through simplistic power-based calculations, but these assumptions mislead their wirelength optimization and leave hotspots unresolved. To address these limitations, we present Chiplet3D, a pin- and thermal-aware floorplanner for two-die 3D-ICs. To achieve pin-awareness, it supports all four rotations and two flips, measuring wirelength from exact pin locations so the solver can flip or rotate blocks to pull connected pins closer. On the thermal side, Chiplet3D replaces the inaccurate power-based metrics of prior work with a fast, coarse convolution field embedded directly in a mixed-integer linear program (MILP) to accurately track the true 3D heat spread. We evaluate Chiplet3D on the ICCAD'24 ATPlace benchmarks, validating every temperature with a golden 3D-ICE simulation. Chiplet3D reduces wirelength by 39\\%--43\\% on average (and up to 62\\% in the best case), while lowering peak temperatures by up to 45.9$^\\circ$C and reducing thermal non-uniformity by up to 56\\% compared to the SOTA baselines. Overall, these results demonstrate that by co-optimizing pin alignment and thermal fields, Chiplet3D establishes a stronger Pareto frontier between thermal-aware layout and interconnect efficiency.",
+    "authors": [
+      "Shuo Ren",
+      "Libo Shen",
+      "Yaohui Han",
+      "Rongliang Fu",
+      "Junying Huang",
+      "Bei Yu",
+      "Tsung-Yi Ho"
+    ],
+    "published": "2026-07-03",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.09742v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "3D 칩렛 플로어플래닝의 열 및 배선 최적화는 HBM, 어드밴스드 패키징(TSV, 3D 스택) 등 우리 주력 사업의 설계·제조 경쟁력을 직결하는 핵심 기술이다.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "3D 칩렛 스택의 열 관리와 배선 최적화 문제를 MILP 기반으로 정확히 해결하는 설계 도구로, HBM·고급 패키징 경쟁력 강화와 AI 인프라 고성능 메모리 수요 충족에 직접 기여할 수 있다.",
+      "final_score": 3.15
+    },
+    "first_seen": "2026-07-16"
   }
 }
