@@ -506,139 +506,6 @@
     },
     "first_seen": "2026-06-29"
   },
-  "2606.21772": {
-    "arxiv_id": "2606.21772",
-    "title": "Solid-state transcapacitor, a new gain element for logic, memory and interconnects",
-    "abstract": "Today's transistors dictate the voltage and charge scales for both logic and memory. While AI systems are recognized to be limited by memory energy, the dominant share of the energy is expended in the intrachip interconnects whose voltage and charge scales are set by transistors. The energy scaling challenges of transistors can be attributed to simultaneously meeting high current density, high current/impedance modulation, and the inability to lower voltages. Hence, a new logic element that lowers the voltage and charge needs is a priority, not only for lowering logic power but also memory access power. Here, we propose a novel 3-terminal logic element for low energy computing, a solid-state transcapacitor (TCAP). A TCAP is a solid state displacement current modulator realized by a gate which controls the charge-voltage relationship of the channel. Unlike transistors, TCAPs eliminate the dissipative transport current, are not bound by the Boltzmann current modulation limit, and operate with displacement currents limited only by the polarization response and contact resistance. Hence, TCAP circuits may simultaneously overcome the voltage, current density, and current modulation limits of CMOS. We describe a solid state TCAP using a piezoelectric transcapacitor in which a gate-controlled stressor modulates the capacitance of a polar channel via electromechanical coupling. This device achieves inversion and gain, essential for logic, and is functionally equivalent to a 1T-1C memory cell, enabling dense memory. Using voltage scaling, capacitive energy recovery, and high polarization densities of polar materials, the logic based on TCAP offers a pathway to 100 fold lower energy consumption with a delay comparable to ultimately scaled CMOS devices. This approach provides a new potential pathway for low-energy computing beyond the limits of transistors using electro-mechanics and multiferroics.",
-    "authors": [
-      "Amrita Mathuriya",
-      "Roza Kotlyar",
-      "Neal Reynolds",
-      "Rafael Rios",
-      "Alan Kalitsov",
-      "Peter B. Meisenheimer",
-      "James Clarkson",
-      "Noriyuki Sato",
-      "Tanay Gosavi",
-      "Ramamoorthy Ramesh",
-      "Dmitri E. Nikonov",
-      "Sasikanth Manipatruni"
-    ],
-    "published": "2026-06-19",
-    "primary_category": "cond-mat.mes-hall",
-    "url": "http://arxiv.org/abs/2606.21772v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "트랜지스터 기반 로직/메모리의 에너지 한계를 극복하는 신소자(TCAP) 제안으로, 메모리 접근 전력과 온칩 인터커넥트 에너지 문제를 직접 겨냥한 기초 연구",
-      "scores": {
-        "business": 1,
-        "threat": 2,
-        "demand": 3,
-        "maturity": 0,
-        "credibility": 2,
-        "novelty": 4
-      },
-      "tag": "중립",
-      "one_line": "압전 기반 신소자로 메모리 전력 문제 해결 가능성을 제시하나, 기초 연구 단계로 상용화까지 기술적·공정적 장벽이 매우 크며 현재 SK하이닉스 제품 포트폴리오에 직접 영향은 미미함.",
-      "final_score": 2.05
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.21767": {
-    "arxiv_id": "2606.21767",
-    "title": "Row-Based Layout Synthesis for Analog Circuits Using Height-Quantized Primitives",
-    "abstract": "Restrictive design rules and strong layout-dependent effects have tightened the coupling between physical layout decisions and electrical performance in advanced process nodes, such as FinFET, making analog and mixed-signal (AMS) layout automation increasingly difficult. This paper presents a quantized row-height layout synthesis methodology for AMS circuits, a methodology that has previously been shown to reduce the simulation-to-silicon gap. The proposed flow optimizes a row height fabric from circuit requirements and layout constraints while mapping analog building blocks into quantized-height rows. Results on multiple testcases demonstrate that the proposed flow synthesizes layouts with similar postlayout performance relative to less-constrained custom baseline designs, with comparable performance metrics. Our quantized-height designs are shown to reduce the schematic-to-postlayout performance gap by up to 68.5% and result in lower area for most of our testcases, with a maximum area reduction of 24.1%.",
-    "authors": [
-      "Endalk Y. Gebru",
-      "Ramprasath S.",
-      "Ramesh Harjani",
-      "Sachin S. Sapatnekar"
-    ],
-    "published": "2026-06-19",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.21767v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "아날로그/혼합신호 회로의 물리 설계 자동화 기술로, 고급 공정(FinFET)에서 레이아웃-성능 간극을 줄이는 방법론이며 메모리 및 패키징 설계 최적화와 간접 연관성 있음.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "아날로그 회로 레이아웃 자동화 기술이지만 메모리 소자 설계보다는 주변 아날로그 블록(PLL, 센서, 신호처리)에 국한되어 있어 HBM/DRAM/NAND 핵심 기술과의 직접 영향은 제한적.",
-      "final_score": 2.0
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.24916": {
-    "arxiv_id": "2606.24916",
-    "title": "SPORT: Spherical-PSNR-Optimized tRuncaTion for Power-Efficient 360-Degree Video Systems",
-    "abstract": "Memory bandwidth accounts for 30-40% of total power consumption in standalone virtual reality (VR) headsets, yet existing systems typically store the entire 360-degree frame at a uniform resolution regardless of viewer gaze. This paper presents SPORT (Spherical-PSNR Optimized tRuncaTion), a bit-truncation framework that reduces display-path memory power by storing only the most significant bits of pixels outside the user's field of view (FoV). Specifically, a new bit-truncation framework is developed to use weighted-to-spherically-uniform PSNR (WS-PSNR) directly in the optimization constraint, eliminating the metric inconsistency that arises when standard PSNR is used for a WS-PSNR quality target. Also, gaze-predictive tile classification compensates for the 9.33 ms end-to-end pipeline latency, reducing boundary misclassifications by 5.2 percentage points at a cost of only 0.01 ms. In addition, the developed SPORT-B variant, which keeps the FoV lossless, achieves 47.9% memory power saving and 47.9% bandwidth reduction across different 4K video sequences while satisfying all three per-region WS-PSNR thresholds and maintaining SSIM = 1.000 in the attended region. The full adaptive variant SPORT-A reaches 51.6% power saving, 3.1percentage points more than a PSNR-based optimizer at equal measured quality. SPORT is validated on the TrunMEM360 flexible SRAM Application-Specific Integrated Circuit (ASIC) fabricated in SkyWater 130 nm CMOS, confirming byte-exact silicon-software agreement, with WS-PSNR and SSIM matching within 0.1 dB and 0.001. CACTI-based analysis confirms 48.72% DRAM leakage reduction and 36.4%/36.7% read/write energy reduction. The total motion-to-photon latency of 9.33 ms satisfies the 20 ms VR comfort budget with a 53.3% safety margin.",
-    "authors": [
-      "Md. Sajjad Hossain",
-      "Hasibur Rahman Hemel",
-      "Kyle Mooney",
-      "Yiwen Xu",
-      "William Oswald",
-      "Mario Renteria-Pinon",
-      "Hritom Das",
-      "Zhenlin Pei",
-      "Jinhui Wang",
-      "Na Gong"
-    ],
-    "published": "2026-06-19",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.24916v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "VR 헤드셋의 메모리 대역폭/전력 최적화를 위한 SRAM/DRAM 기반 시스템 설계 논문으로, 메모리 전력 효율성과 아키텍처 혁신에 직접 관련됨.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "VR 니치 애플리케이션의 메모리 전력 최적화 기술이지만, 대량 수요처(AI/데이터센터)와 무관하고 SPORT 알고리즘 자체는 메모리 소자/공정 혁신이 아닌 소프트웨어 레벨 최적화에 불과함.",
-      "final_score": 2.2
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.21206": {
-    "arxiv_id": "2606.21206",
-    "title": "Local Conformity-Based Evolutionary Game Modeling of UAV Swarm Under Byzantine Attack",
-    "abstract": "Leveraging their flexible and efficient deployment capabilities, unmanned aerial vehicle (UAV) swarms have been widely applied in various mission scenarios. However, the open communication environment also exposes them to the threat of Byzantine attacks. Most existing studies assume independent decision-making by each UAV, neglecting that local conformity amplifies false information propagation. This paper constructs an evolutionary game model for UAV swarm under malicious attacks based on graph evolutionary game theory, revealing how local conformity rules govern the spread of deceptive strategies. Using death-birth updating rules, we derive the macroscopic dynamic equation for the fraction of deceptive strategies and the analytical solutions to its evolutionary stable states. Sim ulations reveal observation errors weaken malicious induction, while higher proportions of malicious nodes and greater attack intensity drastically amplify attack impacts. Moreover, the model exhibits strong topological robustness across regular, scale-free and random networks.",
-    "authors": [
-      "Ruixing Ren",
-      "Junhui Zhao",
-      "He Fang"
-    ],
-    "published": "2026-06-19",
-    "primary_category": "eess.SY",
-    "url": "http://arxiv.org/abs/2606.21206v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "UAV 군집의 Byzantine 공격 방어를 다루는 분산 시스템 이론 논문으로, 메모리 반도체 제조·설계·아키텍처과 직접적 기술 연관성이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 1
-      },
-      "tag": "중립",
-      "one_line": "게임 이론 기반 UAV 보안 모델링 연구로, HBM/DRAM/NAND/CXL/PIM/패키징 사업 전략과 무관하며 메모리 반도체 수요나 기술 경쟁에 영향을 주지 않음.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-06-29"
-  },
   "2606.32029": {
     "arxiv_id": "2606.32029",
     "title": "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
@@ -28771,5 +28638,307 @@
       "final_score": -1.0
     },
     "first_seen": "2026-07-20"
+  },
+  "2607.15225": {
+    "arxiv_id": "2607.15225",
+    "title": "Campaign Diagrams: Visualizing the March Through the Phases of a Workload",
+    "abstract": "We present campaign diagrams, a visualization technique for phase-level analysis of resource utilization and bottlenecks in modern workloads. Existing tools have a trade-off: rooflines aggregate a workload into a single point and lose all notion of time, while profilers and traces expose fine-grained events but obscure what bounds performance. Instead, a campaign diagram depicts compute throughput and memory bandwidth utilization, compute and memory traffic volume, and latency in a single figure. Since they can be generated from analytical models, simulations, or profiling data, campaign diagrams capture both ideal bounds and a kernel's achieved performance. We demonstrate them on two case studies: a low-rank GEMM, where they reveal the counterintuitive result that reducing operational intensity can improve end-to-end performance, and Mamba, where they expose fusion and pipelining opportunities across phases. In both cases, our visualization technique reveals optimization opportunities that are difficult to identify with rooflines or profilers alone.",
+    "authors": [
+      "Toluwanimi O. Odemuyiwa",
+      "John D. Owens",
+      "Michael Pellauer",
+      "Joel S. Emer"
+    ],
+    "published": "2026-07-16",
+    "primary_category": "cs.PF",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.15225v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 워크로드(Mamba 등)의 메모리-연산 병목을 가시화하는 분석 도구로, HBM/DRAM 최적화 설계와 고객(엔비디아) 성능 튜닝 전략에 직결되는 실무적 가치를 가짐.",
+      "scores": {
+        "business": 3,
+        "threat": 0,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "AI 워크로드의 동적 메모리-연산 병목을 단계별로 시각화하여 HBM/DRAM 수요 특성과 최적화 기회를 조기에 발굴할 수 있는 분석 프레임워크로, 고객 성능 튜닝과 차세대 메모리 사양 정의에 활용 가능.",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.15123": {
+    "arxiv_id": "2607.15123",
+    "title": "NIFA: Nonlinear IMC enhanced FPGA for efficient ML inference",
+    "abstract": "Recent FPGAs have improved deep learning (DL) inference efficiency through dedicated tensor blocks and in-BRAM computation. ReRAM-based analog in-memory computing (IMC) pushes efficiency further, offering an order-of-magnitude improvement in compute density and energy efficiency over conventional digital logic by performing vector-matrix multiplication (VMM) directly within the ReRAM crossbar; prior work has integrated such IMC blocks into FPGAs for DL inference. However, conventional IMC designs support only static-weight VMM, leaving nonlinear operations and dynamic matrix-matrix multiplication (DIMM) to the FPGA fabric. As a result, the benefits of IMC are largely confined to static-weight models, whereas Transformer-based models, which rely on frequent nonlinear and DIMM operations, gain only limited improvement. Moreover, the ADCs within each IMC block consume more than 70% of its area and power, further limiting system efficiency and scalability. To address these limitations, we propose a novel FPGA architecture that integrates an ADC-free IMC block, replacing the conventional ADC with analog content-addressable memories (ACAMs) that natively perform nonlinear operations inside the block. To fully exploit this block, we conduct an FPGA-aware design-space exploration that determines optimal crossbar dimensions while balancing FPGA area, flexibility, and DL performance, and we develop an efficient mapping that leverages ACAMs to carry out DIMM operations, extending the applicability of IMC to attention computation. On CNN and Transformer-based benchmarks, the proposed architecture achieves up to 40x and 1.9x higher energy efficiency and 4.1x and 2.5x higher area efficiency, respectively. Overall, it significantly improves FPGA DL inference efficiency and sustains robust gains on Transformer-based workloads across long input sequences, advancing domain-specialized FPGA design.",
+    "authors": [
+      "Jiajun Hu",
+      "Ruthwik Reddy Sunketa",
+      "Lei Zhao",
+      "Archit Gajjar",
+      "Luca Buonanno",
+      "Aman Arora"
+    ],
+    "published": "2026-07-16",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.15123v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "ReRAM 기반 In-Memory Computing을 FPGA에 통합하여 AI 추론 효율을 획기적으로 개선하는 기술로, 메모리 소자·아키텍처·AI 인프라 수요 변화와 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 3,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "Transformer 추론에서 메모리 대역폭·에너지 병목을 ReRAM-IMC로 해결하는 아키텍처로, 메모리 수요 구조 변화 신호이나 현재는 FPGA 특화 솔루션으로 우리 주력 HBM/DRAM 사업과의 직접 경쟁성은 제한적.",
+      "final_score": 4.25
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.15005": {
+    "arxiv_id": "2607.15005",
+    "title": "Differentiable Routability-Driven Package Floorplanning with Pin Assignment",
+    "abstract": "As advanced packaging technology evolves, increasing interconnect density in redistribution layers (RDLs) makes routability critical to package floorplanning. Meanwhile, power integrity requirements often reserve fan-in regions for the power delivery network (PDN), forcing signal nets through fan-out regions and complicating routability estimation. Existing uniform grid-based congestion models cannot accurately characterize fan-out congestion, while previous pin assignment methods struggle to evaluate net crossings. We propose a differentiable routability-driven floorplanning and pin assignment algorithm for advanced packaging with fan-out routing. First, a differentiable wirelength minimization method directly models discrete chip orientations and back-propagates wirelength gradients to chip locations and orientations. It reduces wirelength under fixed pin selection while avoiding the bias of continuous-angle modeling. Second, a crossing-aware pin assignment method incorporates net-crossing cost into a multi-strategy DPSO algorithm and uses GPU-parallel cost evaluation to reduce wirelength efficiently. Finally, a differentiable routability maximization method constructs a congestion model tailored to fan-out routing and establishes a back-propagation path from congestion information to chip locations, thereby guiding routability optimization. Experimental results show that our method achieves 100% routability on all benchmarks. For cases successfully routed by the baselines, it reduces wirelength by up to approximately 23% compared with a leading floorplanning method equipped with our pin assignment flow.",
+    "authors": [
+      "Yiqi Huang",
+      "Zepeng Li",
+      "Zhen Zhuang",
+      "Kehao Chen",
+      "Genggeng Liu",
+      "Tsung-Yi Ho"
+    ],
+    "published": "2026-07-16",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.15005v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "고급 패키징 기술의 라우팅 최적화는 HBM, 3D 패키징, 어드밴스드 패키징 등 SK하이닉스의 핵심 경쟁력 영역과 직결되며, AI 인프라 수요 증가에 따른 고대역폭·고밀도 메모리 패키징 설계의 실질적 과제를 다룬다.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "AI 인프라 수요 급증으로 고밀도 HBM/3D 패키징 설계의 라우팅 병목이 심화되는 상황에서, 미분 가능한 최적화 기법으로 팬아웃 혼잡도를 정확히 모델링하고 100% 라우팅 성공률을 달성하는 방법론은 차세대 패키징 경쟁력 확보에 직접 기여할 수 있다.",
+      "final_score": 4.1
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.14622": {
+    "arxiv_id": "2607.14622",
+    "title": "ExaGEMM: Exploration Framework for CPU-Driven ML Inference via Associative In-Register Computing for Low-Bit GEMM",
+    "abstract": "Low-bit GEMM is increasingly central to efficient ML inference, yet very-low-bit execution remains a poor fit for conventional CPUs. Practical deployment spans fragmented regimes-from 1/2/4-bit weights to varying activation precision-whose feasibility, reuse opportunity, and support cost differ under fixed SIMD and register-file budgets, making lightweight CPU support selection a first-class design problem. We present ExaGEMM, a workload-aware codesign and exploration framework for CPU-native low-bit GEMM via register-resident LUT execution. The key insight is that existing SIMD datapaths already cover table generation and accumulation; the only new hardware is an in-register select/feed mechanism with explicitly modeled cost. ExaGEMM co-explores parameterized kernels and lightweight SIMD ISA support using analytical models of register feasibility, compute cost, memory traffic, and hardware overhead, pruning the candidate space by 99.2% before simulation. It then identifies non-dominated support points and generates ISA specs, gem5 patches, and GEMM kernels for validation. Across representative ML models and CPU targets, ExaGEMM improves latency by 13.29x over software-only baselines, while showing that workload-aware frontier selection is especially important for mixed-precision LLM workloads.",
+    "authors": [
+      "Hyunwoo Oh",
+      "Suyeon Jang",
+      "Hanning Chen",
+      "Sanggeon Yun",
+      "Ryozo Masukawa",
+      "Mohsen Imani"
+    ],
+    "published": "2026-07-16",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.14622v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "CPU 기반 저비트 GEMM 추론 최적화는 AI 인프라의 메모리·연산 효율성 트렌드를 반영하며, 메모리 대역폭 및 레지스터 활용 설계 문제로서 메모리 아키텍처 전략과 직결됨.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "CPU 기반 저비트 추론 최적화는 엣지·추론 시장의 메모리 효율성 수요를 신호하지만, SK하이닉스의 주력(GPU/HBM/고성능 메모리)과는 직접 사업 연관성이 제한적이며 기초 연구 단계.",
+      "final_score": 3.55
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.13878": {
+    "arxiv_id": "2607.13878",
+    "title": "Realization and manipulation of spiral charge density waves in a two-dimensional metal",
+    "abstract": "Nearly degenerate charge-density-wave (CDW) states play a central role in the competition among collective phenomena. In real materials, however, these states are often intertwined by disorder, hindering their disentanglement and control. Here we show that strain can lift this near-degeneracy and spatially separate distinct CDW states in NbSe2. Using van der Waals (vdW) interactions, we stabilize a micron-scale strain network that produces spatially inhomogeneous strain fields. Within this landscape, the intrinsic 3 * 3 CDW superlattice of pristine NbSe2 transforms into an isolated unidirectional 4 * 1 order under 1D-confined compression, and into a 2 * 2 order under biaxial tension. The 4 * 1 CDW has a multiband origin and exhibits markedly enhanced thermal stability, persisting up to 70 K. At strain-network nodes, it further develops into chiral spiral textures, which can be melted by voltage pulses. These results establish strain as a powerful approach to disentangle, stabilize and manipulate competing electronic orders.",
+    "authors": [
+      "Lili Zhou",
+      "Ruizi Zhang",
+      "Chen Si",
+      "Zhaoteng Dong",
+      "Mengya Ren",
+      "Keru Guo",
+      "Can Zhang",
+      "Jizheng Wu",
+      "Fudi Zhou",
+      "Huixia Yang",
+      "Yaxin Zhao",
+      "Guoyuan Yang",
+      "Xiaolong Xu",
+      "Yuanxiao Ma",
+      "Xiao Kong",
+      "Yu Zhang",
+      "Yeliang Wang"
+    ],
+    "published": "2026-07-15",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.13878v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "NbSe2 기반 전자 상태 제어 연구로, 메모리 반도체 제조·아키텍처·AI 수요와 직접적 연관성 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "응축물질 물리학의 기초 연구로 흥미롭지만, HBM/DRAM/NAND 양산 기술, CXL/PIM 아키텍처, AI 메모리 수요와 무관한 순수 학술 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.13834": {
+    "arxiv_id": "2607.13834",
+    "title": "Wireless millikelvin interconnects for superconducting quantum hardware",
+    "abstract": "Scalable quantum computing is limited by the dense network of electrical interconnects linking cryogenic quantum processors to room-temperature control electronics. To overcome this bottleneck, considerable effort has focused on cryogenic CMOS electronics and microwave-to-optical transduction, aiming to reduce wiring complexity and thermal loading. Wireless interconnects have recently emerged as a promising complementary approach, yet their compatibility with superconducting quantum hardware remains largely unexplored. Here, we demonstrate the wireless excitation of a superconducting microwave resonator of the type routinely employed for qubit readout, operating at millikelvin temperatures inside a dilution refrigerator. By directly comparing wired and wireless operation within the same cryogenic environment, we show that wireless coupling preserves the intrinsic resonator response while revealing parasitic electromagnetic pathways arising from stray radiation within the cryostat enclosure. These results establish a framework for the co-design of wireless interconnects, cryogenic packaging and superconducting quantum hardware.",
+    "authors": [
+      "Kristopher Barr",
+      "Mingyan Zhong",
+      "Euan Parry",
+      "Manoj Stanley",
+      "Qusay Al-Taai",
+      "Paniz Foshat",
+      "Kaveh Delfanazari",
+      "Martin Weides",
+      "Nick M. Ridler",
+      "Chong Li",
+      "Alessandro Rossi"
+    ],
+    "published": "2026-07-15",
+    "primary_category": "quant-ph",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.13834v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "양자컴퓨팅 하드웨어의 극저온 제어 인터페이스 기술로, 메모리 반도체 사업·AI 인프라 메모리 수요와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "양자 프로세서의 극저온 무선 제어 기술 연구로, HBM/DRAM/NAND/패키징 사업 및 현재 AI 메모리 수요 구조와 무관한 기초 물리 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.13121": {
+    "arxiv_id": "2607.13121",
+    "title": "SiMOS quantum-dot spin qubits enabled by extreme-ultraviolet lithography",
+    "abstract": "The realization of large-scale silicon quantum processors requires spin qubits compatible with advanced semiconductor manufacturing technologies, demanding lithographic processes that combine nanometer-scale precision with exceptional uniformity. Although the highest-performing silicon spin qubits demonstrated to date have relied on electron-beam (e-beam) lithography, its serial exposure process limits reproducibility studies and wafer-scale fabrication. Here, we demonstrate high-performance silicon metal-oxide-semiconductor (SiMOS) spin qubits fabricated using extreme-ultraviolet (EUV) lithography in a 300 mm semiconductor pilot line. We report wafer-scale quantum-dot uniformity metrics, including 100 % room-temperature gate-to-gate leakage yield and sub-nanometer control of critical gate dimensions. We characterize four double-dot systems realized in two triple-quantum-dot devices. Gate set tomography (GST) reveals consistently high fidelities across all four systems, with values up to 99.8 % for SPAM, 99.9 % for single-qubit gates, and 99.1 % for two-qubit gates. The devices exhibit highly reproducible exchange turn-on characteristics of 10-13 dec/V, indicating high fabrication uniformity enabled by EUV patterning. These results establish EUV lithography as a viable manufacturing technology for quantum processors based on high-fidelity SiMOS spin qubits.",
+    "authors": [
+      "Thomas Van Caekenberghe",
+      "Paul Steinacker",
+      "Bart Raes",
+      "Sofie Beyne",
+      "Clement Godfrin",
+      "Jacques Van Damme",
+      "Sylvain Baudot",
+      "Arne Loenders",
+      "Gulzat Jaliel",
+      "Stefan Kubicek",
+      "Johan De Backer",
+      "Yannick Hermans",
+      "Sugandha Sharma",
+      "Shuchi Kaushik",
+      "Yuchao Jiang",
+      "Yosuke Shimura",
+      "Roger Loo",
+      "Vukan Levajac",
+      "Kristof Moors",
+      "George Simion",
+      "Florian K. Unseld",
+      "Ensar Vahapoglu",
+      "Ajit Dash",
+      "Tuomo Tanttu",
+      "Chris C. Escott",
+      "Chih Hwan Yang",
+      "Andre Saraiva",
+      "Arne Laucht",
+      "Wee Han Lim",
+      "Nard Dumoulin Stuyck",
+      "Massimo Mongillo",
+      "Danny Wan",
+      "Andrew S. Dzurak",
+      "Kristiaan De Greve"
+    ],
+    "published": "2026-07-14",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.13121v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "양자 컴퓨팅의 상용화 경로에서 EUV 리소그래피 기반 대규모 제조 가능성을 입증하여, 향후 메모리·패키징 기술 로드맵과 반도체 제조 생태계 재편에 영향을 미칠 수 있는 신기술 신호.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "양자 프로세서의 제조 가능성을 입증한 기초 성과이나, 현재로서는 메모리 사업 직접 영향은 제한적이며 장기 기술 트렌드 모니터링 대상으로 분류됨.",
+      "final_score": 2.3
+    },
+    "first_seen": "2026-07-21"
+  },
+  "2607.13068": {
+    "arxiv_id": "2607.13068",
+    "title": "The Economics of AI Decoding Chips: Rebalancing Compute, Capacity, and Bandwidth for Efficient LLM Inference",
+    "abstract": "Every mainstream GPU is built compute-heavy and capacity-light: it pairs enormous arithmetic throughput with too little memory to hold a modern model. In contrast, large language model decoding requires little compute and a large amount of memory: a GPU's floating-point units run at single-digit-percent utilization during decoding, and the memory the workload does need is sold only bundled with yet more compute. The compute is recovered only at hyperscale, where Mixture-of-Experts (MoE) models are spread across 96--320-GPU expert-parallel clusters serving thousands of concurrent users, a scale available to a handful of operators. We formalize the inefficiency with two fixed per-chip constants. F/B, the roofline ridge point, determines whether the compute can be utilized; F/S, the compute bundled with each GB of memory, determines how much compute must be bought. We then argue for a rebalanced decode accelerator: less compute, far more commodity memory, and a deliberately lower and cheaper bandwidth. The Skymizer HTX-301, a purpose-built 28nm PCIe accelerator using commodity DDR5, occupies that design point. Its entry cost is low. A single eight-chip card holds DeepSeek-R1 671B for about \\$19,000, and a 4U server of four four-chip cards serves two users at a deterministic 20.3 tokens per second each for about \\$28,000. Either costs less than a single H100, while the minimum GPU deployment for the model is an eight-GPU node near \\$350,000. Concurrency then scales out by adding hardware: eight 4U servers carry sixteen users for about \\$224,000, two-thirds of the node's price, with the cost per token unchanged at about \\$12 per million against the node's \\$21. The HTX-301's decisive advantage is a supply chain free of every rationed input: it uses no high-bandwidth memory, no CoWoS, and no leading-edge logic.",
+    "authors": [
+      "Michael J. Yuan",
+      "Ju Long"
+    ],
+    "published": "2026-07-10",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.13068v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 워크로드의 메모리-연산 불균형을 지적하며 DDR5 기반 저대역폭 메모리 솔루션을 제시함으로써 DRAM 수요 구조와 메모리 아키텍처 전략에 직접 영향을 미치는 논문",
+      "scores": {
+        "business": 4,
+        "threat": 3,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "HBM 중심의 고대역폭 메모리 전략에 대한 도전이자, 대규모 추론 시장에서 DDR5/DRAM 기반 저비용 대용량 메모리 솔루션의 수요 가능성을 제시하는 신호",
+      "final_score": 4.5
+    },
+    "first_seen": "2026-07-21"
   }
 }
