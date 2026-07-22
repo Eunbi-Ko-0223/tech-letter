@@ -348,127 +348,6 @@
     },
     "first_seen": "2026-06-29"
   },
-  "2606.22635": {
-    "arxiv_id": "2606.22635",
-    "title": "Design and Development of a Neuromorphic Silicon Suite: PVT Sensing, Stochastic LIF Inference, On-Chip STDP Learning, and Crossbar Programming",
-    "abstract": "Edge neuromorphic systems need compact, configurable hardware that combines probabilistic inference, local learning, and an interface to emerging analogue memory. We present four interface-compatible digital IP blocks implemented as standard-cell CMOS on the SkyWater 130 nm process: a process, voltage and temperature (PVT) sensor built from five selectable ring oscillators that also provides a jitter-based true-random-number generator and a frequency-bounds health monitor; a stochastic leaky integrate-and-fire (LIF) neuron with a configurable LFSR, a programmable activation table, and a refractory period; an on-chip spike-timing-dependent plasticity (STDP) controller with a programmable curve and reward-modulated, eligibility-trace, and anti-Hebbian modes; and a memristive-crossbar controller supporting forming, set, reset, read, and automated current-voltage sweep with current-compliance limiting and half-select biasing. All four blocks share a common serial peripheral interface (SPI) register file; the sensor also exposes a parallel readout. Each occupies a single tile at a 50 MHz target. The suite was verified with 99 cocotb tests at register-transfer and gate level (all passing) and taken through an open standard-cell flow, then submitted for tapeout via the Tiny Tapeout shared-silicon programme. Mapped to the open cell library, each block occupies a post-synthesis cell area of 9.3 to 10.6 thousand square micrometres, places at 61 to 70 per cent tile utilisation, meets the 50 MHz constraint with positive setup and hold margin after clock-tree synthesis, and draws an estimated 0.64 to 0.70 mW under a default switching-activity assumption. The contribution is a coherent, openly released set of building blocks unified by one register interface and one verification flow. All results are from simulation and the implementation flow; no fabricated silicon is reported.",
-    "authors": [
-      "Poornima Kumaresan",
-      "Santhosh Sivasubramani"
-    ],
-    "published": "2026-06-21",
-    "primary_category": "cs.ET",
-    "url": "http://arxiv.org/abs/2606.22635v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "뉴로모픽 칩의 온칩 학습·추론·메모리 인터페이스 설계로, PIM(Processing-in-Memory)과 어드밴스드 패키징(크로스바 메모리 컨트롤러) 기술 영역과 직접 연관.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 1,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "뉴로모픽 엣지 칩의 학습·추론 IP 블록 설계는 PIM 아키텍처 선행 연구로 의미 있으나, 130nm 공정·시뮬레이션 수준·학계 주도로 단기 사업 임팩트는 제한적.",
-      "final_score": 1.65
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.22621": {
-    "arxiv_id": "2606.22621",
-    "title": "Multi-Level Resistive Synapses for On-Chip Neural Networks: A Physics-Based Design of a Memristive Crossbar Fabric with Quasi-Continuous Conductance States",
-    "abstract": "Building on resistive communication, this paper presents a physics-based design of an on-chip neural network with multi-level memristive synapses supporting a dense spectrum of conductance states. Derived from ionic transport physics, we develop a state-variable model and quantify storable sub-levels under thermal noise, drift, and quantized conductance. We assemble these devices into a 1T1R crossbar fabric, derive the linear algebra of analog vector-matrix multiplication (VMM) under wire resistance, and design a differential synapse for signed weights. A multilayer pipeline executes inference, backpropagation, and weight updates physically in the analog domain. We derive the in-situ outer-product learning rule, its discretization onto the conductance lattice, and the resulting quantization noise. We provide energy, area, capacity, and inter-tile models, showing this substrate is ideally suited for large language models (LLMs). Our design eliminates weight movement, surpassing binary ReRAM and traditional CMOS. We detail the material stack (HfO_2-based), the FEOL/BEOL CMOS foundry-integration flow, a self-contained SPICE model, the complete memristive-FPGA neuromorphic system, and an in-memory self-attention engine with current-mode translinear softmax. Finally, a ternary BitNet datapath shows projected per-token efficiency orders of magnitude better than advanced CPUs or GPUs. The result is a self-contained hardware-native blueprint for a high-density, analog, in-memory neural processor.",
-    "authors": [
-      "David Alejandro Trejo Pizzo"
-    ],
-    "published": "2026-06-21",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.22621v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "메모리스터 기반 아날로그 인-메모리 신경망 프로세서로, PIM과 어드밴스드 패키징 기술을 결합한 차세대 메모리 컴퓨팅 아키텍처 제안",
-      "scores": {
-        "business": 3,
-        "threat": 2,
-        "demand": 4,
-        "maturity": 1,
-        "credibility": 2,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "LLM 추론 효율화를 위한 아날로그 인-메모리 신경망 기술로 장기적 수요 가능성은 높으나, 현재는 기초 연구 단계이며 양산 경로와 신뢰성 검증이 미흡함",
-      "final_score": 3.9
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.22482": {
-    "arxiv_id": "2606.22482",
-    "title": "NeutronSparse: Coordinating Heterogeneous Engines for Sparse Matrix Multiplication on NPUs",
-    "abstract": "Sparse matrix-matrix multiplication (SpMM) is a fundamental data operation for large-scale sparse data processing. With NPUs increasingly deployed in data centers for their performance and energy efficiency, accelerating SpMM on these platforms is a natural choice. However, high-performance SpMM on NPUs poses a data management challenge, as irregular sparsity demands efficient data organization and scheduling. On Ascend 910B, the official MindSpore implementation achieves only 36.3% of the performance of GPU-based sparse libraries such as cuSPARSE on NVIDIA A100. To this end, we conduct an in-depth architectural analysis of SpMM execution on NPUs versus GPU and identify that the key performance bottleneck for SpMM on NPUs lies in the lack of efficient coordination across heterogeneous compute units under tile-based execution model. Therefore, we propose NeutronSparse, a coordination-first SpMM framework for NPUs. NeutronSparse integrates two key techniques: (i) Sparsity-aware coordination of heterogeneous engines, which adaptively partitions and balances workloads between heterogeneous compute units to keep them busy, and (ii) Locality-aware tile orchestrating, which reorganizes and reuses data tiles to reduce redundant computation and memory movement overhead. Evaluations on Ascend 910B show that NeutronSparse achieves 1.26x-7.78x speedup over NPU baselines and 1.03x-3.07x speedup over leading GPU libraries on NVIDIA A100, revealing untapped potential of NPUs for sparse computation.",
-    "authors": [
-      "Xin Ai",
-      "Zeyu Ling",
-      "Hao Yuan",
-      "Qiange Wang",
-      "Yanfeng Zhang",
-      "Yutao Peng",
-      "Ge Yu"
-    ],
-    "published": "2026-06-21",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.22482v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "NPU 기반 희소행렬 연산 최적화는 AI 가속기 메모리 대역폭 활용도와 데이터센터 메모리 수요 패턴에 직접 영향을 미치는 컴퓨팅 아키텍처 연구",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "NPU 기반 희소 연산 최적화 기술은 AI 가속기의 메모리 대역폭 수요를 증대시키고 HBM/고성능 메모리 채용을 촉진하는 긍정 신호이나, 현재는 학술 단계로 SK하이닉스 메모리 제품 전략에 직접 영향은 제한적",
-      "final_score": 3.55
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.22297": {
-    "arxiv_id": "2606.22297",
-    "title": "DejaVu: Why You Should Write to Your DRAM Rows Twice, Carefully",
-    "abstract": "We provide the first experimental demonstration of DejaVu, a phenomenon where the data previously written to DRAM cells affects DRAM's vulnerability to read disturbance. Our experimental characterization using 112 COTS DDR4 DRAM chips from all three major manufacturers shows that, compared to the baseline where we initialize the victim row by writing to it only once, 1) overwriting it with the opposite data reduces ACmin, the minimum aggressor row activation count to induce a bitflip, and 2) writing the same data twice increases ACmin. We provide two hypotheses to explain DejaVu. First, we hypothesize that overwriting the victim row with opposite data values causes under-restoration of charge in DRAM cells. Second, we hypothesize that overwriting the victim row changes charge trap states in the active region, affecting read-disturbance-induced cell leakage current. We conduct controlled characterization to provide insight into these hypotheses. We further characterize the reliability of Processing-Using-DRAM (PUD) operations with DRAM rows initialized with DejaVu patterns. Our characterization of 32-row MAJ-3 operation shows that overwriting the DRAM rows used in the operation reduces the number of bitlines that fail to reliably perform MAJ-3 by 32.7% on average compared to the baseline where rows are written only once. Based on our observations, we describe two major implications of DejaVu. We show how DRAM testing and characterization methodologies should account for DejaVu to accurately characterize read disturbance vulnerability under fixed data patterns and rigorously study data-pattern effects without unintended interference from DejaVu. We also evaluate the performance overhead of read disturbance mitigation techniques when thresholds need to be lowered to be secure against DejaVu, showing a 6.3% overhead when reducing the threshold by 20%.",
-    "authors": [
-      "Haocong Luo",
-      "İsmail Emir Yüksel",
-      "Ataberk Olgun",
-      "Nisa Bostanci",
-      "Orhun Ecemiş",
-      "Abdullah Giray Yağlıkçı",
-      "Onur Mutlu"
-    ],
-    "published": "2026-06-21",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.22297v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "DDR4 DRAM의 read disturbance 취약성과 PIM(Processing-in-DRAM) 신뢰성에 직접 영향을 미치는 물리적 현상을 규명한 논문",
-      "scores": {
-        "business": 4,
-        "threat": 2,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 4,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "DRAM 신뢰성 설계 및 PIM 상용화 단계에서 필수적인 데이터 패턴 의존성 현상을 최초 규명하여 제품 검증 방법론과 마진 설정에 직접 영향을 줄 수 있는 실무적 가치가 높음",
-      "final_score": 3.3
-    },
-    "first_seen": "2026-06-29"
-  },
   "2606.32029": {
     "arxiv_id": "2606.32029",
     "title": "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
@@ -28875,35 +28754,6 @@
     },
     "first_seen": "2026-07-21"
   },
-  "2607.13068": {
-    "arxiv_id": "2607.13068",
-    "title": "The Economics of AI Decoding Chips: Rebalancing Compute, Capacity, and Bandwidth for Efficient LLM Inference",
-    "abstract": "Every mainstream GPU is built compute-heavy and capacity-light: it pairs enormous arithmetic throughput with too little memory to hold a modern model. In contrast, large language model decoding requires little compute and a large amount of memory: a GPU's floating-point units run at single-digit-percent utilization during decoding, and the memory the workload does need is sold only bundled with yet more compute. The compute is recovered only at hyperscale, where Mixture-of-Experts (MoE) models are spread across 96--320-GPU expert-parallel clusters serving thousands of concurrent users, a scale available to a handful of operators. We formalize the inefficiency with two fixed per-chip constants. F/B, the roofline ridge point, determines whether the compute can be utilized; F/S, the compute bundled with each GB of memory, determines how much compute must be bought. We then argue for a rebalanced decode accelerator: less compute, far more commodity memory, and a deliberately lower and cheaper bandwidth. The Skymizer HTX-301, a purpose-built 28nm PCIe accelerator using commodity DDR5, occupies that design point. Its entry cost is low. A single eight-chip card holds DeepSeek-R1 671B for about \\$19,000, and a 4U server of four four-chip cards serves two users at a deterministic 20.3 tokens per second each for about \\$28,000. Either costs less than a single H100, while the minimum GPU deployment for the model is an eight-GPU node near \\$350,000. Concurrency then scales out by adding hardware: eight 4U servers carry sixteen users for about \\$224,000, two-thirds of the node's price, with the cost per token unchanged at about \\$12 per million against the node's \\$21. The HTX-301's decisive advantage is a supply chain free of every rationed input: it uses no high-bandwidth memory, no CoWoS, and no leading-edge logic.",
-    "authors": [
-      "Michael J. Yuan",
-      "Ju Long"
-    ],
-    "published": "2026-07-10",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.13068v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 추론 워크로드의 메모리-연산 불균형을 지적하며 DDR5 기반 저대역폭 메모리 솔루션을 제시함으로써 DRAM 수요 구조와 메모리 아키텍처 전략에 직접 영향을 미치는 논문",
-      "scores": {
-        "business": 4,
-        "threat": 3,
-        "demand": 4,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "HBM 중심의 고대역폭 메모리 전략에 대한 도전이자, 대규모 추론 시장에서 DDR5/DRAM 기반 저비용 대용량 메모리 솔루션의 수요 가능성을 제시하는 신호",
-      "final_score": 4.5
-    },
-    "first_seen": "2026-07-21"
-  },
   "2607.18232": {
     "arxiv_id": "2607.18232",
     "title": "It's Not What You Say, It's How You Say It: Evaluating LLM Responses to Expressions of Belief",
@@ -32103,5 +31953,353 @@
       "final_score": 2.4
     },
     "first_seen": "2026-07-22"
+  },
+  "2607.18916": {
+    "arxiv_id": "2607.18916",
+    "title": "Bridging distributed quantum materials via multi-hotspot vacuum: remote Cooper pairing and Andreev teleportation",
+    "abstract": "We introduce an architecture where mesoscopic quantum matter distributed over spatially separated nodes can be correlated in equilibrium, creating an unprecedented form of many-body quantum system. Central to the design is a multi-gap split-ring resonator (SRR) where the cavity photon has multiple hot spots -- each with deep-subwavelength volume at a split gap and separated by millimeter-scale distances. The cavity's vacuum fluctuations can then mediate a many-body interaction that bridges the distributed quantum materials embedded in the multiple gaps, coupling them into a single correlated mesoscopic system in equilibrium. As an example, we consider a THz SRR with two split gaps, each proximitized to a metallic moiré superlattice, where virtual exchange of a photon in the cavity vacuum mediates a current-current interaction across the gaps. The inherent attractive interaction channels lead to remote Cooper pairing reminiscent of mesoscopic superconductivity, demonstrated with density matrix renormalization group and exact diagonalization calculations. With the two constituents of a Cooper pair now paired across a millimeter-scale separation, a hole incident at one split gap can be converted into an outgoing electron at the remote gap, a process we term Andreev teleportation. The entanglement entropy between the two mesoscopic superlattices is shown to scale linearly with the area (total number of sites) of the mesoscopic lattice. Our results suggest an intriguing paradigm for equilibrium quantum networks of mesoscopic matter that enable emergent nonlocal functionalities and distributed quantum resources.",
+    "authors": [
+      "Zuzhang Lin",
+      "Zhijian Song",
+      "Chengxin Xiao",
+      "Wang Yao"
+    ],
+    "published": "2026-07-21",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.18916v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "양자 물질의 기초 물리 연구로, 메모리 반도체 제조·아키텍처·AI 수요와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "분산 양자 물질의 원격 상관 현상에 관한 순수 응축물질 물리 논문으로, 메모리 반도체 사업 전략·AI 인프라 수요와 무관한 기초 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.18895": {
+    "arxiv_id": "2607.18895",
+    "title": "Multiscale ensemble Monte Carlo of transport and gas sensing in monolayer MoS$_2$",
+    "abstract": "Two-dimensional semiconductors, such as monolayer MoS$_2$, combine a technologically useful band gap with an all-surface geometry, making them attractive both as field-effect-transistor channels and as chemically sensitive devices. Predictive device design requires a transport model that is (i) physically grounded rather than empirical, (ii) validated against experiments, and (iii) able to span the scales from electron-phonon coupling to terminal current and sensor response. We present a self-consistent ensemble Monte Carlo (EMC) framework for monolayer MoS$_2$ built on the ViennaEMC solver, comprising a Boltzmann-transport kernel with a full intrinsic and extrinsic scattering stack (deformation-potential acoustic and intervalley phonons, polar-optical Fröhlich and piezoelectric coupling, remote substrate phonons, screened charged-impurity and surface-roughness scattering), degenerate free-carrier statistics, and a self-consistent Poisson coupling. The intrinsic transport parameters are verified against first-principles density-functional perturbation theory (DFPT), and seven quantities (lattice constant, conduction-band effective mass, band gap, Born effective charges, the longitudinal-optical phonon energy, and both in-plane sound velocities) agree with the reference parametrization. In a multiscale coupling, the EMC velocity-field characteristic feeds a one-dimensional velocity-saturation channel model, which captures the velocity-saturated field dependence and reproduces the measured transfer characteristics of a CVD monolayer device in air and vacuum. Finally, an ambient/adsorbate extension reproduces the measured conductivity response to oxygen partial pressure and the concentration dependence of NO$_2$ and NH$_3$ sensing measured in several independent devices.",
+    "authors": [
+      "Lado Filipovic"
+    ],
+    "published": "2026-07-21",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.18895v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "2D 반도체(MoS₂) 소자의 전자수송 및 화학센싱 시뮬레이션 연구로, SK하이닉스의 주력 사업(HBM/DRAM/NAND/CXL/PIM)과 직접 연관성이 없고 AI 메모리 수요 트렌드와도 무관함.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "MoS₂ 기반 센싱 소자의 물리 시뮬레이션 논문으로, 메모리 반도체 제조사의 전략적 관심 범위 밖의 기초 재료과학 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.18169": {
+    "arxiv_id": "2607.18169",
+    "title": "RRAM-DP: Device-Calibrated Differential Privacy for In-Memory Edge Learning",
+    "abstract": "Edge Artificial Intelligence of Things (AIoT) systems often collect sensitive data in situ, raising serious privacy concerns. Resistive-switching random-access memory (RRAM) is an attractive substrate for efficient AIoT thanks to its multi-bit storage and compute-in-memory (CiM) capabilities, while its inherently stochastic write behavior provides a natural source of randomness that can be leveraged for differential privacy (DP) protection. Yet how to transform this device-level randomness-typically viewed as detrimental to accuracy-into a principled randomized mechanism while preserving model utility remains underexplored. We propose RRAM-DP, a hardware-algorithm co-design that relaxes RRAM write-verify operations to inject calibrated noise for inherently (epsilon, delta)-DP with formal DP analysis; together with pretraining techniques, it renders a novel private, high-utility CiM training paradigm. On CIFAR-10/100, STS-B, and SST-2, RRAM-DP-SGD incurs at best only a 3.8% accuracy drop at (epsilon=2, delta=O(1/n))-DP relative to non-private SGD. At the same privacy level, RRAM-DP-SGD delivers up to 57x and 3.2x energy savings and 2.7x and 1.8x speedups over A100 and DiVa-GEMM, respectively. These results point toward efficient, privacy-preserving in-memory training on RRAM at the edge.",
+    "authors": [
+      "Kwunhang Wong",
+      "Jichang Yang",
+      "Karl M. H. Lai",
+      "Hegan Chen",
+      "Songqi Wang",
+      "Wei Xuan",
+      "Ning Lin",
+      "Han Wang",
+      "Xiaojuan Qi",
+      "Zhongrui Wang"
+    ],
+    "published": "2026-07-20",
+    "primary_category": "cs.CR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.18169v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "RRAM 기반 엣지 AI 학습에서 메모리 효율성과 프라이버시를 동시에 달성하는 하드웨어-알고리즘 공설계로, PIM/CiM 기술과 엣지 AI 인프라 수요 트렌드와 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "RRAM의 고유한 확률적 특성을 차동프라이버시 메커니즘으로 전환하는 혁신적 접근이지만, 상용 RRAM 메모리 생태계 부재와 저자 신뢰도 제한으로 단기 사업 영향은 제한적.",
+      "final_score": 4.05
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.17835": {
+    "arxiv_id": "2607.17835",
+    "title": "New Number Formats for FFT IP Cores in Optical OFDM Transceivers",
+    "abstract": "Many state-of-the-art DSP implementations use fixed-point arithmetic due to its reduced hardware complexity and high throughput compared to conventional floating-point arithmetic. In contrast, machine learning accelerators exhibit substantial gains from reduced-precision floating-point formats, enabling improvements in energy efficiency and peak throughput. These advances motivate a re-evaluation of numerical representations for classical DSP workloads. A central question is whether reduced-precision floating-point formats can achieve competitive power, performance, and area compared to fixed-point implementations, while providing advantages in dynamic range and numerical robustness. This paper presents a new cross-layer co-design methodology for DSP kernels that jointly optimizes numerical representations, arithmetic units, and application-level performance. As a case study, we focus on the FFT, a fundamental DSP block across many applications. The FFT is evaluated within optical OFDM transceivers, where it dominates power consumption and silicon area as FFT size and modulation order scale to support data rates beyond 100 Gbit/s. We compare fixed-point and reduced-precision floating-point formats using post-layout power and area results in a 12nm FinFET technology and demonstrate system-level performance in terms of BER versus Eb/N0. For a 256-point FFT engine in a 128 Gbit/s transceiver, we show that 11- and 12-bit custom floating-point formats preserve BER performance close to a 32-bit floating-point reference across multiple modulation orders, while reducing FFT core power by up to 19.8% and area by up to 12.0% compared to representative fixed-point designs. To the best of our knowledge, this is the first investigation of custom reduced-precision floating-point arithmetic for FFT cores in optical OFDM transceivers.",
+    "authors": [
+      "Lukas Krupp",
+      "Gustavo Magalhães Gomes De Souza",
+      "Sani Nassif",
+      "Norbert Wehn"
+    ],
+    "published": "2026-07-20",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.17835v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "광학 OFDM 트랜시버의 FFT 코어 최적화는 통신 인프라 DSP 설계 문제로, 메모리 반도체 수요·전략·아키텍처과 직접 연관이 없음.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "광통신 신호처리 칩의 산술 포맷 최적화 연구로, HBM/DRAM/NAND 메모리 사업이나 AI 인프라 메모리 수요와 무관한 순수 DSP 설계 문제.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.17569": {
+    "arxiv_id": "2607.17569",
+    "title": "Cross-Domain Acceleration of Open Modification Search: From Commodity Platforms to Emerging Memory and Storage Devices",
+    "abstract": "Open modification search (OMS) in mass spectrometry (MS) is a data-intensive workload whose performance is dominantly limited by reference data movement rather than computation. Prior OMS accelerators have largely been evaluated in isolation, making it difficult to understand system-level trade-offs across platforms. This paper presents the first workload-driven, cross-platform survey of accelerators for MS search by studying not only commodity platforms, but also emerging memory- and storage-centric architectures, including GPUs, near-storage FPGAs, DRAM near-memory processing, ReRAM/PCM in-memory processing, and 3D NAND/FeNAND in-storage processing, under consistent algorithmic and accuracy assumptions. Leveraging a binary hyperdimensional computing (HDC)-based OMS formulation that reduces similarity evaluation to lightweight bitwise primitives and tolerates device-level non-idealities, we enable a robust execution on memory-centric architectures despite device-level non-idealities and limited computing capability. Overall, this study identifies memory- and storage-centric architectures as a key architectural breakthrough for large-scale, high-speed search acceleration, delivering up to >100x speedup and >40,000x improvement in energy efficiency.",
+    "authors": [
+      "Sumukh Pinge",
+      "Chang Eun Song",
+      "Po-Kai Hsu",
+      "Zheyu Li",
+      "Ashkan Moradifirouzabadi",
+      "Yanru Chen",
+      "Xiangjin Wu",
+      "Wei-Chen Chen",
+      "Eric Pop",
+      "Shimeng Yu",
+      "H. -S. Philip Wong",
+      "Tajana Rosing",
+      "Mingu Kang"
+    ],
+    "published": "2026-07-20",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.17569v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "메모리 중심 아키텍처(DRAM near-memory, ReRAM/PCM in-memory, 3D NAND in-storage)의 성능·에너지 효율을 실증하며, PIM/스토리지 처리 기술의 상용화 가능성을 보여주는 워크로드 기반 연구",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "PIM과 in-storage 처리의 에너지 효율성을 실증하는 학술 연구로, 우리의 메모리 확장·PIM 전략에는 기술적 검증 신호이나 질량분석 응용 자체는 메모리 수요 견인력이 제한적",
+      "final_score": 2.4
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.17371": {
+    "arxiv_id": "2607.17371",
+    "title": "ADEPT: Architecture-Driven Energy-Efficient CNN Fine-Tuning on PIM Accelerators",
+    "abstract": "Processing-in-memory-based (PIM) architectures have emerged as a promising solution for accelerating Convolutional Neural Network (CNN) workloads at the edge. Fine-tuning pre-trained CNNs is a common requirement to enhance the model predictive accuracy after deployment. However, the fine-tuning process is computational and memory-intensive, generating a significant amount of intermediate activations. This leads to frequent off-chip memory access, affecting the overall efficiency of the PIM accelerator. Existing fine-tuning strategies are agnostic to the underlying hardware, as they treat all layers equally. In this paper, we propose a hardware-aware framework called ADEPT to accelerate CNN fine-tuning on PIM architectures. Unlike prior fine-tuning methods, ADEPT adaptively trains the model considering both the training overhead and layer sensitivity. Specifically, ADEPT introduces a novel metric that quantifies the trade-off between a block's gradient-based sensitivity and its hardware architecture-specific Energy-Delay Product (EDP), producing platform-dependent fine-tuning configurations. Overall, ADEPT helps reduce the total trainable parameters and the off-chip data access during fine-tuning, while incurring minimal loss in predictive accuracy compared to full-parameter fine-tuning.",
+    "authors": [
+      "Pratyush Dhingra",
+      "Vibhanshu Sharma",
+      "Janardhan Rao Doppa",
+      "Partha Pratim Pande"
+    ],
+    "published": "2026-07-19",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.17371v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "PIM 아키텍처 기반 CNN 파인튜닝 효율화는 엣지 AI 추론 시장에서 메모리 대역폭·전력 수요를 직접 영향하는 기술이며, SK하이닉스의 PIM 사업 포트폴리오와 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "PIM 기반 엣지 AI 추론의 메모리 효율성 개선 사례로서 우리 PIM 제품의 실제 가치 입증 및 고객 채택 가능성을 높이는 신호이나, 아직 학술 단계로 상용화까지는 거리가 있음.",
+      "final_score": 3.95
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.17274": {
+    "arxiv_id": "2607.17274",
+    "title": "Inter-Set Correlation-Aware Replacement Policy for Energy Efficient RTM-based Caches",
+    "abstract": "Today's data-centric applications demand cache architectures that can scale with growing workloads while maintaining high performance and energy efficiency. Fundamental issues such as excessive area consumption and leakage power are increasingly challenging traditional SRAM-based caches, thereby motivating the exploration of non-volatile alternatives. Among these, racetrack memory (RTM) stands out due to its remarkable storage density, achieved through nanowires hosting sequential magnetic domains that can be manipulated via domain wall or skyrmion techniques. Despite its advantages, racetrack memory's inherent serialized access introduces considerable shift overhead, leading to elevated energy consumption and latency. In this paper, we analyze the placement strategies in conventional RTM-based last-level caches and identify that current methods trigger redundant shift operations as a shift intended to read one block fails to preposition other blocks subsequently accessed. To resolve this, we introduce an innovative data placement and replacement scheme that intelligently groups correlated blocks, ensuring that a single shift not only retrieves the target block but also aligns subsequent blocks closer to the access port. Our simulation results using the gem5 simulator and the SPEC CPU2017 benchmarks reveal that our scheme reduces shift overhead by 49.0% and cache energy consumption by 35.9% with negligible performance impact. In addition, this scheme exhibits robust scalability to longer nanowire tracks for higher cache density.",
+    "authors": [
+      "Elham Cheshmikhani",
+      "Hamed Farbeh"
+    ],
+    "published": "2026-07-19",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.17274v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "비휘발성 메모리(RTM) 기반 캐시 아키텍처의 에너지 효율성 개선 연구로, 차세대 메모리 소자 기술과 캐시 설계 최적화에 관련됨.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "RTM 캐시 최적화는 학술적 가치는 있으나 상용화 거리가 멀고, SK하이닉스의 HBM/DRAM/NAND 주력 사업과의 직접 연관성이 낮으며 RTM 자체가 업계 주류 기술이 아니어서 전략적 우선순위는 낮음.",
+      "final_score": 1.65
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.17091": {
+    "arxiv_id": "2607.17091",
+    "title": "ThRIve: Thermally Robust CNN Inference via Low-Rank Adaptation in Heterogeneous PIM Architectures",
+    "abstract": "Processing-In-Memory (PIM) has emerged as a promising technology for accelerating machine learning (ML) workloads. Specifically, non-volatile memory-based PIM architectures have enabled effective ML acceleration due to their ability to perform energy-efficient matrix-vector multiplication operations. However, these devices suffer from non-idealities such as thermal noise. This noise alters the stored values in the memory cells which correspond to actual model weights, compromising the inference accuracy. In this work, we introduce ThRIve, a noise-aware training methodology that leverages low-rank adaptation to enable thermally robust inference on heterogeneous PIM architectures. ThRIve selectively stores these low-rank noise-aware parameters on a hardware that is less susceptible to thermal noise, enabling robustness against temperature-induced noise variations. ThRIve mitigates the effects of thermal-noise and prevent the drop in inference accuracy across the entire operating temperature range. Experimental results demonstrate that ThRIve-enabled architectures maintain consistent inference accuracy, with the mean accuracy staying within 2% of the ideal (i.e., noise-free) accuracy, and the variation in accuracy across the entire operating temperature range remaining within 2% of the mean. The proposed methodology achieves accuracy and robustness comparable to thermally-resilient Static Random-Access Memory (SRAM)-based PIM systems, while delivering up to 5.4x reduction in energy-delay product (EDP) during CNN model inferencing.",
+    "authors": [
+      "Vibhanshu Sharma",
+      "Pratyush Dhingra",
+      "Janardhan Rao Doppa",
+      "Partha Pratim Pande"
+    ],
+    "published": "2026-07-19",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.17091v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "PIM 아키텍처의 열 잡음 문제를 저랭크 적응으로 해결하는 기술로, SK하이닉스의 핵심 사업인 PIM 및 어드밴스드 패키징 전략과 직결되며 AI 추론 효율성 향상을 통해 메모리 수요 창출 신호를 제시한다.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "PIM의 상용화 장벽인 열 잡음을 소프트웨어 기법으로 극복하는 실용적 솔루션으로, AI 추론 효율성 5.4배 개선은 메모리 기반 가속기 시장 확대의 신호이나 아직 학술 단계이므로 기술 검증 및 파운드리 협력이 필요하다.",
+      "final_score": 4.05
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.16985": {
+    "arxiv_id": "2607.16985",
+    "title": "Cluster-Based Distributed Small-Signal Stability Certificates for Grid-Forming Inverter Networks",
+    "abstract": "Large-scale power networks are often organized by geography, ownership, or control authority, making stability certificates that require a fully assembled global model challenging. This paper develops a time-domain small-signal stability certification framework for grid-forming inverter networks with selectable clustering resolution. The objective is to certify stability at the same scale at which the network is organized and operated: each cluster verifies conditions using intra-cluster and limited boundary information, and these checks collectively yield a network-level stability certificate without requiring a global eigenvalue computation. After linearization about a phase-cohesive synchronized operating point, a small-angle approximation decomposes the model into a voltage subsystem and an angle-frequency subsystem, where the latter is certified by an energy argument using the symmetric weighted-Laplacian network structure. For the voltage subsystem, node-to-node gains are introduced and a cyclic small-gain argument yields a family of sufficient exponential stability certificates ranging from fully decentralized to cluster-based and centralized. For an arbitrary network partition, each cluster verifies intra-cluster directed-cycle conditions and inter-cluster path conditions. The singleton- and single-cluster limits recover the decentralized and centralized certificates, respectively. The resulting stability indices provide diagnostic information beyond a pass/fail verdict by localizing the limiting margin to individual nodes, internal feedback loops, and inter-cluster channels.",
+    "authors": [
+      "Bhathiya Rathnayake",
+      "Sijia Geng"
+    ],
+    "published": "2026-07-18",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.16985v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "전력망 안정성 제어 이론으로, 메모리 반도체 제조·설계·수요와 직접적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "전력계통 안정성 인증 알고리즘으로, HBM/DRAM/NAND 사업, AI 메모리 수요, 패키징 기술과 무관한 순수 전기공학 제어 이론 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.16445": {
+    "arxiv_id": "2607.16445",
+    "title": "Nanowire networks' interconnection graphs from their photomicrographs",
+    "abstract": "Self-assemblies of tunable units are being intensively studied as physical systems with signal-processing capabilities. Specifically, silver nanowire networks (AgNWNs) have demonstrated accumulation, non-linearity, and memory retention with multiple timescales, features that enable a wide variety of neuromorphic implementations. In this study, we aim to extract the interconnection scheme to analyze the experimentally obtained network architecture and, eventually, use it as input to a previously developed simulation platform. By post-processing photomicrographs of AgNWN, we present a pipeline optimized to extract the interconnection diagram, recognizing the intersections formed among the nanowires, to determine the associated graph for each physical sample. A graph is a collection of nodes and edges whose properties can be associated with different electrical responses. It is thus possible to study graphs' metrics, such as the degree distribution, community size, clustering coefficient, and path-length, to compare the experimental assemblies' attributes to those of topological models of reference. Small-world, modular, and scale-free are well-known structures in the field of mathematical graphs. By analyzing the degree distribution, the adjacency matrices, among other useful representation means, the experimental assemblies reveal similarities to both small-world and modular topologies. All the mentioned analyses were conducted considering the interconnection scheme obtained from zenithal-view optical images, which overestimates the number of NWs' interconnections (due to the impossibility of distinguishing real junctions from spurious cross-points between vertically displaced NWs). For that reason, this communication also studies the impact of artificially removing junctions from the resulting graphs on the previously calculated clustering coefficient and path length.",
+    "authors": [
+      "Javier Tau Anzoátegui",
+      "Juan Ignacio Diaz Schneider",
+      "Eduardo D. Martínez",
+      "Pablo Levy",
+      "Oscar Filevich",
+      "Cynthia P. Quinteros"
+    ],
+    "published": "2026-07-17",
+    "primary_category": "cond-mat.dis-nn",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.16445v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Silver nanowire network의 그래프 추출 및 위상 분석은 신경형태 컴퓨팅 기초연구이나, SK하이닉스의 주력 사업(HBM/DRAM/NAND/CXL/PIM)과 직접 연관성이 없고 메모리 수요 전망에도 영향을 주지 않음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "AgNW 신경형태 소자의 기초 물리 특성 분석 논문으로, 메모리 반도체 제조사의 전략·사업·경쟁 환경과 무관한 순수 재료과학 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-23"
+  },
+  "2607.16275": {
+    "arxiv_id": "2607.16275",
+    "title": "QR-SPPS: Quantum-Native Retail Shock Propagation and Policy Stress Simulator",
+    "abstract": "Classical supply chain risk models treat node failures as statistically independent events, systematically underestimating correlated cascade failures across multi-tier supplier networks. We present QR-SPPS (Quantum-Native Retail Shock Propagation and Policy Stress Simulator), a quantum-native framework for retail supply chain risk analysis implemented on the Qiskit ecosystem using OpenFermion-based Ising Hamiltonian encoding. A 40-node, four-tier supply network is mapped to a 40-qubit Hamiltonian with ZZ coupling terms representing correlated supplier dependencies. A hardware-efficient Variational Quantum Eigensolver (VQE) computes the stress ground state, revealing entangled cascade failures that differ substantially from classical Monte Carlo predictions. We further introduce the application of ADAPT-VQE gradient screening for counterfactual policy evaluation, enabling real-time ranking of six crisis interventions without repeated variational optimization. Finally, Density-of-States Quantum Phase Estimation (DOS-QPE) reconstructs the eigenspectrum through Trotter evolution and estimates Boltzmann-weighted catastrophe probabilities as a function of market-volatility temperature, providing a quantum-native tail-risk metric compatible with Value-at-Risk analysis. The framework demonstrates scalable quantum algorithms for correlated supply chain stress propagation, policy optimization, and systemic risk quantification while highlighting the exponential computational barriers faced by classical simulation at industrial-scale problem sizes.",
+    "authors": [
+      "Sumit Tapas Chongder"
+    ],
+    "published": "2026-07-08",
+    "primary_category": "quant-ph",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.16275v2",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "양자 컴퓨팅 기반 공급망 시뮬레이션 알고리즘으로, 메모리 반도체 제조·수요·기술과 직접 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "양자 알고리즘 기반 소매 공급망 리스크 분석 논문으로, HBM/DRAM/NAND 사업 전략, AI 메모리 수요, 반도체 기술 경쟁과 무관한 순수 응용 수학/양자 컴퓨팅 연구이며, 저자 신뢰도와 상용화 임박도가 매우 낮음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-23"
   }
 }
