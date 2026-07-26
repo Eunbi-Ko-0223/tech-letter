@@ -1,221 +1,4 @@
 {
-  "2606.27350": {
-    "arxiv_id": "2606.27350",
-    "title": "CHIA: An open-source framework for principled, agentic AI-driven hardware/software co-design research",
-    "abstract": "Agentic artificial intelligence shows great promise for radically improving the pace of innovation in hardware/software co-design research across computer architecture, systems, compilers, and VLSI. Thus far, however, applications of AI in these contexts have generally been demonstrated in isolated settings on small-scale problems, due to the difficulty of designing and deploying complex AI-infused hardware and software development workflows.   This paper introduces CHIA, an open-source hardware/software co-design framework for agile and principled research on the application of AI to co-design. CHIA treats the productive construction and scalable deployment of the co-design flow itself as a first-class objective. In CHIA, agentic AI-driven hardware and software design flows are expressed as \\textit{CHIA loops}: directed cyclic graphs whose nodes execute various system-on-chip design tools, microarchitectural simulators, software build systems, AI models, evolutionary coding agents, and more. The \\textit{CHIA library} provides node implementations for many popular tools, including Chipyard, gem5, ChampSim, FireSim, Hammer (thus several commercial ASIC CAD tools), Vivado, AlphaEvolve, AdaEvolve, and many others.   CHIA also provides a broad set of features to conduct principled science around these flows. These include isolation between AI models and hardware tools, profiling mechanisms, fault-tolerant execution, and reliability at scale across hundreds of heterogeneous systems (CPUs, FPGAs, GPUs, etc., across public cloud/on-prem.).   To showcase CHIA, we present five CHIA loops as case studies: (1) automatic RTL-to-gem5 simulator alignment, (2) LLM-driven implementation of microarchitectural features in RTL, (3) agentic, IPC-aware critical path optimization, (4) evolutionary architectural discovery, and (5) maintainer-friendly agentic GitHub issue fixing.",
-    "authors": [
-      "Angela Cui",
-      "Ferran Hermida-Rivera",
-      "Jack Toubes",
-      "Raghav Gupta",
-      "Jim Fang",
-      "Chengyi Lux Zhang",
-      "Ella Schwarz",
-      "Junha Kim",
-      "Yakun Sophia Shao",
-      "Borivoje Nikolic",
-      "Christopher W. Fletcher",
-      "Sagar Karandikar"
-    ],
-    "published": "2026-06-25",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.27350v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "AI 기반 하드웨어/소프트웨어 협설계 자동화 프레임워크로, 메모리 아키텍처·마이크로아키텍처 최적화 및 RTL 설계 자동화에 직접 적용 가능한 도구",
-      "scores": {
-        "business": 3,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 4,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "AI 에이전트 기반 설계 자동화는 메모리 칩 개발 사이클 단축과 아키텍처 최적화 경쟁력 강화에 기여할 수 있으나, 현재는 학술 프레임워크 수준으로 실제 양산 설계 도입까지는 검증 필요",
-      "final_score": 4.05
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.27319": {
-    "arxiv_id": "2606.27319",
-    "title": "An Instruction Set Architecture for IMPLY-based Memristive Processing-in-Array",
-    "abstract": "The push towards expanded ultra-low-power edge computing necessitates hardware capable of operating under extremely strict energy constraints. Traditional Complementary Metal-Oxide-Semiconductor (CMOS) microcontrollers are fundamentally limited in this domain by the von Neumann bottleneck and by the static power leakage inherent to volatile memory. Memristive In-Memory Computing (IMC) offers a promising solution to these inefficiencies by unifying data storage and computation into a single non-volatile component. However, the State of the Art (SoA) predominantly focuses on accelerators designed to be a co-processor for data-intensive computation. This leaves the prospect of standalone, general-purpose IMC microcontroller architectures underexplored. This thesis proposes such an architecture tailored for ultra-low-power edge devices, alongside an instruction set closely derived from the RV32I standard. Using the IMPLY stateful logic paradigm, a complete implementation of the proposed instruction set is provided, and the novel addressing schema required to support computation in the memristive crossbar array is described as well. Then, the energy use and other circuit-level metrics of the proposed architecture are evaluated through simulation and compared against those of traditional microcontrollers. Finally, the functional viability of the design is demonstrated through an application case study, describing how the proposed design could be used in an intelligent environmental sensor node.",
-    "authors": [
-      "Liam Splittgerber",
-      "Fabian Seiler",
-      "Nima TaheriNejad"
-    ],
-    "published": "2026-06-25",
-    "primary_category": "cs.ET",
-    "url": "http://arxiv.org/abs/2606.27319v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Memristive In-Memory Computing (IMC) 기반 프로세싱-인-메모리 아키텍처로, PIM과 비휘발성 메모리 소자 기술에 직접 연관됨.",
-      "scores": {
-        "business": 2,
-        "threat": 2,
-        "demand": 2,
-        "maturity": 1,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "Memristor 기반 PIM의 학술적 개념 검증 논문이나, 상용화 거리가 멀고 엣지 디바이스 중심이라 SK하이닉스의 HBM/DRAM/NAND 주력 사업과의 직접 영향은 제한적.",
-      "final_score": 2.1
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.27240": {
-    "arxiv_id": "2606.27240",
-    "title": "Evaluating Architectural Trade-offs in CGRAs: The Impact of Scratchpad Memory and Heterogeneity on Compute-Intensive Kernels",
-    "abstract": "Modern edge computing applications, particularly high-throughput stream processing like Vision Transformers (ViTs), demand massive spatial parallelism and efficient data movement under tight power and area constraints. Coarse-Grained Reconfigurable Architectures (CGRAs) offer a promising paradigm to balance performance, flexibility, and energy efficiency. This paper analyzes the impact of two critical CGRA design choices: processing element heterogeneity and local data reuse support. We evaluate essential computational kernels (Fast Fourier Transform (FFT) and General Matrix Multiply (GEMM)) alongside an end-to-end seizure detection transformer workload across two distinct configurations: a baseline homogeneous architecture and a heterogeneous evolution integrating specialized functional units with an Scratchpad Memory (SPM). Our evaluation demonstrates that the SPM significantly optimizes data movement, reducing memory traffic eightfold compared to a memory-less design. While the heterogeneous architecture achieves superior energy efficiency for data-shuffling tasks, the homogeneous design minimizes area overhead by 4.4x to 8.2x relative to state-of-the-art CGRAs. Furthermore, it sustains a 700 MHz operating frequency, enabling up to a 5x execution speedup over the heterogeneous configuration during matrix computations. Ultimately, this work provides an architectural roadmap for selecting CGRA fabrics based on the arithmetic intensity, performance goals, and resource envelopes of edge-scale workloads.",
-    "authors": [
-      "María José Belda",
-      "Lara Orlandic",
-      "Fernando Castro",
-      "Miguel Peón-Quirós",
-      "Katzalin Olcoz",
-      "David Atienza"
-    ],
-    "published": "2026-06-25",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.27240v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "엣지 AI 가속기의 온칩 메모리(Scratchpad) 아키텍처 설계 최적화를 다루며, 메모리 대역폭과 전력 효율성이 핵심인 CGRA 기반 컴퓨팅 플랫폼의 메모리 계층 설계 문제를 다룬다.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "엣지 AI 워크로드의 온칩 메모리 최적화 연구로 향후 PIM/CXL 같은 메모리 확장 아키텍처 설계에 참고 가치는 있으나, 현재는 학술 수준의 CGRA 아키텍처 탐색 단계로 SK하이닉스의 메모리 칩/패키징 사업과의 직접 영향은 제한적이다.",
-      "final_score": 2.1
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.27098": {
-    "arxiv_id": "2606.27098",
-    "title": "Residual GPU Cache State on Apple M4 Pro",
-    "abstract": "Apple silicon exposes unified CPU-GPU memory, but the cache state left after a completed GPU command is not documented. This paper characterizes that phase boundary on a 14-core Apple M4 Pro. We validate the measurement pipeline against unmodified STREAM 5.10 and BabelStream 5.0, then adapt an 8192-byte system-level-cache occupancy pattern to a synchronized Metal experiment. A GPU kernel touches 0 to 512 MiB and finishes before a 16 MiB CPU probe begins. The first CPU traversal is slower after large GPU footprints, while a second traversal removes most of the cost, showing residual shared-cache displacement rather than simultaneous DRAM contention. A separate matched-block experiment measures GPU slowdown under high-priority CPU traffic and finds background QoS close to baseline. Root PMU measurements and public IOReport histograms provide hardware grounding: they distinguish L1D refill sectors from software cache-line size, expose page-offset-dependent conflict behavior, and separate performance-core, efficiency-core, and AGX demand. The results identify a reproducible post-GPU cache-displacement window on M4 Pro and quantify a simple one-pass software recovery mechanism.",
-    "authors": [
-      "Faruk Alpay",
-      "Baris Basaran"
-    ],
-    "published": "2026-06-25",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.27098v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Apple M4 Pro의 통합 CPU-GPU 메모리 아키텍처에서 캐시 상태 특성화는 unified memory 설계와 메모리 계층 최적화에 직접 관련.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "Apple의 통합 메모리 아키텍처 특성 분석은 학술적 가치는 있으나, SK하이닉스의 HBM/DRAM/CXL 전략과 직접적 비즈니스 임팩트는 제한적이며 경쟁 위협 신호도 약함.",
-      "final_score": 2.2
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.26426": {
-    "arxiv_id": "2606.26426",
-    "title": "Nanoelectromechanical Systems (NEMS) for Hardware Security in Advanced Packaging",
-    "abstract": "As hardware security threats escalate across semiconductor manufacturing and advanced packaging, there is a growing need for novel physical mechanisms to counter sophisticated attacks such as tampering, counterfeiting, and supply chain infiltration. This paper presents Nanoelectromechanical Systems (NEMS) as an emerging class of hardware security primitives that enable physical assurance, tamper detection, and authentication at the device level. Leveraging mechanisms such as NEMS-based Physically Unclonable Functions (PUFs), shape memory materials, resonance-based fingerprints, and physical unlocking architectures, these systems offer enhanced resilience to reverse engineering, side-channel attacks, and environmental degradation. By harnessing mechanical unpredictability and fabrication-induced nanoscale variability, NEMS technologies introduce a physically robust and low-power alternative to conventional digital security methods. Their seamless integration into standard semiconductor workflows paves the way for scalable, verifiable, and secure solutions across defense, aerospace, critical infrastructure, and consumer electronics.",
-    "authors": [
-      "Himanandhan Reddy Kottur",
-      "Pavanbabu Arjunamahanthi",
-      "M. Shafkat M. Khan",
-      "Liton Kumar Biswas",
-      "Nitin Varshney",
-      "Navid Asadizanjani"
-    ],
-    "published": "2026-06-24",
-    "primary_category": "cs.AR",
-    "url": "http://arxiv.org/abs/2606.26426v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Advanced packaging 내 물리적 보안 메커니즘으로서 NEMS 기반 PUF 및 tamper detection이 HBM/3D 패키징 환경에서의 하드웨어 보안 위협 대응 기술",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 1,
-        "credibility": 1,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "Advanced packaging 보안은 실제 산업 니즈이나, NEMS 기반 솔루션은 기초 연구 단계이며 기존 디지털/암호화 방식 대비 메모리 제조사 입장에서 직접 도입 경로가 불명확함.",
-      "final_score": 1.8
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.24860": {
-    "arxiv_id": "2606.24860",
-    "title": "Mechanism of Band Gap Formation in Beam Networks",
-    "abstract": "Band gaps are commonly attributed to Bragg scattering or local resonance, yet it remains unclear whether these mechanisms govern band gap formation in beam networks. In this work, we explain band gap formation in beam networks in terms of a new mechanism, geometry-induced coupling between deformation modes. Specifically, band gap onset arises from axial-bending coupling at lattice nodes and scales with the axial cutoff frequency of a one-dimensional periodic beam, whereas band gap termination is primarily governed by high-frequency rotational branches associated with beam geometry. This mechanism holds for both periodic and disordered beam networks. In periodic lattices, it manifests through beam orientations at lattice nodes, whereas in disordered networks it manifests through short-beam statistics arising from variations in beam length. Together, these results establish a unified mechanism for band gap formation across both periodic and disordered beam networks, providing new insight into the physical origin of band gaps in beam-network materials.",
-    "authors": [
-      "Kwangmin Lee",
-      "Charles Emmett Maher",
-      "Katherine A. Newhall",
-      "Ryan C. Hurley"
-    ],
-    "published": "2026-06-23",
-    "primary_category": "cond-mat.mtrl-sci",
-    "url": "http://arxiv.org/abs/2606.24860v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "재료 과학의 기초 연구로, 메모리 반도체 소자·공정·아키텍처·패키징과 직접적 관련성이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "메커니컬 메타머터리얼의 밴드갭 물리를 다룬 기초 재료 과학 논문으로, HBM/DRAM/NAND 메모리 설계·제조·패키징 전략과 무관함.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-06-29"
-  },
-  "2606.24046": {
-    "arxiv_id": "2606.24046",
-    "title": "Rapid FinFET Modelling Using an Autoencoder",
-    "abstract": "This work presents a machine learning framework that leverages an autoencoder (AE) for the efficient modeling of FinFET. We first calibrated a BSIM-CMG model to generate a dataset of current-voltage (ID-VG) characteristics. This data was used to train an autoencoder that compresses full I-V curves into a low-dimensional latent space, which intrinsically encodes key device physics. A key innovation is the explicit incorporation of parameter such as drain to source voltage (VDS) as an input feature, enhancing the model ability to capture bias dependent variation. The trained model successfully reconstructs full I-V curves and directly extracts critical device metrics including threshold voltage (VTH), subthreshold slope (SS), and peak transconductance (gm). This approach demonstrates that data driven compact models, built from actual characterization data, can achieve high accuracy with minimal training data, providing a powerful tool for rapid device characterization, modelling and circuit level simulation.",
-    "authors": [
-      "Amit Sarkar Suman Sau",
-      "Swagata Mandal"
-    ],
-    "published": "2026-06-23",
-    "primary_category": "cs.LG",
-    "url": "http://arxiv.org/abs/2606.24046v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "FinFET 소자 모델링 자동화는 반도체 설계·공정 최적화의 핵심 기술로, 메모리 및 어드밴스드 패키징 개발 사이클 단축에 직결됨.",
-      "scores": {
-        "business": 3,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 2,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "FinFET 컴팩트 모델링 자동화는 공정 개발 효율성 향상에 유용하나, 학계 기초연구 수준이며 메모리 제조사의 직접 경쟁력 차별화 요소는 아님.",
-      "final_score": 2.05
-    },
-    "first_seen": "2026-06-29"
-  },
   "2606.32029": {
     "arxiv_id": "2606.32029",
     "title": "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
@@ -31722,37 +31505,6 @@
     },
     "first_seen": "2026-07-22"
   },
-  "2607.17074": {
-    "arxiv_id": "2607.17074",
-    "title": "ThAME: 3D Memory-Enabled Heterogeneous Accelerator for LLM Mixture of Experts",
-    "abstract": "Mixture of Experts (MoE) architectures have emerged as a dominant paradigm for scaling Large Language Models (LLMs). However, MoE inference on conventional hardware is constrained by three fundamental bottlenecks. These encompass the massive memory bandwidth required to fetch non-contiguous expert weights, the non-deterministic scatter-gather traffic generated by input-dependent token routing, and the tail-latency dependency imposed by synchronous expert output aggregation. To address these challenges, we propose ThAME, a three-dimensional (3D) heterogeneous multi-chiplet architecture for MoE inference. ThAME employs Ferroelectric Field-Effect Transistor (FeFET)-based non-volatile and DRAM-based volatile memory chiplets with a co-designed compute mapping strategy that aligns the distinct computational profiles of attention mechanisms and expert routing. Furthermore, we design a specialized Network-on-Chip communication backbone optimized to mitigate the bottlenecks associated with non-deterministic token routing traffic across the combinatorial space of input-dependent MoE traffic patterns. Experimental results demonstrate that ThAME outperforms state-of-the-art counterparts by up to 15.7x in terms of speedup and improves energy efficiency by up to 9.8x.",
-    "authors": [
-      "Pratyush Dhingra",
-      "Pramit Kumar Pal",
-      "Janardhan Rao Doppa",
-      "Partha Pratim Pande"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AR",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17074v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "MoE 추론 가속을 위한 3D 메모리-컴퓨팅 통합 아키텍처로서 HBM/DRAM 수요 변화, 어드밴스드 패키징(3D 칩렛), PIM 개념과 직결되며 AI 인프라의 메모리 병목 해결 기술.",
-      "scores": {
-        "business": 4,
-        "threat": 2,
-        "demand": 5,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "LLM MoE 추론의 메모리 병목을 3D 칩렛 + FeFET + NoC로 해결하는 아키텍처로, HBM/DRAM 수요 증대와 어드밴스드 패키징 기술 고도화의 신호이자 우리의 3D 메모리 솔루션 포지셔닝 강화 기회.",
-      "final_score": 4.6
-    },
-    "first_seen": "2026-07-22"
-  },
   "2607.17063": {
     "arxiv_id": "2607.17063",
     "title": "When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Language Question Answering",
@@ -35423,5 +35175,2120 @@
       "final_score": -1.0
     },
     "first_seen": "2026-07-24"
+  },
+  "2607.21570": {
+    "arxiv_id": "2607.21570",
+    "title": "MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education",
+    "abstract": "Large Language Models (LLMs) show promise for medical education, but most existing systems focus on localized interactions such as question answering or single-turn feedback, rather than organizing an entire clinical case into a decision-centered learning trajectory. We introduce \\textit{MedGame}, a framework that transforms static clinical cases into structured, executable storytelling games. MedGame uses a dual-engine design: a Medical Narrative Designer synthesizes case-grounded clinical storylines with states and decision nodes, while a Story Director converts them into dependency-aware multimodal orchestration plans rendered by our released interactive platform. We construct MedGame Bench, a 5,000-case benchmark and evaluation protocol for Medical Narrative Generation and Story Direction. Experiments show that task-specific fine-tuning substantially improves open-source LLMs on MedGame Bench and narrows the gap with commercial models. A pilot student study further shows that learners perceive MedGame as more engaging and useful than text-only alternatives.",
+    "authors": [
+      "Qian Wu",
+      "Xinrong Zhou",
+      "Zizhan Ma",
+      "Kai Chen",
+      "Zheyao Gao",
+      "Xun Lin",
+      "Hongqiu Wu",
+      "Longfei Gou",
+      "Yixiao Liu",
+      "Ann Sin Nga Lau",
+      "Qi Dou"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21570v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "의료 교육용 LLM 기반 게임화 플랫폼으로, 메모리 반도체 수요·기술·경쟁 구도와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "순수 의료 교육 응용 논문으로, 메모리 반도체 사업 전략·AI 인프라 수요·경쟁 신호와 무관하며, 우리의 HBM/DRAM/NAND/PIM 사업 의사결정에 입력값이 되지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21561": {
+    "arxiv_id": "2607.21561",
+    "title": "Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling",
+    "abstract": "Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a molecular ensemble foundation model that encodes an ensemble by first encoding each conformer with shared Equivariant Graph Neural Network (EGNN) layers, then pooling the resulting conformer representations with a Set Attention Block. We pretrain the model on CREMP, a cyclic peptide ensemble dataset, using a multi-task self-supervised objective combining masked token recovery, noisy-coordinate reconstruction, and pairwise distance reconstruction. On the CREMP-CycPeptMPDB dataset, training EnsembleEGNN from scratch fails entirely ($R^2=0.005$). However, the pretrained model reaches $R^2=0.477$ and Pearson $r=0.699$, outperforming the sequence-only BERT baseline ($R^2=0.439$, Pearson $r=0.667$). When EnsembleEGNN is co-trained end-to-end with the BERT sequence encoder, the hybrid model improves further to $R^2=0.538$ and Pearson $r=0.737$. These results demonstrate that encoding conformational ensembles into a single thermodynamically informed embedding improves cyclic-peptide property prediction.",
+    "authors": [
+      "Aaron Feller",
+      "Kris Deibler",
+      "Maxim Secor"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21561v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "순수 분자 구조 예측 모델링 연구로, 반도체 메모리 기술·아키텍처·수요와 직접적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "분자 앙상블 모델링은 신약개발·화학 시뮬레이션 도메인 연구이며, 메모리 반도체 사업 전략·AI 인프라 메모리 수요와 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21558": {
+    "arxiv_id": "2607.21558",
+    "title": "Beyond Sycophancy: Structured Resistance and Compliance in LLM Moral Reasoning",
+    "abstract": "Building socially calibrated large language models, which can learn from others without simply yielding to them, requires more than reducing sycophancy as a one-dimensional failure mode. Models must distinguish when to incorporate others' perspectives from when to maintain a well-grounded moral judgment. We study the broader resistance-compliance process governing this distinction. Across three studies, we show that models' judgment revision is structured along three dimensions that parallel classic phenomena in human social psychology: the distance between an incoming view and the model's initial position, the source attribution of that view, and the coalition structure supporting it. Models are generally more receptive to nearby positions, more influenced by views presented as their own prior judgments, and differently responsive to group pressure. These findings recast sycophancy as one expression of a broader judgment-updating process shaped by social influence. Our framework provides a principled basis for distinguishing constructive belief revision from sycophantic compliance, thereby supporting better alignment in morally consequential interactions.",
+    "authors": [
+      "Baihui Wang",
+      "Bernard Koch"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21558v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM의 도덕적 추론과 사회심리학적 순응 메커니즘을 다루는 순수 AI 정렬(alignment) 연구로, 메모리 반도체 수요·아키텍처·기술 전략과 직접적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 행동 특성 연구이지만 메모리 용량·대역폭·추론 효율 등 우리 사업에 영향을 주는 AI 인프라 변화와 무관하므로 전략적 가치 없음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21552": {
+    "arxiv_id": "2607.21552",
+    "title": "MIRROR: Learning from the Other View for Multi-Modal Reasoning",
+    "abstract": "Unlike large language models (LLMs) that exhibit strong reasoning capabilities, vision-language models (VLMs) struggle with visual reasoning, even on geometry problems that admit equivalent text, diagram, and combined diagram+text views. We show that these views often elicit different behaviors: a model may solve a problem from text but fail on the corresponding diagram, or succeed visually while failing textually. This inconsistency suggests that different views expose complementary reasoning paths and failure modes that standard multimodal post-training does not fully exploit. To study and exploit this phenomenon, we construct ODA-Data, a high-quality paired multimodal geometry dataset with text-dominant, image-dominant, and combined image+text views of the same problems, together with splits for training and evaluating modality-dependent reasoning behaviors. We then develop Modality-Informed Reciprocal Reasoning Optimization (MIRROR), a reinforcement learning approach for improving multimodal reasoning via self supervision. For each problem, MIRROR evaluates the model under all views, selects the best-performing view as a teacher, and trains other views with a reverse-KL objective towards the teacher. Across reasoning benchmarks that evaluate on geometry problems, MIRROR improves over standard RL and yields more accurate and consistent behavior across modalities",
+    "authors": [
+      "Wen Ye",
+      "Yuxiao Qu",
+      "Aviral Kumar",
+      "Xuezhe Ma"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21552v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "VLM의 멀티모달 추론 효율성 개선은 AI 인프라의 메모리 접근 패턴과 연산 효율을 변화시켜 HBM/DRAM 수요 특성에 영향을 미칠 수 있는 전방 시장 신호",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "VLM 멀티모달 추론 최적화는 AI 모델 효율성을 높이지만, 메모리 수요 규모나 아키텍처 변화로 직결되지 않으며 순수 알고리즘 개선으로 반도체 사업과의 직접 연관성은 제한적",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21550": {
+    "arxiv_id": "2607.21550",
+    "title": "X$^3$-OPD: Distilling Reasoning into Large Audio-Language Models via On-Policy Alignment",
+    "abstract": "While large audio-language models have achieved remarkable progress in auditory perception, they still lag behind text-based large language models in deep logical reasoning, primarily due to the scarcity of high-quality audio reasoning data. To bridge this gap, we propose X$^3$-OPD, a cross-modal on-policy distillation framework that transfers reasoning capabilities from a powerful text teacher to an audio-language student. During training, the student generates reasoning trajectories conditioned on its own acoustic perception, while the teacher provides token-level guidance using matched textual inputs and verified answers. We further construct a three-tier symmetric corpus covering textual reasoning rendered into speech, audio-event reasoning grounded in complex acoustic scenes, and spoken-dialogue reasoning involving paralinguistic cues. This design extends cross-modal distillation beyond textually recoverable content to reasoning grounded in non-linguistic events, prosody, and conversational context. Experiments on MMSU, MMAU, BIG Bench Audio, and MMAR demonstrate that X$^3$-OPD substantially improves audio-grounded reasoning and chain-of-thought quality while largely preserving the model's existing capabilities under domain shift.",
+    "authors": [
+      "Dongjie Fu",
+      "Di Cao",
+      "Xize Cheng",
+      "Zihan Zhang",
+      "Wenxu Jia",
+      "Yifu Chen",
+      "Shengpeng Ji",
+      "Yu Zhang",
+      "Tao Jin"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21550v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Audio-Language Model의 추론 능력 강화는 멀티모달 AI 인프라 복잡도를 증가시켜 메모리(HBM/DRAM) 수요와 on-device 추론 최적화 수요를 견인하는 전방 시장 신호",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "멀티모달 추론 모델의 고도화는 메모리 대역폭·용량 수요를 증가시키지만, 논문 자체는 소프트웨어 기법이므로 직접 반도체 사업 영향은 제한적",
+      "final_score": 1.65
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21535": {
+    "arxiv_id": "2607.21535",
+    "title": "Windowed-MTP: Removing the Full-Context Draft-KV Tax at Million-Token Context",
+    "abstract": "Speculative decoding accelerates autoregressive generation by having a cheap draft propose tokens that a target verifies in parallel. Frontier models increasingly ship a built-in Multi-Token-Prediction (MTP/NEXTN) draft head under the assumption that the draft is negligibly cheap. At million-token context this breaks: an MTP draft head typically runs full attention over the entire KV cache at every draft step, so its read grows linearly with context and comes to dominate the draft cost -- precisely where speculation is most valuable. The effect compounds with draft length (a deep native draft can turn net-negative, slower than no speculation) and sharpens under hybrid/linear-attention targets, where cheaper verification leaves the draft's full-attention read exposed. We apply a StreamingLLM-style sliding window plus attention sink to the draft's attention only (Windowed-MTP), leaving full-attention verification intact. It is training-free, drop-in, and lossless by construction: the full-attention target still decides every accepted token, so windowing changes only which tokens are proposed, never which are accepted. It bounds the draft's KV working set to a constant, dropping ~99% of KV entries at 1M. Across three architecture families (Qwen GDN-MoE 35B/122B and a Mamba2-hybrid NoPE 120B) at 1M context on a single GPU in SGLang, windowing cuts the per-decode-step cost over the shipping native MTP draft by +28% to +44%, an input-invariant margin that widens with context. Since per-token latency is this cost divided by acceptance length, at matched acceptance end-to-end decode latency improves by the same amount, and more where windowing also lifts acceptance, while preserving the target's verified output distribution. Finally, the unread draft KV -- 7.7-11% of total KV at 1M -- is reclaimed via a compact ring buffer at no acceptance or quality cost.",
+    "authors": [
+      "Alagappan Valliappan"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21535v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "백만 토큰 컨텍스트에서 추론 메모리 대역폭 효율을 개선하는 기법으로, AI 인프라의 메모리 읽기 비용을 직접 감소시켜 우리의 HBM/DRAM 수요 특성과 고객 추론 비용 구조에 영향을 미침.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 4,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "장문맥 추론에서 KV 캐시 메모리 읽기를 99% 감소시키는 소프트웨어 기법이 실전 도입 중이므로, 메모리 대역폭 수요 구조 변화와 효율성 경쟁 심화를 신호하며 우리의 고대역폭 메모리 가치 제안 재정의를 촉구함.",
+      "final_score": 4.1
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21530": {
+    "arxiv_id": "2607.21530",
+    "title": "From Resource Flow to Executable Tests: Petri-Net-Guided LLM Test Generation for Concurrent Stateful Rust APIs",
+    "abstract": "Concurrent stateful library APIs expose behavior through evolving resource ownership, lifecycle states, and competing interleavings. Large language models can synthesize executable Rust tests, but their outputs often violate API preconditions, remain shallow, or reduce concurrency to accidental sequential traces. Conversely, model-based and systematic testing techniques provide semantic control but commonly require substantial handwritten code to turn abstract scenarios into executable tests. This paper addresses the gap between formal scenario design and low-cost test concretization. We present a Petri-net-guided methodology for test generation over concurrent stateful Rust APIs. The method represents API resources, lifecycle conditions, and causal dependencies as colored tokens and transitions; derives legal deep-state, near-legal, and partial-order concurrent scenarios; and uses these scenarios as a constrained intermediate representation for LLM-based code synthesis. A local-faithfulness contract and structural repair loop preserve the modeled intent during concretization, while Petri-guided schedule shaping prioritizes high-conflict concurrency skeletons for systematic exploration. A layered semantic oracle then distinguishes synthesis failures from violations of the target API's expected behavior.",
+    "authors": [
+      "Kaiwen Zhang",
+      "Guanjun Liu"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.SE",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21530v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Rust API 테스트 자동화 기법으로, 메모리 반도체 제조·아키텍처·수요와 직접 연관이 없는 순수 소프트웨어 엔지니어링 논문.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "Petri-net 기반 LLM 테스트 생성은 소프트웨어 품질 보증 도구일 뿐, HBM/DRAM/NAND 사업 전략, AI 메모리 수요, 또는 반도체 아키텍처 혁신과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21529": {
+    "arxiv_id": "2607.21529",
+    "title": "ElasticTTT: Prior-Preserving Test-Time Tuning for Video Editing",
+    "abstract": "Test-Time Tuning (TTT) on pretrained diffusion models has emerged as a powerful paradigm for video editing. However, there exists a foundational mismatch between the distribution-mapping nature of generative models and the single-point optimization of standard TTT. In this paper, we demonstrate that this mismatch triggers \\textit{Prior Collapse}, a degenerate state where the model discards the text conditions and spatial latents, collapsing generations to the source video, or entangling the features of distinct regions. To resolve this, we propose \\textbf{ElasticTTT}, a novel framework that preserves the prior generative distribution and rescues generative elasticity. Specifically, we propose \\textit{Target Distribution Regularization} to prevent sharp memorization minima, \\textit{Contrastive CFG} to guide inference away from source biases, and \\textit{Asynchronous Noise Schedule} to preserve unedited regions. Extensive evaluations, supported by theoretical analysis, demonstrate that ElasticTTT successfully preserves the generative prior of the base model, achieving state-of-the-art performance on one-shot video editing.",
+    "authors": [
+      "Yueyi Liu",
+      "Chi Zhang",
+      "Sen Cui",
+      "Miao Liu"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CV",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21529v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "비디오 생성형 AI 모델의 효율적 추론 기법으로서 메모리 대역폭·용량 수요 패턴 변화를 시사하는 전방 시장 신호",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "Test-Time Tuning 기반 비디오 편집 기법의 고도화는 생성형 AI 추론 단계에서의 메모리 접근 패턴·대역폭 요구를 재정의할 가능성이 있으나, 현재는 알고리즘 수준의 개선으로 하드웨어 수요 변화 신호는 제한적",
+      "final_score": 1.8
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21522": {
+    "arxiv_id": "2607.21522",
+    "title": "GS-Agent: Creating 4D Physical Worlds With Generative Simulation",
+    "abstract": "Creating dynamic and physically realistic 4D worlds from natural language descriptions is both fascinating and challenging. Traditional computer graphics methods rely on manual creation, requiring extensive human effort to fine-tune materials, motions, and visual fidelity. Recent advances in generative foundation models have sparked interest in learning to generate such 4D worlds from large-scale data; however, existing methods still struggle to ensure physical plausibility and controllability. In this work, we take a different path by leveraging foundation models to construct an agentic system that emulates how humans traditionally create 4D worlds, yet automates the entire process. We present GS-Agent, an end-to-end multi-agent framework that integrates physics engines in the loop to generate realistic, dynamic, and controllable 4D physical worlds from natural language. Inspired by how humans build 4D worlds, GS-Agent decomposes the task into entity management, covering 3D asset curation, material tuning, placement, and motion control, and rendering configuration, including camera and lighting manipulation. Multiple agents with distinct expertise interact with the physics engine via code, seek multimodal feedback, and collaborate to iteratively construct 4D worlds that align with the given descriptions. Experimental results show that GS-Agent effectively converts natural language into diverse and physically plausible 4D worlds exhibiting rich interactions among liquids, deformable objects, and rigid bodies, while achieving cinematic camera and lighting control. We envision GS-Agent as a foundation for a new paradigm in 4D world generation, empowering creative content creation and physical AI. Project page at https://umass-embodied-agi.github.io/gs-agent/",
+    "authors": [
+      "Hongxin Zhang",
+      "Chunru Lin",
+      "Junyan Li",
+      "Zhou Xian",
+      "Tsun-Hsuan Wang",
+      "Chuang Gan"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.RO",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21522v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "4D 물리 시뮬레이션 생성 AI는 메타버스·게임·로봇 등 차세대 AI 인프라에서 메모리·연산 수요를 급증시킬 신흥 전방 시장",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "멀티에이전트 물리 시뮬레이션 기반 4D 생성은 장기적으로 고대역폭 메모리(HBM)·고성능 연산 수요를 견인할 신흥 AI 워크로드이나, 현재 상용화 거리는 멀고 메모리 사업과의 직접 연관성은 제한적",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21517": {
+    "arxiv_id": "2607.21517",
+    "title": "Improved lower bounds for the Shannon capacity of odd cycles",
+    "abstract": "The Shannon capacity $Θ(G)$ of a graph $G$ quantifies the maximum rate at which information can be transmitted with zero error over a noisy channel. It is lower bounded by $α(G^d)^{1/d}$ for any $d$, where $α(G^d)$ is the independence number of the $d$-th strong power of $G$. We construct independent sets of size $134753$ in $C_7^{10}$, $21909$ in $C_{11}^{6}$, and $62530$ in $C_{13}^{6}$, improving the best known lower bounds for the Shannon capacity of these graphs to $Θ(C_7)\\geq 134753^{1/10}>3.258020$, $Θ(C_{11})\\geq 21909^{1/6}>5.289773$, and $Θ(C_{13})\\geq 62530^{1/6}>6.300109$. We also improve the best known lower bounds on the independence numbers of several individual strong powers of odd cycles that do not improve the Shannon capacity lower bound. The constructions were discovered through iterative interactions with a Large Language Model (LLM), illustrating the potential of LLMs for finding explicit combinatorial constructions.",
+    "authors": [
+      "Nathaniel Itty",
+      "Christopher D. Rosin",
+      "Chase Carstensen",
+      "Daniel Reichman"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.IT",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21517v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "순수 그래프 이론의 Shannon 용량 문제로, 메모리 반도체 제조·설계·아키텍처 및 AI 인프라 수요와 직접적인 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM을 활용한 조합론적 구성은 방법론적 참신함이 있으나, 메모리 사업 전략·기술·수요와 무관한 기초 수학 연구이므로 사업 의사결정에 영향을 주지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21498": {
+    "arxiv_id": "2607.21498",
+    "title": "Artificial Epanorthosis: Why large language models overuse a classical rhetorical figure, and how to mitigate it",
+    "abstract": "A rhetorical figure that Cicero and Quintilian catalogued two thousand years ago reappears, systematically, in the text of large language models: epanorthosis, the self-correction of the specimen «This is not a course. It is a journey of transformation». This essay argues that the overuse is a trained disposition, driven mainly by a training distribution rich in promotional prose and by preference tuning (RLHF) that rewards confident, emphatic phrasing; the left-to-right nature of generation is an amplifier rather than the root cause. Building on evidence that models diverge from human rhetorical style, and on Fontanier's classification of epanorthosis as a figure of thought, it sets out a programme that scores the figure against genre-specific human baselines through an Epanorthosis Index (density relative to the human rate). A first measurement, on three sizes of one instruction-tuned model family, finds mis-calibration by register in both directions: the models overshoot in oratory (about twofold, near threefold in Italian, concentrated in the larger tiers) and undershoot in informal question-and-answer writing, while matching humans in argument, journalism, and encyclopedic prose. Three constructive contributions follow: a survey of mitigation techniques centred on lightweight LoRA adapters; a demonstration, in Italian, that a one-line instruction cuts the figure by half to nearly three-quarters and that a supervised-fine-tuning adapter removes it almost entirely, with a scaling coefficient that dials the reduction back onto the human rate; and the argument that the target is calibration to the human rate for each genre, not elimination. It closes on the stakes: the real risk is that we begin to write like the machines.",
+    "authors": [
+      "Federico Boggia"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21498v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM의 수사학적 스타일 분석으로, 메모리 반도체 수요·기술·아키텍처와 직접적인 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM의 텍스트 생성 특성을 언어학적으로 분석한 순수 NLP 논문으로, 메모리 수요·제조·경쟁 전략과 무관하며 우리의 사업 의사결정에 기여하지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21496": {
+    "arxiv_id": "2607.21496",
+    "title": "Toward Generalizable Cognitive Impairment Detection with Speech-Based Multimodal Large Language Models",
+    "abstract": "Cognitive impairment (CI) is a growing public health concern. Early and accurate diagnosis is critical for enabling timely intervention and improving patient outcomes. Speech-based CI detection has emerged as a promising non-invasive approach, as speech signals encode both linguistic and acoustic markers associated with cognitive decline. Recent advances in large language models (LLMs) further strengthen the potential of speech-based assessment by enabling more expressive representation learning and improved generalization across diverse speakers, recording devices, and clinical environments. Moreover, multimodal learning by jointly modeling linguistic and acoustic features allows for a more comprehensive characterization of cognitive and behavioral changes related to CI, leading to more reliable detection. In this work, we propose a multimodal CI detection framework based on open-source LLMs that integrates speech audio and corresponding transcripts while preserving patient privacy. Acoustic embeddings are extracted directly from speech signals, while textual embeddings are generated from automatically transcribed speech. These modality-specific embeddings are then concatenated to create a combined feature vector and used for downstream classification, without requiring access to raw or sensitive patient data. The proposed approach is evaluated on the ADReSS20 and ADReSSo21 benchmark datasets. Experimental results show that the proposed multimodal framework achieves an CI classification accuracy of 92.4% and consistently outperforms single-modality baselines. Our work establishes a new state-of-the-art for CI identification, with the proposed method demonstrating superior cross-dataset generalization. This advance highlights the power of an LLM-based multimodal framework that fuses linguistic and acoustic data to enable robust, scalable, and non-invasive screening.",
+    "authors": [
+      "Yingchao Huang",
+      "Xin Wang",
+      "Yuhan Su",
+      "Shanshan Yao"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "eess.SP",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21496v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "의료 진단용 음성 AI 모델로서 메모리 반도체 수요·아키텍처·기술 전략과 실질적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 1,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 기반 의료 진단 애플리케이션으로 일반적 AI 인프라 수요는 미미하며, 메모리 제조사의 제품·전략·경쟁 구도와 직접 무관한 순수 응용 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21482": {
+    "arxiv_id": "2607.21482",
+    "title": "Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks",
+    "abstract": "Large language models (LLMs) and agents are now widely used tools in code development, with data typically sent to third-party cloud-based models. Their adoption in research using personal data is constrained by governance requirements that typically prohibit data transmission to external services. Locally deployable open-weight models offer an alternative since sensitive data never leave the local environment. We introduce an open-source framework for evaluating the efficacy of AI agents powered by open-weight LLMs on one of the most persistent bottlenecks in research on longitudinal population studies: data preparation. The framework comprises: a curated ground-truth dataset (cleaning scripts preparing six sweeps of data from a British cohort study), task definitions encompassing tasks such as category harmonization and multi-wave merging, and automated routines for evaluating the LLM-produced R code and outputted data. We benchmark LLMs across the (consumer grade) deployment spectrum to assess their efficacy in 20 data preparation tasks (creation of 102 variables). Current state-of-the-art, 31-35B parameter models almost saturated our benchmark (\"average task completion\" up to 87.9%). The performance of open-weight LLMs running on consumer-grade hardware shows promise of a viable path toward AI-assisted data preparation in governance-restricted research settings. Our framework is publicly available at: https://github.com/UCL-ARC/RRBench.",
+    "authors": [
+      "Mack Nixon",
+      "Liam Wright",
+      "Yevgeniya Kovalchuk",
+      "Alison Fang-Wei Wu",
+      "Martin Danka",
+      "Andy Boyd",
+      "David Bann"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21482v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "온디바이스 LLM 추론의 실용화 경로를 제시하며, 엣지/로컬 배포 시 메모리 효율성과 소비자급 하드웨어 요구사항 변화를 시사하는 AI 전방 시장 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "클라우드 중심 AI 추론에서 온디바이스 오픈웨이트 모델로의 전환이 가속화될 경우, 엣지 디바이스의 DRAM/NAND 수요 증가와 저전력 메모리 아키텍처(LPDDR, CXL) 수요 변화를 초래할 수 있는 신호",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21475": {
+    "arxiv_id": "2607.21475",
+    "title": "Error Certificates for KV-Cache Eviction via Randomized Design",
+    "abstract": "Deterministic KV-cache eviction keeps the top-$k$ tokens under an importance score and deletes the rest. We prove that this design cannot know what it destroyed: evicted values can be altered so that everything the serving system retains is unchanged while the true attention-output error grows arbitrarily, so no serving-time estimator of that error is consistent. Randomized eviction restores identifiability. With a Poisson-sampled tail at known inclusion probabilities, one logit offset performs the Hájek correction inside the softmax, and a survey-sampling variance estimator over the retained set becomes a per-step error certificate with 0.97 empirical coverage at no accuracy cost. On real workloads we pre-registered seven claims and lost three: question-aware eviction at 25--50\\% budgets is nearly free; output log-probability predicts failure better than the certificate; certificate-gated budget escalation adds nothing. What survives is attribution: the certificate separates cache-induced from inherent failures (AUC 0.73--0.75, against 0.47--0.54 for output confidence) and schedules recomputation better than random or confidence gating. Randomization buys attribution, not prediction.",
+    "authors": [
+      "Peng Xie"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21475v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 시 KV-캐시 효율화 기법으로서 메모리 대역폭·용량 수요를 직접 감소시키는 AI 인프라 최적화 논문",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "생성형 AI 추론 워크로드의 메모리 효율화 기법으로서 HBM/DRAM 수요 패턴 변화를 시사하지만, 아직 학술 단계이며 실제 도입 영향은 제한적",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21468": {
+    "arxiv_id": "2607.21468",
+    "title": "Thinkink: 2D Spatial Ink-native Interaction with LLMs",
+    "abstract": "People often use handwritten notes and sketches to externalize ideas for ideation. To integrate large language models (LLMs) into this practice, we propose Thinkink. Prompts can be handwritten text or drawn sketches with LLM-generated responses visualized as ink-like text and sketches spatially integrated into a shared canvas. A semantic tree streamlines ink interpretation, and a lightweight UI provides explicit control using a state machine. The tool was designed using a three-stage process. A formative study (N=12) examined current practices with conventional and digital inking methods. The results informed a technical probe for a diagnostic study (N=6) identifying usability and human-LLM interaction challenges. This motivated the design of Thinkink, with a final study (N=10) examining how people incorporate it into their ideation practices. We contribute design implications and a tool for ink-native LLM interaction where the user and LLM write and draw in a shared 2D canvas.",
+    "authors": [
+      "Mohammad Hasan Payandeh",
+      "Daniel Vogel",
+      "Jian Zhao"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.HC",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21468v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "HCI/UI 설계 논문으로 메모리 반도체 수요, 아키텍처, 기술 전략과 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 기반 손글씨 상호작용 UI/UX 도구로, 메모리 수요 패턴이나 반도체 기술 전략과 무관한 순수 인터페이스 설계 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21461": {
+    "arxiv_id": "2607.21461",
+    "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+    "abstract": "Deep research requires agents to find answers that jointly satisfy multiple constraints. Discovering such answers is costly, whereas verifying a candidate can often be decomposed into tractable constraint-wise checks. This discovery--verification asymmetry suggests that a research agent should do more than simply search longer: it should recursively improve its current answer by verifying intermediate results and using the partially verified state to guide subsequent refinement. We introduce AREX, a family of Recursively Self-Improving (RSI) deep research agents. AREX alternates between an inner research loop that gathers evidence and constructs a provisional answer, and an outer self-improvement loop that audits the answer constraint-wise, identifies unresolved claims, and launches targeted follow-up research. To sustain RSI over long horizons, AREX learns an autonomous context-update tool that compresses growing interaction history into a compact improvement state preserving verified evidence and unresolved constraints, without relying on an external model. We train AREX on verified synthetic tasks and high-quality trajectories through agentic mid-training and long-horizon reinforcement learning. To mitigate sparse final rewards during long horizon learning, we emphasize key steps where decisive evidence is acquired or erroneous research directions are corrected. We instantiate a dense 4B model and a 122B-A10B Mixture-of-Experts model. Across BrowseComp, WideSearch, DeepSearchQA, Humanity's Last Exam (HLE), and other reasoning and tool-use benchmarks, AREX substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
+    "authors": [
+      "Shuqi Lu",
+      "Chaofan Li",
+      "Kun Luo",
+      "Zhang Zhang",
+      "Hui Wang",
+      "Hongwang Xiao",
+      "Zheng Liu",
+      "Lei Xiong",
+      "Jiahao Wang",
+      "Sen Wang",
+      "Xiyan Jiang",
+      "Wanli Li",
+      "Yuyang Hu",
+      "Hongjin Qian",
+      "Bingyu Yan",
+      "Ziyi Xia",
+      "Yingxia Shao",
+      "Kang Liu",
+      "Zhicheng Dou",
+      "Di He",
+      "Chaozhuo Li",
+      "Qiwei Ye",
+      "Zhongyuan Wang",
+      "Zheng Liu"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21461v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 에이전트의 장시간 추론·탐색 능력 향상은 대형 모델의 메모리·연산 수요 패턴을 근본적으로 변화시키며, 특히 컨텍스트 윈도우 확장과 중간 상태 압축 기법이 HBM/DRAM/CXL 메모리 아키텍처 설계에 직접 영향을 미친다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "RSI 에이전트의 장시간 추론은 컨텍스트 관리·상태 압축·메모리 효율성 요구를 급증시켜 HBM/CXL 같은 고대역폭 메모리와 PIM 기술의 수요를 견인할 신호이지만, 현재는 기초 알고리즘 단계로 상용 메모리 설계 영향은 중기(2-3년)에 나타날 것으로 예상된다.",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21453": {
+    "arxiv_id": "2607.21453",
+    "title": "Test-Time Scaling via Error Localization",
+    "abstract": "Scaling inference-time computation has emerged as a reliable method to improve the performance of large language models on complex reasoning and programming tasks. However, standard approaches such as independent sampling and sequential multi-turn refinement operate without token-level credit assignment, resulting in computational inefficiency, since valid reasoning prefixes are frequently discarded. In this work, we introduce Test-Time Scaling via Error Localization (TTEL), an inference-time algorithm that utilizes fixed or environment feedback to perform token-level error localization. By comparing conditional probabilities under informed feedback against a null-context baseline, TTEL isolates the step at which an error occurred. The algorithm then truncates the trajectory and branches a new generation, maximally reusing the valid prefix. Extensive evaluations demonstrate that TTEL establishes strictly dominating Pareto frontiers across sequential reasoning domains, measured by pass-at-k vs. generated-token cost. With Qwen3-8B on LiveCodeBench, TTEL attains a pass@64 of 71.0% while generating approximately half as many tokens as independent sampling (360.4k vs. 735.0k). Generalizing to math benchmarks AIME-2025 and HMMT-2025, TTEL cleanly outperforms competing test-time baselines across both Qwen3-8B and Qwen3-4B-Thinking-2507.",
+    "authors": [
+      "Rajiv Shailesh Chitale",
+      "Rahul Madhavan",
+      "Taneesh Gupta",
+      "Deepanway Ghosal",
+      "Aravindan Raghuveer"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21453v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 추론 단계에서 토큰 효율성을 획기적으로 개선하는 기법으로, 메모리·연산 수요 패턴을 근본적으로 변화시키는 전방 시장 트렌드",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "Test-time 추론에서 토큰 생성량을 50% 감축하면서 성능을 유지하는 기법은 AI 인프라의 메모리·대역폭 수요 구조를 재편할 가능성이 있어, HBM/DRAM 설계 및 용량 전략 재검토 필요",
+      "final_score": 3.95
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21447": {
+    "arxiv_id": "2607.21447",
+    "title": "RUMBA: Russian User Memory Benchmark",
+    "abstract": "The ability to handle long-term memory in LLMs is becoming increasingly critical, yet existing benchmarks remain English-centric and rely on aggregate retrieval metrics, failing to capture interactions between long-range context, temporal information, and reasoning. To address this, we introduce RUMBA (Russian User Memory BenchmArk) - a new benchmark for long-term conversational memory that provides a fine-grained taxonomy of memory-centric question types and a unified methodology accounting for semantic type, session scope, temporal reasoning, and the explicitness of temporal expressions. RUMBA consists of timestamped user-assistant dialogues with QA pairs requiring retrieval, combination, and reasoning across sessions. While designed for Russian, we also provide an aligned English subset under the same methodology. We evaluate contemporary memory systems and long-context models, and show how RUMBA serves as a diagnostic tool to analyze model behavior across benchmark slices and identify strengths and failure modes of different memory mechanisms.",
+    "authors": [
+      "Elizaveta Shevtsova",
+      "Inna Glebkina",
+      "Mark Baushenko",
+      "Pavel Gulyaev",
+      "Alena Fenogenova"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21447v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM의 장기 메모리 처리 능력 평가 벤치마크로서 AI 인프라의 메모리 수요 패턴(컨텍스트 윈도우 확대, 세션 간 상태 유지)을 드러내며, 이는 HBM/DRAM/CXL 같은 고대역폭·저지연 메모리 수요를 견인하는 신호.",
+      "scores": {
+        "business": 2,
+        "threat": 0,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "LLM의 장기 메모리·다중 세션 추론 요구가 증가하는 AI 워크로드 특성을 정량화함으로써 고대역폭 메모리(HBM) 및 메모리 확장(CXL) 수요 증대의 근거를 제공하는 진단 도구.",
+      "final_score": 3.25
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21445": {
+    "arxiv_id": "2607.21445",
+    "title": "When Trivia Is Not Trivial: Everyday Knowledge Failures in Multilingual LLMs",
+    "abstract": "Quiz rooms, trivia nights, and quiz shows challenge human knowledge across a wide range of topics, from canonical facts to everyday culture. In this paper, we examine whether large language models (LLMs) can perform competitively in such settings, using quiz-style questions to test them on both common and niche topics. We introduce TriviaRoomQA, a multilingual benchmark designed to evaluate everyday, culturally grounded, and long-tail knowledge across 288 topics. The benchmark contains 3,300 parallel multiple-choice questions in six European languages and additional 5,340 French-only questions for a more fine-grained case study. We evaluate 30 open-weight LLMs from European, Asian, and North American providers, covering models from 7 to 70B parameters. We find that models are strong on knowledge-intensive topics such as history, geography, and mathematics, but substantially weaker on everyday popular-culture topics such as celebrities, music, movies, and news. Moreover, model performance varies across languages even for the same underlying questions, suggesting that access to factual knowledge is not always language-independent. In sum, our dataset and experiments demonstrate an important knowledge gap which is not captured by existing academic-based saturated benchmarks.",
+    "authors": [
+      "Anna Mosolova",
+      "Djamé Seddah"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21445v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM의 지식 성능 편차와 언어별 차이는 추론 시 메모리 접근 패턴, 컨텍스트 윈도우 크기, 다국어 모델 최적화 수요를 드러내며, AI 인프라의 메모리 효율성 요구를 시사한다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "LLM의 다국어·장문맥 추론 성능 편차는 메모리 대역폭(HBM), 캐시 효율성, 컨텍스트 윈도우 확장(CXL) 수요를 암시하는 간접적 신호이나, 반도체 기술 개선 필요성을 직접 제시하지는 않는다.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21433": {
+    "arxiv_id": "2607.21433",
+    "title": "Token Budget Saturation and Mechanistic Early Detection of Reasoning Non-Convergence in Chain-of-Thought Models",
+    "abstract": "Chain-of-thought reasoning models such as DeepSeek-R1-Distill-Qwen-7B exhibit a bimodal convergence pattern: generations either terminate within a token budget (converged) or exhaust it without reaching a conclusion (non-converged). We characterize this phenomenon empirically, showing that converged generations achieve 90.3% accuracy on AIME 1983-2024 while non-converged ones achieve only 6.6%, with an overall convergence rate of 62.0%. We then ask whether this outcome is detectable early in the thinking chain using internal model representations. Training linear probes on hidden-state activations at token positions 50-300, we find that layer-20 activations at token 150 achieve AUC 0.608 (+-0.080, 5-fold CV), reliably above chance even at token 50. Activation probes consistently outperform behavioral baselines derived from token entropy and repetition statistics. A sweep-level permutation test yields p=0.063 (100,000 permutations), consistent with a modest signal that our sample size cannot confirm at conventional thresholds. These findings suggest that convergence fate is partially encoded in intermediate representations well before the generation ends, opening a path toward early-exit inference and adaptive compute allocation.",
+    "authors": [
+      "Renuka Oladri",
+      "Niveda Jawahar",
+      "Abdirisak Mohamed"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21433v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 추론 모델의 토큰 예산 효율성 최적화 기법으로서, 메모리 대역폭·용량 수요와 추론 비용 구조를 근본적으로 변화시킬 수 있는 전방 시장 신호",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "조기 종료(early-exit) 추론으로 토큰 소비를 30~40% 감축 가능하면 HBM/DRAM 대역폭 수요와 추론 서버 메모리 풀 규모가 재설계되어야 하므로, AI 인프라 메모리 아키텍처 전략 수정 신호",
+      "final_score": 3.85
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21424": {
+    "arxiv_id": "2607.21424",
+    "title": "An Evaluation Framework for Structured Audio Captions Validated by Controlled Perturbations",
+    "abstract": "Recent advancements in automated audio captioning (AAC) have shifted from monolithic sentence generation toward structured formats that explicitly disentangle distinct acoustic and semantic properties. However, evaluating this heterogeneous data remains a significant challenge. Existing caption metrics focus on flat textual outputs and fail to reliably assess multimodal attributes. To bridge this gap, we propose a multi-axis evaluation framework tailored for structured audio descriptions. Building on the AudioCards dataset, we evaluate outputs across five orthogonal axes: tag-sets, descriptions, logical reasoning, numeric measurements, and spectral profiles. Our approach combines Large Language Model (LLM) judges to capture semantic nuance with deterministic computational metrics to precisely measure acoustic deviations. To rigorously validate the reliability of this framework, we introduce a controlled perturbation testing protocol that injects typed, graded errors into groundtruth annotations. Our results demonstrate that this framework successfully distinguishes meaning-preserving paraphrases from genuine semantic and acoustic corruptions.",
+    "authors": [
+      "Liang-Yuan Wu",
+      "Sripathi Sridhar",
+      "Mark Cartwright",
+      "Magdalena Fuentes"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21424v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "음성 캡션 평가 프레임워크는 순수 자연언어처리·멀티모달 평가 방법론으로, 메모리 반도체 수요·아키텍처·기술 전략과 직접 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "음성 처리 AI의 평가 방법론 개선이지만, HBM/DRAM/NAND 수요 변화나 메모리 아키텍처 혁신과는 무관하므로 사업 전략 의사결정에 입력값이 되지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21421": {
+    "arxiv_id": "2607.21421",
+    "title": "Bridging the Gap Between Plausibility and Admissibility: Constraint-Aware Flow Maps for Dynamic Graph Systems",
+    "abstract": "Generative models can support decision-making under uncertainty by producing ensembles of plausible future system trajectories, but statistical plausibility does not ensure structural feasibility. This study investigates whether post-sampling symbolic constraints can improve the reliability of generative trajectory modeling in dynamic graph-structured systems. A conditional diffusion model generates future graph-state trajectories from partial observations, while an external symbolic layer applies hard filtering, soft weighting, or projection-based repair. The framework is evaluated on two controlled synthetic regimes: a compact graph and a medium-complexity dependency graph, using metrics for structural validity, sample efficiency, diversity, robustness, and calibration. In the compact regime, the model produces an invalid probability mass of 0.002996, indicating an almost entirely admissible trajectory manifold. Under the same architecture and training protocol, invalid mass increases to 0.155929 in the medium-complexity regime. Hard filtering removes all invalid retained trajectories while preserving 84.4% of generated samples, whereas soft weighting preserves effective sample size but yields only limited validity gains. Family-level analysis shows that dependency constraints account for nearly all observed inadmissibility. These results indicate that statistical plausibility and structural admissibility are distinct reliability properties and that symbolic constraint handling becomes more valuable as graph-structural complexity increases.",
+    "authors": [
+      "Michael Romei de Socio",
+      "Gian Luca Pozzato",
+      "Alessio Merlo"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21421v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "동적 그래프 시스템의 제약 조건 기반 궤적 생성 모델링은 메모리 반도체 제조, AI 인프라 메모리 수요, 또는 컴퓨팅 아키텍처와 실질적 연관이 없는 순수 머신러닝 방법론 연구이다.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "확산 모델 기반 그래프 궤적 생성과 기호적 제약 처리는 학술적으로 흥미로우나 메모리 반도체 사업, AI 메모리 수요, 또는 시스템 아키텍처 변화와 무관한 응용 머신러닝 논문이다.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21412": {
+    "arxiv_id": "2607.21412",
+    "title": "Euclid-MCP: A Model Context Protocol Server for Deterministic Logical Reasoning via Prolog",
+    "abstract": "Large Language Models (LLMs) excel at natural language understanding and generation but remain unreliable for multi-step logical reasoning, especially in safety-critical or compliance-sensitive domains. Recent neuro-symbolic approaches address this gap by coupling neural models with external symbolic engines, yet most integrations are bespoke and lack a standardized interface for tool-augmented agents. This paper presents Euclid-MCP, an open-source MCP server that provides deterministic logical reasoning via SWI-Prolog. Euclid-MCP introduces Euclid-IR, an engine-agnostic intermediate representation for Horn-clause logic that is human-readable, easy for LLMs to generate, and straightforward to compile into Prolog or alternative backends. The server exposes a compact tool interface that supports a translate-run-inspect-repair loop, enabling LLM clients to delegate inference while retaining full access to proof traces and derivation logs. We evaluate Euclid-MCP on a realistic IT security and compliance use case. Results show that while LLMs alone are sufficient on small knowledge bases, they hallucinate systematically on larger problems, whereas Euclid-MCP delivers exact answers with lower latency and more compact outputs. We argue that semantic RAG is fundamentally unsuited for rule enforcement, and that Euclid-MCP can serve as a stable, shared reasoning substrate for both RAG-based assistants and agentic systems.",
+    "authors": [
+      "Bartolomeo Bogliolo"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21412v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM의 논리 추론 능력 개선을 위한 소프트웨어 아키텍처 논문으로, 메모리 반도체 수요·기술·경쟁 구도와 직접적인 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 2,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "Prolog 기반 논리 추론 서버는 LLM 응용 소프트웨어 계층의 문제 해결이며, HBM/DRAM/NAND 메모리 제조·설계·수요 예측에 영향을 주지 않는 순수 AI 소프트웨어 논문이다.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21403": {
+    "arxiv_id": "2607.21403",
+    "title": "A Diffusion-Model Subpopulation Digital Twin for Mobile Health Deployment: A Case Study on the HeartSteps Intervention",
+    "abstract": "Mobile-health interventions increasingly use online learning and decision making algorithms to personalize when to nudge users toward healthier behavior, but a poorly designed algorithm can burden and disengage participants. New algorithm design decisions should therefore be vetted against realistic simulated users before each real-life deployment. We propose a method to develop ``JITAI-Twins'': digital twins of a target subpopulation for comparing candidate online algorithms before a just-in-time adaptive intervention (JITAI) deployment. The method builds on a conditional time-series diffusion model that is temporally consistent (future actions do not affect the generated past), and it supports repeated updating from three sources of information, in three steps: pre-training on a large observational dataset, fine-tuning on small prior intervention deployments in related populations, and inference-time calibration to the next target population from domain-scientist expertise. We validate the twin at each pre-deployment stage of the long-running HeartSteps series (v2 through v4) of physical-activity suggestion intervention deployments, treating each successive deployment as an upcoming study. The proposed method reproduces the target subpopulation's temporal and between-participant structure better than simpler simulators. These results suggest that our twin can be used to simulate a target deployment before it runs, the prerequisite for testing and informing online algorithm design decisions.",
+    "authors": [
+      "Ziping Xu",
+      "Yuyi Chang",
+      "Chenshun Ni",
+      "Nithin Sugavanam",
+      "Asim H. Gazi",
+      "Pedja Klasnja",
+      "Emre Ertin",
+      "Susan A. Murphy"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21403v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "모바일 헬스케어 개인화 알고리즘 검증을 위한 디지털 트윈 개발로, 메모리 반도체 수요·기술·아키텍처와 직접적 연관이 없으며 AI 인프라 메모리 수요 트렌드와도 무관함.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "헬스케어 도메인의 시뮬레이션 방법론이며, 메모리 반도체 사업 전략·AI 인프라 수요와 무관한 순수 응용 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21402": {
+    "arxiv_id": "2607.21402",
+    "title": "MSBraM: A Multi-scale Self-supervised Brain Foundation Model for Hierarchical EEG Dynamics Learning",
+    "abstract": "Self-supervised foundation models have recently shown strong potential for electroencephalogram (EEG)-based analysis. However, existing approaches struggle to capture the inherently multi-scale temporal structure of EEG signals, where local neural patterns and long-range dependencies jointly encode task-relevant information. This limitation hampers cross-scale representation learning and generalization across diverse downstream tasks. To address this challenge, we propose MSBraM, a Multi-Scale self-supervised Brain foundation Model designed to learn hierarchical EEG representations. MSBraM follows a two-stage pretraining framework. First, a multi-scale neural tokenizer discretizes raw EEG signals into semantic codes at different temporal resolutions via vector-quantized reconstruction. Second, the model is pretrained to predict masked codes using a curriculum multi-scale masking strategy, progressively integrating fine-grained local patterns with global temporal context. We pretrain MSBraM on over 2,400 hours of EEG data and evaluate it across 10 downstream tasks on 12 public datasets. Extensive experiments show that MSBraM achieves superior performance on other state-of-the-art pretrained models, demonstrating strong generalization and transferability. These results indicate that explicitly modeling multi-scale temporal dynamics is critical for effective EEG foundation models.",
+    "authors": [
+      "Tao Zhou",
+      "Jing Han",
+      "Lingyu Shu",
+      "Zixing Zhang"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21402v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "뇌신호(EEG) 기반 AI 파운데이션 모델은 의료·신경과학 AI 인프라의 신흥 응용으로, 장시간 고주파 신호 처리에 따른 메모리·연산 수요 증가를 시사하는 전방 시장 신호",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "EEG 파운데이션 모델은 신흥 AI 응용으로 흥미롭지만, 현재 메모리 수요 규모가 미미하고 의료기기 시장 진입 장벽이 높아 단기 사업 영향은 제한적",
+      "final_score": 1.6
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21384": {
+    "arxiv_id": "2607.21384",
+    "title": "Multimodal Pretraining for Generalizable EEG Representation Learning",
+    "abstract": "Electroencephalography (EEG) models used for epilepsy are often limited to specific datasets and tasks. This limited approach can make it challenging to apply these models across different datasets or in various situations. However, recent studies in foundation models and self-supervised learning suggest that an adaptable EEG backbone could support a range of EEG related tasks. In this study, we have developed a multimodal EEG foundation model that combines a raw signal encoder based on the Mamba architecture, a Vision Transformer (ViT)-style encoder for time-frequency data, and a lightweight encoder for text, all within a shared embedding space. The pretraining process relies on several innovative techniques, such as masked modeling, cross-view contrastive alignment, and temporal consistency losses. These methods are designed to create rich, seizure-relevant representations without requiring labeled data. To assess the efficacy and generalization of our pretrained model, we fine-tuned it on the canonical CHB-MIT seizure detection benchmark and additional seizure detection datasets, and conducted extensive experiments comparing different model variants. On the standard CHB-MIT split, our best single model achieved an AUROC of 0.874, and an ensemble variant reached 0.878 AUROC, representing state-of-the-art performance on this benchmark. In addition to standard train-test splits, we evaluated performance under a leave-one-subject-out (LOSO) protocol, which is rarely reported in prior EEG seizure modeling work and highlights the difficulty of patient-independent seizure detection, with a mean LOSO balanced accuracy of 0.558 across 19 subjects. Across datasets and evaluation settings, our multimodal foundation model enabled robust seizure detection and straightforward adaptation to new seizure detection scenarios, while also supporting interpretable seizure localization.",
+    "authors": [
+      "Targol Bakhtiarvand",
+      "Jugal Kalita",
+      "Adham Atyabi"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21384v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "의료용 EEG 신경신호 처리 모델로서 메모리 반도체 수요, 아키텍처, 경쟁 구도와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "의료 신경신호 처리 분야의 기초 AI 모델 연구로, SK하이닉스의 메모리 사업 전략·수요·경쟁 구도와 무관하며 순수 응용 도메인 논문임.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21340": {
+    "arxiv_id": "2607.21340",
+    "title": "Capital Markets LLM Reliability Score (CM-LRS): From Plausible to Bankable",
+    "abstract": "In capital-markets workflows the question is rarely whether a large language model can produce a fluent draft, but whether the draft is bankable: defensible in front of a counter-party or a regulator, with the documents in hand. Existing methods address parts of that gap: open-domain QA benchmarks reward surface accuracy, and finance benchmarks (FinanceBench, FinQA, ConvFinQA) advance document-grounded and numerical QA but evaluate at the question-answer layer rather than the workflow outputs practitioners defend.   We introduce CM-LRS, a Capital Markets LLM Reliability Score, evaluating outputs at the workflow-output layer across seven dimensions: factual accuracy, evidence traceability, numerical consistency, workflow completeness, source discipline, decision usefulness, and reviewability/auditability. Each is scored 0-5 against a rubric anchored on signals reviewers in regulated settings use; the aggregate is tunable to the workflow.   We demonstrate CM-LRS on five workflows (DCM transaction-terms extraction, precedent retrieval, issuer profile synthesis, M&A transaction-comparable reasoning, ECM transaction-terms extraction) over public SEC EDGAR filings, a public UK takeover release, and fictional synthetic supplements, scoring four models against four independent LLM judges spanning three model families.   Three findings. First, the frontier closed-source models cluster within 0.22 points on four-judge averaged CM-LRS (Sonnet 4.6 = 4.31, Opus 4.7 = 4.30, GPT-5.5 = 4.09); all four judges place the open-weights baseline (Llama 3.3 70B = 3.15) last. Second, that gap concentrates on retrieval (2.23) and synthesis (2.15), not extraction (0.84). Third, Decision Usefulness shows the widest cross-model dispersion of any dimension (4.0 points on issuer profiling) and top-tier inter-judge agreement (mean r = 0.52).   Plausibility is cheap. Bankability is the bar.",
+    "authors": [
+      "Prerit Ahuja"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21340v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 기반 금융 워크플로우의 신뢰성 평가 프레임워크는 엔터프라이즈 AI 인프라 수요(메모리·연산)를 결정하는 규제·실무 기준을 정의하며, 이는 메모리 수요 예측과 고객 요구사항 정의에 영향을 미친다.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 3,
+        "maturity": 4,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "금융 AI 워크플로우의 '뱅커빌리티' 기준이 엔터프라이즈 LLM 배포 규모·빈도를 결정하는 신호이나, 메모리 기술 자체와는 무관하고 고객 수요 신호로서의 신뢰도가 제한적이다.",
+      "final_score": 1.95
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21327": {
+    "arxiv_id": "2607.21327",
+    "title": "From Static Bibliometrics to Dynamic Knowledge Graphs: An LLM-Powered Framework for Modernizing Science, Technology, and Innovation (STI) Analytics",
+    "abstract": "Bibliometric indicators - citation counts, h-indexes, co-authorship networks - have long anchored science, technology, and innovation (STI) analytics, yet suffer from temporal lag, semantic shallowness, and an inability to capture the non-linear dynamics of contemporary knowledge ecosystems. Dynamic knowledge graphs and large language models (LLMs) have each been proposed as remedies, but neither is sufficient alone: existing scholarly knowledge graphs remain largely static, while LLM-driven pipelines are prone to hallucination, opacity, and corpus bias without structured grounding. This paper proposes a hybrid, symbolic-first framework integrating all three traditions under explicit methodological constraint. Organized across five layers - an open scholarly data backbone, a dynamic versioned knowledge graph, a constrained LLM-assisted semantic augmentation layer, a multi-layer validation pipeline, and an analytics layer - the framework positions LLMs strictly as generators of provisional candidate enrichments. Candidates become analytically admissible only after passing structural, evidentiary, comparative, and selective expert validation, with full provenance recorded at every stage. The analytics layer supports both established bibliometric indicators and extended graph-based analyses, including trend emergence detection, science-to-technology pathway mapping, and policy-oriented gap analysis. The framework's central theoretical contribution is treating validation as the mediating principle between semantic flexibility and epistemic discipline, enabling STI analytics that is semantically richer and temporally more responsive than static bibliometrics while remaining aligned with the evidentiary standards of science-of-science research. Governance considerations addressing reproducibility, bias, and auditability are also discussed.",
+    "authors": [
+      "Muhsen Hammoud"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.DL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21327v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "STI 분석 방법론(bibliometrics, knowledge graphs, LLM)에 관한 메타-연구로, 반도체·메모리 기술 개발, AI 인프라 수요 변화, 경쟁 동향과 직접적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "학술 데이터 분석 프레임워크 논문으로, 우리의 메모리 사업 전략, 기술 로드맵, 시장 수요 신호와는 무관한 순수 방법론 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21307": {
+    "arxiv_id": "2607.21307",
+    "title": "Scaling Up Formal Representation of Clinical Trial Protocols in Ensemble Logic Using LLMs: A Preliminary Study",
+    "abstract": "The reliance on unstructured free text for documenting clinical trial protocols creates a significant barrier to automated reasoning, cohort discovery, and trial simulation. The lack of formal structure obscures critical temporal phenotypes, such as dynamic eligibility criteria and event timing constraints. Although Temporal Ensemble Logic (TEL) offers an expressive framework for modeling these elements, manual encoding remains a prohibitive bottleneck. We introduce the CT-TEL workflow: a scalable pipeline leveraging Large Language Models (LLMs) to translate narrative clinical protocols into TEL formulas. We applied CT-TEL to generate logical models for 23 real-world trials from ClinicalTrials.gov. We evaluated translation fidelity via a back-translation approach, using LLMs to convert TEL formulas back into natural language and measuring semantic similarity against source texts. The resulting semantic retention suggests that LLMs may offer a pathway for mapping informal protocols to computable logic, providing preliminary evidence toward scalable clinical trial emulation within the emerging \"Symbolic Biomedicine\" paradigm championed by the corresponding author.",
+    "authors": [
+      "Yan Huang",
+      "Xubing Hao",
+      "Xiaojin Li",
+      "Rashmie Abeysinghe",
+      "Xiaoqian Jiang",
+      "Licong Cui",
+      "Guo-Qiang Zhang"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LO",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21307v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "임상시험 프로토콜의 형식화는 의료 정보학 영역으로, 메모리 반도체 수요·기술·경쟁 구도와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "LLM을 활용한 의료 프로토콜 자동화 연구로, 메모리 반도체 사업·AI 인프라 수요·경쟁 동향과 무관한 순수 의료 정보학 응용.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21306": {
+    "arxiv_id": "2607.21306",
+    "title": "AI Assistants Overassist",
+    "abstract": "Large language models (LLMs) are increasingly used as tutors and thought partners, helping users reason through problems. While guidance from AI assistants can scaffold thinking and foster learning, such benefits depend on how they help--for instance, intervening too early or too frequently may hinder true learning and cognitive engagement. Yet how AI systems navigate intervention decisions during problem-solving remains poorly understood. Here, we introduce Int-Bench, a simulation-based benchmark for evaluating LLM interventions during learning. Int-Bench simulates a \"student\" solving a problem while a \"teacher\" monitors the student's reasoning and decides whether, when, and how to intervene. Across three domains--code debugging, mathematics, and brain teasers--we evaluate LLM teachers on the frequency and timing of interventions, as well as their impact on both immediate task success and generalization to new problems. We also compare LLMs to humans, finding that LLMs intervene more frequently and earlier than humans. Moreover, in contrast to humans, they tend to provide complete solutions rather than targeted hints. These findings suggest that current LLM assistants often optimize for short-term success rather than supporting the reasoning processes needed for deeper learning and long-term success.",
+    "authors": [
+      "Verona Teo",
+      "Raghav Jain",
+      "Tobias Gerstenberg",
+      "Max Kleiman-Weiner"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21306v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM 튜터링 행동 분석은 AI 소프트웨어 설계 문제이며, 메모리 반도체 수요·아키텍처·기술 전략과 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM의 교육적 개입 최적화는 AI 응용 UX 개선 연구일 뿐, HBM/DRAM/NAND 수요 변화나 메모리 아키텍처 혁신과 무관하므로 우리 사업 전략 수립에 직접 참고 가치가 없음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21300": {
+    "arxiv_id": "2607.21300",
+    "title": "Unlearning Under Imbalance: Benchmarking Fairness in Multimodal LLM Unlearning",
+    "abstract": "Machine unlearning has emerged as a tool for removing personal data from trained models to comply with recent AI regulations. To evaluate unlearning effectiveness in multimodal large language models (MLLMs), prior works fine-tune models on fictitious identities, simulating unlearning requests on subsets of these IDs, which are typically uniformly distributed. However, in realistic scenarios, people from different demographic groups may request to be unlearned at different frequencies, potentially altering the model's internal beliefs for these groups and leading to biased behaviors. To fill this gap, we propose FAIRGET, the first Visual Question Answering benchmark that evaluates unlearning under unbalanced, realistic, forget requests. These requests are designed to simulate multiple realistic scenarios, ranging from simple to challenging settings, that lead to biased unlearned models if fairness is not accounted for. Additionally, we propose FAUN, the first unlearning algorithm for MLLMs that forgets unlearning data while preserving model fairness. FAUN exploits a bias-aware activation steering mechanism to unlearn identities while accounting for the unbalanced nature of the forget data. Experiments on FAIRGET and the established FIUBench demonstrate our method's superiority both in unlearning quality and fairness.",
+    "authors": [
+      "Lorenzo Orsingher",
+      "Thomas De Min",
+      "Massimiliano Mancini",
+      "Davide Talon",
+      "Elisa Ricci"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CV",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21300v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Machine unlearning의 공정성 문제는 AI 모델 규제 준수 기술이나 소프트웨어 알고리즘 영역으로, 메모리 반도체 수요·아키텍처·성능에 직접적인 영향을 미치지 않음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "Multimodal LLM의 unlearning 공정성 연구는 AI 규제 준수 알고리즘 영역으로, HBM/DRAM/NAND 메모리 사업 전략이나 메모리 수요 변화와 무관한 순수 소프트웨어 문제.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21292": {
+    "arxiv_id": "2607.21292",
+    "title": "An LLM-Driven Workflow for Automated Process Control Strategy Generation and Tuning from Dynamic Process Models",
+    "abstract": "We present a structured large-language-model-driven workflow for automated multi-variable control design from dynamic process models. The workflow decomposes the design task into constrained code-generation steps: plant-interface construction, normalization, manipulated-variable controlled-variable (MV-CV) pairing, controller specification, closed loop simulation, scenario generation, performance evaluation and Bayesian-optimization (BO) based tuning. Generated artifacts are executed and validated before downstream tasks proceed, and failed artifacts are repaired using validation feedback. The proposed approach is demonstrated on a nonlinear gas-preheater benchmark with coupled pressure and temperature dynamics. The generated workflow produces a physically consistent decentralized PI (proportional-integral) feedback-feedforward control structure and an executable tuning environment. Bayesian optimization reduces the closed loop performance objective, which aggregates set-point tracking and disturbance-rejection errors for the controlled variables, by approximately 26.5% relative to the initial controller generated by the workflow, mainly through improved pressure-loop transient performance. This figure quantifies the automated tuning stage rather than a comparison against a manually designed controller. The results demonstrate the feasibility of using structured large-language-model-based code generation to construct executable control-design workflows, while also highlighting the need for broader validation on larger plantwide-control benchmarks.",
+    "authors": [
+      "Ari Luna Rueda",
+      "Eike Cramer",
+      "Klaus Hellgardt",
+      "Mehmet Mercangöz"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21292v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "프로세스 제어 자동화 논문으로, 반도체 제조·메모리 기술·AI 인프라 수요와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "화학공정(가스 프리히터) 제어 최적화 논문으로 메모리 반도체 사업, AI 수요 트렌드, 경쟁 구도와 무관하며 순수 산업제어 응용 분야임.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21291": {
+    "arxiv_id": "2607.21291",
+    "title": "Adaptive Depth Sparse Framework: Similarity-Driven Resource Allocation for Pre-Trained LLMs",
+    "abstract": "Large language models (LLMs) achieve strong generation and reasoning performance, but the Transformer architecture incurs high inference cost. Existing acceleration methods often rely on task-specific fine-tuning or training from scratch, increasing adaptation cost and limiting cross-task usability. We present an Adaptive Depth Sparse Framework (AdaDSF) that converts off-the-shelf pre-trained LLMs into depth-sparse models without full retraining. Our key insight is that layers contribute unequally to representation transformation, characterized by the cosine similarity between layer input and output hidden states. Based on this, AdaDSF assigns layer-wise token retention ratios from similarity statistics, uses a lightweight router to select informative tokens at each layer, and introduces a feature-preserving alignment objective to match intermediate and final representations between sparse and dense models. On GPT-NeoX and Qwen2.5 over language modeling and commonsense reasoning, AdaDSF substantially reduces inference FLOPs while preserving performance close to dense counterparts. Under comparable sparsity, AdaDSF consistently yields smaller accuracy degradation than strong baselines including MoD, D-LLM, and DLO.",
+    "authors": [
+      "Yidu Wu",
+      "Xiang Wang",
+      "Kejie Zhao",
+      "Zhangchi Wang",
+      "Qinghai Guo",
+      "Xiaoying Tang"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21291v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 효율화 기법이 메모리 대역폭·용량·전력 수요를 직접 감소시키므로 AI 인프라 메모리 시장의 수요 패턴 변화를 시사하는 전방 시장 신호",
+      "scores": {
+        "business": 2,
+        "threat": 3,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "위협",
+      "one_line": "Depth Sparsity를 통한 토큰·레이어 단위 추론 효율화가 확산되면 HBM/DRAM 대역폭 수요 증가율을 둔화시킬 수 있으므로 AI 인프라 메모리 성장 시나리오에 대한 리스크 신호",
+      "final_score": 2.5
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21284": {
+    "arxiv_id": "2607.21284",
+    "title": "news-crawler-LM: A Small Long-Context Model For High-Quality News Crawling",
+    "abstract": "Extracting structured content from news pages remains challenging due to heterogeneous HTML layouts, inconsistent markup, and substantial boilerplate such as navigation elements and advertisements. Rule-based news crawlers can achieve high extraction accuracy by encoding site-specific structure, but require manual configuration in order to generalize to new publishers. Large language models provide a more flexible alternative by reducing the need for handcrafted rules, but their high computational cost limits practical deployment. In this paper, we introduce news-crawler-LM, a small long-context language model fine-tuned on high-quality, human-validated extractions from the Fundus news-crawling library. Our model converts raw HTML into plaintext and structured JSON, including fields such as headline, author, publication date, and article body. In our experiments, news-crawler-LM outperforms strong baselines in HTML-to-Markdown and HTML-to-JSON extraction, improving performance by +4.8 BLEU and +6.1 METEOR in the HTML-to-Markdown task, and by +2.2 BLEU and +4.1 METEOR in the HTML-to-JSON task. However, we also observe that our model only slightly better compared to other rule-based parsing libraries on the HTML-to-plaintext task in evaluations on previously unseen publishers. We release all models and artifacts to the research community.",
+    "authors": [
+      "Pascal Stolzenburg",
+      "Jonas Golde",
+      "Max Dallabetta",
+      "Alan Akbik"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21284v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "뉴스 크롤링용 소형 언어모델 최적화 논문으로, 메모리 반도체 수요·기술·전략과 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "HTML 파싱 효율화는 추론 비용 절감 신호이나, 메모리 용량·대역폭 수요 변화와 무관한 순수 NLP 응용 논문으로 사업 전략 가치 없음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21279": {
+    "arxiv_id": "2607.21279",
+    "title": "A Unified Moral-Value Dataset for Instruction Tuning",
+    "abstract": "Large language models (LLMs) have developed rapidly and become valuable tools in everyday life. However, how to align LLMs to a particular set of human values is still an open problem. Recent studies show that instruction tuning has strong potential for zero-shot tasks and may serve as an effective approach to addressing value alignment. Nevertheless, although many datasets for instruction tuning already exist, they are not specifically designed around moral scenarios and behaviors. We construct a unified moral-value dataset that can be directly used for instruction tuning. This dataset is built upon existing moral-value datasets by merging them into a unified corpus and converting them into an instruction-response format. We show that training on a mixed dataset combining general task datasets with our dataset preserves general-task performance, and we report preliminary observations on how the mixing ratio affects value-oriented task performance. Our work provides a moral-value dataset for instruction tuning and offers a useful resource for further alignment research. The dataset is available at https://huggingface.co/datasets/teohzzh/value-for-instruction-tuning.",
+    "authors": [
+      "Zhaohui Zeng",
+      "Florian Mai"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21279v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM 정렬(alignment)을 위한 도덕·가치 데이터셋 구성 논문으로, 메모리 반도체 기술, 수요 변화, AI 인프라 효율성과 직접적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "순수 NLP·LLM 정렬 연구로 메모리 수요, 아키텍처, 성능 특성에 영향을 미치지 않으며, 메모리 반도체 사업 전략과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21200": {
+    "arxiv_id": "2607.21200",
+    "title": "Transformer-based Diffusion models for Hydrological Time Series Probabilistic Imputation and Forecasting",
+    "abstract": "The modeling of hydrometeorological time series with limited observations is a key challenge in the monitoring of hydro-systems and water resources, as well as for flood or drought risk assessment. Due to the high variability of the underlying processes and the sparsity of available measurements, traditional statistical approaches often struggle to accurately represent their dynamics. In this context, recent advances in deep learning offer a promising direction for improving the representation and generation of complex temporal processes sampled at several observation sites. This study investigates the application of transformer-based diffusion models to the simulation and reconstruction of hydrological time series. The proposed framework is applied to the joint modeling of water quantity and quality at six sites spread across three adjacent headwater catchments located in North-East France on a limestone plateau covered by forests and field crops. The model is calibrated and validated using available observational data, which has been quality controlled and corrected for sensor drift and malfunction through collaborative efforts by LNE metrology expertise and Andra monthly quality control over more than 15 years. Its performance is compared with several established baseline approaches commonly used for time series modeling. Quantitative evaluation metrics are employed to assess the ability of the proposed method to reproduce key temporal characteristics of the observed signals in two settings: the imputation of incomplete time series and the forecasting of upcoming hydrological conditions.  Results support the effectiveness of the transformer-based approach and highlight its capacity to capture and simulate the complex patterns present in hydrological data. In particular, the results indicate that diffusion models can efficiently sample realistic time series distributions under observation settings with variable missing data for both forecasting and imputation.",
+    "authors": [
+      "Ferdinand Bhavsar",
+      "Lionel Benoit",
+      "Maxime Savatier",
+      "Edith Gabriel"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "stat.ML",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21200v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "수문학 시계열 데이터 보간/예측을 위한 Transformer-Diffusion 모델 연구로, 반도체·메모리 기술 및 AI 인프라 수요와 직접적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "순수 수문기상 응용 분야의 ML 모델 논문으로, 메모리 반도체 사업 전략, AI 인프라 수요, 또는 경쟁 동향과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21196": {
+    "arxiv_id": "2607.21196",
+    "title": "Case study: solving P-99 with LPTP and an LLM",
+    "abstract": "Ninety-Nine Prolog Problems (P-99) is a famous set of Prolog exercises. We solved the first thirty three just by prompting an LLM (Large Language Model). We used Claude from Anthropic. By solved we mean: generate the Prolog code and a test file, run the tests and check whether they pass, then formally prove types, groundness, termination, uniqueness, existence and also sometimes functional correctness with LPTP (Logic Program Theorem Prover). Hence our approach is an experiment in vibe-coding/vericoding of P-99. It is a vibe-coding experiment because we started from informal specifications written in English and let Claude generate the Prolog code. It also fits within vericoding because the LLM proved reliability guarantees on the generated Prolog code. Claude wrote 58 logic procedures, 508 tests, 257 lemmas for a total of 11800 proof lines. We manually checked each file generated by the LLM. We checked the Prolog code, ran the tests, examined the logical statements generated by Claude and proof-checked Claude's proofs with LPTP. This paper describes this experiment and provides the main details so that it can be reproduced by the interested reader.",
+    "authors": [
+      "Fred Mesnard",
+      "Thierry Marianne",
+      "Étienne Payet",
+      "Wim Vanhoof"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LO",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21196v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Prolog 프로그래밍 검증 논문으로, 메모리 반도체 기술, AI 인프라 수요, 또는 컴퓨팅 아키텍처와 실질적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "LLM 기반 Prolog 코드 생성 및 형식 검증 연구로, SK하이닉스의 메모리 사업 전략, AI 인프라 수요, 또는 반도체 기술 트렌드와 무관한 순수 소프트웨어 검증 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21187": {
+    "arxiv_id": "2607.21187",
+    "title": "Case study: proving sqrt(2) irrational with LPTP and an LLM",
+    "abstract": "We present the interactions with an LLM (Large Language Model) aiming at proving that the square root of 2 is not a rational number in an LP (Logic Programming) context. We start from a few basic pure logic programming predicate definitions. We rely on the LPTP  (Logic Program Theorem Prover) system for stating and proving properties about logic programs.  As the proof language of LPTP  is based on natural deduction,  the proofs are human readable. In our case study, we sketch in LPTP the usual proof showing the irrationality of the square root of 2.  Then we describe the interactions we had with the LLM. We end up with a complete formal proof, partially generated by an LLM and fully proof-checked by LPTP.",
+    "authors": [
+      "Fred Mesnard",
+      "Étienne Payet",
+      "Wim Vanhoof"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LO",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21187v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "순수 형식논리·정리증명(theorem proving) 학술 연구로, 메모리 반도체 제조, AI 인프라 수요, 컴퓨팅 아키텍처와 실질적 연결고리 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "LLM과 논리프로그래밍을 활용한 수학적 증명 자동화 연구이나, 메모리 사업 전략·AI 인프라 수요·반도체 기술과 무관한 기초 CS 이론 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21151": {
+    "arxiv_id": "2607.21151",
+    "title": "V-DEAL: Diagnosing Video Safety De-Calibration as an Understanding-Refusal Coupling Failure",
+    "abstract": "As Video Large Language Models are increasingly deployed in real-world applications, ensuring their safety alignment has become critical. Counterintuitively, we find that harmful videos paired with benign queries achieve higher attack success rates than the same videos paired with explicitly harmful queries. To understand the underlying mechanism of this vulnerability, we present V-DEAL, a three-level diagnostic framework that jointly analyzes this failure across model behaviour, understanding, and internal representations. By progressively ruling out perception failure and quantifying the model's internal refusal tendency, V-DEAL provides a new diagnostic perspective for analyzing the underlying mechanism of the observed vulnerability. We tested six Video LLMs on three public benchmarks and observed that models correctly recognize harmful video content with over 81\\% accuracy, yet the average attack success rate still reaches 48.33\\% under the condition pairing harmful videos with benign queries. Hidden-state analysis further shows that visual understanding activates a weaker refusal tendency than textual understanding. Furthermore, we introduce a prompt injection intervention method that reduces attack success rates by an average of 48.24 percentage points and achieves performance comparable to prior fine-tuning-based methods, providing an effective and practical means to address such safety risks in Video LLMs.",
+    "authors": [
+      "Zhetong Zhang",
+      "Honghao Fu",
+      "Miao Xu",
+      "Yiwei Wang",
+      "Yujun Cai"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21151v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Video LLM의 안전성 취약점 분석 논문으로, 메모리 반도체 수요·기술·아키텍처와 직접 연관이 없으며 AI 인프라의 메모리 요구사항 변화도 제시하지 않음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "Video LLM 안전성 진단 프레임워크는 AI 모델 신뢰성 연구로 가치 있으나, 메모리 반도체 사업 전략·수요·기술과 무관한 순수 ML 보안 논문이다.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21090": {
+    "arxiv_id": "2607.21090",
+    "title": "Training Large Language Models for Self-Explanation Faithfulness",
+    "abstract": "We propose a Reinforcement Learning (RL) method to directly optimize the faithfulness of self-explanations - the extent to which a model's generated reasoning accurately reflects its internal decision-making process. While existing work focuses on evaluating faithfulness or using inference-time prompting frameworks to improve an LLM's self-explanation's tractability, these approaches do not provide a mechanism to directly optimize a model's parameters to generate faithful self-explanations. We bridge this gap by modifying existing faithfulness metrics into an RL training objective. We investigate (1) if models can be trained to accurately detect factors that affect their decisions, and (2) whether RL can directly optimize for the disclosure of these factors thereby improving LLM self-explanations' faithfulness. We experiment with two intervention types: random-word insertions and user-bias insertions, using a per-sample reward derived from the Phi-CCT correlation metric. RL fine-tuned Llama3.1-8B and Qwen3-8B show substantial improvements on the Phi-CCT faithfulness metric, with in-distribution scores rising from near-zero to as high as 0.664, and out-of-distribution scores reaching up to 0.691 on held-out tasks such as StrategyQA. Cross-intervention generalization is weaker but more interesting: a priori we would not expect a model trained only on random word insertions to generalize to user-bias phrases, yet Llama3.1-8B shows non-zero transfer in this direction. The reverse direction and Qwen3-8B do not replicate this, indicating model-dependent and setup-dependent effects we cannot yet explain. Lastly we analyze model behavior to rule out reward gaming behaviors that often plague RL training. Ultimately, we show that models can be trained to implicitly identify influential factors and disclose them, offering a scalable path toward reducing unfaithful reasoning in LLMs.",
+    "authors": [
+      "Yeoktatt Cheah",
+      "María Pérez-Ortiz",
+      "Noah Y. Siegel",
+      "Oana-Maria Camburu"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21090v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM의 자체 설명 충실성을 개선하는 순수 AI 알고리즘 연구로, 메모리 반도체 수요·아키텍처·제조 전략과 직접적인 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 1,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 해석 가능성 개선 기법이지만 메모리 수요·효율성·아키텍처 변화를 유도하지 않으므로 메모리 사업 전략과 무관.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21067": {
+    "arxiv_id": "2607.21067",
+    "title": "PrefReward: Learning User Preference Matrix for Personalized Text Generation",
+    "abstract": "Large Language Models (LLMs) have demonstrated remarkable ability in generating personalized content by leveraging user histories and contextual cues. However, most existing personalization approaches rely on implicit representations within model parameters, making it difficult to interpret user-specific preferences or effectively handle long-context dependencies. To address these challenges, we propose PrefReward, a novel preference-aware generative framework that explicitly models user styles through a structured preference matrix and integrates it into the decoding process as a reward signal. PrefReward consists of two stages: (1) extracting a user-specific preference matrix that summarizes individual stylistic tendencies, and (2) using the matrix to guide generation via a KL-divergence-based reward function. Experiments on the LongLaMP dataset show that PrefReward outperforms non-personalized and retrieval-based baselines in both generation quality and personalization interpretability.",
+    "authors": [
+      "Yue Wu",
+      "Chengbing Wang",
+      "Yimeng Bai",
+      "Xiaoyan Zhao",
+      "Yang Zhang",
+      "Fuli Feng"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21067v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 개인화 생성 기술이 추론 단계의 메모리 접근 패턴과 컨텍스트 윈도우 확장을 요구하므로, 장문맥 처리 시 HBM/DRAM 수요와 메모리 대역폭 요구사항을 증가시키는 AI 인프라 트렌드",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "개인화 LLM 추론이 장문맥 의존성과 반복적 메모리 접근을 증가시켜 HBM/고대역폭 메모리 수요를 견인하는 신호이나, 논문 자체는 알고리즘 수준이고 메모리 아키텍처 영향은 간접적",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21063": {
+    "arxiv_id": "2607.21063",
+    "title": "QuantiBias: Benchmarking Quantization-Induced Bias in LLMs",
+    "abstract": "Almost every large language model that reaches a broad audience is quantized: trained in full precision, then compressed for efficiency. This step is assumed harmless and its safety is rarely re-checked. We find its principal side effect is increased bias that standard safety evaluation misses. Holding the model, its training, and the prompts fixed, a quantized model still refuses harmful requests, still avoids over-refusing benign prompts, and still selects the unbiased multiple-choice answer. Yet asked an open-ended question, the same model volunteers stereotypes in all eight languages we probe, in roughly one in four open-ended answers under an independent judge (~24% to ~27% across the compression ladder): it passes every standard check and still reaches users measurably more biased. The selective gap is a robust finding; whether open-ended bias further increases with compression is less certain, sensitive to the judge that scores it. We address both with \\textbf{QuantiBias}, a benchmark that pairs a generative, multilingual stereotype probe with the refusal and multiple-choice controls that isolate open-ended generation, contrasts each build with and without reasoning, and rates the content severity of what it generates. Across two backbone models (Qwen and Gemma), a five-family screen, and eight benchmarks, quantizers allocate their extra precision by capability data that carries no bias-prevention signal, and reasoning before answering roughly halves the effect on some families while doing nothing on others. A quantized build must be re-evaluated for open-ended bias, not only on the short-form safeguards it already passes.",
+    "authors": [
+      "Emilio Ferrara"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21063v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 양자화(압축)로 인한 편향 증가 현상은 AI 추론 효율화 전략의 숨겨진 비용을 드러내며, 이는 메모리 효율성과 모델 안전성 간 트레이드오프를 시사하여 HBM/DRAM 기반 추론 인프라 설계와 고객(엔비디아 등) 요구사항에 영향을 미칠 수 있다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 4,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "양자화 모델의 편향 문제는 AI 추론 효율화 트렌드의 실제 비용을 지적하지만, 메모리 하드웨어 수요나 우리 기술 전략에 직접적 영향은 제한적이며 주로 소프트웨어/평가 레이어의 이슈다.",
+      "final_score": 2.55
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21013": {
+    "arxiv_id": "2607.21013",
+    "title": "EmoAgent-R1: Towards Multimodal Emotion Understanding with Reinforcement Learning-based Dynamic Agent Specialization",
+    "abstract": "Multimodal large language models (MLLMs) have achieved impressive performance in multimodal emotion recognition (MER) tasks and lifted MER to a new level that is complex emotion understanding with advanced video understanding abilities and natural language description. However, existing MLLM-based methods often use a fixed prompt to perceive the emotions, ignoring the dynamicity and complexity of the emotion source in the multimodal inputs. To address these issues, we propose a novel Reinforcement Learning-based Dynamic Agent Specialization framework (\\textbf{EmoAgent-R1}) to optimize the emotion recognition, reasoning, and generalization abilities of an MLLM with dynamic agent specialization based on reinforcement learning. Specifically, we first adopt a cold start strategy to endow an MLLM with preliminary emotion recognition, reasoning, and agent routing ability by training with synthetic answer-conditioned chain-of-thought data and agent routing data. Then, we further train the MLLM with reinforcement learning to perceive emotions in a two-step agentic workflow with agent selection and agent specialization. To effectively train EmoAgent-R1, we propose a novel Progressive Group-Relative Policy Optimization (P-GRPO) to combine group-based relative advantages with a PMI-inspired progressive token-level modulation to transform sparse rewards into fine-grained learning signals, mitigating the coarse-grained uniform credit assignment issue in GRPO. Extensive experiments on MER benchmarks demonstrate the superiority of our EmoAgent-R1 in stronger emotion reasoning performance and improved optimization stability.",
+    "authors": [
+      "Lihuang Fang",
+      "Yuchen Zou",
+      "kebin Jin",
+      "Jinghui Qin"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21013v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 추론 효율성 향상 기법이 메모리 대역폭·용량 수요 패턴을 변화시키는 전방 시장 신호",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "멀티모달 감정 인식 AI 모델 최적화 논문이지만, 동적 에이전트 라우팅과 강화학습 기반 추론 효율화는 AI 인프라의 메모리 접근 패턴 변화를 암시하므로 전방 시장 트렌드로서 중간 수준의 관찰 가치가 있음.",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.21010": {
+    "arxiv_id": "2607.21010",
+    "title": "Reexamining zero-shot summarization: Empirical investigation of trustworthiness of LLM-summarizers",
+    "abstract": "Zero-shot summarization using Large Language Models (LLMs) has significantly advanced the abstractive summarization task by producing coherent and fluent summaries. However, underlying stochasticity of the large language models raises concerns about the stability and trustworthiness of the LLM-generated summaries. This issue has become increasingly important due to proliferation of LLM-generated summaries in educational settings, where students and researchers summarize complex academic materials in zero-shot manner.   We propose a novel two-level diagnostic protocol for benchmarking LLM-summarizers based on the stability of the generated summaries. At the lower level, document-level stability analysis is performed over multiple LLM-summaries generated under controlled environment, and the stability coefficient is computed. Each generated summary is scored for semantic and factual alignment with the original document, enabling estimation of stability along more than one dimensions. At the next level, observations from a stratified sample of documents drawn from the corpus are consolidated to estimate the stability index of the LLM-summarizer, which is the proxy for its trustworthiness.   Our empirical investigation of three LLM-summarizers across three genres of documents reveals statistically significant differences in the generation-level variability among LLMs across summary evaluation metrics. This study advances the LLM-summarization research by evidential recognition of the stability problem in LLM-summaries and motivates further research towards development of robust, reliable and trustworthy LLM-summarizers.",
+    "authors": [
+      "Vasudha Bhatnagar",
+      "Purnima Bindal",
+      "Vikas Kumar",
+      "Raj Kumari Bahl"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.21010v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM 요약의 안정성 평가는 순수 NLP/소프트웨어 연구로, 메모리 반도체 수요·아키텍처·기술 전략과 직접 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 추론 안정성 연구이지만 메모리 수요 신호나 반도체 기술 전략과 무관하므로 사업 의사결정 관점에서 비관련.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20995": {
+    "arxiv_id": "2607.20995",
+    "title": "Where Animacy Lives in Large Language Models: Tracing the Circuits of the Animacy Concept",
+    "abstract": "Distinguishing animate from inanimate concepts in written language requires more than shallow text processing, as it involves recognizing complex selectional constraints and contextual cues, such as verb-argument interactions. Yet, current large language models (LLMs) appear to be capable of doing it. We investigate whether this animacy-sensitive behavior of LLMs can be traced to a localized set of causally relevant components and connections. To do so, we construct a controlled dataset of minimal pairs and perform circuit discovery on four open-weight models. Through in-depth experiments and ablations, we show that a causal mechanism responsible for handling animacy in these models does exist, thus discovering an animacy circuit. At the same time, this circuit appears to be less localized compared to other known ones and generalizes only partially across models and animacy tasks, confirming the distributed, context-dependent, and somewhat graded nature of the animacy concept.",
+    "authors": [
+      "Samuele Punzo",
+      "Giovanni Cinà",
+      "Sandro Pezzelle"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20995v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM의 언어 개념(animacy) 회로 분석은 순수 신경망 해석학 연구로, 메모리 반도체 수요·아키텍처·성능 특성과 직접적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 내부 회로 분석은 AI 모델 이해에 학술적 가치가 있으나, HBM/DRAM/NAND 수요 변화, 추론 효율화, 메모리 아키텍처 혁신과는 무관한 기초 언어학 연구.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20982": {
+    "arxiv_id": "2607.20982",
+    "title": "GuardianAgentBench: Where Agents Fail and How to Guard Them",
+    "abstract": "As large language model agents increasingly operate autonomously with access to tools and external environments, ensuring their safe and reliable behavior becomes critical. We present GuardianAgentBench (GABench), a benchmark of 580 scenarios across six domains evaluated on three production-ready frameworks: LangChain, LlamaIndex, and Vectara. The benchmark incorporates rigorous multi-stage validation and five adversarial attack modes. Experiments with six state-of-the-art models reveal that even the strongest configuration achieves only 74.8% overall accuracy and expose two distinct failure regimes: stronger models under-call required tools, while weaker models mis-select and over-call tools. Performance degrades monotonically with both tool-set size and sequential turn depth, with long-horizon planning proving the steeper bottleneck. Our guardrail implementation consistently outperforms system-prompt-based defenses across all models, recovering 19.9% of failures at a false positive rate of just 0.5%. These results demonstrate that execution-time structural intervention improves safety without disrupting correct agent behavior.",
+    "authors": [
+      "Vishal Ishwar Naik",
+      "Chenyu Xu",
+      "Donna Dong",
+      "Hussein Hassan",
+      "Abhishek Pradhan",
+      "Ofer Mendelevitch",
+      "Tallat Shafat",
+      "Humayun Irshad"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20982v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 에이전트의 안정성·신뢰성 문제가 대규모 LLM 배포 확산을 제약하는 요인이 되어, 메모리 집약적 AI 인프라 수요 성장 속도와 규모에 영향을 미칠 수 있음.",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "AI 에이전트 안전성 벤치마크는 LLM 배포 신뢰도를 높여 전방 AI 인프라 수요를 가속할 수 있으나, 메모리 반도체 기술·제품 전략과의 직접 연관성은 낮음.",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20981": {
+    "arxiv_id": "2607.20981",
+    "title": "Beyond Independent Optimization: Compression, MoE Routing, and Quantization Interactions in Multimodal Edge Intelligence",
+    "abstract": "Efficient multimodal inference is increasingly constrained not only by model quality or FLOP count, but also by the cost of preserving, moving, routing, caching, and quantizing multimodal representations under latency, memory, and energy constraints. This paper reviews recent advances in efficient vision-language and multimodal large language models, covering visual token compression, video token management, KV-cache optimization, Mixture-of-Experts (MoE) routing, low-bit quantization, edge deployment, and hardware-aware benchmarking. We argue that these techniques cannot be treated as independent optimizations. Visual token compression alters downstream feature distributions and MoE routing decisions, routing behavior affects expert utilization and quantization sensitivity, quantized router logits influence expert assignment, KV-cache policies determine retained multimodal evidence, and hardware constraints often transform computational savings into memory and communication bottlenecks. We organize the literature around these interactions and identify key design trade-offs, including accuracy versus token budget, static versus adaptive compression, sparse routing efficiency versus expert collapse, and low-bit inference versus modality-specific degradation. Finally, we introduce Temporal Routing Consistency as a diagnostic for video MoE models and highlight open research directions in routing-aware compression, cross-modal cache management, hardware-aware co-design, and unified benchmarking for multimodal edge intelligence.",
+    "authors": [
+      "Jay Gor",
+      "Karm Dave",
+      "Akshita Abrol",
+      "Rajesh Gupta",
+      "Sudeep Tanwar",
+      "Zhengkui Wang"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20981v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "멀티모달 AI 추론의 메모리·에너지 효율화 기법(토큰 압축, KV-캐시, MoE 라우팅, 양자화)과 하드웨어 제약 간 상호작용을 다루며, 엣지 배포 시 메모리 대역폭·용량·전력 수요를 직접 좌우하는 핵심 기술 트렌드를 분석.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "멀티모달 AI 추론 효율화 기법들의 상호작용을 체계화하여 메모리 수요 패턴 변화(KV-캐시 최적화, 토큰 압축, MoE 라우팅)를 예측하고 HBM/DRAM/CXL 설계 및 에지 메모리 솔루션 기회를 식별하는 데 유용하나, 하드웨어 아키텍처 제안이 부재하고 저자 신뢰도가 중간 수준.",
+      "final_score": 3.85
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20970": {
+    "arxiv_id": "2607.20970",
+    "title": "From Scalars to Time Series: Rethinking Implicit Neural Representations for Time-Varying Volumetric Data",
+    "abstract": "Implicit neural representations (INRs) for time-varying volumetric data are typically trained using dense sampling over spatiotemporal coordinates, where each observation corresponds to a single point in space and time. This coordinate-wise formulation requires extensive sampling during optimization, leading to high computational cost and inefficient use of temporal structure. In this work, we revisit this design choice and show that dense spatiotemporal sampling is not necessary for learning time-varying fields. Instead, we represent the data as a collection of spatially indexed time series and train INRs using sequence-level supervision over each spatial location, rather than coordinate-wise scalar samples. This reformulation eliminates the need for dense spatiotemporal sampling and instead learns each spatial location from its full temporal evolution in a structured manner. We demonstrate that this representation is compatible with a range of existing INR architectures and consistently improves reconstruction quality, while significantly reducing training cost. Furthermore, we show that this formulation can be combined with mixture-of-experts architectures, and that our MoE instantiation further improves reconstruction quality compared to both the base reformulation and existing MoE-based INR methods, providing a stronger capacity allocation under heterogeneous temporal dynamics.",
+    "authors": [
+      "Weihan Zhang",
+      "Xuan Zhao",
+      "Yenwen Peng",
+      "Yuqi Chen",
+      "Jun Tao"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20970v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "시간 변화 3D 데이터의 신경망 기반 압축·표현 기법으로, 메모리 반도체 수요나 AI 인프라 메모리 아키텍처와 직접적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "순수 신경망 기반 데이터 표현 기법으로, HBM/DRAM/NAND 수요 변화나 AI 인프라 메모리 요구사항 변화와 무관한 응용 알고리즘 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20935": {
+    "arxiv_id": "2607.20935",
+    "title": "Chemical Chain-of-Thought Functions as a Hallucination-Prone Molecular Scratchpad",
+    "abstract": "Chemical reasoning language models are expected to derive molecular answers through faithful chain-of-thought (CoT). However, across four reasoning model families and twelve chemistry tasks, hallucination is widespread and largely decoupled from answer correctness: correct answers often coexist with fabricated structural claims absent from the relevant molecules. Yet this does not make the reasoning trace computationally irrelevant. Attribution analyses suggest a shared scratchpad function expressed in model-specific forms: Chem-R and ether-0 rely on fragmented SMILES drafts, whereas ChemDFM-R emphasizes scaffold, positional, and naming cues. Notably, perturbing Chem-R's SMILES sketches degrades generation, showing that structural drafts can be causally load-bearing even when verbal structural claims are largely inert. Together, these results show that chemical CoT is neither a faithful explanation nor merely a post-hoc rationalization, but a hallucination-prone molecular scratchpad. This finding cautions against treating CoT as direct evidence of faithful reasoning and motivates process-level supervision beyond answer-only evaluation.",
+    "authors": [
+      "Jiatong Li",
+      "Yuxuan Ren",
+      "Weida Wang",
+      "Xiaoyong Wei",
+      "Yatao Bian"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CE",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20935v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "화학 분자 추론 모델의 언어 생성 메커니즘 분석으로, 메모리 반도체 사업, AI 인프라 수요, 또는 컴퓨팅 아키텍처와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "순수 LLM 추론 메커니즘 연구로서 메모리 수요, 아키텍처 설계, 또는 반도체 제조 전략과 무관한 기초 AI 언어학 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20933": {
+    "arxiv_id": "2607.20933",
+    "title": "Transformer-Assisted LLM-Based Source Code Summarisation: to Enable More Secure Software Development",
+    "abstract": "Neural Source Code Summarisation (NSCS) aims to generate natural language summaries of source code to improve developers' and maintainers' understanding of code. Source code summaries are vital during the maintenance phase of the Secure Software Development Lifecycle (SSDLC), as they improve maintainers' understanding of code and help reduce the number of bugs and vulnerabilities in a software system. However, summaries are often missing, incomplete, or outdated in many software systems. Solutions to this problem use small, task-specific Transformer models or code-aware Large Language Models (LLMs). Task-specific Transformer-generated summaries often score well across many natural language generation (NLG) metrics, but these metrics reward lexical overlap rather than summary quality. Conversely, the ability of LLMs to capture semantics and produce high-quality summaries presents an exciting solution to this problem. This is especially relevant given the increased availability of LLMs and improvements in workstation hardware in recent years, which mean that some LLMs can now be run on developers' workstations. However, because of their abstractive nature, LLM-generated code summaries often differ greatly from developer-written summaries in the words and phrases they use, resulting in low scores across NLG metrics. We show how combining these two methods, by using Transformer-generated summaries in prompt engineering, may enable LLMs to create better source code summaries and help software practitioners maintain secure systems. We prompt four LLMs using four different prompts, with a task-specific Transformer used to assist the LLMs within the prompts. We present \"Transformer-Assisted LLM-Based Source Code Summarisation\", a method through which we observe an improvement of 7.8% in BLEU-4 and 5%.",
+    "authors": [
+      "Jesse Phillips",
+      "Tracy Hall",
+      "Paul Rayson",
+      "Mo El-Haj"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.SE",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20933v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "소프트웨어 개발 생산성 도구로서 메모리 수요나 반도체 아키텍처 변화와 직접 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "코드 요약 자동화는 개발 도구 영역이며, HBM/DRAM/NAND 메모리 수요나 AI 인프라 메모리 아키텍처 변화와 무관한 순수 소프트웨어 공학 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20923": {
+    "arxiv_id": "2607.20923",
+    "title": "Scientific exploration, collaboration and labor division in the large language model era",
+    "abstract": "Large language models (LLMs) have rapidly and significantly entered scientific workflows, but it remains unclear how their diffusion is associated with changes in scientists' strategies in research directions and team building. We link PubMed Central full text with OpenAlex publication and collaboration histories for 775,323 scientists and analyze CRediT contribution statements from 137,120 multi-author papers. After 2022, scientists increasingly published across more intellectually distant fields and entered fields in which they had not previously worked. These increases in interdisciplinarity and exploration were especially pronounced among established scientists and scientists from non-English-speaking low- and middle-income countries. Authors with stronger AI-writing signals were already more interdisciplinary and exploratory before the widespread adoption of LLMs, and the gap widened further after 2022 compared with authors with weaker AI-writing signals. Scientists' collaboration networks also became more interdisciplinary after 2022. Yet, among authors with stronger AI-writing signals, research interdisciplinarity was less closely tied to the disciplinary diversity of their collaborators. The division of labor within research teams also became more differentiated. Contributors on papers published after 2022 reported narrower role sets on average, coauthors shared fewer roles in common, and their role profiles became less rigid and more fluid. Software and validation roles increased, while conceptual and management roles decreased. These patterns suggest that team members are taking on more distinct responsibilities and may rely less on one another to perform research tasks. Overall, this study indicates that the LLM era coincides with a broader reorganization of scientific exploration, collaboration, and the division of labor.",
+    "authors": [
+      "Xiang Zheng",
+      "Xi Hong",
+      "Jialin Liu",
+      "Chaoqun Ni"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.DL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20923v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 시대 과학 연구 방식의 구조적 변화(팀 구성, 역할 분화, 학제 간 협력)는 AI 인프라 수요 패턴과 메모리 워크로드 특성 변화를 예측하는 선행 지표",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 3,
+        "maturity": 4,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "LLM 도입으로 인한 과학 협업 구조 변화는 AI 인프라 수요의 질적 변화(소프트웨어·검증 역할 증가)를 시사하지만, 메모리 용량·대역폭 수요와의 직접 인과관계는 불명확하여 간접적 수요 신호 수준",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20916": {
+    "arxiv_id": "2607.20916",
+    "title": "Traceable Scholarship: Page Anchors and Ariadne's Thread for Humanistic Inquiry in the Age of Generative AI",
+    "abstract": "Generative AI lets large language models produce scholarly-looking text within seconds, yet fluency does not equal valid explanation. The deepest risk is not factual error alone but the appearance that an explanation is already established without clear sources, page numbers, editions, or evidence. We liken the page anchor to Ariadne's thread: within the labyrinth of generative fluency, it is the thread that leads the scholar back to the source. This paper proposes Traceable Scholarship as the minimum normative condition for AI-assisted humanistic research, situating it across the three revolutions of knowledge infrastructure: print, digital, and generative AI. We introduce page anchors, dual page numbers, citation-first generation, NO_EVIDENCE, human verification, four-level compliance, and Scope Contract, and present AIH-Infra as a three-layer reference implementation: Contexture (document structuring), Open WebUI AIH-Infra (traceable knowledge base), and AIH-Infra MCP Server (agent gateway). A case study on a 29-volume Kant Akademie-Ausgabe knowledge base illustrates how traceability supports retrieval correction, evidence grading, and judgment downgrading. Traceability is not a software feature; it is the condition under which humanistic research can remain public and refutable in the age of generative AI.",
+    "authors": [
+      "Deyu Jing"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20916v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "생성형 AI 시대의 인문학 연구 추적성(traceability) 문제로, 메모리 반도체 수요·기술·전략과 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "인문학 연구의 AI 신뢰성 문제를 다루는 순수 소프트웨어/방법론 논문으로, HBM·DRAM·NAND 등 메모리 사업 전략이나 AI 인프라 메모리 수요와 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20913": {
+    "arxiv_id": "2607.20913",
+    "title": "Source-Prior-Driven Selective Adaptation for Efficient Diffusion Model Finetuning",
+    "abstract": "Fine-tuning large diffusion models for new domains or styles involves a trade-off: improving target-specific generation often degrades the pretrained model's broad generative capability. Existing full and parameter-efficient fine-tuning methods typically handle this trade-off only implicitly. In this work, we propose a novel source-prior-driven selective adaptation method to efficiently fine-tune diffusion models, achieving a favorable trade-off. Our method relies on two key observations: (1) the loss of general generative capability is highly inconsistent across pretrained parameters, and (2) parameters that have a relatively small impact on the model's general generative capability remain structurally inconsistent across layers and parameter types. Motivated by these observations, we first learn a static mask to explicitly identify parameters better suited for downstream adaptation, and then construct structured update strategies for the selected subset. Experiments show that our method achieves a better adaptation-retention trade-off than existing strong baselines.",
+    "authors": [
+      "Yi Xiong",
+      "Yuan-Yuan Cheng",
+      "Xiao-Ming Fu"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20913v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 모델 효율화 기법으로서 메모리 풋프린트 감소 및 추론 비용 절감을 견인하며, 대형 확산 모델의 도메인 적응 시 메모리 수요 패턴을 변화시키는 전방 시장 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "확산 모델의 파라미터 효율적 파인튜닝 기법은 AI 추론 메모리 효율을 개선하는 소프트웨어 트렌드이나, 메모리 칩 자체의 수요량·아키텍처 변화로는 직결되지 않으므로 간접적 신호 수준",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20833": {
+    "arxiv_id": "2607.20833",
+    "title": "REFACT: Adaptive Fact Restatement for Compact and Faithful Chain-of-Thought Reasoning",
+    "abstract": "Large language models increasingly rely on long-form reasoning for complex tasks, yet their reasoning traces may drift away from the supplied context when evidence is sparse, noisy, or in conflict with parametric knowledge. Existing grounding methods either attach citations after generation or encourage evidence retrieval inside the trace, but they often do not ensure that cited content is sufficient for the local inference and final answer. We propose REFACT, an adaptive fact-restatement citation framework that trains models to decide when a reasoning step needs contextual grounding and at what granularity source facts should be restated. This design avoids both unsupported inference and indiscriminate fact copying by turning citations into answer-supporting intermediate states. REFACT is optimized with a two-stage SFT-to-RL pipeline in which a citation-utility reward encourages cited facts to be well-formed, source-traceable, and answer-sufficient. Experiments on LongBench, LV-Eval, and ConFiQA show that REFACT improves long-context QA and counterfactual faithfulness while substantially reducing token consumption. Further analysis shows that REFACT preserves more answer-bearing evidence with fewer restated facts, yielding reasoning traces that are denser rather than longer. All code and data are available at https://github.com/NEUIR/REFACT.",
+    "authors": [
+      "Zhensheng Jin",
+      "Xin Dai",
+      "Zhenghao Liu",
+      "Chaojun Xiao",
+      "Huiyuan Xie",
+      "Yu Gu",
+      "Ge Yu",
+      "Maosong Sun"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20833v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM의 장문맥 추론 효율화 기법으로서 토큰 소비를 대폭 감소시키며, 이는 AI 인프라의 메모리·연산 수요 구조를 근본적으로 변화시키는 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론 효율화(토큰 감소)가 AI 인프라의 메모리·대역폭 수요 패턴을 변화시키는 신호로서, HBM/DRAM 용량·대역폭 설계 및 CXL 메모리 확장 전략에 영향을 미칠 가능성이 있음",
+      "final_score": 3.8
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20814": {
+    "arxiv_id": "2607.20814",
+    "title": "Enhancing Explainable Cardiac Diagnosis with Guide-Grounded Multimodal LLMs",
+    "abstract": "The electrocardiogram (ECG) is a cornerstone of cardiac as- sessment, yet clinical deployment of deep learning models remains con- strained by limited interpretability and the hallucination risk of large language models (LLMs). Existing CNN+Grad-CAM+multimodal LLM frameworks can generate ECG reports, but their explanations are often only weakly grounded in established diagnostic criteria, reducing trust- worthiness and reproducibility. We propose a guide-grounded multimodal framework that explicitly anchors report generation in curated clinical knowledge. A convolutional neural network (CNN) and Grad-CAM first produce class probabilities and class-specific heatmaps from 12-lead ECG images. In parallel, authoritative ECG textbooks and guideline materials are distilled offline into a structured ECG Interpretation Guide, which is injected as a fixed knowledge block for every sample. Conditioned on the ECG image, Grad-CAM overlay, CNN-derived fact pack, and the in- jected guide, a multimodal LLM generates structured diagnostic reports with guideline-consistent terminology and criteria usage. Experiments on the full PTB-XL test set demonstrate that guide grounding improves se- mantic quality and perceived consistency of generated reports while pre- serving competitive classification performance. In particular, our method increases the average BERTScore of generated impressions from 0.818 to 0.953 relative to a strong CNN+Grad-CAM+MLLM baseline, indicat- ing closer alignment with reference reports. These findings suggest that injecting a distilled interpretation guide into the multimodal prompting pipeline offers a practical pathway to reduce hallucinations and enhance the clinical plausibility of LLM-based ECG explanations, bringing ex- plainable cardiac diagnosis closer to real-world deployment.",
+    "authors": [
+      "Hai-Nam Duy Vuong",
+      "Duy-Anh Bui",
+      "Trong-Nghia Nguyen",
+      "Kim-Ngan Thi Nguyen",
+      "Trang Mai Xuan",
+      "Tien-Cuong Nguyen",
+      "Van-Dem Pham",
+      "Thien Van Luong"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20814v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "의료 영상 AI 진단 모델의 해석성 개선 연구로, 메모리 반도체 수요·기술·경쟁 구도와 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "ECG 진단용 멀티모달 LLM의 해석성 개선은 의료 AI 응용 논문일 뿐, HBM/DRAM/NAND 사업, AI 인프라 메모리 수요, 또는 메모리 아키텍처 혁신과 무관하다.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20806": {
+    "arxiv_id": "2607.20806",
+    "title": "Profiling Lightweight Large Language Models",
+    "abstract": "Lightweight large language models (LLMs) are increasingly being deployed locally on personal computers and are expected to play a growing role in resource-constrained edge and mobile environments. In such settings, energy consumption, execution time, and memory usage directly affect practical usability, yet existing evaluations of LLM efficiency largely rely on proxy descriptors such as parameter count or FLOPs, often decoupled from task precision. This paper introduces a PTME-based experimental framework for the precision-aware profiling of lightweight LLM inference, jointly measuring Precision, execution Time, peak Memory usage, and Energy consumption through direct hardware-level measurements. The methodology is applied to a representative set of lightweight LLMs executed locally under edge-class resource envelopes on a controlled desktop platform, using benchmarks spanning code generation, mathematical reasoning, and multi-task understanding. We find that static proxy descriptors approximate inference cost well but fail to predict precision. Tightening the resource envelope increases cost without affecting precision, amplifying execution time more strongly than energy and penalizing larger models the most. Moreover, no single model dominates across all PTME dimensions, and a Pareto analysis reveals non-dominated configurations that would be hidden by accuracy-only or efficiency-only assessments, providing practical guidance for selecting models under different resource envelopes. These results show that selecting lightweight LLMs by size, FLOPs, latency, or accuracy alone can select the wrong deployment candidate; PTME profiling exposes configurations that preserve useful accuracy at lower physical cost.",
+    "authors": [
+      "Tomohiro Harada",
+      "Enrique Alba",
+      "Gabriel Luque"
+    ],
+    "published": "2026-07-23",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20806v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "경량 LLM의 엣지/모바일 배포 확대에 따른 메모리·에너지 효율 프로파일링이 메모리 제품 설계 및 고객 선택 기준을 재정의하는 신호",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 4,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "경량 LLM의 엣지 배포 확산으로 DRAM/NAND의 저전력·저용량 최적화 수요가 증가하고 있으며, PTME 프로파일링 방법론은 고객(엔비디아, 칩 설계사)의 메모리 선택 기준을 정확도 중심에서 효율성 중심으로 전환시키는 신호",
+      "final_score": 4.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20778": {
+    "arxiv_id": "2607.20778",
+    "title": "Toward Mechanistic Interpretability of an AI Foundation Model Fine-Tuned for Atmospheric Chemistry",
+    "abstract": "Weather forecasting foundation models (FMs) are increasingly fine-tuned to predict air quality, offering fast global pollution forecasts at lower computational cost than conventional chemical transport models. These FMs are typically trained on reanalysis data and generate forecasts through autoregressive rollout. They do not explicitly represent governing physical or chemical processes. Therefore, high forecast skill does not reveal whether a model has learned physical mechanisms or exploits statistical regularities in its training data. Here, we present the first study of what a FM fine-tuned for atmospheric chemistry has learned by examining Microsoft's Aurora model. We impose controlled chemical perturbations on its forecasts and test them against known photochemical relationships. We then examine the internal representations that generate these forecasts. We find that Aurora captures a first-order ozone response to reactive nitrogen but does not enforce the chemical constraints that a process-based model encodes. It generates chemically inconsistent combinations of related species and relaxes localized emission features such as wildfire plumes toward background. Internally, its representations remain largely organized around the meteorology inherited during pretraining, with little structure specific to chemistry. Using sparse autoencoders, we identify internal components that causally control the chemical forecast but do not map cleanly onto individual atmospheric processes. This work provides a framework for testing whether AI forecasting systems learn atmospheric chemistry from reanalysis data. As these models are increasingly positioned to inform environmental policy decisions, we argue that composition forecasts should also be judged by their internal mechanisms rather than by benchmark skill alone.",
+    "authors": [
+      "Jason Y. Hu",
+      "Ivan Higuera-Mendieta",
+      "Patrick Obin Sturm",
+      "Makoto M. Kelp"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20778v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "대기화학 모델의 해석가능성 연구로, 메모리 수요·반도체 아키텍처·AI 인프라 효율성과 직접적인 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "기초 AI 해석가능성 연구이나 메모리 수요, 컴퓨팅 아키텍처, 추론 효율성 등 우리 사업 전략과 무관한 순수 과학 논문.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20773": {
+    "arxiv_id": "2607.20773",
+    "title": "HARP: The Human--AI Research Platform",
+    "abstract": "Large language models (LLMs) have shifted human--computer interaction from `traditional'' interface journeys toward more conversational exchanges. Researchers studying HCI and UI use moderated usability sessions, interviews, surveys, transcript analysis, and static prototypes. However, static prototypes provide limited opportunities to study interaction with live AI systems or systematically control how an LLM behaves across participants and scenarios. Conversation transcripts reveal little about how users formulate, revise, and hesitate over prompts before submission. We designed the Human--AI Research Platform (HARP) for researchers, designers, and anyone who has ever wondered, `What if AI did this?' HARP places participants in controlled mock scenarios with live, configurable AI agents. Researchers can control agent prompts, model parameters, response characteristics, and experimental conditions; trigger surveys at predefined moments; and record prompt composition time, response latency, deletions, and keystroke pauses. Planned capabilities include voice, facial expression, gesture, and, where legally and ethically appropriate, emotion analysis. We illustrate HARP through a study examining how technical specificity and response length affect retention of LLM output. By pairing controllable live agents with behavioral and self-report measures, HARP enables systematic testing of how AI design choices affect users.",
+    "authors": [
+      "Zeshu Zhu",
+      "Natalie Friedman",
+      "Kevin Weatherwax",
+      "Emily Eiben"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.HC",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20773v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "HCI/UI 연구 플랫폼으로서 LLM 사용자 상호작용 측정에 초점이며, 메모리 반도체 수요·아키텍처·기술 전략과 직접 연결고리 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM 사용자 행동 연구 도구일 뿐, 메모리 수요·설계·경쟁 전략에 영향을 주는 AI 인프라 트렌드(모델 규모, 추론 효율, 메모리 대역폭 요구)와 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20771": {
+    "arxiv_id": "2607.20771",
+    "title": "Emergent Compositional Skills in Mixture-of-Experts VLAs",
+    "abstract": "We consider the problem of learning compositional robot policies end-to-end from expert demonstrations, without any pre-specified notion of task decomposition or hierarchy. We ask whether a VLA trained with a simplified Mixture-of-Experts (MoE) action head can emergently learn to decompose tasks into reusable, interpretable primitives. We find that learned experts are heavily reused across tasks and consistently correspond to qualitatively distinct low-level behaviors, suggesting that the router implicitly learns to perform high-level sequencing while experts serve as compositional primitives. Our MoE matches the task performance of a monolithic baseline while demonstrating meaningful expert specialization, a step toward modular, interpretable robot policies that emerge from data alone.",
+    "authors": [
+      "Shlok Shah",
+      "Rhiaan Jhaveri",
+      "Tharun Kumar Tiruppali Kalidoss",
+      "Chirayu Nimonkar",
+      "Ishaan Javali"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.RO",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20771v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "로봇 AI 모델(VLA)의 효율적 추론 아키텍처 연구로서 엣지/로봇 디바이스의 메모리·연산 최적화 트렌드를 반영하며, MoE 기반 모듈식 설계는 메모리 접근 패턴과 대역폭 효율성에 영향을 미치는 신흥 AI 인프라 기법",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "로봇 AI의 MoE 기반 경량화 추론 기법은 엣지 메모리 효율성 요구를 시사하지만, 현재 논문은 기초 연구 수준으로 HBM/DRAM 수요 견인 신호는 약함",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20730": {
+    "arxiv_id": "2607.20730",
+    "title": "GPE: Evaluating Robust Evidence Aggregation for Fact Verification under Controllable GEO-Style Poisoning",
+    "abstract": "Large language models increasingly use search tools to retrieve up-to-date information, introducing a new attack surface in which retrieved documents can be manipulated. This risk is amplified by the development of generative engine optimization, which can make selected content more likely to be retrieved, cited, and adopted by models. Existing fact-verification benchmarks and evaluation frameworks do not provide the controlled evidence environments needed to assess robustness against GEO poisoning. We therefore propose GPE, which consists of a multi-domain fact-verification benchmark and an evaluation framework for controlling evidence sources and poisoning ratios. Experiments across multiple verification methods and poisoning attacks demonstrate that GPE exposes robustness degradation and efficiency trade-offs that cannot be observed through clean evaluation alone, confirming the need to evaluate fact verification under adversarial evidence environments.",
+    "authors": [
+      "Zhaoqi Wang",
+      "Zijian Zhang",
+      "Xiaomei Yuan",
+      "Pengtao Kou",
+      "Jiamou Liu",
+      "Zhen Li",
+      "Liehuang Zhu"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.CR",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20730v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 기반 AI 시스템의 검색-생성 파이프라인 견고성 평가 논문으로, 향후 AI 인프라의 신뢰성 요구도 상승 → 메모리 검증/보안 기능 수요 증가 신호",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "AI 모델의 사실검증 견고성 문제는 향후 신뢰성 요구도를 높이지만, 현재 메모리 제조사의 직접 사업 영향은 제한적이며 기초 연구 단계",
+      "final_score": 1.8
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20722": {
+    "arxiv_id": "2607.20722",
+    "title": "REGARD: Regional Affective Differences in Large Language Models",
+    "abstract": "Large language models trained and aligned within different linguistic and regional ecosystems may frame the same political, cultural, and geopolitical entities in different ways. Such differences are often evaluated through sentiment, favorability, or stance, reducing model attitudes to a single positive-negative axis. We introduce REGARD, a study of what drives affective framing differences across LLMs on post-Soviet entities using target-directed Valence-Arousal-Dominance profiling. We query 19 models on 500 region-specific targets, score their responses with two independent LLM judges, GPT-4o-mini and Qwen3.6-35B-A3B, and validate the measurements on a 300-item human-annotated subset. Post-hoc Ward-linkage clustering of all 19 models by affective and response-behavior profiles yields three behavioral clusters that cut across model origin, family, and parameter count. Generic-answer rate is strongly associated with lower arousal (r = -0.81) and with cluster placement: models that deflect evaluative prompts with templated responses cluster together at low arousal regardless of origin. These findings show that VAD profiling captures emotional intensity, a dimension of affective framing that is largely invisible to conventional sentiment-based evaluation.",
+    "authors": [
+      "Andrei Chetvergov",
+      "Alexander Evseev",
+      "Mikhail Solovev",
+      "Timofei Sivoraksha",
+      "Stepan Ukolov",
+      "Valeriia Kuschenko",
+      "Maria Chistyakova",
+      "Sergey Bolovtsov"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20722v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM의 감정 프레이밍 차이를 분석하는 순수 언어학·사회과학 연구로, 메모리 반도체 수요·기술·아키텍처과 직접적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "LLM의 지역별 감정 표현 차이를 VAD 프레이밍으로 분석한 연구이나, 메모리 수요·기술 전략·AI 인프라 효율성과 무관하므로 메모리 사업 의사결정에 기여하지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20652": {
+    "arxiv_id": "2607.20652",
+    "title": "Scaling Interpretable Transformers with Parity Bottleneck Layers",
+    "abstract": "Language models are thought to exhibit the phenomenon of superposition, representing many more features than dimensions in their residual streams. Sparse autoencoders (SAEs) are designed to recover such features post-hoc, but training models that are interpretable by construction has remained impractical, as a per-layer over-complete bottleneck is prohibitively expensive in both memory and compute. To overcome this issue, we introduce the ParityTransformer, a GPT-2-scale architecture whose intermediate representations are efficient and wide / sparse by design. At each layer, a Deep Parity Bottleneck (DPB) replaces a learned over-complete basis with a parameter-free algebraic dictionary, providing a deterministic incoherence guarantee and eliminating the memory requirements that have prevented per-layer interpretable bottlenecks at scale. A DPB is a hierarchically structured sparse bottleneck which efficiently enforces sparsity using a multi-level mixture-of-experts approach: a hardware-aware implementation that closes the cost gap between activation sparse and dense training to a manageable interpretability tax. Empirically, ParityTransformers perform at least as well as post-hoc SAEs on sparse probing tasks, while out-performing on measures of feature absorption, steering effectiveness, and fine-grained causal interventions. Because subsequent computation acts only on features that survive the sparse bottleneck, the ParityTransformer's features are native to the model's forwards pass by construction, addressing the question of whether SAEs probe features the model actually uses during computation. We see this as a step toward training models whose internal representations are interpretable by design rather than recovered post hoc.",
+    "authors": [
+      "Andrew Mack",
+      "Kraig Yuheng Tou",
+      "Mark Henry",
+      "Zhengxun Wu",
+      "Lauren Greenspan"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20652v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 모델의 메모리 효율성과 스파스 연산을 개선하는 아키텍처 혁신으로, 대형 모델 학습·추론 시 메모리·연산 수요 구조를 근본적으로 변화시킬 수 있는 전방 시장 트렌드.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "스파스 병목 구조로 AI 모델의 메모리 효율성을 획기적으로 개선하는 기법이 주류화될 경우, HBM/DRAM 수요 프로파일(대역폭 vs 용량 vs 스파스 연산 지원)의 재편성을 초래할 수 있는 신호.",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20638": {
+    "arxiv_id": "2607.20638",
+    "title": "WaveformQA: Benchmarking LLM Temporal Reasoning on Digital Waveforms",
+    "abstract": "Large Language Models (LLMs) have demonstrated strong capabilities in code generation and reasoning, yet their ability to perform temporal reasoning over digital waveform data remains largely unexplored. Although reasoning over digital waveforms is a critical bottleneck in design verification, existing benchmarks primarily evaluate hardware description language (HDL) code generation and use waveforms only as supplementary context. This paper presents WaveformQA, an open-source question-answering benchmark for evaluating LLM temporal reasoning over digital waveforms. The benchmark comprises 360 questions with programmatically generated ground truths across eight categories of varying difficulty, including questions targeting multi-signal correlation and event ordering. Waveforms are generated from open-source design implementations, ensuring reproducibility and grounding the benchmark in real hardware behavior. Evaluation of frontier LLMs reveals that while models achieve reasonable accuracy on simple queries, performance degrades due to context window limitations and reasoning difficulties on complex temporal and multi-step questions. In addition, we show that an event-time JSON representation of waveforms improves LLM reasoning accuracy versus the standardized value change dump (VCD) format. The open-source framework supports extending to new question categories and importing new waveform sources, enabling researchers to rapidly prototype temporal reasoning experiments.",
+    "authors": [
+      "Yichuan Liu",
+      "Daniel Cummings",
+      "Nick Vadlamudi"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.AI",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20638v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "반도체 설계 검증(Design Verification) 자동화에서 LLM의 시간 추론 능력을 평가하는 논문으로, 향후 AI 기반 EDA/검증 도구 고도화가 메모리 수요(컨텍스트 윈도우, 추론 메모리)를 견인할 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "설계 검증 자동화 분야에서 LLM의 시간 추론 한계를 드러내며, 이를 해결하기 위한 더 큰 컨텍스트 윈도우와 고성능 메모리(HBM, 장기 메모리 확장)의 수요 증가 가능성을 시사한다.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20630": {
+    "arxiv_id": "2607.20630",
+    "title": "Demonstrating GenDB: Instance-Optimized and Customized Query Processing Code Generation via LLM Agents",
+    "abstract": "Traditional query processing engines require continuous development and extensions to support new techniques and user requirements, and in some cases, entirely new systems must be built from scratch. However, these engines are difficult to extend due to their internal complexity, and building new systems demands significant engineering effort and cost. To address this, we demonstrate GenDB, a generative query engine that shifts query processing from manually engineered systems to query processing code generation driven by Large Language Models (LLMs). An early prototype of GenDB uses LLM agents to generate instance-optimized query execution code tailored to specific data, workloads, and hardware resources. This prototype suits offline code generation for repetitive, templated queries, since the upfront generation cost amortizes over many executions and correctness can be ensured through extensive fuzz testing and manual inspection. For ad-hoc queries, GenDB can work with a traditional DBMS in a hybrid architecture: the DBMS handles one-off queries, while GenDB speeds up frequent SQL templates. Our demonstration allows users to (1) visually and interactively explore how GenDB analyzes workloads, profiles hardware resources and underlying data, produces query plans, generates code based on them, and finally uses an optimizer to iteratively achieve a correct and efficient implementation; (2) use visual inspection and analysis to gain qualitative insights into why GenDB produces code that achieves significantly better performance than state-of-the-art query engines on two benchmarks: TPC-H and a newly constructed benchmark designed to reduce potential data leakage from LLM training data; and (3) upload their own data and queries to explore GenDB with different LLMs and query patterns.",
+    "authors": [
+      "Jiale Lao",
+      "Immanuel Trummer"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.DB",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20630v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 인프라의 쿼리 처리 효율화 기술로서 데이터센터 메모리 대역폭·용량 수요 패턴을 변화시킬 수 있는 전방 시장 트렌드",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "LLM 기반 쿼리 코드 생성이 데이터센터 워크로드의 메모리 접근 패턴과 효율성을 재정의할 가능성은 있으나, 현재는 프로토타입 단계이며 메모리 칩 자체의 아키텍처 수요 변화로는 직결되지 않음.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20596": {
+    "arxiv_id": "2607.20596",
+    "title": "Are Single-Token Sparse Autoencoder Features Causally Necessary? Layer-Depth and SAE-Family Effects",
+    "abstract": "Sparse autoencoder (SAE) features are used to interpret and steer large language models, yet whether a feature's causal role is stable across SAE families remains untested. Single-token features that activate on one vocabulary item provide the diagnostic case where ground truth permits direct comparison. We analyze 3.9M features across six models and three SAE families using zero-ablation at full layer depth. Single-token features cluster 4.7x tighter in decoder space and concentrate in early layers (Layer 0 in GPT2-Small; L0-L4 in Gemma). Ablating them yields Benjamini-Hochberg-significant logit reductions in 178 of 208 full-layer conditions, with depth controlling whether damage cascades downstream or shapes the output directly. Cross-family causal differences exceed within-family scale effects: on the same base model, GemmaScope and BatchTopK features remain causally anchored, while LlamaScope features are locally redundant. The target token's rank recovers to within 2x baseline 96-98% of the time after the same ablation, and a controlled activation-function comparison reverses sign within the same model, leaving training recipe as the residual candidate. Cross-family interpretability claims are therefore sensitive to training methodology, not just activation function or scale.",
+    "authors": [
+      "Seonglae Cho",
+      "Zekun Wu",
+      "Kleyton Da Costa",
+      "Rishi Kalra",
+      "Ilham Wicaksono",
+      "Adriano Koshiyama"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.LG",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20596v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "SAE 기반 LLM 해석·최적화 기법이 모델 효율성과 추론 비용을 좌우하며, 이는 AI 인프라의 메모리·연산 수요 패턴 변화를 예측하는 데 중요한 신호",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "SAE 기반 모델 해석이 향후 LLM 최적화·경량화 방향을 결정할 수 있으나, 현재는 기초 연구 단계로 메모리 수요 영향은 간접적이고 시간 지평이 불명확함",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20589": {
+    "arxiv_id": "2607.20589",
+    "title": "Evaluating the Effectiveness of Persona Simulation in Opinion Prediction with GPT-4.1",
+    "abstract": "Persona simulation involves utilizing large language models (LLMs) to anticipate human choices or interactions based on specific characteristic information. To further understand current limitations and future directions, we tested persona simulation in opinion prediction with GPT-4.1 (knowledge cutoff by June 2024). Using personas from nine U.S. states provided by Columbia University's Personas dataset, GPT-4.1 accurately predicted 2024 election outcomes in eight out of the nine states, only failing in one of the swing states. We then focused on opinions related to medicine and healthcare. With the American Trends Panel Wave 123 dataset from Pew Research Center, GPT-4.1 was able to anticipate beliefs about childhood vaccines with an accuracy of up to 0.94. Furthermore, we applied GPT-4.1 to generate conversations among personas and observed that the simulated dialogues and opinions adhered well to personas' personalities and backgrounds, albeit lacking natural human-like flow. Persona simulation proves to be a promising application of artificial intelligence as long as biases are addressed. In the near future, it will be beneficial to apply it to opinion analysis and reaction prediction in diverse fields ranging from public health to lawmaking to economics.",
+    "authors": [
+      "Sarah Y. Li",
+      "Ziyu Yao"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.CL",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20589v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "LLM 기반 페르소나 시뮬레이션은 순수 NLP/사회과학 응용으로, 메모리 반도체 수요·기술·경쟁 구도와 직접 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "GPT-4.1의 언어 능력 평가 논문이지만, 메모리 칩 설계·수요·경쟁·AI 인프라 비용 구조 변화와 무관하므로 사업 전략 의사결정에 직접 기여하지 않음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
+  },
+  "2607.20583": {
+    "arxiv_id": "2607.20583",
+    "title": "Foundation-model-guided radiogenomic discovery linking cancer genomes to cancer scans",
+    "abstract": "The function of many genes is still unknown, and conventional driver-discovery methods, which rely on how frequently a gene is mutated, cannot assess genes that are only rarely affected. Here we pair Evo~2-based genome analysis with routine clinical imaging to identify gene--phenotype associations at genome-wide scale. For every somatic mutation across three TCGA cohorts (cRCC=clear cell renal cell carcinoma, HCC=hepatocellular carcinoma, and BC=breast cancer; $n = 340$ total), Evo~2 predicts a severity score, with no task-specific training. Per-gene severity summaries are then correlated with radiomic features extracted from paired tumor segmentations, controlling for total mutation burden. In TCGA-cRCC ($n = 162$), this sweep recovers established renal-cancer drivers and identifies 46 additional genes reaching false discovery rate (FDR) significance absent from curated cancer-gene panels, several of which are Mendelian ciliopathy and cytoskeletal-disease genes. These results demonstrate that pairing a genomic language model with widely available clinical imaging can serve as a hypothesis-free discovery tool for gene--imaging associations invisible to conventional approaches.",
+    "authors": [
+      "Frederik Hauke",
+      "Jeremias Krause",
+      "Patrick Wienholt",
+      "Christiane Kuhl",
+      "Ingo Kurth",
+      "Sikander Hayat",
+      "Jakob Nikolas Kather",
+      "Sven Nebelung",
+      "Daniel Truhn"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "q-bio.GN",
+    "track": "AI",
+    "url": "http://arxiv.org/abs/2607.20583v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "의료 영상-유전체 연관성 발견 논문으로, 반도체 메모리 사업, AI 인프라 메모리 수요, 또는 컴퓨팅 아키텍처와 직접적 연관이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "기초 생의학 응용 논문으로 메모리 반도체 사업 전략, 메모리 수요 동향, AI 인프라 컴퓨팅 효율과 무관하므로 우리 관찰 범위 외.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-27"
   }
 }
