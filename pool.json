@@ -37290,5 +37290,307 @@
       "final_score": -1.0
     },
     "first_seen": "2026-07-27"
+  },
+  "2607.22022": {
+    "arxiv_id": "2607.22022",
+    "title": "HEMERA: A Heterogeneous Memory-Centric Accelerator with Recursive Dataflow for Edge-Constrained State-Space-Duality Models Inference",
+    "abstract": "Structured State Space Models (SSMs), such as Mamba, enable efficient long-sequence modeling with linear time complexity. Recent implementations realize this capability through Structured State Space Duality (SSD), which transforms recursive state evolution into matrix-form computations. However, SSD introduces substantial system-level overheads, including quadratic intermediate materialization, irregular data movement, and prefix-dependent execution, leading to excessive memory traffic and bandwidth demand on conventional architectures. Although prior accelerators mitigate these overheads through optimized dataflows or compute-in-memory techniques, they largely retain matrix-oriented SSD execution and cannot simultaneously avoid quadratic intermediate storage and efficiently map dependency-bound state propagation.   This paper presents HEMERA, a heterogeneous memory-centric accelerator for efficient Mamba-2 inference. Rather than directly executing the matrix-form SSD computation, HEMERA reformulates it into an algebraically equivalent streaming-recursive dataflow that avoids quadratic intermediate storage while preserving the original computation. The resulting heterogeneous execution paradigm maps dense linear operations onto in-memory computing units and recursive state updates onto a dedicated streaming engine. Across Mamba-2 models ranging from 130M to 2.8B, HEMERA achieves average latency speedups of 1.4x-3.6x and energy-efficiency improvements of 12.2x-27.0x over the official optimized fused Mamba-2 kernel on NVIDIA A100. It further reduces the average SSD-related execution-time ratio across model scales to 14.12% during long-sequence inference, demonstrating its potential for efficient deployment under edge constraints.",
+    "authors": [
+      "Hao Ding",
+      "Ling Liang",
+      "Ruitong Qiao",
+      "Dongxue Zhao",
+      "Xiantong Qiu",
+      "Jinshan Li",
+      "Meng Li",
+      "Lei Jin",
+      "Zhiliang Xia",
+      "Zongliang Huo",
+      "Zongwei Wang",
+      "Yimao Cai"
+    ],
+    "published": "2026-07-24",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.22022v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 추론 워크로드(Mamba-2)의 메모리 대역폭·저장소 문제를 해결하는 메모리 중심 가속기 아키텍처로, 메모리 수요 패턴 변화와 PIM/어드밴스드 패키징 기술의 실전 응용 사례를 제시",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "SSM 기반 AI 추론의 메모리 병목을 메모리 중심 아키텍처(in-memory computing + streaming engine)로 해결하는 사례로, 엣지 AI 환경에서 메모리 효율성 수요 증가를 반영하지만 학술 수준의 프로토타입이므로 상용화 거리는 아직 멀다.",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.21985": {
+    "arxiv_id": "2607.21985",
+    "title": "Unified Static-Dynamic Pruning for Efficient LLM Inference",
+    "abstract": "The increasing deployment of large language models (LLMs) has magnified the computational and memory bottlenecks of autoregressive decoding, where low compute intensity and bandwidth-bound kernels dominate inference cost. Weight pruning offers a promising remedy,   but existing methods remain confined to either static pruning (SP), which permanently removes redundant weights but lacks adaptivity, or dynamic pruning (DP), which adapts to input sparsity but introduces runtime irregularity. This paper presents SPDP, a unified   sparse-inference framework that integrates unstructured SP with input-adaptive DP for efficient LLM inference on GPUs. SPDP co-designs a new Tiled-Column-wise Bitmap Compressed (Tiled-CBC) format and two complementary GPU kernels: (1) a CUDA-core spMspV kernel   featuring Hybrid Activation-aware Dynamic Shared-Memory Bitmap Decoding (HAD-SMBD) for fine-grained, runtime activation skipping, and (2) a Tensor-Core SpMM kernel optimized for prefill computation. This joint format-kernel design harmonizes static and dynamic   sparsity, maintaining bandwidth-efficient memory access and high compute intensity under both phases of LLM inference. Comprehensive evaluations on inference-optimized GPUs demonstrate that SPDP achieves 1.24x-1.37x average speedup (up to 2.51x) over state-of-the-   art sparse frameworks such as SpInfer, while matching. perplexity with up to 25% higher sparsity. SPDP advances the inference efficiency-quality Pareto frontier, showing that unified static-dynamic pruning can deliver substantial throughput and performance-per-watt   improvements in large-scale LLM serving",
+    "authors": [
+      "Jinhyeok Kim",
+      "Yejoon Lee",
+      "Jaeyoung Do"
+    ],
+    "published": "2026-07-24",
+    "primary_category": "cs.DC",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.21985v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 효율화를 위한 동적-정적 프루닝 기법으로, GPU 메모리 대역폭 병목 해소와 추론 비용 감소를 직접 다루며 AI 인프라 메모리 수요 구조를 변화시키는 신기술.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론의 메모리 대역폭 병목을 소프트웨어 기법으로 해소하려는 시도로, 향후 HBM/DRAM 수요 구조(용량 vs 대역폭 트레이드오프)와 GPU 메모리 아키텍처 설계에 영향을 미칠 수 있는 신호.",
+      "final_score": 4.3
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.20358": {
+    "arxiv_id": "2607.20358",
+    "title": "PolySim: Deterministic Polynomial Surrogates for Cross-Modal Retrieval on CiM",
+    "abstract": "Cross-modal retrieval on edge devices benefits from probabilistic embeddings that capture semantic uncertainty, but deploying them on compute-in-memory (CiM) hardware remains an open problem. The core difficulty is a sampling gap: probabilistic methods such as PCME rely on Monte Carlo sampling and nonlinear distance evaluation at inference, which are fundamentally incompatible with CiM crossbar arrays that support only deterministic, single-step matrix-vector multiplication. Few existing probabilistic retrieval methods can be executed on a conventional crossbar. To bridge this gap, we propose PolySim, a framework that reformulates probabilistic retrieval into a fully deterministic pipeline. PolySim approximates each Gaussian embedding dimension using low-order polynomial bases and computes similarity via a learnable order-bilinear kernel, eliminating stochastic sampling while preserving distributional information. In experiments on six benchmarks spanning video, image, and audio retrieval, PolySim improves R@1 over deterministic baselines by up to 10.3\\% and matches or exceeds PCME, while reducing inference to a single crossbar-compatible matrix-vector multiplication. CrossSim evaluation under realistic device non-idealities confirms robust deployment on conventional crossbar arrays. To the best of our knowledge, PolySim is the first method to enable probabilistic cross-modal retrieval on CiM hardware.",
+    "authors": [
+      "Xinzhao Li",
+      "Charles Power",
+      "Pengyu Ren",
+      "Jongun Won",
+      "Likai Pei",
+      "Yuting Hu",
+      "Jinjun Xiong",
+      "Alptekin Vardar",
+      "Ningyuan Cao",
+      "Xiaobo Sharon Hu",
+      "Thomas Kämpfe",
+      "Kai Ni",
+      "Ruiyang Qin"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.20358v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "CiM(Compute-in-Memory) 하드웨어에서 확률적 임베딩 기반 검색을 가능하게 하는 기술로, PIM/어드밴스드 패키징 전략과 에지 AI 추론 수요를 직결하는 메모리 아키텍처 혁신",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "에지 AI 추론 시장에서 CiM 기반 메모리-연산 통합 아키텍처의 실용성을 높이는 알고리즘 혁신으로, SK하이닉스의 PIM/CXL 메모리 사업 포지셔닝과 부합하나 아직 학술 단계이며 상용 임박도는 낮음",
+      "final_score": 3.95
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.20162": {
+    "arxiv_id": "2607.20162",
+    "title": "Self-organizing Architecture of Receptron Units: a Hardware-Aware Framework for Edge Intelligence",
+    "abstract": "The growing demand for intelligent processing at the edge of IoT networks is constrained by the severe computational and memory limitations of microcontroller units, which render impractical conventional deep learning approaches. We propose a neuromorphicinspired classifier based on the Receptron model, a single-unit architecture capable of implementing non-linearly separable decision boundaries, without resorting to multi-layer networks. The model is designed for direct deployment on mid-range MCUs, while supporting continuous on-device adaptation. Experimental evaluation on basic dataset benchmarks yields cross-validated accuracies compatible with standard machine learning method baselines. These results position the Receptron as a viable and interpretable alternative for resource-constrained neuromorphic edge systems operating in dynamic, non-stationary environments.",
+    "authors": [
+      "Stefano Radice",
+      "Ludovico Casaccia",
+      "Riccaro Emanuele Beccalli",
+      "Bruno Paroli",
+      "Paolo Milani"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.LG",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.20162v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지 AI 추론 시스템의 메모리·연산 효율화 기법으로서 저전력 MCU 기반 온디바이스 AI 배포 트렌드를 반영하며, 분산 AI 인프라에서 메모리 수요 구조 변화를 시사한다.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "극저전력 엣지 추론 기법으로서 향후 분산 AI 시장의 메모리 수요 프로파일 변화를 암시하지만, 현재 논문은 기초 알고리즘 수준이고 SK하이닉스의 고대역폭·고용량 메모리 사업과는 직접 연관성이 제한적이다.",
+      "final_score": 1.35
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.20141": {
+    "arxiv_id": "2607.20141",
+    "title": "Formal Foundations for Known Good Reliable Die Screening in Chiplet-Based AI Systems-on-Chip",
+    "abstract": "The rapid growth of chiplet-based artificial intelligence systems-on-chip (SoCs) has exposed a fundamental gap in semiconductor test methodology. Existing Known Good Die (KGD) screening guarantees pre-assembly functional correctness, yet it offers no probabilistic assurance of post-assembly reliability lifetime. To address this limitation, the present work formalizes the transition from KGD to Known Good Reliable Die (KGRD) screening as a constrained inference problem over incomplete pre-assembly observability. Building upon this formulation, four interlocking contributions are presented: (i) a Bayesian probabilistic risk model that maps pre-assembly telemetry to post-assembly failure likelihood with a quantified observability bias bound; (ii) a safety-gated decision architecture that provides a provable post-assembly failure probability guarantee; (iii) uncertainty-aware disposition boundaries derived from Bayes-optimal decision theory; and (iv) a constrained closed-loop feedback mechanism that delivers consistent model improvement without violating reliability constraints. A Monte Carlo simulation study on N = 4,000 synthetic dies verifies all four theoretical properties and confirms that the safety guarantee holds uniformly across the full range of tested gate threshold.",
+    "authors": [
+      "Prashanthi Metku",
+      "Chandra Gandu"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.20141v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Chiplet 기반 AI SoC의 신뢰성 검증 방법론으로, 어드밴스드 패키징·3D 통합 메모리 시스템의 수율·신뢰성 관리에 직결되는 제조 기술 문제.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "Chiplet 기반 AI 시스템의 확산에 따른 고신뢰성 메모리 검증 방법론 개발로, HBM·3D 패키징 수율 향상과 고객(엔비디아 등) 신뢰도 확보에 기여할 수 있는 기초 연구.",
+      "final_score": 3.7
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.19922": {
+    "arxiv_id": "2607.19922",
+    "title": "DGNA: Dissecting GPU NUMA Architecture through Microbenchmarking and Data Analysis",
+    "abstract": "Graphics Processing Units (GPUs), due to their immense parallel processing capabilities, have become essential across various fields, including gaming and artificial intelligence. With significant advancements in GPU cores, GPU memory efficiency has lagged, resulting in bottlenecks that can limit workload efficiency. To bridge this gap, a deep understanding of GPU memory architectures, particularly Non-Uniform Memory Access (NUMA) mechanisms within L2 and DRAM, is essential for optimizing applications, designing new architectures, and building accurate simulators. However, the latest GPU hardware from vendors like NVIDIA and AMD is still a black-box, making it challenging for researchers to understand the details of their design.   In this paper, we introduce DGNA, a methodology designed to unveil the NUMA architecture of the GPU memory hierarchy through microbenchmarking and data analysis. Specifically, we propose an approach to measuring the latency of L2 caches and DRAM without relying on the intrinsic instructions of the architecture and apply a Gaussian mixture model to filter out outliers and accurately determine latency distributions. We apply DGNA on NVIDIA's A100 and H100 GPUs, revealing NUMA node architecture, SM-NUMA relationships, and NUMA-aware memory allocation strategies used to maintain cache coherence. To the best of our knowledge, this is the first paper to detail the NUMA architecture within the GPU memory subsystem.",
+    "authors": [
+      "Changxi Liu",
+      "Yun Chen",
+      "Trevor E. Carlson"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.19922v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "GPU 메모리 계층(L2/DRAM) NUMA 아키텍처 분석으로 AI 인프라의 메모리 효율성 병목을 규명하며, HBM/DRAM 설계 최적화와 고객(엔비디아) 제품 이해에 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 3,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "A100/H100 GPU 메모리 NUMA 구조를 최초로 상세 분석하여 AI 인프라 메모리 병목 이해를 제공하고, 차세대 HBM/DRAM 설계 및 메모리 확장(CXL) 전략 수립에 실질적 인사이트를 제공한다.",
+      "final_score": 4.35
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.19661": {
+    "arxiv_id": "2607.19661",
+    "title": "Leveraging ECRAM for Edge Continual Learning",
+    "abstract": "Several edge computing platforms, such as autonomous vehicles and smart sensing devices, need to adapt to dynamic environments in real time by learning from new data in the field. Continual learning has emerged as a promising solution for edge training, by incorporating techniques that successfully combine a highly summarized version of previously trained data (to avoid catastrophic forgetting) with recently sensed data. However, as is the case with other ML algorithms, continual learning generates significant data movement between general-purpose CPUs/GPUs and memory, impacting the suitability of continual learning for edge platforms. In-memory computing (IMC; also known as processing-using-memory) can curtail this waste and make continual learning feasible at the edge, but it faces two unique challenges: (1) IMC architectures make use of noisy computation operations that significantly harm training accuracy; and (2) IMC architectures have poor and often incomplete support for resource-efficient training.   To address these challenges, we propose CLASP (the Continual Learning Acceleration System Platform), which to our knowledge is the first end-to-end system with IMC acceleration for continual learning. The hardware and software of CLASP are co-designed to support a wide range of continual learning algorithms, through software-visible assembly-level instructions that can be incorporated without constraints into ML-based algorithms. CLASP is designed around a back-end-of-line (BEOL) compatible ECRAM device that we fabricate, which can overcome the challenges of IMC-based training using other emerging memory devices. We show that CLASP with ECRAM approaches the accuracy of in-GPU training, while delivering a speedup of 67x and energy savings of 132x for learning without forgetting and experience replay using MNIST.",
+    "authors": [
+      "Nabila Tasnim",
+      "Haoran Liu",
+      "Qing Cao",
+      "Saugata Ghose"
+    ],
+    "published": "2026-07-22",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.19661v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Edge AI 연속학습을 위한 In-Memory Computing(IMC) 아키텍처와 ECRAM 신소자 기술로, PIM/어드밴스드 메모리 전략과 엣지 AI 수요 변화를 동시에 다룸.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "엣지 AI 연속학습 시장의 부상과 PIM/신메모리 기술 필요성을 시사하지만, ECRAM은 아직 초기 단계이며 우리의 HBM/DRAM 주력사업과의 직접 경쟁은 제한적.",
+      "final_score": 4.15
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.19502": {
+    "arxiv_id": "2607.19502",
+    "title": "MC-BRIDGE: A Modular Receiver-Chain Simulation Framework for OECT-Based Molecular Communication",
+    "abstract": "Organic electrochemical transistor (OECT)-based molecular communication (MC) receivers connect transport and binding to device current, noise, calibration, and detection. We present MC-BRIDGE (Molecular Communication Bioelectronic Receiver-chain Integrated Design and Guided Evaluation), a modular framework linking release, extracellular diffusion, finite-area observation, stochastic binding, and OECT transduction to charge-domain detection. On an independent electrical time grid, it generates sequence-wide multichannel colored noise, performs control-channel referencing and charge integration, and supports molecule-shift-keying (MoSK), concentration-shift-keying (CSK), and Hybrid decisions. Through common module interfaces, it estimates symbol error rate (SER) and decoded-symbol mutual information and analyzes inter-symbol interference (ISI). At nominal separation, the passive finite-area observer retains 27.5 percent of the center-point decision-charge magnitude, while correlation between the selective and control channels determines whether control referencing helps. After adaptive search, held-out records with seeds disjoint from search and calibration test the selected and next-lower budgets, yielding a tested-grid upper bound on the minimum budget meeting the SER target. This passive-field test resets receptor occupancy, excludes ISI, and calibrates thresholds on separate records at each operating point. Retaining transport and receptor memory instead produces high SER. Thus, geometry, covariance, calibration, and memory can change receiver conclusions.",
+    "authors": [
+      "Hongbin Ni",
+      "Ozgur B. Akan"
+    ],
+    "published": "2026-07-21",
+    "primary_category": "cs.IT",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.19502v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "유기 전자화학 트랜지스터 기반 분자 통신 수신기 시뮬레이션 프레임워크로, 메모리 반도체·AI 인프라·컴퓨팅 아키텍처와 실질적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "분자 통신(molecular communication) 기초 연구로, SK하이닉스의 메모리·패키징·AI 인프라 사업 전략과 무관한 생의학 신호 처리 분야.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-28"
+  },
+  "2607.19488": {
+    "arxiv_id": "2607.19488",
+    "title": "Electron-Induced Formation of C$_{2}$ on Si(100) from Acetylene and Ethylene",
+    "abstract": "Hydrogen Desorption Lithography on Si(100) demonstrates the ability of the Scanning Tunneling Microscope (STM) to create functional atomic-scale structures and devices. The dehydrogenation of adsorbed molecules represents a potential complementary technique that has received little attention. For example, formation of C$_{2}$ could introduce local strain or act as centers for subsequent reactions and would inform positionally controlled mechanosynthesis, an approach with vast potential in surface patterning and functionalization. Here, we studied the electron-induced dehydrogenation of acetylene and ethylene on Si(100) at 4 K using STM. Excitation of acetylene at +3.2 V and above induces configurational switching, including to a new sublayer-bonded geometry previously predicted to be an adsorption precursor, as well as migration and desorption. Excitation also induces dehydrogenation to C$_{2}$. Switching between three observed C$_{2}$ configurations can be induced by excitation at +4.2 V and above. Simulations using density functional theory reproduced the experimental images based on choice of functional, dimer-buckling averaging, and inclusion of diffuse basis functions. In addition, dehydrogenation could be induced using field-emitted electrons on a scale ranging from a single molecule to a radius of >10 nm. These observations highlight the potential of carbon dehydrogenation as an additional tool in Atomically Precise Fabrication (APF).",
+    "authors": [
+      "Oliver MacLean",
+      "Marc Savoie",
+      "Damian G. Allis",
+      "Rafik Addou",
+      "Ryan Groome",
+      "Si Yue Guo",
+      "Aru Joy Hill",
+      "Alex Inayeh",
+      "Hadiya Ma",
+      "Cameron J. Mackie",
+      "Sheena Ou",
+      "Marco Taucer",
+      "Denis A. B. Therien",
+      "Finley Van Barr",
+      "Ryan Yamachika"
+    ],
+    "published": "2026-07-21",
+    "primary_category": "cond-mat.mtrl-sci",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.19488v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "원자 단위 표면 화학 제어 기술로서 장기적 나노제조 기초연구이나, 메모리 반도체 제조·성능·수요와 직접적 인과관계가 없음.",
+      "scores": {
+        "business": 1,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "STM 기반 원자 정밀 제조(APF) 기초 연구로서 학술적 가치는 있으나, HBM/DRAM/NAND 양산 공정, AI 메모리 수요, 경쟁 위협과 무관한 초기 단계 탐색 연구임.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-28"
   }
 }
