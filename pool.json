@@ -8699,36 +8699,6 @@
     },
     "first_seen": "2026-07-07"
   },
-  "2607.01617": {
-    "arxiv_id": "2607.01617",
-    "title": "3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving",
-    "abstract": "Large language model (LLM) serving increasingly combines prefill-decode (PD) disaggregation with tensor parallelism (TP) to support large models and long contexts. In conventional 2D/2.5D chiplet architectures, layer-wise prefill-to-decode KV-cache transfer decode-side TP collectives share the same lateral die-to-die (D2D) interconnect, creating mixed-traffic contention on the decode critical path. This contention increases communication latency, prolongs token generation intervals, and degrades end-to-end serving performance. We propose 3DLS, a logic-on-logic 3D-stacked chiplet architecture that separates traffic classes by routing KV-cache transfers through vertical interconnects while preserving decode-side TP collectives on the lateral D2D fabric. 3DLS achieves up to 1.49$\\times$ throughput and 60.2\\% lower end-to-end (E2E) latency over the shared-fabric planar baseline, and still achieves up to 1.17$\\times$ throughput and 31.4\\% lower E2E latency over a workload-aware priority-managed planar baseline. These results highlight that physical isolation is an important design principle for future chiplet-based PD-disaggregated LLM serving systems.",
-    "authors": [
-      "Jaehun Lee",
-      "In-Jun Jung",
-      "Joo-Young Kim"
-    ],
-    "published": "2026-07-02",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.01617v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 추론 시스템의 메모리 대역폭 병목을 3D 칩렛 아키텍처로 해결하는 논문으로, HBM/어드밴스드 패키징 기술 수요와 AI 인프라 메모리 효율화 트렌드를 직접 반영",
-      "scores": {
-        "business": 4,
-        "threat": 1,
-        "demand": 5,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "Prefill-Decode 분리 추론 구조에서 KV-캐시 전송을 수직 인터커넥트로 물리적 분리하는 3D 칩렛 설계는 HBM 대역폭 수요와 TSV/3D 패키징 기술 도입을 강력히 정당화하는 신호",
-      "final_score": 4.4
-    },
-    "first_seen": "2026-07-07"
-  },
   "2607.00104": {
     "arxiv_id": "2607.00104",
     "title": "An analog ac voltage amplifier based on a single straintronic magnetic tunnel junction",
@@ -41134,5 +41104,522 @@
       "final_score": -1.0
     },
     "first_seen": "2026-07-29"
+  },
+  "2607.25588": {
+    "arxiv_id": "2607.25588",
+    "title": "System-Aware Adaptive CSI Feedback via RL-Guided Autoencoder Switching in Multi-User MIMO System",
+    "abstract": "This paper proposes a system-aware adaptive channel state information (CSI) feedback framework for massive multiple-input multiple-output (mMIMO) systems, aiming to dynamically optimize the trade-off between reconstruction fidelity and signaling overhead. While deep learning-based autoencoders (AEs) have enabled significant CSI compression, conventional fixed-ratio schemes fail to adapt effectively to non-stationary channel conditions. To address this limitation, we develop a reinforcement learning (RL)-driven control framework that operates over a bank of pretrained multi-rate AEs, each corresponding to a distinct compression ratio (CR). At each time step, a centralized RL agent selects the most suitable CR for each user based on observed channel conditions and system performance indicators. Distinct from conventional mean squared error (MSE)-centric designs, we introduce a system-aware reward formulation that jointly accounts for spectral efficiency via signal-to-interference-plus-noise ratio (SINR), feedback overhead constraints, and the computational cost of model adaptation. Simulation results on high-dimensional delay-domain CSI datasets demonstrate that the proposed RL-guided framework effectively balances the overhead-accuracy tradeoff and adapts to dynamic channel environments. The proposed method improves spectral efficiency and feedback efficiency compared with fixed compression schemes and adaptive baselines, while maintaining a modest computational and memory footprint. Averaged over different numbers of users and across all considered baselines, the proposed RL framework reduces the CSI feedback cost by more than 53.4%, improves the average downlink sum rate by 53.64%, and reduces the NMSE by 22.38%. These results demonstrate its ability to achieve a more efficient rate-accuracy-feedback tradeoff under dynamic wireless conditions.",
+    "authors": [
+      "Maryam Ansarifard",
+      "Mohit K. Sharma",
+      "George Exarchakos",
+      "Kishor C. Joshi"
+    ],
+    "published": "2026-07-28",
+    "primary_category": "cs.IT",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.25588v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "무선 통신(mMIMO) 시스템의 채널 피드백 최적화 논문으로, 메모리 반도체 제조·아키텍처·AI 인프라 메모리 수요와 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "5G/6G 무선 통신의 신호 처리 효율화 논문이며, HBM/DRAM/NAND 사업, AI 메모리 수요, 메모리 아키텍처 전략과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.25505": {
+    "arxiv_id": "2607.25505",
+    "title": "From sLLG to Fokker-Planck: Accurate WER Modeling for Non-Axisymmetric MRAM Devices",
+    "abstract": "The Fokker--Planck (FP) equation is essential for predicting write error rates (WER) in STT and SOT-MRAM devices, but traditional 1D projections fail when symmetry is broken by in-plane fields, field-like torques, or anisotropic barriers. We develop a 2D finite-volume (FVM) solver on the unit sphere and validate it against $10^6$-trajectory stochastic Landau--Lifshitz--Gilbert (sLLG) simulations. The solver supports four discretization schemes---central, Scharfetter--Gummel (SG), upwind, and hybrid adaptive blending---each with different Péclet-dependent accuracy and monotonicity properties. We demonstrate that central differencing recovers ground-truth WER for STT and SOT geometries where 2D effects dominate, and show that the choice of discretization scheme directly affects predicted WER. For magnetic simulations, we recommend hybrid adaptive blending as the optimal balance of accuracy and stability across variable Péclet regimes. These results establish that customizable discretization is critical for accurate, unbiased predictions of switching dynamics in next-generation magnetic memory.",
+    "authors": [
+      "Fernando Garcia Redondo",
+      "Trisha Bhowmik",
+      "Maxwel Gama Monteiro",
+      "Yang Xiang",
+      "Jan Van Houdt",
+      "Kristiaan Temst",
+      "Siddharth Rao"
+    ],
+    "published": "2026-07-28",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.25505v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "MRAM의 쓰기 오류율(WER) 예측 모델링 고도화는 차세대 자기 메모리 소자 개발의 핵심 기술 과제이며, 메모리 신뢰성 및 상용화 경로에 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 1,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "MRAM 소자 설계 검증 기술의 정확도 향상은 기술 리스크 감소에 기여하지만, 현재 MRAM은 주력 사업이 아니며 상용화 시점이 불명확해 직접적 사업 임팩트는 제한적.",
+      "final_score": 2.4
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.25504": {
+    "arxiv_id": "2607.25504",
+    "title": "At-the-Roofline Sparse Tensor Contractions on Vector Processors for Transformer Inference",
+    "abstract": "Fine-grained weight pruning and activation sparsification have emerged as effective approaches for reducing the compute and memory cost of inference for Transformer models. In the moderate-sparsity regime, Gustavson's dataflow provides a natural execution model for exploiting both activation and weight sparsity on vector processors through metadata-driven indexed accumulation. However, existing RVV architectures lack native support for this pattern, forcing kernels to rely on software index decoding and L1-backed indexed memory operations that keep sparse tensor contractions far below their roofline performance bound. We present Ventaglio, a runtime-configurable sparse execution unit coupled with RVV ISA extensions that drives sparse tensor contractions toward their roofline through indexed gather-accumulate-scatter support. Integrated into an open-source vector processing cluster and implemented in 12nm FinFET, Ventaglio accelerates sparse tensor contraction kernels by $6.9\\text{--}7.4\\times$ over optimized RVV baselines, with only $3.1\\%$ area overhead for a cluster of tightly-L1 coupled vector processing elements. We build a performance-accurate instruction-level model of the Ventaglio extension, calibrate it against RTL implementation, and leverage it for scale-out performance analysis on a large $4\\times4$ multi-cluster system. Using a DuoGPT-pruned LLaMA-3-8B model with practical $40\\text{--}60\\%$ dual sparsity, Ventaglio achieves $2.40\\text{--}5.25\\times$ and $2.06\\text{--}3.16\\times$ speedup over dense baselines during prefill and autoregressive decoding, respectively.",
+    "authors": [
+      "Bowen Wang",
+      "Chi Zhang",
+      "Diyou Shen",
+      "Renzo Andri",
+      "Navaneeth Kunhi Purayil",
+      "Luca Benini"
+    ],
+    "published": "2026-07-28",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.25504v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Transformer 추론 시 스파시티 활용으로 메모리 대역폭·연산량 수요를 획기적으로 감소시키는 기술로, AI 인프라의 메모리 효율성 패러다임 변화를 시사한다.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론에서 40~60% 스파시티를 통해 메모리 대역폭 수요를 2.4~5.25배 감소시키는 기술로, HBM/DRAM 수요 구조 변화의 신호이자 고효율 메모리 아키텍처(PIM, CXL) 개발 방향성을 제시한다.",
+      "final_score": 4.15
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.25498": {
+    "arxiv_id": "2607.25498",
+    "title": "Beyond Prefill-Decode Disaggregation: Dissecting LLM Inference for Heterogeneous Platforms via Dynamic Operator Scheduling",
+    "abstract": "Prefill-decode disaggregation (PD) and roofline-based operator placement are common strategies for partitioning Large Language Model (LLM) inference across heterogeneous systems, but they are often insufficient in practice. End-to-end latency also depends on workload shape, runtime device contention, and persistent weight layout. We present DOPS (dynamic operator scheduling), a hardware-aware, closed-loop framework that jointly optimizes operator scheduling and blockwise weight layouts. DOPS constructs a stage-aware directed acyclic graph (DAG) and integrates two components: the Bifocal scheduler for dynamic operator-to-device placement and the Weight Layout Arbiter (WLA) for selecting hardware-efficient weight layouts under strict memory constraints. Across representative heterogeneous systems combining neural processing units (NPUs) and processing-in-memory (PIM) devices, Bifocal achieves geometric-mean speedups of 1.20$\\times$ to 2.23$\\times$ over the PD baseline. WLA provides an additional geometric-mean speedup of 1.28$\\times$ to 1.33$\\times$ over Bifocal/Linear. DOPS also supports systematic analysis of workload sensitivity and hardware scalability for LLM serving. The source code is available at https://github.com/YIAI-02/TriForm, and the visualization tool is demonstrated at https://youtu.be/Ya_oMCyYno0.",
+    "authors": [
+      "Jiaqi Yang",
+      "Jiayi Li",
+      "Yihan Fu",
+      "Hongxiao Zhao",
+      "Zhan Chen",
+      "Qiuping Wu",
+      "Yuchao Yang",
+      "Bonan Yan"
+    ],
+    "published": "2026-07-28",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.25498v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 시 이질적 하드웨어(NPU+PIM)에서 동적 연산 스케줄링과 가중치 레이아웃 최적화를 다루며, PIM 기술 수요와 메모리 효율성 전략에 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "PIM 기반 이질적 추론 플랫폼의 최적화 기법을 제시하여 우리의 PIM/CXL 메모리 사업 포지셔닝과 AI 인프라 수요 창출에 직접 관련성 있으나, 학계 주도 연구로 상용화 임박도는 낮음.",
+      "final_score": 3.95
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.25330": {
+    "arxiv_id": "2607.25330",
+    "title": "Physics-Informed Neural Operator for Warm-Starting Background-Decomposed and Preconditioned PSFD: Enabling Scalable 3-D EUV Mask Simulation",
+    "abstract": "We present a physics-informed neural operator (PINO) trained with pseudo-spectral frequency-domain (PSFD) equations for electromagnetic (EM) scattering problems in EUV lithography. The Fourier neural operator is factorized into a two-dimensional lateral ($xy$) branch and a one-dimensional axial ($z$) branch and is trained self-consistently with background decomposition.Thus, the full-vector coupling between the mask and the multilayer response is retained without invoking a finite-order Born approximation. In this way, the computational domain size is significantly reduced, thereby lowering the computational cost. The PINO is trained on approximately 16,000 mask designs from the LithoBench library sampled randomly at each training iteration without using precomputed EM field solutions. The PINO surrogate model yields predictions with a mean absolute error of about $7 \\times 10^{-3}$ for the scattered intensity of held-out mask patterns relative to the reference PSFD solution. Combined with spectral damping, the PINO warm-start initialization accelerates the background-decomposed PSFD solver on finer discretizations.",
+    "authors": [
+      "Doyun Kim",
+      "Werner Gillijns"
+    ],
+    "published": "2026-07-28",
+    "primary_category": "physics.optics",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.25330v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "EUV 리소그래피 마스크 시뮬레이션 고속화는 반도체 미세공정 수율·생산성 향상에 직결되며, 특히 HBM·고급 패키징 등 우리 주력 제품의 제조 경쟁력을 좌우하는 공정 기술이다.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "EUV 마스크 설계·검증 시간 단축으로 미세공정 생산성을 높일 수 있는 AI 기반 공정 최적화 기술이나, 아직 학계 초기 단계이며 우리 제조 경쟁력에 미치는 직접 영향은 제한적이다.",
+      "final_score": 2.3
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.25058": {
+    "arxiv_id": "2607.25058",
+    "title": "Mitigating the Impact of Retention Loss on Inference Accuracy in 65 nm Single-Poly Floating-Gate Analog In-Memory Computing",
+    "abstract": "We show with experiments and system-level simulations that it is possible to successfully mitigate the impact of retention loss on inference accuracy degradation by using both circuit-level compensation techniques and batch normalization recalibration at the algorithmic level. Experiments are performed on a single-poly floating-gate (FG) analog non-volatile memory array for analog in-memory computing fabricated in a standard 65 nm CMOS. We use a model of retention-loss statistics calibrated with experiments to evaluate the system-level impact on neural network models such as VGG-10/CIFAR-10 and WideResNet-28-10/CIFAR-100. We show that, after 60 days since programming, combined mitigation techniques enable to recover the baseline inference accuracy within 2-4%",
+    "authors": [
+      "Mirko Brazzini",
+      "Giulio Filippeschi",
+      "Alessandro Catania",
+      "Sebastiano Strangio",
+      "Giuseppe Iannaccone"
+    ],
+    "published": "2026-07-27",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.25058v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "아날로그 인메모리 컴퓨팅(IMC)의 retention loss 문제를 해결하는 회로·알고리즘 기법으로, PIM과 메모리 신뢰성이 교차하는 핵심 기술 과제를 다룸.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "PIM/IMC 상용화 시 메모리 열화 문제를 회로·SW 협력으로 해결하는 실증 연구로, AI 추론 효율화 경로에서 신뢰성 확보의 중요성을 보여주지만 아직 학계 수준의 성숙도.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.24396": {
+    "arxiv_id": "2607.24396",
+    "title": "The SpiNNaker2 chip: a many-core platform for flexible and scalable brain-inspired computing",
+    "abstract": "In deep learning, efficiency gets more and more important to compensate for the ongoing growth in model sizes and applications. Neuromorphic hardware has long been advocated as an upcoming alternative to deep networks, taking inspiration from the brain for achieving unprecedented energy efficiency. However, demonstrations of these gains only recently began to grow in complexity and real-world applicability. With SpiNNaker2, we present a chip that bridges the gap between deep networks and neuromorphic computing and allows for flexible exploration of computing approaches that combine both worlds. It features 152 processing elements equipped with an ARM M4F processor and dedicated accelerators, an extended SpiNNaker routing fabric for scalable event-based communication and a range of external interfaces for system integration, including Gbit Ethernet and an LPDDR4 memory interface. We demonstrate performance and efficiency of the SpiNNaker2 chip for neuromorphic and deep network workloads, as well as novel event-based computing approaches. For deep network workloads, the chip achieves up to 4.5 TOPS in high performance mode and up to 2.7 TOPS/W efficiency in high efficiency mode for INT8 workloads. The chip supports spiking neural networks with >150000 neurons and >1.8 billion synaptic events/s when simulated with a 1 ms time step. Its low baseline power of less than 250 mW allows for efficiency even under varying workload conditions, allowing to explore sparse and event-based modes of computation. All this demonstrates the chip's capabilities as a universal hardware platform for scalable brain-inspired computing and its combinations with mainstream deep network approaches.",
+    "authors": [
+      "Stefan Scholze",
+      "Johannes Partzsch",
+      "Sebastian Höppner",
+      "Florian Kelber",
+      "Andreas Dixius",
+      "Marco Stolba",
+      "Sirine Arfa",
+      "Marc Berthel",
+      "Georg Ellguth",
+      "Jim Garside",
+      "Hector A. Gonzalez",
+      "Stephan Hartmann",
+      "Thomas Kiel-Hocker",
+      "Dongwei Hu",
+      "Matthias Jobst",
+      "Khaleelulla Khan Nazeer",
+      "Tim Langer",
+      "Chen Liu",
+      "Gengting Liu",
+      "Matthias Lohrmann",
+      "Mantas Mikaitis",
+      "Felix Neumärker",
+      "Amirhossein Rostami",
+      "Stefan Schiefer",
+      "Tilo Schubert",
+      "Delong Shang",
+      "Bernhard Vogginger",
+      "Yexin Yan",
+      "Steve Furber",
+      "Christian Mayr"
+    ],
+    "published": "2026-07-27",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.24396v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "뉴로모르픽 칩이 LPDDR4 메모리 인터페이스를 탑재하고 AI 워크로드 효율성을 추구하는 신흥 컴퓨팅 아키텍처로서, 메모리 수요 패턴과 저전력 메모리 인터페이스 설계 트렌드에 영향을 미칠 수 있는 전방 시장 신호.",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "뉴로모르픽 컴퓨팅의 실증적 진전은 장기 에지 AI 메모리 수요를 암시하지만, 현재 SpiNNaker2는 학술/틈새 시장 수준으로 주력 DRAM/HBM 사업에 직접 위협은 제한적.",
+      "final_score": 2.55
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.24221": {
+    "arxiv_id": "2607.24221",
+    "title": "DICE: Detailed Inter-Chiplet End-to-End PHY Modeling for Accurate Chiplet Simulation",
+    "abstract": "Scaling monolithic multicores is increasingly constrained by power/thermal limits, yield, and rising manufacturing and testing costs. Chiplet designs address these challenges by partitioning large dies into smaller parts (typically multiple core-complex dies and an I/O die) linked via high-bandwidth physical fabrics (PHY). As bandwidth and wiring density scale, however, these short-reach links are pushed closer to their signal-integrity limits, increasing susceptibility to noise, crosstalk, and channel loss, motivating stronger link-level reliability mechanisms such as forward error correction (FEC). Despite this trend, state-of-the-art simulation infrastructures often approximate inter-chiplet links using oversimplified, fixed-latency models. Such abstractions overlook the inherently dynamic, runtime-dependent behavior of the PHY -- including channel conditions (e.g., signal-to-noise ratio shifts, signal crosstalk, clock jitter), iterative decoder convergence and packet retransmissions, and application dynamics (e.g., LLC-misses that travel across chiplet boundaries) -- all of which are hard to determine offline. We show that neglecting these effects distorts inter-chiplet packet-level timing and high-level performance metrics such as IPC, leading to off-trend simulation results. We present DICE, an in-simulation, runtime PHY modeling in gem5 that captures the end-to-end inter-chiplet datapath, including QC-LDPC encoding/decoding, PAM4 modulation, lossy-channel transmission, LLR-based demodulation, adaptive packet re-sending, and PHY-level flow control between chiplets.",
+    "authors": [
+      "Rashid Aligholipour",
+      "Stefanos kaxiras",
+      "Yuan Yao"
+    ],
+    "published": "2026-07-27",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.24221v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Chiplet 기반 고대역폭 인터페이스의 PHY 모델링은 HBM, 어드밴스드 패키징(2.5D/3D), CXL 메모리 등 우리 주력 기술의 신뢰성·성능 검증에 직결되는 핵심 설계 과제",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "Chiplet 간 고속 링크의 신호 무결성·FEC 수렴 동작을 정확히 모델링하는 시뮬레이션 기법으로, HBM·3D 패키징 설계 검증 및 신뢰성 예측의 정확도를 높여 개발 사이클 단축과 수율 개선에 기여할 수 있는 실무적 가치가 있음",
+      "final_score": 3.0
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.24196": {
+    "arxiv_id": "2607.24196",
+    "title": "PIMID: A Full-System Simulator with Intricacy and Diversity for Processing-in-Memory",
+    "abstract": "Processing-in-Memory addresses the memory wall by co-locating computation with memory, but because real PIM hardware remains scarce, simulation is the primary way to explore the PIM design space. Yet existing PIM simulators each cover only part of that space: they typically model a single memory technology, fix processing elements at one level of the memory hierarchy, support a single execution model, and stop at the device boundary. We therefore present PIMID, an execution- and trace-driven full-system simulator that closes these gaps in one tool. PIMID supports both the shared-memory and message-passing execution models, running annotated parallel code in OpenMP and MPI side by side across eleven memory technologies (seven DRAM standards, SRAM, and three non-volatile memories); it places PEs anywhere from subarrays to logic dies, sweeps PE count and core-model fidelity, and prices the in-memory network per technology from measured congestion. Its single-process host-device co-simulation resolves an end-to-end time and energy breakdown (host preparation, device compute, and explicit boundary charges) that device-only tools cannot produce. Across the resulting dual-execution-model dataset, PIMID shows that the memory technology alone moves execution time by more than an order of magnitude and that the best host main memory is not the best PIM substrate; that regular kernels scale superlinearly with PE count as in-memory bandwidth co-scales with compute; that graph traversal under message-passing hits a collective-communication wall absent under shared memory; and that at full-system scope the offload trades time for energy only on the bandwidth-class memory: shared-memory offload saves energy on HBM3 while a 16-core host keeps every end-to-end time win. PIMID's plugin interfaces let new engines and models be added through standardized YAML specifications as PIM technology evolves.",
+    "authors": [
+      "Yuan He",
+      "Masaaki Kondo",
+      "Galen M. Shipman",
+      "Jered B. Dominguez-Trujillo",
+      "Shigeki Tomishima",
+      "Kazi Asifuzzaman"
+    ],
+    "published": "2026-07-27",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.24196v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "PIM(Processing-in-Memory) 설계 공간 탐색을 위한 풀시스템 시뮬레이터로, HBM/DRAM 등 주력 메모리 기술과 PIM 아키텍처 평가에 직접 관련됨.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "PIM 기술 개발의 설계 검증 도구로서 HBM/DRAM 기반 PIM 제품 로드맵 수립 시 필수 시뮬레이션 플랫폼이 될 수 있으나, 현재는 학술 도구 수준으로 상용화 임박도는 낮음.",
+      "final_score": 2.85
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.23882": {
+    "arxiv_id": "2607.23882",
+    "title": "ADVERSARIAL: And-Inverter Graph-Assisted Hardware Trojan Detection At Scale",
+    "abstract": "Modern System-on-Chip (SoCs) often contain hundreds of millions to tens of billions of gates, making existing Hardware Trojan (HT) detection methods impractical due to their immense scale. The proposed approach incorporates symbolically enabled learning by modeling flattened gate-level netlists as Boolean networks represented as And-Inverter Graphs (AIGs), where all internal nodes are 2-input AND gates and inversions reside on the edges. Each directed connection is expressed as a triple within a Knowledge Graph Embedding (KGE) framework, producing compact, constant-size per-node representations that retain multi-hop structural context. The AIG's bounded fan-in and uniform semantics ensure training and inference complexity scale linearly with edge count, addressing major scalability bottlenecks in HT detection. Symbolically enabled learning across deep datapaths enables the model to differentiate circuit structures from rare and functionally inconsistent connections that signify potential Trojan triggers and payloads. Experiments on large-scale SoC benchmarks demonstrate clear geometric separation between Trojan and benign nodes and practical scalability.",
+    "authors": [
+      "Yaroslav Popryho",
+      "Debjit Pal",
+      "Inna Partin-Vaisband"
+    ],
+    "published": "2026-07-26",
+    "primary_category": "cs.LG",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.23882v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "SoC 설계 보안(HT 검출)은 메모리 통합 칩 설계 검증의 핵심 공정이며, 특히 HBM·CXL·PIM 같은 고집적 메모리 패키징 기술에서 신뢰성 보증의 필수 요소.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 1,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "메모리 SoC 설계 검증 효율화에는 기여하나, 메모리 수요·경쟁 구도·상용화 임박도 측면에서는 직접적 영향이 제한적이며, 주로 내부 설계 프로세스 개선 도구로서의 가치.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.23709": {
+    "arxiv_id": "2607.23709",
+    "title": "Elemental Germanium Phase-Change Memory",
+    "abstract": "Phase-change memory (PCM) is a mature technology for fast, scalable, non-volatile data storage, with applications spanning embedded memory, as well as in-memory and neuromorphic computing. PCM predominantly relies on chalcogenide alloys, with $\\mathrm{Ge_2Sb_2Te_5}$ (GST) as the industry standard. Yet in these alloys, the individual Ge, Sb, and Te atoms redistribute upon cycling, causing stochastic operation and ultimately device failure. To address this issue, elemental antimony was proposed as a PCM material, but it exhibits a metastable amorphous state that prevents reliable data retention. Moreover, tellurium and antimony can contaminate complementary metal-oxide-semiconductor (CMOS) production lines or act as unintended dopants, restricting manufacturing of PCM to dedicated fabs. Here we introduce elemental germanium (Ge) as a CMOS-native phase-change material that overcomes these fundamental limitations. In a vertical PCM cell architecture, Ge enables sub-nanosecond crystallization (240 ps, 40 times faster than GST), non-volatile data storage with excellent thermal stability ($>$110 °C for 10 years vs. $\\sim$87 °C for GST), and a resistance drift coefficient approximately 60% lower than in GST. These results establish pure Ge, a standard semiconductor, as an alternative to chalcogenide phase-change materials, achieving superior performance in key metrics and enabling phase-change memory to be fabricated in standard semiconductor facilities.",
+    "authors": [
+      "Till Zellweger",
+      "Marko Mladenović",
+      "Kevin Portner",
+      "Christoph Weilenmann",
+      "Michael Stiefel",
+      "Hanglin He",
+      "Klemens Bauer",
+      "Luiz Felipe Aguinsky",
+      "Mathieu Luisier",
+      "Alexandros Emboras"
+    ],
+    "published": "2026-07-26",
+    "primary_category": "cond-mat.mtrl-sci",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.23709v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "비휘발성 메모리의 핵심 기술 혁신으로서 PCM의 재료·공정 혁신이 차세대 메모리 아키텍처(embedded, in-memory computing, neuromorphic)와 AI 인프라의 메모리 계층 다양화에 영향을 미칠 수 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "PCM의 재료 혁신(Ge 기반)은 기초 연구 단계이며 우리 주력 사업(HBM/DRAM/NAND)과 직접 경쟁하지 않으나, 장기적으로 embedded/neuromorphic 메모리 시장에서 틈새 기회 또는 보완 기술로 관찰 필요.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.23000": {
+    "arxiv_id": "2607.23000",
+    "title": "Magnetic Tunnel Junctions for Timekeeping in Intermittent Computing Systems",
+    "abstract": "Batteryless intermittent systems run unattended for years, but power failures erase timekeeping state, corrupting sensing, scheduling, and coordination. State-of-the-art timekeepers infer elapsed time from capacitor discharge; however, the capacitor must be sized for the longest interval measured (so range, energy, and area grow together), and repeated charge-discharge cycling lowers capacitance over time, biasing every estimate further as the deployment ages. We present FLINT, a timekeeper that reads elapsed time from the stochastic retention loss of an array of \"broken\" Magnetic Tunnel Junctions (MTJs)---spintronic memory cells engineered to lose state predictably. Because the decay timescale is fixed by device geometry, the energy to read it is independent of the interval measured and does not drift with device age. We validate FLINT's array model against 21 fabricated MTJs, then evaluate the full timekeeper in real-device-trace-driven simulation, showing that it tracks over 15 minutes of off-time within 10% error while consuming only 1.03 $μJ$ and occupying under 0.1 $mm^2$---$9.2\\times$ the range at $11\\times$ lower energy than prior work. It extends to longer intervals at no added cost, and makes $16-52\\times$ fewer scheduling errors than an aging capacitor clock over a one-year deployment.",
+    "authors": [
+      "Nikola Vuk Maruszewski",
+      "Jordan Athas",
+      "Allison Fleming",
+      "Christian Duffee",
+      "Eren Yildiz",
+      "Saad Ahmed",
+      "Yaman Sangar",
+      "Pedram Khalili",
+      "Josiah Hester"
+    ],
+    "published": "2026-07-25",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.23000v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "스핀트로닉 메모리(MTJ) 기반 초저전력 타이밍 솔루션으로, 엣지·IoT 컴퓨팅에서 메모리 소자의 새로운 응용 영역을 제시하며 차세대 메모리 아키텍처 다각화 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "MTJ 스핀트로닉 소자의 창의적 응용이지만, 배터리리스 엣지 기기라는 틈새 시장이며 HBM/DRAM/NAND 주력 사업과의 직접 시너지는 제한적—중장기 메모리 다각화 옵션으로 모니터링 가치",
+      "final_score": 2.2
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.22869": {
+    "arxiv_id": "2607.22869",
+    "title": "Multi-primitive in-memory computing for Monte Carlo tree search",
+    "abstract": "Monte Carlo tree search (MCTS) enables artificial intelligence (AI) decision-making, but requires 55-300 W on conventional processors, limiting edge deployment. In-memory computing (IMC) is energy-efficient on regular workloads but has been considered incompatible with irregular multi-phase algorithms. We introduce phase-to-primitive decomposition, which reformulates each algorithmic phase as a hardware-native IMC primitive. Applied to MCTS, selection, expansion, rollout and backpropagation map to content-addressable memory, combinational logic, a resistive random-access memory (RRAM) crossbar and static random-access memory, keeping search on chip. At 22 nm with fabricated RRAM-array parameters, IMC-MCTS consumes ~60 mW for 9x9 Go, achieving 96x energy efficiency over a central processing unit (CPU) and 65x-2,059x over an H100 graphics processing unit (GPU). It reaches a European Go Federation rating within sample-size uncertainty of open-source Go engines (Pachi-UCT and Michi-C). The same substrate runs eight applications across four AI domains.",
+    "authors": [
+      "Tergel Molom-Ochir",
+      "Benjamin F. Morris",
+      "Yintao He",
+      "Archit Gajjar",
+      "Giacomo Pedretti",
+      "Hai Helen Li",
+      "Yiran Chen",
+      "Jim Ignowski",
+      "Aishwarya Natarajan"
+    ],
+    "published": "2026-07-24",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.22869v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "In-Memory Computing(IMC)을 MCTS 같은 불규칙 AI 알고리즘에 적용하여 에지 AI 추론의 에너지 효율을 96-2,059배 개선하는 신기술로, PIM/어드밴스드 패키징 전략과 AI 인프라 메모리 수요 변화를 직결시킴.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "에지 AI 추론 시장에서 RRAM 기반 IMC-PIM이 GPU 대비 극적 에너지 효율을 입증하며 메모리 아키텍처 혁신 방향을 제시하지만, 22nm 시제품 수준으로 상용화까지는 거리가 있음.",
+      "final_score": 4.15
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.22792": {
+    "arxiv_id": "2607.22792",
+    "title": "Reducing Instruction-Fetch Energy in RISC-V for Embedded AI Processing via Dynamic and Static Loop Caching",
+    "abstract": "Embedded RISC-V processors are increasingly deployed for on-device AI inference at the edge, where energy efficiency is a primary design constraint. Instruction fetching from SRAM-based memory is a dominant source of energy consumption in these cores, accounting for over 40\\% of total energy in our baseline measurements. This paper presents two loop cache architectures integrated into the datapath of a RISC-V processor: a dynamic loop cache that automatically detects and caches short backward-branch loops at runtime, and a static loop cache that functions as a software-managed hot-code instruction buffer, allowing preloading of arbitrary instruction blocks during the boot sequence. Both designs are implemented in the open-source NEORV32 RISC-V processor and evaluated on a LeNet-5 convolutional neural network inference workload, synthesized on GlobalFoundries 22nm FDX+ technology at 0.5\\,V and 250\\,MHz. The dynamic cache reduces instruction fetches by 48.3\\% and total energy by 21.5\\%, while the static cache achieves an 83.3\\% fetch reduction and 35.5\\% total energy savings. The area overhead of both designs remains below 0.2\\% of the full SoC area. The complete implementation is open source.",
+    "authors": [
+      "Wiebren Wijnstra",
+      "Sameed Sohail",
+      "Berend-Jan van der Zwaag",
+      "Sabih Gerez",
+      "Amirreza Yousefzadeh"
+    ],
+    "published": "2026-07-24",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.22792v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지 AI 추론 시스템의 메모리 에너지 효율화 기법으로서 임베디드 메모리 아키텍처 혁신을 제시하며, 온디바이스 AI 인프라 확대에 따른 저전력 메모리 수요 트렌드를 반영.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "엣지 AI 추론의 에너지 병목(instruction fetch)을 루프 캐싱으로 35.5% 절감하는 기법은 저전력 임베디드 메모리 수요 신호이나, SK하이닉스의 HBM/DRAM/NAND 주력 사업과의 직접 연관성은 제한적이고 RISC-V 오픈소스 커뮤니티 수준의 기술로 상용 임팩트는 아직 미미함.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-30"
+  },
+  "2607.22790": {
+    "arxiv_id": "2607.22790",
+    "title": "The Sparsity Tax: Weight Sparsity Trade-offs in Event-Driven SIMD and SIMT Neuromorphic Cores",
+    "abstract": "Event-driven neuromorphic inference exploits activation sparsity by updating neuron state only on spikes. However, weight sparsity introduces irregular gather-style updates that undermine lockstep Single Instruction Multiple Data (SIMD) execution. We call the resulting overheads in control, metadata, and memory activity the sparsity tax. This paper quantifies that tax by comparing three closely related accelerators integrated into one neuromorphic core: (i) baseline lockstep SIMD, (ii) bitmap-gated Sparse-SIMD that selectively disables lanes without compressing weights, and (iii) a Single Instruction Multiple Threads (SIMT) style design with per-PE address generation and run-length coded sparse weights. Using an RTL-to-gates flow in GF22FDX+ and activity-driven energy estimation, we evaluate event-driven neural network inference across varying post-training pruning levels. Results show that total core area changes are insignificant because SRAM dominates area, while performance and energy strongly depend on how sparsity is handled: SIMD and Sparse-SIMD exhibit near-constant throughput, Sparse-SIMD achieves limited energy savings due to bitmap and dense-storage overheads, and SIMT provides the strongest energy scaling and substantial speedups at high sparsity, albeit with sublinear gains due to metadata reads, load imbalance, and sparsity-independent phases. The hardware code for the proposed architectures and experiments is publicly accessible for research purposes.",
+    "authors": [
+      "Mattias Westerink",
+      "Sameed Sohail",
+      "Berend-Jan van der Zwaag",
+      "Sabih Gerez",
+      "Amirreza Yousefzadeh"
+    ],
+    "published": "2026-07-24",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.22790v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "신경형태 추론 가속기의 가중치 스파시티 처리 방식이 메모리 접근 패턴과 에너지 효율에 미치는 영향을 정량화하며, PIM/어드밴스드 아키텍처 설계 시 스파시티 처리 메커니즘의 메모리 오버헤드 문제를 직접 다룸.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "신경형태 추론 칩의 스파시티 처리 아키텍처 연구로 메모리 오버헤드 정량화는 학술적 가치가 있으나, SK하이닉스의 HBM/DRAM/PIM 사업 전략과의 직접 연결고리는 제한적이고 상용화 임박도가 낮아 단기 사업 영향은 미미함.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-07-30"
   }
 }
