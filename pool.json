@@ -3497,115 +3497,6 @@
     },
     "first_seen": "2026-07-09"
   },
-  "2607.03601": {
-    "arxiv_id": "2607.03601",
-    "title": "ArchEval: Measuring AI Agents as Computer Architects",
-    "abstract": "Computer architecture has long used benchmarks to make progress measurable. LLM agents create a different measurement problem: success is not merely writing code or tuning parameters. The agent must interpret workloads, choose mechanisms, use simulators, predict performance, satisfy hard constraints, and decide which feasible design is worth evaluating. This paper introduces ArchEval, a benchmark and platform for evaluating LLM agents on computer architecture design and optimization. It contains 20 challenges across CPU core mechanisms, system architecture, memory systems, accelerators, and compute-in-memory, backed by eight simulators. Each challenge is posed under three settings: L1 full harness, with repeated simulator feedback; L2 simulator-code container, where simulator source is available but the agent must assemble its own workflow; and L3 agent-only, with no runnable feedback before submission. Each run reports baseline-normalized verifier performance and records the full trajectory, connecting results to workload analysis, simulator-tool use, prediction, constraint handling, and artifact integrity. Initial results show a sharp boundary in current agents. With L1 support, all four evaluated agents reach or exceed baseline and improve real designs across diverse simulators. Removing support exposes weaknesses: many agents fail to turn simulator source into useful experiments, and L3 predictions often disagree with verifier results. In L3, only GPT-5.5 + Codex remains above baseline, reaching 1.21x geomean performance and a 65% win rate; the other three fall below baseline. Even GPT-5.5 + Codex has only a 15% performance-modeling pass rate. ArchEval frames today's agents as useful optimization assistants rather than autonomous architects, and identifies capabilities needed next: simulator-tool use, calibrated prediction, pre-feedback judgment, and useful mechanism discovery.",
-    "authors": [
-      "Chenyu Wang",
-      "Zishen Wan",
-      "Jeffrey Ma",
-      "Shvetank Prakash",
-      "Zhenting Qi",
-      "Haebin Do",
-      "Andy Cheng",
-      "Arya Tschand",
-      "Jiahe Shi",
-      "Yilun Du",
-      "Vijay Janapa Reddi"
-    ],
-    "published": "2026-07-03",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.03601v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 에이전트가 컴퓨터 아키텍처(메모리 시스템, 가속기, PIM 포함)를 자동 설계·최적화하는 능력을 평가하는 벤치마크로, AI 인프라 설계 자동화 트렌드와 메모리 시스템 요구사항 변화를 시사한다.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "AI 에이전트 기반 아키텍처 자동 최적화는 미래 메모리 시스템 설계 방식의 변화를 예고하지만, 현재는 보조 도구 수준이므로 중기 전략 신호로 주목할 가치가 있다.",
-      "final_score": 3.7
-    },
-    "first_seen": "2026-07-09"
-  },
-  "2607.03191": {
-    "arxiv_id": "2607.03191",
-    "title": "AIGOR: A Modular, Event-Driven Neuromorphic Architecture for Configurable SNN Inference",
-    "abstract": "Spiking neural networks (SNNs) run today on a fragmented landscape of hardware: dedicated neuromorphic processors, application-specific FPGA accelerators, and large-scale neuroscience simulators, each typically built around a fixed neuron model, execution strategy, or workload class. We present AIGOR, a modular, event-driven neuromorphic architecture for spiking neural network inference. AIGOR organizes neurons into timestep-synchronized processing cores that exchange spikes as packets over a packet-switched communication layer, and it is assembled from a library of parameterized compute, memory, and communication IP blocks rather than as a one-off design for a single network. The neuron model, numeric precision, the folding of neurons onto hardware, and the partitioning across cores are configured per instance rather than committed at design time; a single declarative specification then generates the cores, neuron kernels, and synaptic-memory images that realize a given network. We validate a first prototype on the AMD Versal VPK180 across two deliberately different workloads mapped onto the same cores: a feedforward image classifier trained in snnTorch and a recurrent bal anced random network modeled in NEST. The classifier reproduces its snnTorch reference accuracy, and the recurrent network matches its NEST reference at spike-level precision across multiple cores spanning two FPGAs. We report post-implementation resource utilization and validate the multi-node synchronization scheme in simulation up to one thousand cores on a three-dimensional torus. The prototype's measured limits localize the throughput bottleneck in the synaptic-delivery datapath and the global timestep barrier, and motivate a set of datapath refinements, now in development, that the configurable structure of the architecture admits as changes to the same cores.",
-    "authors": [
-      "Pierpaolo Perticaroli",
-      "Roberto Ammendola",
-      "Andrea Biagioni",
-      "Ottorino Frezza",
-      "Francesca Lo Cicero",
-      "Michele Martinelli",
-      "Pier Stanislao Paolucci",
-      "Elena Pastorelli",
-      "Luca Pontisso",
-      "Cristian Rossi",
-      "Francesco Simula",
-      "Piero Vicini",
-      "Alessandro Lonardo"
-    ],
-    "published": "2026-07-03",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.03191v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "SNN 추론 가속기의 모듈식 아키텍처는 AI 엣지·뉴로모픽 컴퓨팅 시장에서 메모리·패키징·통신 IP의 새로운 수요 패턴을 시사하며, 특히 PIM·CXL·어드밴스드 패키징 전략과 연결 가능성이 있음.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "뉴로모픽 SNN 추론은 장기 AI 엣지 시장의 틈새 기회이나 현재 메모리 사업 포트폴리오에 직접 영향은 제한적이고, 프로토타입 단계로 상용화까지 거리가 멈.",
-      "final_score": 2.25
-    },
-    "first_seen": "2026-07-09"
-  },
-  "2607.02842": {
-    "arxiv_id": "2607.02842",
-    "title": "Continuous-time nonlinear closed-loop in-memory computing for high-accuracy massive MIMO detection",
-    "abstract": "Analog in-memory computing (IMC) has emerged as a promising approach for accelerating matrix operations by exploiting the intrinsic physics of memory arrays. To date, however, most IMC architectures have focused on linear algebra workloads in which computation is encoded in the equilibrium state of a physical system. Extending these principles to nonlinear optimization remains challenging and typically relies on iterative algorithms composed of repeated linear operations. Here, we introduce a continuous-time nonlinear closed-loop IMC architecture for box-constrained zero-forcing (BCZF) decoding in massive multiple-input multiple-output (MIMO) systems. The proposed architecture embeds the decoding problem directly within the dynamics of a nonlinear feedback network of memory arrays and supply-limited operational amplifiers, allowing solutions to emerge through continuous-time physical optimization. We derive a compact analytical model of the circuit and show that its trajectories minimize an equivalent energy function. Experimental emulation using a fabricated IMC chip confirms the predicted dynamics under realistic hardware nonidealities for up to 16x16 MIMO systems. To overcome the finite precision of analog hardware, we extend mixed-precision iterative refinement from linear algebra to nonlinear continuous-time optimization, enabling reliable detection of high-order modulation formats including 256-QAM. Benchmark projections indicate operation from ultra-low-energy approximate decoding to high-accuracy massive MIMO detection. Together, these results extend closed-loop IMC from equilibrium-based linear algebra to continuous-time nonlinear optimization and establish a pathway toward efficient physical accelerators for high-accuracy wireless communications.",
-    "authors": [
-      "Piergiulio Mannocci",
-      "Giacomo Pedretti",
-      "Fabian Böhm",
-      "Thomas Van Vaerenbergh"
-    ],
-    "published": "2026-07-03",
-    "primary_category": "cs.ET",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.02842v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "아날로그 인메모리 컴퓨팅(IMC)을 통한 비선형 최적화 아키텍처로, PIM 및 어드밴스드 메모리 컴퓨팅 기술 진화의 신호이며 무선통신/AI 인프라 가속기 수요와 연결됨.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 4
-      },
-      "tag": "중립",
-      "one_line": "PIM/IMC 기술의 비선형 최적화 확장은 개념적으로 흥미로우나, 현재 MIMO 디코딩 응용은 우리 주력 메모리 사업과의 직접 연관성이 제한적이고 상용화 거리가 멀어 단기 전략 영향은 낮음.",
-      "final_score": 2.5
-    },
-    "first_seen": "2026-07-09"
-  },
   "2607.07708": {
     "arxiv_id": "2607.07708",
     "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
@@ -13078,40 +12969,6 @@
       "tag": "중립",
       "one_line": "가역 논리의 에너지 효율 이득은 AI 인프라의 전력 병목 해결에 이론적 가능성을 제시하나, 현재는 극저온 큐빗 제어기 수준의 니치 응용만 가능하며 범용 메모리/연산 시스템 상용화까지는 5년 이상 거리가 있어 단기 전략 영향은 제한적.",
       "final_score": 2.35
-    },
-    "first_seen": "2026-07-16"
-  },
-  "2607.09742": {
-    "arxiv_id": "2607.09742",
-    "title": "Chiplet3D: Pin- and Thermal-Aware 3D Chiplet Floorplanning via Convolution-Embedded MILP",
-    "abstract": "As traditional Moore's Law scaling slows down, 3D-ICs stack multiple active dies vertically to sustain performance scaling. However, this vertical stacking traps heat inside, making temperature a design concern. Although we can fix thermal issues at different design steps, floorplanning is the earliest and most cost-effective stage to solve it. Previous methods handle this by assuming wires connect to block centers and estimating temperature through simplistic power-based calculations, but these assumptions mislead their wirelength optimization and leave hotspots unresolved. To address these limitations, we present Chiplet3D, a pin- and thermal-aware floorplanner for two-die 3D-ICs. To achieve pin-awareness, it supports all four rotations and two flips, measuring wirelength from exact pin locations so the solver can flip or rotate blocks to pull connected pins closer. On the thermal side, Chiplet3D replaces the inaccurate power-based metrics of prior work with a fast, coarse convolution field embedded directly in a mixed-integer linear program (MILP) to accurately track the true 3D heat spread. We evaluate Chiplet3D on the ICCAD'24 ATPlace benchmarks, validating every temperature with a golden 3D-ICE simulation. Chiplet3D reduces wirelength by 39\\%--43\\% on average (and up to 62\\% in the best case), while lowering peak temperatures by up to 45.9$^\\circ$C and reducing thermal non-uniformity by up to 56\\% compared to the SOTA baselines. Overall, these results demonstrate that by co-optimizing pin alignment and thermal fields, Chiplet3D establishes a stronger Pareto frontier between thermal-aware layout and interconnect efficiency.",
-    "authors": [
-      "Shuo Ren",
-      "Libo Shen",
-      "Yaohui Han",
-      "Rongliang Fu",
-      "Junying Huang",
-      "Bei Yu",
-      "Tsung-Yi Ho"
-    ],
-    "published": "2026-07-03",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.09742v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "3D 칩렛 플로어플래닝의 열 및 배선 최적화는 HBM, 어드밴스드 패키징(TSV, 3D 스택) 등 우리 주력 사업의 설계·제조 경쟁력을 직결하는 핵심 기술이다.",
-      "scores": {
-        "business": 4,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 3,
-        "credibility": 3,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "3D 칩렛 스택의 열 관리와 배선 최적화 문제를 MILP 기반으로 정확히 해결하는 설계 도구로, HBM·고급 패키징 경쟁력 강화와 AI 인프라 고성능 메모리 수요 충족에 직접 기여할 수 있다.",
-      "final_score": 3.15
     },
     "first_seen": "2026-07-16"
   },
@@ -39327,5 +39184,289 @@
       "final_score": 1.65
     },
     "first_seen": "2026-08-03"
+  },
+  "2607.29076": {
+    "arxiv_id": "2607.29076",
+    "title": "Selective KV Cache Protection for Noise-Resilient LLM Inference on Analog Compute-In-Memory Systems",
+    "abstract": "Analog compute-in-memory (CIM) arrays have emerged as a promising substrate for energy-efficient LLM inference, particularly for weight-stationary computations in linear layers. However, extending analog CIM to attention mechanisms introduces a fundamental challenge: KV cache operations demand repeated in-situ weight updates, and the resulting mismatch with the weight-stationary paradigm exposes dynamic computations to significant hardware noise, a critical problem that remains largely unexplored. In this paper, we present the first systematic study of dynamic attention computation on analog CIM arrays, revealing that initial and recent tokens exhibit disproportionate vulnerability to hardware noise. Motivated by this token-level insight, we propose a hierarchical token protection strategy that keeps sink tokens and a sliding recent-token window on a higher-precision digital path while processing the bulk KV cache on analog CIM. A co-designed scheduler combines analog programming, ownership transition, and bulk-MVM tile formation to bound digital overhead. Evaluations on nine LLMs show that our approach lowers average perplexity under analog noise from 33.91 to 11.95, close to the clean baseline of 11.06, while improving dynamic-KV programming-row utilization from 23.1\\% to 91.2\\%.",
+    "authors": [
+      "Yuannuo Feng",
+      "Wenyong Zhou",
+      "Yuang Ma",
+      "Yizhe Chen",
+      "Wenshuai Yao",
+      "Yuxin Xie",
+      "Ngai Wong",
+      "Wang Kang"
+    ],
+    "published": "2026-07-31",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.29076v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Analog CIM 기반 LLM 추론에서 KV 캐시 보호 전략을 제시하며, PIM/어드밴스드 컴퓨팅 아키텍처와 AI 추론 효율성이라는 우리의 핵심 전략 영역과 직접 연관.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "AI 추론 에너지 효율화를 위한 Analog CIM 기술의 실용성을 높이는 연구로, PIM/메모리 확장 전략과 부분적으로 겹치지만 아직 초기 단계 기술이며 주류 경로(HBM/DRAM)와는 다른 아키텍처 선택지를 제시.",
+      "final_score": 4.05
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.28824": {
+    "arxiv_id": "2607.28824",
+    "title": "Characterizing LLM Kernel Access and Memory Interaction in Multi-Partition NUMA GPUs",
+    "abstract": "Large language model (LLM) workloads motivate multi-partition GPUs as a path to scaling compute and memory capacity, but their non-uniform memory access characteristics and inter-partition communication can amplify contention and degrade locality, leading to suboptimal kernel latency. To address this, we analyze performance-critical LLM kernel implementations spanning weight projection, mixture-of-experts, and attention variants of state-of-the-art serving engines to present a characterization of data access patterns in multi-partition GPUs. First, we introduce memory trace analysis methodology to derive workgroup-level data access and sharing behavior, then evaluate the locality implications on latency using a cycle-level simulator. Using these tools, we categorize LLM kernel operands into three inter-workgroup sharing patterns (global, partial, or private) and show that the required optimization strategies differ across categories, from simple per-workgroup pinning to subgroup-aware co-scheduling. Our findings highlight the need for placement-aware kernel programming and smarter architectural support for work and data locality in multi-partition GPUs.",
+    "authors": [
+      "Donghyeon Joo",
+      "Sooraj Puthoor",
+      "Nuwan Jayasena",
+      "Bahar Asgari"
+    ],
+    "published": "2026-07-30",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.28824v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Multi-partition GPU의 메모리 접근 특성 분석을 통해 LLM 추론 성능을 최적화하는 아키텍처 설계 이슈를 다루며, HBM/DRAM 기반 GPU 메모리 시스템의 병목 해소와 차세대 패키징(3D/2.5D) 설계에 직결된다.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 5,
+        "maturity": 3,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론 워크로드의 메모리 지역성 문제를 정량화하여 고대역폭 메모리(HBM) 설계 및 어드밴스드 패키징 최적화의 구체적 요구사항을 제시하는 실무 기반 연구로, 엔비디아 등 고객사의 차세대 GPU 아키텍처 수요를 선도한다.",
+      "final_score": 4.5
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.28233": {
+    "arxiv_id": "2607.28233",
+    "title": "Demystifying DRAM Read Disturbance: Bridging the Gap Between Experimental Characterization and Device-Level Modeling of RowHammer and RowPress Phenomena",
+    "abstract": "DRAM read disturbance, like RowHammer and RowPress, is a critical robustness issue where accessing DRAM can cause unintended bitflips in other unaccessed DRAM locations. DRAM read disturbance bitflips significantly impact the safe, secure, and reliable operation of DRAM-based computing systems. Many prior works experimentally characterize these bitflips and propose mitigations based on empirical results. Other device-level works study their underlying physical mechanisms, but these mechanisms do not fully explain all major empirical observations.   Our goal is to bridge the gap between experimental characterization and device-level modeling and understanding of RowHammer and RowPress, providing a principled foundation for future work on understanding, characterizing, and mitigating DRAM read disturbance. We first identify and demonstrate gaps and inconsistencies between the physical mechanisms of RowHammer and RowPress described by existing device-level models and experimental characterization of their bitflips. We focus on three fundamental metrics that should map to first-order physical mechanisms: 1) bitflip directions, 2) bitflip counts, and 3) the minimum number of aggressor row activations that trigger the first bitflips (i.e., ACmin). Second, we present a comprehensive and rigorous set of TCAD simulations that match phenomena observed in experimental characterizations of RowHammer and RowPress bitflips.   From our results, we 1) summarize updated device-level error mechanisms for understanding RowHammer and RowPress bitflips, and 2) identify key modeling and simulation parameters that significantly affect whether simulation results match real-chip characterization. We discuss implications for 1) rigorous, comprehensive, and efficient experimental characterization methodologies of DRAM read disturbance bitflips, and 2) the design of DRAM read disturbance mitigation techniques.",
+    "authors": [
+      "Haocong Luo",
+      "Longda Zhou",
+      "Ataberk Olgun",
+      "İsmail Emir Yüksel",
+      "Nisa Bostanci",
+      "Zhigang Ji",
+      "Xing Wu",
+      "Onur Mutlu"
+    ],
+    "published": "2026-07-30",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.28233v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "DRAM 읽기 왜곡(RowHammer/RowPress) 현상의 물리 메커니즘을 규명하는 것은 우리의 핵심 DRAM 제품의 신뢰성·안정성 설계와 직접 연관되며, AI 인프라의 대규모 메모리 시스템 안정성 요구도 증가하고 있다.",
+      "scores": {
+        "business": 4,
+        "threat": 3,
+        "demand": 2,
+        "maturity": 3,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "DRAM 신뢰성 설계의 기초 이론을 강화하는 중요한 학술 기여이지만, 즉각적인 사업 기회나 위협보다는 장기 제품 경쟁력(안정성·신뢰성)에 영향을 미치는 기초 연구이다.",
+      "final_score": 3.3
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.27609": {
+    "arxiv_id": "2607.27609",
+    "title": "Analog Courant Numbers and their Role in Analog Computing",
+    "abstract": "This paper identifies a dynamical constraint on analog-computing approaches in which a row of the matrix is represented by an impedance network. It shows that the fastest normalized mode is no more than $2π$ times the largest combined unity-gain bandwidth (CUGBW) among all the circuit rows. The CUGBW of a row equals its finite-gain-adjusted unity-gain bandwidth plus the contributions of all rows coupled to it. Each contribution is the square root of the product of the two rows' unity-gain bandwidths multiplied by their coupling conductance and divided by the square root of the product of their total conductance loadings. This bound plays a role analogous to the Courant-number restriction in time-stepping methods by limiting the operator rates that analog hardware can physically represent and resolve at its outputs. The theory is validated using large-scale LTspice simulations across architectures ranging from CMOS to thermionic vacuum-tube circuits. The benchmark circuits implement a one-dimensional heat equation, a graph-based semi-supervised learning problem, and a graph-regularized regression.",
+    "authors": [
+      "Arash Ghasemi"
+    ],
+    "published": "2026-07-30",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.27609v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "아날로그 컴퓨팅의 동작 제약을 규명하는 논문으로, PIM(Processing-in-Memory)과 메모리 확장 아키텍처의 물리적 한계를 이해하는 데 기초 이론적 가치가 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "아날로그 회로 기반 컴퓨팅의 근본적 성능 한계를 이론화한 기초연구로, PIM/CXL 같은 고급 메모리 아키텍처 설계 시 참고 가능하나 현재 상용 제품 영향은 제한적.",
+      "final_score": 1.9
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.26938": {
+    "arxiv_id": "2607.26938",
+    "title": "Symmetry-Selective Strain Control of Anisotropic Magnetic Response in a Silicon FinFET Double Quantum Dot",
+    "abstract": "Strain naturally develops in three-dimensional quantum-dot structures such as silicon FinFETs during fabrication and cooling. Such strain becomes especially important in a double quantum dot, because the two dots can experience different local strain and therefore acquire different magnetic responses. To understand how this dot-to-dot strain difference affects coupled hole spins, we theoretically study the local \\(g\\) tensors of a silicon FinFET double quantum dot by combining a three-dimensional Poisson--Schrödinger calculation based on a six-band \\(k\\!\\cdot\\!p\\) model with configuration interaction. We find that the effect of strain depends on both its tensor component and its spatial symmetry. For the diagonal components \\(ε_{yy}\\) and \\(ε_{zz}\\), strain mainly changes the principal \\(g\\) values, with only a small opening of the maximum-response axes. In contrast, the shear component \\(ε_{yz}\\) can also change the orientation of the local magnetic response. When the strain profile preserves the transverse mirror symmetry, the shear-induced rotation is strongly suppressed. Breaking this local constraint permits a pronounced off-diagonal response and rotates the principal magnetic axes. The same component- and symmetry-selected trends appear in a Zeeman-only calculation, showing that the valence-band Zeeman coupling is sufficient to generate them, while the full Hamiltonian determines their quantitative expression. Together, these results show how the tensor component and spatial symmetry of strain can be used to control both the magnitude and orientation of the magnetic response in coupled hole-spin qubits.",
+    "authors": [
+      "Yuze Lu",
+      "Xiaoyan Liu",
+      "Fei Liu"
+    ],
+    "published": "2026-07-29",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.26938v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "양자점 기반 스핀 큐빗의 자기 응답 제어 기술은 양자 컴퓨팅 메모리/연산 소자 개발의 핵심 기초 연구로, 차세대 양자 정보처리 인프라 구축 시 메모리 아키텍처 혁신 가능성을 시사한다.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 1,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "양자 큐빗 제어 기술의 기초 연구로 장기 전략적 가치는 있으나, 현재 상용 메모리 사업(HBM/DRAM/NAND)과의 직접 연관성이 낮고 실용화까지 10년 이상 소요될 것으로 예상되어 단기 사업 영향은 미미함.",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.26835": {
+    "arxiv_id": "2607.26835",
+    "title": "A Low-Power Sparse Convolution Accelerator with Idle-First-Task-Assignment for Edge Vision",
+    "abstract": "In recent years, edge-vision monitoring systems for applications such as smart animal husbandry have faced strict tripartite constraints: maintaining input resolution under extremely limited transmission bandwidth and strict power budgets. Conventional dense convolutional neural networks (CNNs) cannot satisfy the resource limits of such constrained IoT nodes. To address this challenge, this paper presents a low-power sparse convolution accelerator for edge devices, fabricated and validated in a 16 nm process. First, the accelerator adopts a bitmap-based format for compression in both data transmission and computation, effectively reducing memory and bandwidth overhead. Second, to mitigate load imbalance in sparse computation, an Idle-First-Task-Assignment (IFTA) dynamic scheduling strategy is proposed, significantly reducing processing-element (PE) idle time and improving multiplier utilization. In addition, a dedicated dataflow is designed to support and accelerate depthwise separable convolution (DWConv), which is widely used in lightweight networks. Experimental results show that the chip occupies only 0.5~mm$^2$ core area and consumes as little as 12--16~mW. On ImageNet, for sparse VGG16 and MobileNetV2, the proposed accelerator achieves 6.5$\\times$ and 2.8$\\times$ speedups, respectively, over traditional dense accelerators, and also delivers significant performance gains over the existing sparse accelerator.",
+    "authors": [
+      "Jingyue Zhuge",
+      "Johannes Partzsch",
+      "Christian Mayr"
+    ],
+    "published": "2026-07-29",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.26835v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지 AI 비전 시스템의 메모리·대역폭 효율화 기술로서 희소 연산 가속기 아키텍처를 제시하며, 경량 CNN 모델 추론 시 메모리 수요 감소 트렌드를 반영하는 전방 시장 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "기회",
+      "one_line": "엣지 AI 추론의 메모리·대역폭 최적화 요구가 증가하는 신호이나, 우리의 고대역폭 메모리(HBM) 및 고성능 DRAM 사업과는 직접 연관성 낮고 저전력 IoT 칩 수준의 기술로 상용화 거리도 멀다.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.26660": {
+    "arxiv_id": "2607.26660",
+    "title": "Entanglement signatures of topological phase transitions in a dirty Weyl semimetal",
+    "abstract": "Three-dimensional Weyl semimetals (WSMs) constitute paradigmatic gapless topological phases whose nodal structure is stable against weak perturbations, including disorder. Two distinct ways to destroy the topology of the Weyl nodes are through pairwise annihilation in momentum space or by sufficiently strong disorder that eliminates the quasiparticle pole, driving the system into a non-Fermi-liquid diffusive-metallic state. In this work, we study the evolution of entanglement spectrum and entanglement entropy of a dirty WSM as it undergoes these two topological transitions. In the clean limit, the WSM topology is reflected by a locus of $ξ=1/2$ eigenvalues of the reduced correlation matrix mirroring the structure of Fermi arcs. We show that disorder broadens this feature into a finite-width distribution, which disappears either through a gradual loss of spectral weight upon node annihilation or by melting into the background at the onset of metallicity. When tuning across the disorder-driven transition, the scaling of the Rényi entropies observed for weak disorder gradually breaks down as the system approaches the critical disorder strength.",
+    "authors": [
+      "Vinícius Mohr",
+      "Shunji Tsuchiya",
+      "Andras Szabo"
+    ],
+    "published": "2026-07-29",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.26660v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "Weyl 반도체의 위상 전이와 얽힘 엔트로피는 응축물질 물리학 기초연구이며, 메모리 반도체 제조·아키텍처·AI 수요와 직접적 연관이 없습니다.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "위상 물질의 양자 정보 이론적 성질 연구로, HBM/DRAM/NAND 사업 전략, AI 메모리 수요, 경쟁 위협과 무관한 순수 응축물질 물리학 논문입니다.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.26392": {
+    "arxiv_id": "2607.26392",
+    "title": "Spin-Orbit Torque's Hidden Partner",
+    "abstract": "The spin-orbit torque (SOT) is widely recognized as the primary mechanism for current-driven magnetization switching in nonmagnetic/ferromagnetic bilayers. In this work, we show that, in the presence of interfacial Dzyaloshinskii-Moriya interaction (iDMI), the Zhang-Li torque, a current-induced spin-transfer torque (STT) acting on nonuniform magnetization at the device boundary, can trigger switching behaviors strikingly similar to those of SOT, including field-assisted deterministic reversal and switching polarity control. These results suggest that the Zhang-Li torque may act as a significant complementary mechanism to SOT. This work provides a broader perspective on the switching physics in heavy metal/ferromagnet (HM/FM) structures and offers practical guidance for the design of SOT-MRAM devices.",
+    "authors": [
+      "Shuai Li",
+      "Maokang Shen",
+      "Liuyu Tang",
+      "Weiwei Lin",
+      "Kaiming Cai",
+      "Tao Wang",
+      "Tianli Jin",
+      "Yue Zhang"
+    ],
+    "published": "2026-07-29",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.26392v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "SOT-MRAM은 차세대 비휘발성 메모리 기술로서 DRAM/NAND 대체 가능성을 가진 신흥 메모리 소자이며, 본 논문은 그 스위칭 메커니즘 최적화를 통해 상용화 경로를 개선하는 기초 연구",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "SOT-MRAM의 스위칭 물리 이해를 심화시키는 기초 연구로 장기적 메모리 소자 경쟁력 강화에는 기여하나, 단기 사업 영향과 AI 수요 견인 신호는 제한적",
+      "final_score": 2.4
+    },
+    "first_seen": "2026-08-04"
+  },
+  "2607.26328": {
+    "arxiv_id": "2607.26328",
+    "title": "On the static dielectric constant of thin dielectrics in extremely scaled silicon nanosheet transistors",
+    "abstract": "We argue that the static dielectric constant of small (thin and/or narrow) semiconductor and insulator nanostructures depends strongly on the their environment. We do so by considering the electronic response simply reviewing, briefly but critically, the existing literature. Regarding the ionic response, in addition to reviewing the literature, we use a simple model to account for the confinement of optical phonons in thin films and show that the reduction of their density of states has a negligible effect on the dielectric constant, in contrast to some claims found in the literature. In general, we argue that in realistic structures, such as double-gated Si nanosheets, the use of the bulk dielectric constants for both the channel and the gate insulators, is justified.",
+    "authors": [
+      "Massimo V. Fischetti",
+      "Dallin O. Nielsen",
+      "Edward Chen"
+    ],
+    "published": "2026-07-28",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2607.26328v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "극미세 Si 나노시트 트랜지스터의 유전상수 특성 규명은 차세대 고밀도 DRAM/로직 소자 설계의 핵심 물리 파라미터로, 우리의 어드밴스드 패키징 및 PIM 기술 개발에 직접 영향을 미친다.",
+      "scores": {
+        "business": 3,
+        "threat": 1,
+        "demand": 2,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "나노시트 트랜지스터의 유전상수 물리 모델 정립은 차세대 메모리 소자 설계 정확도를 높이는 기초 연구이나, 즉각적인 사업 영향보다는 중장기 공정 최적화 참고 자료로 가치가 있다.",
+      "final_score": 2.35
+    },
+    "first_seen": "2026-08-04"
   }
 }
