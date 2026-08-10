@@ -3501,34 +3501,6 @@
     },
     "first_seen": "2026-07-16"
   },
-  "2607.10046": {
-    "arxiv_id": "2607.10046",
-    "title": "Kinetic Inductors Enable Reversible Logic",
-    "abstract": "Reversible logic has long promised substantial reductions in energy dissipation, yet prior demonstrations have not scaled to commercially relevant systems. This work presents a quantitative framework for evaluating reversible logic through a process termed CMOS conversion, in which a conventional CMOS design is transformed into a functionally equivalent reversible implementation and compared using common performance metrics. The framework combines planning equations, kinetic-inductor energy-storage models, a four-phase 4LC energy-recycling power supply, and RLC-based simulation methods that account for data-dependent loading effects. The analysis identifies inductor loss as a fundamental limitation of conventional approaches and shows that high-energy-density kinetic inductors provide essential design margin for scaling reversible systems. Using representative device parameters, the framework suggests that selected cryogenic CMOS qubit controller circuits could be converted to reversible logic using available or near-term technologies. Rather than claiming commercialization of reversible logic in general, the paper provides a methodology for assessing its feasibility and potential benefits across future applications.",
-    "authors": [
-      "Erik P. DeBenedictis"
-    ],
-    "published": "2026-07-10",
-    "primary_category": "cs.ET",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.10046v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "가역 논리(Reversible Logic)를 통한 에너지 효율 혁신은 고전력 소비 AI 인프라(HPC/GPU 클러스터)의 전력 제약을 완화할 수 있는 차세대 컴퓨팅 아키텍처 기술로, 메모리-연산 시스템의 전력 효율성 경쟁에 영향을 미칠 수 있음.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 1,
-        "credibility": 3,
-        "novelty": 4
-      },
-      "tag": "중립",
-      "one_line": "가역 논리의 에너지 효율 이득은 AI 인프라의 전력 병목 해결에 이론적 가능성을 제시하나, 현재는 극저온 큐빗 제어기 수준의 니치 응용만 가능하며 범용 메모리/연산 시스템 상용화까지는 5년 이상 거리가 있어 단기 전략 영향은 제한적.",
-      "final_score": 2.35
-    },
-    "first_seen": "2026-07-16"
-  },
   "2607.14086": {
     "arxiv_id": "2607.14086",
     "title": "Leveraging unlabelled data for generalizable neural population decoding",
@@ -39277,5 +39249,253 @@
       "final_score": 3.45
     },
     "first_seen": "2026-08-10"
+  },
+  "2608.07226": {
+    "arxiv_id": "2608.07226",
+    "title": "Dual-Node NVIDIA DGX Spark over Tailscale: A Remote-Access Testbed for Distributed LLM Training and Cyber-Threat-Intelligence Fine-Tuning",
+    "abstract": "Compact AI systems make local language-model experimentation increasingly accessible, yet practical evidence for multi-node training on desktop-class accelerators remains limited. This report presents a proof-of-concept deployment of distributed NanoChat pretraining across two NVIDIA DGX Spark systems, each with a GB10 Grace Blackwell system-on-chip and 128 GB of unified memory, administered remotely over a Tailscale mesh VPN and connected for training by a dedicated 200 Gb/s QSFP56 direct fiber link. PyTorch torchrun, DDP, and NCCL were configured with one process per node, a depth-20 NanoChat model, a local batch size of 32 per node, and a 2,048-token context, giving a global batch of 131,072 tokens per step. The run sustained a step time of about 69.4 s (about 1,890 tokens/s), processing about 653 million tokens over four days. We document link configuration, container setup, interface binding, a step-zero evaluation bug that triggered NCCL timeouts, checkpointing, and troubleshooting lessons, as a reproducibility reference for small labs.   We also built a cybersecurity fine-tuning dataset from 77 CISA advisories (338 training, 37 validation conversations) and ran a 17-question held-out evaluation comparing a baseline SFT checkpoint against a CTI-augmented checkpoint with an Ollama-hosted LLM judge. CTI-specific categories improved while general-knowledge categories regressed, for a small overall change from 2.06 to 2.29 on a 0-10 scale. The same cluster supports a 400-level AI course (CS 426) and a query engine for CompTIA Security+ POGIL activities in CBS 255, showing modest local infrastructure can serve both research and teaching. The study establishes feasibility rather than a scaling-efficiency claim, since single-node throughput used for comparison was estimated, not measured under matched conditions. Runbook and scripts are available (see Code Availability).",
+    "authors": [
+      "Vasanth Iyer"
+    ],
+    "published": "2026-08-07",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.07226v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "소형 AI 클러스터(DGX Spark, 128GB 통합 메모리)의 분산 LLM 훈련 실증으로 엣지/로컬 AI 인프라의 메모리 수요 패턴과 Grace Blackwell 아키텍처의 실제 메모리 활용 특성을 보여주는 전방 시장 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 3,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "데스크톱급 가속기의 분산 훈련 가능성을 입증하지만, 학술 PoC 수준이며 메모리 수요 규모나 기술 혁신 신호는 제한적—AI 인프라 다양화 트렌드의 참고 자료일 뿐 전략적 위협/기회는 약함.",
+      "final_score": 2.0
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.06989": {
+    "arxiv_id": "2608.06989",
+    "title": "Rethinking Unified Memory for NPU-PIM Systems: Dual-View Memory for Dynamic Inference of LLM",
+    "abstract": "Heterogeneous architectures that combine neural processing unit (NPU) and processing-in-memory (PIM) are increasingly adopted to accelerate LLM inference. Prior work focuses on building a unified memory that allows NPUs and PIM to share data without duplication. However, these designs implicitly assume that each tensor is bound to a fixed execution device, and therefore rely on static, device-biased data mappings.   We observe that this assumption does not hold in modern LLM workloads. Due to phase changes (e.g., prefill vs. decode) and dynamic behaviors such as MoE routing, the optimal execution device for the same tensor can change at runtime. Under such dynamic execution, device-biased mappings become mismatched to access patterns, leading to substantial bandwidth underutilization and performance loss. This paper presents PFM (PIM-as-Flexible-Memory), a dual-view memory system that decouples physical data layout from accessor-visible logical views. PFM stores data in a jointly optimized physical layout and exposes different logical interpretations to NPUs and PIM, enabling efficient access across devices without data duplication or relayout. We further design accessor-aware address translation and runtime scheduling mechanisms to support dynamic execution when LLM workloads fluctuate and the optimal execution device dynamically changes. Our evaluation across LLMs shows that PFM improves end-to-end throughput by up to 2.32$\\times$, demonstrating its effectiveness and broad applicability as a unified memory management solution for NPU-PIM systems.",
+    "authors": [
+      "Shixin Zhao",
+      "Lian Liu",
+      "Tianhua Han",
+      "Mengdi Wang",
+      "Yinhe Han",
+      "Ying Wang"
+    ],
+    "published": "2026-08-07",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.06989v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "NPU-PIM 이종 아키텍처의 메모리 관리 최적화로, PIM 사업과 LLM 추론 메모리 수요 전략에 직접 연관됨.",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "LLM 동적 추론 워크로드에서 PIM의 메모리 활용 효율을 2.3배 향상시키는 아키텍처 혁신으로, PIM 상용화 경로와 AI 인프라 메모리 수요 확대의 교점을 보여주는 전략적 신호.",
+      "final_score": 4.4
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.06793": {
+    "arxiv_id": "2608.06793",
+    "title": "Ultralow p-type contact resistance for ultra-nanoscaled 2D-materials transistors",
+    "abstract": "High contact resistance is one of the main bottlenecks for practical two-dimensional (2D) materials transistors, especially for p-type transistors and future 2D ultra-nanoscaled (sub-10 nm) FETs (PMOS + CMOS). We develop self-consistent contact resistance models for metal-2D semiconductor-metal devices to capture the essential interface physics for both vertical and edge configurations. Our calculations have been verified with various recent experiments of p-type and n-type contacts. For a given set of materials, the model determines the scaling of contact resistance over a wide range of device parameters including channel length (100s nm down to sub-10 nm), doping and mobility of the 2D materials, contact length of the electrodes, and applied voltages. These results identify the key factors in order to reduce the contact resistance for p-type 2D semiconductor WSe$_2$ towards the sub-10 nm channel length scale that are readily to be realized by future experiments. It is found that the effect of source-limited current saturation is the key challenge for down scaling 2D FET to sub-10 nm channel length. Two topological semi-metals as potential electrodes are proposed for 2D p-type semiconducting WSe$_2$ with our predicted contact resistance $R_c<$ 100 $Ω\\; {\\rm μm}$ approaching the quantum limit. Our model is also verified with the computational expensive full quantum atomistic model that is currently limited to a few nm scale.",
+    "authors": [
+      "Ying Xiong",
+      "Tong Su",
+      "Qiang Li",
+      "Yee Sin Ang",
+      "Lain-Jong Li",
+      "L. K. Ang"
+    ],
+    "published": "2026-08-07",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.06793v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2D 반도체(WSe₂) 기반 초소형 FET의 접촉 저항 문제 해결은 차세대 고밀도 메모리/로직 소자 기술로서 어드밴스드 패키징 및 PIM 아키텍처 경쟁에 간접적 영향을 미칠 수 있는 기초 기술.",
+      "scores": {
+        "business": 1,
+        "threat": 1,
+        "demand": 1,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "2D 트랜지스터는 학계 주요 연구 주제이나 메모리 제조사의 단기 사업 전략(HBM/DRAM/NAND)과는 거리가 멀고, 상용화까지 5년 이상 소요될 기초 물성 연구로 현재 우리 사업 포트폴리오에 직접적 위협이나 기회 신호는 약함.",
+      "final_score": 1.45
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.06318": {
+    "arxiv_id": "2608.06318",
+    "title": "Breaking Memory Bottlenecks in Quantum Control Systems for More Precise Experiments and Higher Throughput Computing",
+    "abstract": "As quantum computing continues to demonstrate promise and attract growing attention, there is an increasing need for more precise experiments to advance the development of quantum devices, as well as higher circuit throughput to validate more domain applications. However, this need is hindered by a memory bottleneck at the quantum control system layer, arising from limited on-chip BRAM capacity and the non-deterministic latency of DRAM. To break this bottleneck, we present Ant-Q, a memory hierarchy design that integrates DRAM with BRAM to support pipelined quantum circuit execution while ensuring deterministic inter-circuit timing. We evaluated Ant-Q using 26 real-world experimental and computing circuits. The results show that Ant-Q supports deep circuits for 1Q and 2Q Randomized Benchmarking and reduces the overhead of circuit loading and readout uplink relative to execution time from 22.90%-1417.05% to near zero. Ant-Q is being integrated into QubiC 3.0, with part of its functionalities already available.",
+    "authors": [
+      "Yicheng Guang",
+      "Neel Vora",
+      "Yilun Xu",
+      "Yueqi Chen",
+      "Gang Huang"
+    ],
+    "published": "2026-08-06",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.06318v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "양자 컴퓨팅 제어 시스템의 BRAM/DRAM 메모리 계층 최적화로, 메모리 반도체 제조·아키텍처·수요와 직접 연관이 없으며 AI 전방 시장 트렌드도 반영하지 않음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "양자 컴퓨팅 제어 펌웨어 수준의 메모리 스케줄링 논문으로, SK하이닉스의 HBM/DRAM/NAND 사업 전략, AI 인프라 메모리 수요, 경쟁 동향과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.06203": {
+    "arxiv_id": "2608.06203",
+    "title": "Beyond Electrons: Radiative Thermal Computing and Neural Networks at the Near-Field Limit",
+    "abstract": "We propose and analyze a programmable near-field radiative thermal network that emulates convolutional and recurrent operations through heat exchange. By integrating radiative thermal diodes and transistors composed of phase-change materials such as VO2 and GST, we construct two fundamental architectures: the Thermal Convolutional Neural Network (T-CNN) and the Thermal Recurrent Neural Network (T-RNN). The T-CNN executes spatial pattern recognition via temperature-dependent emissivity modulation, where each gate acts as a tunable radiative filter that amplifies or suppresses localized heat flux. The system is externally programmable via gate temperature distributions in VO2/GST, enabling weighted summation and nonlinear activation; hysteretic transitions provide state dependent responses that can be harnessed for memory. The T-RNN extends this functionality temporally, embedding radiative feedback and hysteretic phase transitions to realize memory and sequential inference. Together, these systems exhibit tri-state logic behavior, radiative gain, and non-volatile thermal storage, key attributes of physical learning. Each logical node operates without charge carriers or electrical circuits, relying solely on near-field photon tunneling between nanoscale surfaces. The resulting framework enables direct implementation of convolution, memory retention, and feedback learning within a contactless, energy-conserving platform. This study establishes the first radiative realization of thermal deep learning, revealing a new computing paradigm where temperature fields function as carriers of intelligence, uniting heat transfer, memory, and adaptive inference in a single non-electronic system.",
+    "authors": [
+      "Hexiang Zhang",
+      "Mauro Antezza",
+      "Yi Zheng"
+    ],
+    "published": "2026-08-06",
+    "primary_category": "cond-mat.mes-hall",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.06203v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "열복사 기반 신경망은 순수 물리 컴퓨팅 패러다임으로, 메모리 반도체 제조·아키텍처·AI 인프라 수요와 실질적 연결고리가 없는 기초 물리 연구이다.",
+      "scores": {
+        "business": 0,
+        "threat": 1,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "열복사 신경망은 개념적으로 흥미로우나, 현재 기초 물리 연구 단계로 메모리 칩·패키징·AI 인프라 수요 변화와 무관하며, 상용화까지 10년 이상 거리가 있어 사업 전략 수립에 불필요하다.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.05360": {
+    "arxiv_id": "2608.05360",
+    "title": "Katz Centrality-Based Security Allocation in Positive Networks",
+    "abstract": "This paper deals with security allocation challenges for networked control systems represented by positive-weighted digraphs under stealthy false data injection attacks. These systems consist of interconnected subsystems, referred to as nodes in the underlying digraph, where an adversary aims to maximize network performance loss by stealthily attacking specific nodes. Meanwhile, a defender monitors several nodes to impose stealthiness constraints on the adversary's actions, thereby minimizing the network performance loss. We analyze the worst-case network performance loss of these stealthy attacks and make the following contributions: we (i) show that the worst-case network performance loss is upper-bounded by a tractable semi-definite programming (SDP) problem; (ii) establish the relationship between the SDP problem and the Katz centrality measure of the underlying digraph under a sufficient condition, resulting in a network-size-independent optimization problem; and (iii) provide a heuristic search based on the Katz centrality measure of the underlying digraph for selecting sub-optimal monitor nodes against all admissible attack scenarios without solving optimization problems. These results offer practical insights for safeguarding large-scale networked control systems against stealthy false data injection attacks. The obtained results are validated via extensive simulations on Erdos-Renyi random graphs with different network sizes.",
+    "authors": [
+      "Anh Tung Nguyen",
+      "Sribalaji C. Anand",
+      "André M. H. Teixeira"
+    ],
+    "published": "2026-08-05",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.05360v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "네트워크 제어 시스템의 사이버 보안(거짓 데이터 주입 공격 방어)에 관한 순수 제어이론 논문으로, 메모리 반도체 제조·아키텍처·AI 수요와 실질적 연결고리가 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 1
+      },
+      "tag": "중립",
+      "one_line": "제어 시스템 보안 최적화 논문이며 메모리 사업, AI 인프라 수요, 반도체 경쟁 동향과 무관하므로 전략 의사결정에 참고 가치 없음.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.04815": {
+    "arxiv_id": "2608.04815",
+    "title": "Memristive Behavior and Mechanism in Solid-State Nanopores",
+    "abstract": "Nanofluidic memristors whose conductance evolves through history-dependent ionic transport and dynamic interfacial processes are promising building blocks for ionic neuromorphic applications. However, most existing designs rely on biological nanopores, polymers, and two-dimensional materials, which limit scalable fabrication and poses challenges to integration of ionic computing circuits and systems. Here, we report memristive behaviors of silicon-based solid-state nanopores (SSNPs) fabricated based on wafer-scale semiconductor processes. The SSNPs exhibit hysteretic current-voltage characteristics with a dependence on voltage sweeping frequency, electrolyte concentration, and nanopore geometry. To investigate the physical origin of their memory feature, the measured current of the SSNPs is decomposed into resistive, capacitive, and memristive components. An ion adsorption-desorption kinetics is developed to explain and predict the memristive behavior. A dynamical system analysis further reveals that the memristive behavior arises from delayed relaxation, thereby linking the measured hysteresis to the observed adaptive ionic response. Together, these findings establish native SSNPs as scalable ionic memristive elements and provide a generalized electrokinetic mechanism for memristive behavior under nanoconfinement. The resulting analytical framework connects device characterization with the underlying dynamics, deepens mechanism understanding, and guides the design of ionic neuromorphic devices.",
+    "authors": [
+      "Zhiwei Li",
+      "Ngan Hoang Pham",
+      "Shi-Li Zhang",
+      "Chenyu Wen"
+    ],
+    "published": "2026-08-05",
+    "primary_category": "physics.app-ph",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.04815v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "신경형 컴퓨팅용 이온 메모리소자 기술로서 PIM·메모리 확장·AI 가속 아키텍처의 차세대 패러다임을 제시하며, 반도체 공정 기반 확장성이 우리 사업 포트폴리오와 교집합을 가짐.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "이온 메모리 기반 신경형 컴퓨팅은 AI 인프라의 메모리-연산 병목 해결 후보이나, 현재는 기초 물리 단계이며 실리콘 기반 SSNPs의 상용성·신뢰성·집적도 검증이 필요하므로 중기 R&D 모니터링 대상.",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-08-11"
+  },
+  "2608.04169": {
+    "arxiv_id": "2608.04169",
+    "title": "On Design Principles for Efficient Heterogeneous DRAM-PIM-GPU Systems",
+    "abstract": "Heterogeneous DRAM-based processing-in-memory (PIM)-GPU systems promise significant efficiency gains for decode-phase large language model (LLM) inference, particularly in long-output generation, yet current design practices overlook critical factors that determine real-world performance. Through systematic evaluation of diverse architectures and workloads (OPT-7B/70B, Mamba2-2.7B/70B), we reveal three fundamental design principles: (i) static power consumption (DRAM leakage, refresh, and GPU idle power) can dominate the efficiency calculus, causing dynamic-only models to overestimate tokens/s/W by up to 3.85X for realistic deployments (Mamba2-2.7B, batch size 1, 128 input tokens, and 2,048 output tokens); (ii) decoding performance is monotonically non-decreasing with channel count across all evaluated models and workloads, generally plateauing at high channel counts for low-batch workloads; under a fixed-capacity sweep, all models instead share a common near-optimal hierarchy configuration, with substantially larger misconfiguration penalties for attention-based models; (iii) workload mapping strategies provide bounded improvements (up to 14.0%/17.4% kernel-level latency/energy reduction, up to 5.6% end-to-end gain) and are not primary bottlenecks. Significant efficiency gains require system-wide co-optimization. These principles provide design-space guidance for architects designing the next generation of memory-accelerated LLM systems.",
+    "authors": [
+      "Corey Lammie",
+      "Hadjer Benmeziane",
+      "William Andrew Simon",
+      "Irem Boybat"
+    ],
+    "published": "2026-08-04",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.04169v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "PIM-DRAM-GPU 이질 시스템의 LLM 추론 효율성 설계 원칙을 제시하며, DRAM 정적 전력·채널 구성·워크로드 매핑이 메모리 효율을 좌우하는 핵심 요소임을 실증적으로 규명함으로써 차세대 메모리 가속 시스템 아키텍처 설계에 직결되는 내용.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 5,
+        "maturity": 3,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "LLM 추론 단계에서 DRAM 정적 전력이 효율성을 3.85배 왜곡하고 채널·계층 구성이 성능을 좌우한다는 발견은 PIM·HBM·DRAM 설계 최적화와 고객(엔비디아 등) 시스템 통합 전략 수립에 직접 활용 가능한 설계 가이드를 제공함.",
+      "final_score": 4.55
+    },
+    "first_seen": "2026-08-11"
   }
 }
