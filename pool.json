@@ -3418,39 +3418,6 @@
     },
     "first_seen": "2026-07-23"
   },
-  "2607.16445": {
-    "arxiv_id": "2607.16445",
-    "title": "Nanowire networks' interconnection graphs from their photomicrographs",
-    "abstract": "Self-assemblies of tunable units are being intensively studied as physical systems with signal-processing capabilities. Specifically, silver nanowire networks (AgNWNs) have demonstrated accumulation, non-linearity, and memory retention with multiple timescales, features that enable a wide variety of neuromorphic implementations. In this study, we aim to extract the interconnection scheme to analyze the experimentally obtained network architecture and, eventually, use it as input to a previously developed simulation platform. By post-processing photomicrographs of AgNWN, we present a pipeline optimized to extract the interconnection diagram, recognizing the intersections formed among the nanowires, to determine the associated graph for each physical sample. A graph is a collection of nodes and edges whose properties can be associated with different electrical responses. It is thus possible to study graphs' metrics, such as the degree distribution, community size, clustering coefficient, and path-length, to compare the experimental assemblies' attributes to those of topological models of reference. Small-world, modular, and scale-free are well-known structures in the field of mathematical graphs. By analyzing the degree distribution, the adjacency matrices, among other useful representation means, the experimental assemblies reveal similarities to both small-world and modular topologies. All the mentioned analyses were conducted considering the interconnection scheme obtained from zenithal-view optical images, which overestimates the number of NWs' interconnections (due to the impossibility of distinguishing real junctions from spurious cross-points between vertically displaced NWs). For that reason, this communication also studies the impact of artificially removing junctions from the resulting graphs on the previously calculated clustering coefficient and path length.",
-    "authors": [
-      "Javier Tau Anzoátegui",
-      "Juan Ignacio Diaz Schneider",
-      "Eduardo D. Martínez",
-      "Pablo Levy",
-      "Oscar Filevich",
-      "Cynthia P. Quinteros"
-    ],
-    "published": "2026-07-17",
-    "primary_category": "cond-mat.dis-nn",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.16445v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "Silver nanowire network의 그래프 추출 및 위상 분석은 신경형태 컴퓨팅 기초연구이나, SK하이닉스의 주력 사업(HBM/DRAM/NAND/CXL/PIM)과 직접 연관성이 없고 메모리 수요 전망에도 영향을 주지 않음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 1,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "AgNW 신경형태 소자의 기초 물리 특성 분석 논문으로, 메모리 반도체 제조사의 전략·사업·경쟁 환경과 무관한 순수 재료과학 연구.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-23"
-  },
   "2607.20410": {
     "arxiv_id": "2607.20410",
     "title": "LKValues: Aligning Large Language Models with Sri Lankan Societal Values",
@@ -39118,5 +39085,356 @@
       "final_score": 4.15
     },
     "first_seen": "2026-08-17"
+  },
+  "2608.14333": {
+    "arxiv_id": "2608.14333",
+    "title": "Beyond Capacity: Scalable MoE LLM Inference via High-Bandwidth Flash with Direct GPU and HBM Paths",
+    "abstract": "Modern mixture-of-experts (MoE) language models increasingly strain the capacity and cost efficiency of high-bandwidth memory (HBM), as rapidly growing expert weights must be provisioned close to GPUs. High-bandwidth flash (HBF) offers substantially greater capacity, but conventional designs typically deliver HBF-resident expert weights to the GPU through HBM, leaving an additional direct GPU-HBF connection underutilized. We explore an HBF organization that simultaneously exploits two independent expert-delivery routes: a direct path that transfers expert weights from HBF to the GPU and a relay path that transfers them from HBF through the HBM base die to the GPU. Whole experts are assigned to one of the two routes, and transfers over both routes proceed concurrently, increasing aggregate expert-delivery bandwidth without replicating expert weights or introducing a shared relay bottleneck. Early expert determination identifies upcoming experts ahead of their conventional execution point, allowing HBF read latency to overlap with preceding computation, while separate management of immutable expert weights and mutable KV-cache data reduces interference between the two traffic classes. We evaluate the architecture using an event-driven continuous-batching LLM serving simulator with empirically measured GPU compute latencies. Across representative MoE workloads, concurrently utilizing the direct GPU-HBF and HBF-HBM-GPU routes consistently improves expert-delivery efficiency over designs restricted to either route alone. For a representative workload, the proposed architecture can achieve 1.94$\\times$ higher throughput and 1.90$\\times$ end-to-end speedup over a design that delivers all HBF-resident expert weights to the GPU through the HBM base die.",
+    "authors": [
+      "Seeyeon Kim",
+      "Juhyeong Jin",
+      "Joo-Young Kim"
+    ],
+    "published": "2026-08-14",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.14333v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "MoE LLM 추론 시 HBM-Flash 메모리 계층 구조 최적화를 다루며, HBM 용량 제약과 고대역폭 메모리 효율성이라는 우리의 핵심 사업 과제와 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 5,
+        "maturity": 3,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "MoE 모델 추론에서 HBM 병목을 Flash와 직접 연결하는 아키텍처 제안으로, HBM 수요 증가와 고급 패키징(다중 경로 연결) 기술 필요성을 강화하는 신호.",
+      "final_score": 4.5
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.14073": {
+    "arxiv_id": "2608.14073",
+    "title": "Experimental Study on System-Level Performance Impact of Read Disturbance in Modern SSDs",
+    "abstract": "This work investigates the system-level performance impact of read disturbance in modern NAND flash-based SSDs, aiming to provide new insights that can help develop better storage architectures and optimize system software. Continuous improvement in storage density over decades has led NAND flash memory to play a vital role in modern computing systems, but it also comes at a cost of significant reliability degradation. Among various error sources, read disturbance has gained growing attention as a major reliability concern due to its rapidly increasing impact, which can significantly affect system I/O performance by exacerbating SSD-internal reliability-management overheads. Although a large body of prior work has focused on device-level characterizations and optimizations, the system-level performance impact of read disturbance still remains largely uninvestigated. To address this gap, this work conducts a rigorous experimental study using 15 modern NVMe SSDs from 10 major vendors in two ways. First, we comprehensively analyze the system-level performance impact of read disturbance under diverse workloads and operating conditions. Second, to highlight the importance of efficient read-disturbance management, we showcase a new possible SSD-performance attack as a case study, demonstrating that an adversary can significantly degrade the I/O performance of other concurrently running processes by exploiting read disturbance alone in commodity SSDs. Based on our experimental study, we make 16 new observations and 7 takeaway lessons, which lead to 6 key directions for future improvements at the host-system and SSD-architecture levels to better cope with read disturbance.",
+    "authors": [
+      "Yonggon Park",
+      "Hyunuk Cho",
+      "Onur Mutlu",
+      "Sungjin Lee",
+      "Jisung Park"
+    ],
+    "published": "2026-08-14",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.14073v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "NAND 플래시 SSD의 신뢰성 열화(Read Disturbance)가 시스템 성능에 미치는 영향을 실증적으로 분석하여, 우리의 NAND/SSD 제품 아키텍처 설계 및 신뢰성 관리 전략 수립에 직접 기여할 수 있는 연구",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 2,
+        "maturity": 4,
+        "credibility": 5,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "Read Disturbance의 시스템 레벨 성능 영향을 15개 상용 SSD로 실증하여 차세대 NAND 신뢰성 관리 및 SSD 아키텍처 개선의 구체적 방향을 제시하는 실무적 가치가 높은 연구",
+      "final_score": 3.35
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.13868": {
+    "arxiv_id": "2608.13868",
+    "title": "Exploring High-Bandwidth Flash for Modern LLM Inference: Opportunities and Challenges",
+    "abstract": "This work investigates the potential benefits and technical challenges of using high-bandwidth flash (HBF) for large language model (LLM) inference. HBF has gained increasing attention as a promising solution to mitigate memory-capacity bottlenecks in modern LLM-serving systems, but its benefits and challenges remain largely uninvestigated. To address this gap, we thoroughly analyze HBF-based LLM-serving systems under diverse system configurations and operating scenarios in which HBF serves as a main GPU-memory component to handle both reads and writes. Our analysis shows that, despite its limited write performance, HBF can significantly improve the batch size, throughput, and flexibility of LLM-serving systems while reducing the minimum GPU requirements, but realizing these benefits critically depends on sustaining HBM-comparable read bandwidth and requires significant endurance improvements.",
+    "authors": [
+      "Dowon Son",
+      "Yonggon Park",
+      "Hyunuk Cho",
+      "Hyungkyu Ham",
+      "Onur Mutlu",
+      "Sungjin Lee",
+      "Gwangsun Kim",
+      "Jisung Park"
+    ],
+    "published": "2026-08-14",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.13868v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 추론 시스템에서 NAND 플래시를 GPU 메모리 확장 솔루션으로 활용하는 기술 분석으로, NAND/메모리 계층 구조 및 AI 인프라 수요 변화와 직결됨.",
+      "scores": {
+        "business": 3,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 4,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "HBF(고대역폭 플래시)가 LLM 추론의 메모리 병목을 완화하는 실행 가능한 대안으로 부상하면서 NAND 수요 확대와 메모리 계층 최적화 전략 재검토를 촉발하는 신호.",
+      "final_score": 4.1
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.13496": {
+    "arxiv_id": "2608.13496",
+    "title": "YAVIN: A Unified Architecture for Secure Edge Processing in Memory",
+    "abstract": "Secure, private multi-tenant execution spanning processors, memory, and accelerators remains one of the most significant challenges in modern edge computing systems. Simultaneously, processing-in-memory (PIM) has emerged as an effective approach for reducing the Von Neumann bottleneck by moving computation closer to data. Existing trusted execution environments (TEEs) establish trust only within the processor, protecting data while it traverses untrusted resources such as the memory bus. Consequently, trusted computation cannot be performed directly within memory. We present YAVIN, a unified trusted computing base (TCB) that extends the TEE beyond the processor to encompass both processor execution and a dedicated memory region supporting trusted processing-in-memory execution while treating the memory bus as untrusted. Leveraging the dedicated protected memory regions already established by conventional TEE architectures, YAVIN enables data to be decrypted, processed, and re-encrypted by either processor or PIM execution while remaining within the TEE. To realize this unified TCB, YAVIN presents the first PIM implementations of the LightSaber KEM post-quantum cryptosystem and ASCON-128 authenticated encryption, co-designing both algorithms for efficient DRAM execution to establish and maintain shared cryptographic state. Finally, we demonstrate how cryptography-PIM co-design for tensor-based workloads reorganizes computation to satisfy the ordering constraints imposed by authenticated encryption with minimal performance overhead while simultaneously enabling bit-sliced ordering that limits temporary plaintext exposure. Compared to the latest PIM AES implementation, YAVIN achieves more than a 20x speedup while incurring only 34% and 9.3% overhead when executing INT8 and INT32 quantized edge-class LLMs, respectively, relative to plaintext execution.",
+    "authors": [
+      "Shouzhi Fang",
+      "William C. Tegge",
+      "Md Omar Faruque",
+      "Peipei Zhou",
+      "Endadul Hoque",
+      "Alex K. Jones"
+    ],
+    "published": "2026-08-13",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.13496v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "PIM(Processing-in-Memory) 아키텍처에 보안 기능을 통합하는 기술로, DRAM 기반 신규 수요 창출과 엣지 AI 인프라 메모리 전략에 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 4
+      },
+      "tag": "기회",
+      "one_line": "엣지 AI 추론 시장에서 보안-성능을 동시에 만족하는 PIM-DRAM 통합 솔루션으로, 향후 엣지 메모리 수요 확대와 DRAM 고부가가치화의 신규 축을 제시하는 연구.",
+      "final_score": 4.2
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.13143": {
+    "arxiv_id": "2608.13143",
+    "title": "ProbSplat: Efficient Probabilistic Hardware for Gaussian Splatting in 3D Scene Reconstruction",
+    "abstract": "This paper presents ProbSplat, a Compute-in-Memory (CIM)-inspired architecture based on programmable and energy efficient floating-gate inverter columns for probabilistic computing. Improving upon our prior work, ProbSplat programs and stores both means and variances of Gaussian mixture components, and evaluates log-likelihood for gaussian splatting during scene reconstruction with high energy efficiency, suitable for robotics and augmented/virtual reality (AR/VR) at the edge. Our proposed scheme enables independent control of both mean and variance via deterministic adjustment of floating-gate MOSFET threshold voltages, increasing the fidelity of hardware to program probability distributions. The design is simulated in 180nm CMOS on 1.8 V at 50 MHz and achieves mean-variance independence with <2.4% deviation during 3-D Gaussian mixture modeling. Compared to conventional digital implementations, ProbSplat significantly reduces compute complexity, memory footprint, and power consumption. The scalable framework consumes 18pJ energy per log-likelihood inference with 4-bit precision while operating for 500 mixture functions in a 3-D GMM. Scene reconstruction with ProbSplat's characteristics gave satisfactory fidelity of 21.99 PSNR (dB) at 8-bit precision.",
+    "authors": [
+      "Siddarth Gottumukkula",
+      "M P Samartha",
+      "Vedant Pahariya",
+      "Priyanshi Jain",
+      "Amit Ranjan Trivedi",
+      "Priyesh Shukla"
+    ],
+    "published": "2026-08-13",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.13143v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지 AI/AR·VR 장면 재구성을 위한 확률 컴퓨팅 기반 메모리-연산 통합 아키텍처로서, PIM과 저전력 메모리 효율성이 우리의 전략적 관심사와 부합.",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "중립",
+      "one_line": "엣지 AI 3D 재구성 워크로드의 메모리-연산 효율성 개선 신호로는 의미 있으나, 180nm 기초연구 수준이고 대규모 데이터센터/HBM 수요와의 직접 연관성은 제한적.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.13127": {
+    "arxiv_id": "2608.13127",
+    "title": "Potential Applications of HBF in LLM Serving Systems",
+    "abstract": "LLM serving is increasingly constrained by memory capacity as model weights, KV caches, and the number of served model variants continue to grow. This report examines High-Bandwidth Flash (HBF) as a capacity-oriented extension to HBM-based serving systems. We first discuss how HBF can be integrated into the GPU memory hierarchy without undermining the bandwidth expected by the compute die. We then model the system-level value of added capacity as expanded residency for read-mostly model-state objects. Under this view, HBF can improve MoE serving by enabling more expert replicas and can improve multi-model serving by reducing model loading and supporting hot-model replication. Our simulation results show that these benefits depend on preserving the HBM-resident execution path while using HBF to expand the resident set of model weights.",
+    "authors": [
+      "Yihan Yin",
+      "Yinlun Zhao",
+      "Zhixin Yun",
+      "Guanying Wu",
+      "Feng Zhu",
+      "Kai Tao",
+      "Shu Li",
+      "Fei Huang",
+      "Zhe Zhang",
+      "Shuangchen Li",
+      "Hongzhong Zheng"
+    ],
+    "published": "2026-08-13",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.13127v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "LLM 서빙 시스템의 메모리 계층 구조 최적화를 통해 HBM 용량 한계를 Flash 확장으로 해결하는 기술로, NAND/SSD와 HBM의 계층적 활용이라는 우리 포트폴리오 전략과 직결됨.",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 5,
+        "maturity": 3,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "AI 추론 인프라의 메모리 병목(KV 캐시, 모델 가중치 용량)을 HBM-NAND 계층화로 해결하는 아키텍처 제안으로, NAND 플래시 수요 증대와 고대역폭 메모리 솔루션 수요를 동시에 견인하는 신호.",
+      "final_score": 4.6
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.12865": {
+    "arxiv_id": "2608.12865",
+    "title": "Digital Twin Satellite Networks: A Paradigm for Intelligent, Efficient, and Resilient Operations",
+    "abstract": "Satellite mega-constellations in Low Earth Orbit (LEO) are becoming an important part of next-generation non-terrestrial networks, but their operation remains challenging because of fast network topology variation, intermittent inter-satellite links, hardware disturbances, and strict Size, Weight, and Power (SWaP) constraints. Existing approaches based on Digital Twin (DT), Digital Twin Network (DTN), Software-Defined Networking (SDN), and Open Radio Access Network (O-RAN) provide useful building blocks for intelligent satellite networking, but they do not fully support real-time, predictive, and platform-aware network operation. In this paper, we propose a Digital Twin Satellite Network (DTSN) framework as a closed-loop architecture for reliable and intelligent management of LEO satellite constellations. The proposed framework connects the physical satellite network with a synchronized virtual twin and combines real-time telemetry, Integrated Sensing and Communication (ISAC), predictive intelligence, and resilience-oriented control. To validate the concept, we develop a constellation-scale cross-domain co-simulation using the NASA 42 spacecraft simulator and a Python-based DT bridge for a LEO constellation. The DT continuously ingests physical telemetry to manage a multi-domain threat environment, encompassing kinematic drift, hardware failures, and adversarial jamming over a 600-second flight window. By leveraging a predictive lookahead mechanism and an exponential sensor recovery model, the framework successfully isolates compromised nodes and triggers proactive network reconfiguration, thereby ensuring uninterrupted service and dynamic network resilience. These results show the potential of DTSN to support predictive and resilience-oriented satellite network operations.",
+    "authors": [
+      "Mustafa Alhassan",
+      "Peng Hu"
+    ],
+    "published": "2026-08-13",
+    "primary_category": "cs.NI",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.12865v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "위성 네트워크 운영 최적화 논문으로, 메모리 반도체 제조·아키텍처·수요와 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 0,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "Digital Twin 기반 위성 네트워크 관리 프레임워크는 통신 인프라 운영 논문일 뿐, SK하이닉스의 메모리 사업 전략·제품·기술 로드맵과 무관함.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.12797": {
+    "arxiv_id": "2608.12797",
+    "title": "Vertical Gallium Oxide Isolated Source Electrode Field Effect Transistors (ISEFET) Without Planarization or Mid-Gap Acceptor Blocking Layers",
+    "abstract": "We propose and demonstrate the first vertical Gallium oxide device architecture without the use of planarization etch back processes or mid-gap acceptor regions. The Isolated Source Electrode Field Effect Transistor (ISEFET) incorporates a dielectric blocking layer to access an isolated source pad extending from the top fin metal. Scaled multi-fin channels were formed by electron beam lithography with a width of 200 nm along with the source pads and then etched to a trench depth of ~1.2 um. The fabricated devices showed enhancement mode operation with threshold voltage of 2 V and on-off ratio > 1e7 with excellent gate modulation characteristics. The resulting device proved to be comparable to existing vertical transistors and suitable for high-throughput prototyping and large-scale manufacturing of future Gallium oxide and other wide bandgap semiconductor devices.",
+    "authors": [
+      "Akilesh Srikanth",
+      "Md Saklain Morshed",
+      "Chandan Joishi",
+      "Ahmad E. Islam",
+      "Siddharth Rajan"
+    ],
+    "published": "2026-08-13",
+    "primary_category": "physics.app-ph",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.12797v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "갈륨 산화물 기반 와이드밴드갭 전력 반도체 소자 기술로, SK하이닉스의 메모리(HBM/DRAM/NAND) 및 메모리 확장 사업과 직접적 연관성이 없음.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "와이드밴드갭 전력 반도체(Ga₂O₃ MOSFET) 기초 연구로, 메모리 제조사의 핵심 사업 영역(메모리 소자, 패키징, AI 인프라 메모리 수요)과 무관하며 전력 변환/RF 응용 분야 지향.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.12729": {
+    "arxiv_id": "2608.12729",
+    "title": "Asymmetric Textured Image Sensors Based on Antenna Theory as Designed by Nature",
+    "abstract": "This work numerically validates the application of bio-inspired concepts on CMOS derived from bacterial photosynthetic light harvesters. We investigate a modification of symmetric inverted pyramid array CMOS image sensors into an asymmetrically shaped texture to explore the structural boundary of passive non-reciprocity. Diverging from traditional macroscopic continuum assumptions, we analyze whether structural asymmetry at sub-wavelength scales can induce non-reciprocal scattering under passive, linear, and time-invariant conditions. A theoretical framework based on perturbation theory is developed, estimating a potential efficiency enhancement of 5\\% to 15\\%. Numerical simulations performed via the MEEP finite-difference time-domain (FDTD) platform reveal that the linear response is highly localized, showing a subtle 0.02\\% change. This suggests that macroscopic Lorentz reciprocity remains robust at the investigated scale due to apex field concentration, defining a clear geometric threshold for microscopic non-reciprocity.",
+    "authors": [
+      "Julian Juhi-Lian Ting"
+    ],
+    "published": "2026-08-13",
+    "primary_category": "physics.optics",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.12729v1",
+    "analysis": {
+      "is_relevant": false,
+      "relevance_reason": "CMOS 이미지 센서의 광학 구조 최적화 연구로, 메모리 반도체 사업(HBM/DRAM/NAND/CXL/PIM)과 직접 연관성이 없으며 AI 메모리 수요 트렌드와도 무관함.",
+      "scores": {
+        "business": 0,
+        "threat": 0,
+        "demand": 0,
+        "maturity": 1,
+        "credibility": 1,
+        "novelty": 2
+      },
+      "tag": "중립",
+      "one_line": "이미지 센서 광학 설계 논문으로 메모리 제조사의 핵심 사업 전략, AI 인프라 수요, 경쟁 구도와 무관한 순수 센서 기초연구임.",
+      "final_score": -1.0
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.12152": {
+    "arxiv_id": "2608.12152",
+    "title": "The electrical transport of intrinsic two-dimensional ferroelectric metal PtBi2",
+    "abstract": "Breaking the conventional stereotype that ferroelectrics are necessarily insulating, two-dimensional (2D) ferroelectric metals combine seemingly incompatible switchable electric polarization and metallic conductivity, providing a fertile ground for the discovery of novel electrical transport phenomena and the development of innovative electronic devices. Using the semiclassical Boltzmann equation and first-principles calculations, we systematically investigate the linear and nonlinear transport responses of the intrinsic 2D ferroelectric metal \\ch{PtBi2} to an applied electric field. Our \\textit{ab initio} molecular dynamics simulations reveal that it possesses a high Curie temperature reaching $800~\\text{K}$. We propose that the crystal structure of its high-temperature paraelectric phase can be explicitly distinguished through simple measurements of the in-plane electrical conductivity. Quantitative calculations of the Edelstein effect and the intrinsic spin Hall effect demonstrate a sizable charge-to-spin conversion efficiency, highlighting its potential in spintronics. We also find that a Berry curvature dipole-induced nonlinear Hall effect emerges in uniaxially strained \\ch{PtBi2}. Furthermore, we highlight the unique advantages of 2D ferroelectric metals in gate-controlled transport applications. Based on the domain wall scattering mechanism, we conceptually design a novel ferroelectric metal field-effect transistor (FEM-FET) capable of nonvolatile switching between high-resistance and low-resistance states under a gate voltage. Our work not only unveils the rich transport physics in 2D ferroelectric metals but also provides valuable insights into the design of next-generation nonvolatile memory and spintronic devices.",
+    "authors": [
+      "Dan Li",
+      "Liu Yang",
+      "Lei Li"
+    ],
+    "published": "2026-08-12",
+    "primary_category": "cond-mat.mtrl-sci",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.12152v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "2D 강유전 금속의 비휘발성 메모리 소자 설계와 스핀트로닉스 응용이 차세대 메모리 기술 경로로 제시되고 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 2,
+        "demand": 1,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "중립",
+      "one_line": "강유전 금속 기반 비휘발성 메모리 개념은 학술적으로 흥미롭지만, 상용 메모리(DRAM/NAND/HBM) 대체 가능성은 낮고 기초 연구 단계로 사업 영향은 제한적.",
+      "final_score": 2.05
+    },
+    "first_seen": "2026-08-18"
+  },
+  "2608.11920": {
+    "arxiv_id": "2608.11920",
+    "title": "NITRO: High-Performance 3D NAND Flash-Based In-Storage Computing with Enhanced Activation Dataflow",
+    "abstract": "In-storage computing (ISC) is considered a next-generation memory architecture for its ability to relieve the data bottleneck between the host and the memory. While the required resources of large language models (LLMs) have increased significantly in recent years, the memory density has not scaled accordingly. Recently, several works have studied NAND flash-based processing-in-memory (NAND-PIM) schemes to exploit the high density of the memory. However, they do not address the dataflow/buffer for the intermediate values, so a simple method is to deal with the values in the slow flash memory array. To overcome such a limitation, we propose a high-performance NAND flash-based ISC architecture with enhanced activation buffering. Instead of using the very slow flash memory array for the intermediate values, our architecture buffers the values in a fast DRAM subsystem. This approach effectively handles the high-latency penalties when activations are programmed into slower TLC NAND flash. We also introduce a distributed dataflow approach for the NAND-PIM array. This approach maximizes computational parallelism by employing efficient intra-plane data mapping. The results show that our proposed architecture achieves significant performance improvements, reducing the inference latency by up to 85% compared to the baseline.",
+    "authors": [
+      "Sanghun Shin",
+      "Sangyeon Kim",
+      "Gisan Ji",
+      "Sungju Ryu"
+    ],
+    "published": "2026-08-12",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.11920v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "NAND 플래시 기반 인-스토리지 컴퓨팅(ISC)은 우리의 NAND/PIM 주력 사업과 직결되며, LLM 추론 시 메모리 병목 해결이라는 AI 전방 시장의 핵심 수요를 다룬다.",
+      "scores": {
+        "business": 4,
+        "threat": 2,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "NAND-PIM 아키텍처의 실용적 성능 개선 제안으로 LLM 추론 메모리 병목 해결 경로를 제시하나, 학계 연구 수준이며 대규모 상용화까지는 거리가 있다.",
+      "final_score": 4.15
+    },
+    "first_seen": "2026-08-18"
   }
 }
