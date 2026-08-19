@@ -2167,970 +2167,6 @@
     },
     "first_seen": "2026-07-22"
   },
-  "2607.17437": {
-    "arxiv_id": "2607.17437",
-    "title": "Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions",
-    "abstract": "Large language model (LLM) agents offer a generative approach to simulating human behavior under conditions that may have few or no direct historical analogues, a common challenge in disaster and infrastructure-disruption planning. However, this generative capacity creates a validity problem: individually plausible agent reasoning may fail to reproduce empirical population behavior. We evaluate whether empirical grounding improves the statistical realism of LLM-agent simulations during disruptions. Specifically, we develop an empirically grounded LLM-agent framework that embeds demographic profiles from the American Community Survey, baseline routines from the American Time Use Survey, and urban spatial context into agent initialization, memory, decision prompts, and activity execution. An independent household survey conducted during the July 2024 Philadelphia heatwave is reserved as an external validation benchmark. Compared with an ungrounded LLM-agent baseline, the grounded model improved reconstruction of normal daily routines, increasing mean correlation with empirical activity profiles from 0.528 to 0.912 and reducing mean squared error from 0.066 to 0.008. Under heatwave conditions, the grounded model better reproduced survey-derived activity profiles, increasing mean correlation from 0.349 to 0.836 and reducing mean squared error from 0.098 to 0.012. The grounded model captured 46.4% of observed heatwave response amplitude, compared with 20.6% for the ungrounded baseline. These findings show that empirical grounding can make LLM agents more statistically credible simulators of population behavior while revealing remaining gaps in modeling human adaptation during disruptions.",
-    "authors": [
-      "Chen Xia",
-      "Zexi Kuang",
-      "Yuqing Hu"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17437v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "LLM 에이전트 기반 인구 행동 시뮬레이션 논문으로, 반도체·메모리 기술과 직접 연관이 없으며 AI 메모리 수요 트렌드도 반영하지 않음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "재난 상황 인구 행동 모델링 연구로 메모리 반도체 사업 전략, 기술 경쟁, 메모리 수요 견인 요소 어디와도 연결되지 않음.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17427": {
-    "arxiv_id": "2607.17427",
-    "title": "Abliteration Is Not a Scalpel: Off-Target Effects of Refusal Removal on Decision Disposition Across Model Families",
-    "abstract": "Abliteration - deleting a model's refusal direction from its weights - is the standard recipe behind popular \"uncensored\" open-weight models. We show the surgery is not clean. As a disposition probe we use 21,600 decisions under uncertainty - weekly up/down calls on 60 Warsaw Stock Exchange equities over 18 weeks, replayed through a frozen pipeline so the decision-layer model is the only variable. The task elicits no refusals at all, so any between-arm delta is pure side effect. Holding provenance constant (official BF16 checkpoints, a single abliteration author, an identical serving stack, one byte-identical frozen prompt), we compare base and abliterated arms of two Mixture-of-Experts families, Gemma-4-26B-A4B-it and Qwen3-30B-A3B-Instruct-2507. Three effects replicate across both families (weeks-clustered bootstrap CIs excluding zero): abliterated models are systematically more optimistic (+12.2 pp Gemma, +7.4 pp Qwen; the confirmed preregistered endpoint), justify themselves at greater length, and use fewer explicit uncertainty words in forced self-critiques (both exploratory). A fourth effect reverses sign: the same operation makes Gemma-abliterated less confident and Qwen-abliterated more (family CIs non-overlapping) - one weight surgery, opposite shifts in expressed confidence. Capability covariates rule out instruction-following degradation as the driver, and no arm shows economic skill: the apparent edge of abliterated arms is regime beta, not alpha. Our provenance audit also caught two independent contamination channels - a mismatched-quantizer pilot pair and a stale community chat template that silently mangled the rendered prompt - suggesting toolchain artifacts are the rule in studies of community-modified checkpoints. Whoever deploys an \"uncensored\" model as an agent is deploying a measurably different decision-maker, not the base model minus refusals.",
-    "authors": [
-      "Aleksander Fafuła"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17427v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "LLM 모델의 refusal 제거 기법이 의사결정 편향에 미치는 영향을 다루는 순수 AI 안전/해석성 연구로, 메모리 수요·아키텍처·반도체 제조 전략과 직접적 연결고리가 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "LLM 모델 가중치 수정의 부작용을 측정하는 AI 안전 연구이나, 메모리 반도체 사업 전략·수요·기술 로드맵과 무관한 언어모델 해석성 논문.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17419": {
-    "arxiv_id": "2607.17419",
-    "title": "Kernelized Linear Attention: Breaking the Capacity Wall with Symmetric Cones",
-    "abstract": "Linear attention promises constant-time recurrent inference but degrades sharply on associative recall. We formulate attention recall as a spherical-packing problem and introduce Kernelized Linear Attention Activations (KATA), a framework whose feature maps are derived from first principles by certifying nonnegative attention weights through a self-dual homogeneous cone. Building on this observation, we show that rank-one positive semi-definite (PSD) features offer a favorable capacity--interference tradeoff. KATA recovers a parameter-free convex output gate and characterizes associative capacity through the Welch interference floor. For tolerances above this floor, KATA enlarges the state without adding parameters and admits spherical codes with exponentially many keys in the projection dimension. We implement KATA as fused Triton kernels at two operating points: a flash-attention-style forward up to ${\\sim}1.6\\times$ FlashAttention-2 throughput, and an exact $O(T)$ chunked-state form that reaches ${\\sim}11\\times$ FlashAttention-2 forward throughput at $131$k tokens. An associative scan of the first-order feature lowers the inter-chunk recurrence depth to $O(\\log(T/C))$ for chunk size $C$ and averages ${\\sim}2.4\\times$ the throughput of a matched sequential linear-attention baseline. On long-range MQAR and repeated-key overwrite, several KATA variants outperform Gated DeltaNet, with parameter counts and state sizes reported alongside accuracy. Induction preserves near-perfect recall, while kernel benchmarks show that the maps can be implemented efficiently. KATA retains $0.985$ MQAR at a $16\\times$ out-of-distribution length, approaching the softmax with roughly one quarter of the KV-cache entries. Experiments on 340M-parameter LLMs reveal a feature-dependent fluency trade-off and clarify how positional embeddings, delta rules, and decay gates interact with feature geometry.",
-    "authors": [
-      "Ayoub Ghriss",
-      "Sourav Chakraborty"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17419v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Linear attention의 KV-cache 효율성 개선은 LLM 추론 시 메모리 대역폭·용량 수요를 직접 감소시키는 AI 인프라 기술로, HBM/DRAM 수요 구조 변화의 신호.",
-      "scores": {
-        "business": 3,
-        "threat": 2,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 4
-      },
-      "tag": "기회",
-      "one_line": "KV-cache를 1/4 수준으로 압축하는 linear attention 기법의 진전은 단기적 메모리 수요 감소 위험이지만, 장기적으로 더 큰 모델·배치 수용을 통해 전체 메모리 대역폭 수요를 증대시킬 가능성이 높아 HBM/고성능 DRAM의 전략적 기회.",
-      "final_score": 4.05
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17417": {
-    "arxiv_id": "2607.17417",
-    "title": "Grounded verification of chemical and materials reasoning: detection is the bottleneck",
-    "abstract": "Large language models confabulate chemical objects (molecular formulas, space groups, formation energies) in fluent reasoning traces, concentrated on long-tail entities where confidence is least trustworthy. Deterministic, database-grounded verification can catch and repair such errors without the coverage cost of blanket retrieval; the binding constraint, we find, is detection, not repair. Our tiered verifier extracts each checkable claim, checks it against authoritative databases and physics, and feeds the reference into a gated correction loop. Across four models and 528 condition-pinned prompts, gated correction cuts committed-formula error from 22% to 4% at $3.2\\times$ fewer retrievals than blanket augmentation, beating a conversational oracle. Repair succeeds wherever a flag fires (80--97%); the bottleneck is in-loop detection recall. Grounding improves the final answer only when the verifier's scope reaches the deliverable (83% to 90%), and the lift appears only where extractable long-tail error exists: absent on near-ceiling physical constants, large on isotope half-lives (11% to 0%).",
-    "authors": [
-      "Can Polat",
-      "Mustafa Kurban",
-      "Erchin Serpedin",
-      "Hasan Kurban"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17417v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "화학·재료 분야 LLM 검증 기법으로, 메모리 반도체 사업·AI 인프라 수요·메모리 아키텍처과 직접 연관이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "LLM의 화학 추론 신뢰성 개선 논문으로, 메모리 수요·제조·아키텍처 전략과 무관하며 순수 NLP 응용 영역에 해당.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17411": {
-    "arxiv_id": "2607.17411",
-    "title": "Feature-Guided Diffusion for Non-Differentiable Inverse Rendering",
-    "abstract": "Inverse rendering is traditionally solved via differentiable renderers and gradient descent, which requires substantial problem-specific engineering and is prone to getting stuck in local minima due to ambiguities. Derivative-free approaches alleviate engineering requirements, but often heavily depend on a good problem initialization. In this work, we propose Feature-Informed Diffusion Evolution (FIDE), a fully black-box framework that requires no gradients or specific initialization: the renderer is treated as an opaque function whose only requirement is to produce images. Our key insight is feature guiding: rather than reducing each candidate rendering to a scalar loss value, we use a Vision Transformer (ViT) to extract dense visual features from it. We subsequently use these features to train a diffusion-based candidate proposal model, allowing the network to use visual cues to predict parameters that would match the target image. The candidate solutions proposed by this diffusion model are then refined in a closed loop with a CMA evolution strategy, continuously narrowing the proposal region as optimization progresses. We validate across diverse inverse problems from path tracing, vector splines, Voronoi shaders, and robotics, and demonstrate that feature-guiding substantially improves convergence over scalar-loss baselines and reliably escapes local minima where gradient-based methods stall.",
-    "authors": [
-      "Andrei-Timotei Ardelean",
-      "Michael Fischer",
-      "Tim Weyrich",
-      "Tomáš Iser"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.GR",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17411v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "컴퓨터 그래픽스·렌더링 역최적화 문제 해결 기법으로, 메모리 반도체 수요·아키텍처·제조 전략과 직접 연관이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "순수 컴퓨터 비전/그래픽스 알고리즘 논문으로, 메모리 수요 견인이나 반도체 사업 전략과 무관함.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17409": {
-    "arxiv_id": "2607.17409",
-    "title": "Efficient Sequential Evaluation of Large Language Models",
-    "abstract": "We study the problem of sequentially evaluating a new large language model (LLM) on a fixed question set using historical performance data from prior LLMs. Our goal is to construct a confidence sequence (CS) for the model's capability on this question set and to design active querying rules that shrink the CS width as quickly as possible. For CS construction, we invert a family of test supermartingales and focus on two representative approaches: a reverse information projection (RIPr)-based approach and a testing-by-betting-based approach. We first study these approaches under an oracle setting, and demonstrate the oracle optimality of the RIPr-based construction. We then propose a growth-oriented querying rule that aims to maximize the worst-case one-step expected log-increment over the endpoints of the current CS. In practice, we build these test supermartingales and the querying rule on predictions of question-level correctness learned from historical data. We then analyze the shrinkage behavior of the resulting CSs and identify two key factors that slow the shrinkage rate of CSs: accumulated prediction mismatch and the spikiness of the querying distribution. Finally, motivated by this analysis, we propose several mixture querying rules that combine growth-oriented querying, prediction refinement, and uniform exploration, trying to mitigate the effects that slow the shrinkage rate. We provide experiments comparing different querying rules for the RIPr-based and testing-by-betting-based CSs across several synthetic testing datasets. Interestingly, we observe that the simplest querying rule, uniform sampling, can sometimes outperform more adaptive querying rules for both methods.",
-    "authors": [
-      "Chia-Yu Hsu",
-      "Shubhanshu Shekhar"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "stat.ML",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17409v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 평가 효율화 기법은 AI 인프라의 추론 비용·메모리 접근 패턴을 최적화하여 메모리 수요 구조와 HBM/DRAM 활용도에 영향을 미치는 전방 시장 트렌드",
-      "scores": {
-        "business": 1,
-        "threat": 0,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "LLM 평가 효율화는 AI 인프라 추론 최적화 방향을 시사하지만, 메모리 반도체 사업 전략과의 직접 연관성은 제한적이며 기초 통계학 연구 수준",
-      "final_score": 1.65
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17398": {
-    "arxiv_id": "2607.17398",
-    "title": "CoEvoP&R: Co-Evolving Placement Objectives with Routing Feedback via Large Language Models",
-    "abstract": "Analytical placers rely on differentiable objective functions to guide placement, typically combining intermediate surrogate metrics such as half-perimeter wirelength (HPWL) and cell-density penalties. However, these placement-stage surrogates remain misaligned with downstream routed and timing quality. Prior work reduces this gap with human-designed terms or learned black-box surrogates, but the former requires expert retuning and the latter is difficult to explain, debug, or deploy in analytical placement flows. CoEvoP&R addresses these limitations with a large language model (LLM)-based framework that automatically evolves analytical placement objectives. At each generation, the prompt combines the restricted objective interface, baseline context, and archived prior candidates with routing-related feedback from placement, timing proxy, and routing tools. The LLM proposes readable differentiable objectives, which are embedded and validated in DREAMPlace, evaluated through a timing proxy and an actual router, and stored with their feedback to guide later generations. Across eight ChiP-Bench Nangate45 designs and three seeds, CoEvoP&R reduces post-route routed wirelength and congestion by 16.9% and 36.7%, with gains of 0.70 ns in worst negative slack and a 912 ns reduction in total negative slack magnitude over native DREAMPlace. Across eight ICCAD 2015 Superblue designs, it reduces post-route routed wirelength and congestion by 5.4% and 23.2%. Code is available at https://github.com/FCHXWH823/CoEvoP-R.git.",
-    "authors": [
-      "Ruogu Chen",
-      "Weihua Xiao",
-      "Ramesh Karri",
-      "Jie Han"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17398v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "칩 설계 자동화(EDA) 분야의 배치-라우팅 최적화 기술로, 고성능 메모리 칩(HBM, DRAM, 고급 패키징)의 물리 설계 효율성과 수율을 직접 개선하는 도구 기술.",
-      "scores": {
-        "business": 3,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 4
-      },
-      "tag": "중립",
-      "one_line": "LLM 기반 칩 배치 최적화는 설계 효율성 향상에 기여하나, 메모리 제조사의 핵심 경쟁력(공정 기술, 패키징, 용량)과는 간접적이며 EDA 도구 의존도를 높일 수 있는 양날의 검.",
-      "final_score": 2.45
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17384": {
-    "arxiv_id": "2607.17384",
-    "title": "Quantifying Diversity of Thought: A Predictive Law of Weighted LLM Ensemble Lift",
-    "abstract": "This paper provides an experimentally verified formal law for calculating the uplift that diversity of thought provides in Large Language Model (LLM) ensembles. From first principles, we derive an exact decomposition of LLM ensemble lift into rescue and damage masses, which yields a compact heuristic for calculating uplift. From this we extract the metrics which predict ensemble performance: an accuracy adjusted correctness correlation, $φ_{\\mathrm{adj}}$, together with the accuracy gap and collective accuracy of the pair. We test the law on 767,520 inferences from ten open-weight models over two graduate-level science benchmarks, together with a novel agentic cybersecurity benchmark in which each model conducts digital-forensics investigations by multi-turn tool use in a network-isolated sandbox (23,520 graded trials including abstentions); all votes are released openly. Calibrated once on SuperGPQA at a 40:60 vote split, the heuristic predicts lift on the calibration set with Spearman's $ρ=0.84$ and, with its coefficients frozen, transfers to two datasets never used in calibration ($ρ=0.51$ on GPQA Diamond and $0.84$ on the forensic tasks), whilst the measured swap mass tracks realised lift with $R^2\\ge 0.96$ throughout. Raw $φ$ has almost no predictive power ($R^2\\le 0.09$ throughout); the accuracy-adjusted $φ_{\\mathrm{adj}}$ is markedly superior ($R^2=0.67$ on SuperGPQA), and the heuristic combining these metrics is the most stable pre pooling predictor across the three datasets.",
-    "authors": [
-      "Junade Ali"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17384v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 앙상블 추론 최적화 기법은 AI 인프라의 메모리·연산 효율성을 직접 좌우하며, 엔비디아 등 고객사의 추론 비용 구조를 변화시켜 메모리 수요 패턴에 영향을 미친다.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "LLM 앙상블 추론의 효율성 향상은 다중 모델 병렬 처리 시 메모리 대역폭·용량 수요를 증가시키는 신규 AI 워크로드 패턴으로, HBM·DRAM 수요 견인 신호이나 현재는 학술 단계로 상용 영향은 제한적.",
-      "final_score": 3.6
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17331": {
-    "arxiv_id": "2607.17331",
-    "title": "Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning",
-    "abstract": "Enterprise Resource Planning (ERP) systems record transactions reliably but still delegate almost all operational decision-making to human specialists, because classical rule-based automation cannot reason about exceptions and monolithic AI assistants degrade when asked to coordinate across functional boundaries. This paper presents Agentic ERP, an expert-system architecture that combines role-aligned large-language-model (LLM) agents with a risk-tiered human-in-the-loop harness and a graph-based orchestrator to execute end-to-end business workflows on a production ERP backend. First, autonomous ERP operation is formulated as a constrained sequential-decision problem over a structured enterprise state, with a decomposition argument linking role-aligned agents to a measurable reduction in per-step tool-selection complexity. Second, a graph-based Planner--Executor--Reflector--Responder orchestration decouples generation from evaluation through externalised grading criteria and sprint contracts, packaging recent harness-engineering principles as inspectable expert-system artefacts. Third, the system is evaluated at three levels: a scenario-based task suite, a comprehensive comparison of six orchestration paradigms on cross-functional crisis tasks, and a 365-day agent-in-the-loop simulation against rule-based RPA and no-intervention baselines. Across these levels the proposed multi-agent method is significantly better than the baseline, and the system sustains a simulated year of operation with zero stockouts while the rule-based baseline accumulates hundreds under the same demand stream. The work shows that role-aligned LLM agents under human oversight can move an ERP system from passively recording transactions to actively executing operational decisions, and it provides a reference architecture and an evaluation protocol for autonomous enterprise resource planning.",
-    "authors": [
-      "Zhihao Liu",
-      "Tianyu Wang",
-      "Xi Vincent Wang",
-      "Lihui Wang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17331v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "ERP 시스템의 에이전트 자동화 아키텍처로, 메모리 반도체 수요·기술·경쟁 구도와 직접적 연관성이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "엔터프라이즈 소프트웨어 자동화 논문으로, 메모리 칩·아키텍처·AI 인프라 수요와 무관하며 우리 사업 전략 수립에 기여하지 않음.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17317": {
-    "arxiv_id": "2607.17317",
-    "title": "TAPAS: Throughput-adaptive Perception for Autonomous Systems",
-    "abstract": "Autonomous systems rely on a perception module to navigate through dynamic environments. In real-world scenarios, the perception module's throughput requirements vary at runtime due to changes in scene complexity. However, existing perception strategies assume a fixed FPS and static model-to-cluster mapping, resulting in either over/under provision of throughput requirements or unnecessary energy consumption across diverse scenes. Addressing this challenge requires tightly coupled \\textit{scene complexity awareness} to estimate an appropriate FPS target and \\textit{dynamic model-to-cluster mapping} to deliver the required throughput at minimum energy. We propose a throughput-adaptive perception strategy for mobile/edge platforms, enabling intelligent runtime resource allocation based on varying FPS targets. We use Reinforcement Learning (RL) with RRM (Reward Reasoning Model) and a GRU (Gated Recurrent Unit) agent to orchestrate perception tasks across heterogeneous mobile/edge platforms. We evaluate TAPAS on Jetson Orin NX across KITTI and unseen nuScenes. On the \\textit{KITTI} dataset's test sequences, TAPAS achieves 93-100% throughput met rate while saving energy by 76%. On the unseen \\textit{nuScenes} dataset, TAPAS maintains 97% throughput met rate with 64% lower energy compared to \\textit{SOTA} approaches, proving its robustness.",
-    "authors": [
-      "Aman Vyas",
-      "Vasista Kodumagulla",
-      "Zain Taufique",
-      "Pasi Liljeberg",
-      "Anil Kanduri"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17317v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "엣지/모바일 AI 추론 시스템의 동적 리소스 할당 기법으로, 메모리 대역폭·전력 효율 최적화가 핵심이며 향후 엣지 AI 인프라의 메모리 수요 패턴 변화를 시사함.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "기회",
-      "one_line": "엣지 AI 추론의 동적 메모리·연산 효율화 기법은 모바일/엣지 플랫폼의 메모리 수요 프로파일을 재정의할 가능성이 있으나, 현재는 Jetson Orin NX 같은 제한된 플랫폼 검증 수준이므로 장기 전략 신호로만 의미 있음.",
-      "final_score": 2.25
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17299": {
-    "arxiv_id": "2607.17299",
-    "title": "WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning",
-    "abstract": "Long-horizon rollout generation has become the dominant systems bottleneck in agentic reinforcement learning (RL). As agents interact with environments over many turns, trajectories rapidly grow to tens of thousands of tokens, making synchronous RL training increasingly constrained by rollout. We propose WAR, a workload-aware rollout system that substantially accelerates synchronous agentic RL by jointly optimizing decoding and scheduling. WAR is built on a key observation: the optimal rollout optimization strategy depends on runtime load: (1) Under low load, WAR enables model-free speculative decoding with SuffixDecoding, which reuses suffix patterns from previously completed trajectories as speculative drafts for future rollouts. Unlike model-based drafters, SuffixDecoding introduces no additional draft model and avoids GPU contention with rollout generation. (2) Under high load, where saturated batched decoding leaves limited room for speculative speedup, WAR shifts the optimization focus to cache-aware scheduling. A global scheduler places requests across rollout replicas based on cache locality, trajectory progress and server load, reducing redundant KV-cache recomputation and mitigating load imbalance. By combining decoding-level suffix reuse with system-level rollout scheduling, WAR delivers robust throughput improvements across workload regimes without changing the underlying RL algorithm. WAR improves long-context agentic rollout throughput by 1.4x under low load and up to 1.6x under high load. These results show that WAR removes a major rollout bottleneck in synchronous agentic RL and provides a practical path toward scalable long-context agent training.",
-    "authors": [
-      "Ryan Xu",
-      "Atlas Zhao",
-      "David Bao",
-      "Frank Du"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17299v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "AI 에이전트 RL 훈련의 메모리 병목(long-context rollout, KV-cache 재계산)을 시스템 레벨에서 해결하는 기법으로, HBM/DRAM 수요 패턴과 메모리 대역폭 활용 효율을 직접 영향",
-      "scores": {
-        "business": 3,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "동기식 agentic RL의 long-context 롤아웃 병목을 KV-cache 최적화와 스케줄링으로 해결하는 시스템 기법으로, 메모리 대역폭·용량 수요 증가 신호이자 메모리 효율 아키텍처 설계의 새로운 요구사항 제시",
-      "final_score": 3.8
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17283": {
-    "arxiv_id": "2607.17283",
-    "title": "Lossless but Not Free: An Empirical Anatomy of Speculative Decoding on Consumer Hardware",
-    "abstract": "Single-stream autoregressive decoding of large language models is bound by memory bandwidth: each generated token requires one full forward pass through the target model, and successive passes cannot be parallelized. Speculative decoding restructures this computation: a small draft model proposes $K$ tokens autoregressively, the target model scores all of them in one batched pass, and a rejection-sampling rule provably preserves the target model's output distribution. We present a from-scratch, device-agnostic (CUDA/MPS/CPU) implementation and an empirical study across five draft/target backend configurations on a consumer Apple-silicon laptop. Distribution equivalence is verified at three levels, culminating in a two-sample test over roughly 9,200 real-model tokens per method ($χ^2 = 162.5$, dof $= 200$, $p = 0.976$) and exact greedy-sequence agreement. The best configuration reaches a measured $1.61\\times$ wall-clock speedup at $K=6$, on an acceptance profile declining from 69.7% at $K=1$ to 37.8% at the optimum, while three of five configurations decelerate, either because the draft fails to out-speed a small target or because the quantized Metal backend executes \"parallel\" verification serially, an effect we isolate and quantify. The failures are as instructive as the successes: speculative decoding pays off only when verification is genuinely batch-parallel and the draft/target latency gap is real.",
-    "authors": [
-      "Param Chordiya"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17283v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 추론 효율화 기법(Speculative Decoding)이 메모리 대역폭 병목을 재구조화하며, AI 인프라의 메모리 수요 패턴과 최적화 전략을 직접 변화시키는 신호",
-      "scores": {
-        "business": 3,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "Speculative Decoding은 메모리 대역폭 활용 효율을 재정의하며 AI 추론 워크로드의 메모리 수요 구조를 변화시키는 신호이지만, 현재는 소비자 하드웨어 수준의 검증에 그쳐 데이터센터급 HBM/DRAM 전략 수립에는 아직 간접적 영향",
-      "final_score": 3.85
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17281": {
-    "arxiv_id": "2607.17281",
-    "title": "AIGB-R1: Self-Evolving Generative Auto-Bidding via Hierarchical Planner-Executor Optimization",
-    "abstract": "Auto-bidding plays an essential role in online advertising, automatically adjusting bids for advertisers to optimize their commercial goals. The emerging AI-Generated Bidding (AIGB) paradigm widely adopts generative modeling to optimize bidding strategies, yet suffers from the limited mode coverage of offline datasets and inadequate task-state understanding, hindering effective exploration of optimal strategies. Large Language Models (LLMs), with prior world knowledge and reasoning capabilities, offer a promising approach to overcome these limitations. However, directly applying LLMs to auto-bidding tasks faces inherent challenges in limited numerical precision, hallucinations, and inference latency. To address these limitations, we propose AIGB-R1, a hierarchical self-evolving auto-bidding framework aiming to enhance AI-Generated Bidding via LLMs' Reasoning capabilities, comprising a high-level Planner module for macro-level strategy planning and a low-level Executor module for fine-grained decision-making. Building upon this, we design an experience-driven self-evolving loop, enabling autonomous strategy exploration and optimization from accumulated experience. We adopt a two-stage pipeline of offline pre-training and post-training alignment, and build an interactive bidding simulation environment for strategy rollout. Furthermore, we propose Decoupled Group Relative Policy Optimization (D-GRPO) to achieve end-to-end optimization via advantage decoupling. Experimental results on a large-scale public dataset demonstrate the effectiveness of AIGB-R1.",
-    "authors": [
-      "Yuejia Dou",
-      "Hesong Wang",
-      "Xinyu Zhang",
-      "Tianyu Wang",
-      "Zhilin Zhang",
-      "Chuan Yu",
-      "Jian Xu",
-      "Bo Zheng",
-      "Qi Qi"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17281v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "온라인 광고 자동입찰 최적화 논문으로, 메모리 반도체 수요·기술·아키텍처와 직접적 연관성이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 1
-      },
-      "tag": "중립",
-      "one_line": "LLM 기반 광고 입찰 최적화는 AI 애플리케이션 영역이나, 메모리 수요·인프라·기술 요구사항 변화를 유발하지 않아 메모리 사업 전략과 무관함.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17272": {
-    "arxiv_id": "2607.17272",
-    "title": "Node4All: Learning Node Representation Beyond Datasets",
-    "abstract": "Node representation learning has advanced rapidly, yet most existing methods rely on per-dataset training and hyperparameter tuning. This dataset-specific optimization comes from the difficulty of designing reusable graph models that generalize across diverse graph datasets. In this work, we introduce Node4All, a node representation learner applicable to arbitrary graph datasets without any dataset-specific optimization.   Node4All is built on two complementary ideas. At the architectural level, we introduce the Channel Graph Transformer (CGT), which enables a single fixed parameterization to process arbitrary graph datasets. At the learning level, we propose a self-supervised learning based on a series of synthetic graphs. Together, these components enable generalization beyond individual datasets, which is infeasible with existing architectures and learning frameworks. We extensively evaluate Node4All on node classification across 25 benchmarks against 21 baselines, covering both supervised and self-supervised methods. Despite all baselines being trained and optimized for each dataset, a single Node4All, applied uniformly across the datasets, achieves a competitive ranking of 5th among 21 baselines. Moreover, Node4All supports one-shot and in-context learning with an appropriate predictor and outperforms recent graph foundation models (GFMs) in these settings. These results demonstrate that Node4All not only achieves reusability across arbitrary graph datasets, but also remains an effective solution in practice. Code and model checkpoints are available in https://github.com/dooho00/node4all.",
-    "authors": [
-      "Dooho Lee",
-      "Jaemin Yoo"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17272v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "그래프 신경망의 일반화 능력 향상은 AI 인프라(추천·검색·지식그래프)의 효율성을 높여 메모리 수요 패턴과 컴퓨팅 아키텍처 설계에 영향을 미치는 AI 전방 시장 트렌드",
-      "scores": {
-        "business": 1,
-        "threat": 0,
-        "demand": 2,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "그래프 신경망의 범용성 향상은 AI 인프라 효율화 신호이나, 메모리 수요 증가나 신규 메모리 기술 필요성과의 직접 연결고리는 약함",
-      "final_score": 1.6
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17270": {
-    "arxiv_id": "2607.17270",
-    "title": "Safety That Does Not Transfer: Cross-Lingual Clinical Correctness Drift in Deployable Medical Language Models",
-    "abstract": "Safety evaluation of large language models is conducted predominantly in English and predominantly on frontier systems. Neither condition describes how such models are encountered in low-resource health settings, where small quantised systems are run locally and queried in local languages. We ask whether clinical safety established in English transfers to Hausa, and whether any failure is attributable to the language, the clinical task, or the class of model that low-resource deployment admits. Matched English-Hausa question pairs were built for three conditions of high burden in northern Nigeria: malaria, sickle cell disease, and tuberculosis, probing knowledge recall, emergency triage, a leading question inviting a contraindicated action, and a traditional-remedy claim. Six models were evaluated: five locally deployable systems of 4-9 billion parameters, two medically fine-tuned, and one frontier system. All 128 responses were scored against Nigerian national treatment guidelines by two fluent Hausa speakers working independently and blind to one another. Among locally deployable models, mean clinical correctness fell from 1.57 in English to -0.03 in Hausa, on a scale where 2 denotes a correct answer and -1 an actively harmful one. The frontier model moved from 2.00 to 1.75 and produced no response judged harmful in either language. Drift was consistent across all three conditions. Inter-rater agreement was substantial for clinical correctness (kappa = 0.70); agreement on harm was initially poor (kappa = 0.22) and is examined in detail. Because a frontier model answers the same questions competently in Hausa, the deficit is a property neither of the language nor of the clinical material, but of the deployable tier.",
-    "authors": [
-      "Anthonio Oladimeji Gabriel",
-      "Dimeji Olawuyi",
-      "Toba Ajayi",
-      "Temilola Aderemi"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CL",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17270v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "저사양 양자화 모델의 언어별 성능 편차는 엣지 AI 추론 인프라의 메모리 효율성·아키텍처 요구사항을 재정의하는 신호",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 4,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "저소득 지역 엣지 배포 모델(4-9B 양자화)의 다언어 안정성 부족은 온디바이스 추론용 메모리·연산 최적화 기술(PIM, 어댑티브 프루닝, 로컬 DRAM/NAND 계층화)의 새로운 수요를 암시하며, 특히 의료·임계 애플리케이션에서 메모리 대역폭과 지연시간 트레이드오프 재검토를 촉발할 가능성이 있다.",
-      "final_score": 2.55
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17269": {
-    "arxiv_id": "2607.17269",
-    "title": "An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation",
-    "abstract": "Large language models encode world models implicitly in neural weights, which exposes four structural risks in high-precision domains such as medicine and finance: hallucination, frozen knowledge, poor explainability, and poor modifiability. This paper proposes data-first ontology: LLMs are treated as reasoning and language engines, while deterministic knowledge is moved into an explicit multimodal database, DaoQL. We formalize an explicit world model and show that, under rule independence, deterministic evaluation, and fixed conflict resolution, explicit models provide a sufficient condition for composable counterfactual decomposability; implicit models lack atomic read/delta semantics and therefore provide no comparable architectural guarantee. The implemented system focuses on DaoQL's verified storage layer and explicit Eval path, integrating graph, column, vector, and full-text engines within one process. KVCache graph nodes, expert hot updates, and the DaoQL-Agent runtime remain future work. On an embedded same-machine setup, DaoQL reports graph BFS at 1.20 ms, HNSW at 83.1 us, and a Fluent hybrid query at 105.8 us; these results indicate engineering potential but must be interpreted with deployment-shape differences from client-server systems. Exploratory measurements on LDBC SNB SF1 and ANN-Benchmarks further show 34/34 query coverage with interactive-class queries mostly in the sub-millisecond to millisecond range, but only 1.8 QPS overall due to long-tail BI/IC queries; ANN-Benchmarks reaches Recall@10 >= 99% at thousand-level QPS after a bridge-edge protection fix. In a five-domain counterfactual experiment (n = 1250), DaoQL+GPT-4o achieves 94% composable counterfactual decomposability, 49 percentage points above GPT-4o alone. The paper explicitly separates provable structure, preliminary empirical evidence, and architectural roadmap claims.",
-    "authors": [
-      "Zhanbo Li",
-      "Shifeng Wu",
-      "Xiangjin Meng",
-      "Wenjie Cai"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17269v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "AI 모델의 메모리 효율성과 추론 아키텍처를 근본적으로 재설계하는 명시적 세계 모델 접근법으로, 향후 메모리 계층 구조와 데이터 접근 패턴 변화를 시사하는 전방 시장 신호",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 1,
-        "credibility": 1,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "LLM의 암묵적 가중치 기반 메모리 모델을 명시적 데이터베이스로 전환하는 아키텍처 제안으로, 향후 AI 인프라의 메모리·캐시 수요 패턴을 변화시킬 가능성은 있으나 현재는 개념 검증 단계로 상용화 임박도가 낮음",
-      "final_score": 2.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17266": {
-    "arxiv_id": "2607.17266",
-    "title": "Debate-on-Graph: Reliable and Adaptive Reasoning of Large Language Model on Uncertain Knowledge Graph",
-    "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in natural language processing. However, LLMs often suffer from hallucinations and lack of relevant knowledge when dealing with question answering (QA) tasks. To mitigate these issues, knowledge graphs (KGs) have been utilized to enhance LLM reasoning. Nevertheless, KGs often contain noise and errors, while existing KG-enhanced LLM approaches are generally unable to identify and filter such noisy and erroneous content, which can instead amplify hallucinations and pose challenges for reliable reasoning. Uncertain knowledge graphs (UKGs), which associate each triple with a confidence score to quantify uncertainty, offer a promising direction to address this challenge. Compared with prior work, we investigate how to leverage UKGs to support LLMs for QA. We propose Debate-on-Graph (DoG), a new framework that enables LLMs and UKGs to collaborate adaptively for reliable reasoning. Specifically, we first design a heuristic search algorithm tailored for UKGs to extract reliable and question-relevant subgraphs, thereby reducing noise and errors in retrieved knowledge. We then introduce a Multi-Agent Debate mechanism, which yields reliable answers through adaptive adversarial debates, aiming to fully exploit the knowledge in UKGs while preserving the reliability of retrieved evidence. Extensive experiments on four benchmark QA datasets show that DoG achieves state-of-the-art performance over existing LLM reasoning methods and KG-based baselines, while enabling reliable and adaptive reasoning. Our code is available at https://github.com/seucoin/Debate-on-Graph.",
-    "authors": [
-      "Peiji Yu",
-      "Xin Chen",
-      "Tianxing Wu"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CL",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17266v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 추론 효율화 기법이 AI 인프라의 메모리·연산 수요 패턴을 변화시키는 신호로서, 향후 HBM/DRAM 용량 및 대역폭 요구사항 재평가에 영향을 미칠 수 있음.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "LLM 추론 최적화 기법으로서 관심 있으나, 메모리 하드웨어 수요 증감 신호는 아직 약하고 학술 연구 단계로 상용 영향은 제한적.",
-      "final_score": 2.25
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17247": {
-    "arxiv_id": "2607.17247",
-    "title": "Distilled Reinforcement Learning for LLM Post-training",
-    "abstract": "Large language model (LLM) post-training is essential for improving reasoning, adaptation, and alignment. Existing methods mainly follow two paradigms: reinforcement learning (RL) and on-policy distillation (OPD). However, RL relies on coarse-grained outcome supervision, resulting in difficult credit assignment and limited capability to acquire new knowledge. OPD, meanwhile, unconditionally matches teacher logits through KL divergence, which creates a dilemma: similar teachers provide little new knowledge, while substantially different teachers often yield ineffective guidance, largely restricting OPD to within-family distillation. We propose Distilled Reinforcement Learning (Distilled RL), which integrates teacher supervision into the RL objective to provide fine-grained guidance, selectively transfer new knowledge and avoid unconditional imitation. Distilled RL contains three components: reverse importance sampling with clipping, negative sample reset, and sequence-level geometric normalization. Through a concise and interpretable case study, we demonstrate that Distilled RL can effectively transfer previously unavailable knowledge from a teacher model to a student model. Extensive experiments across both within-family and cross-family distillation settings show that Distilled RL substantially outperforms standard RL and OPD in terms of both pass@1 and pass@k. Our code is available at https://github.com/597358816/Distilled-RL.",
-    "authors": [
-      "Chen Wang",
-      "Zhaochun Li",
-      "Jionghao Bai",
-      "Yining Zhang",
-      "Hexuan Deng",
-      "Ge Lan",
-      "Yue Wang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17247v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 포스트트레이닝 효율화 기법으로서 모델 크기·메모리 풋프린트·추론 비용을 감소시켜 AI 인프라의 메모리 수요 패턴을 변화시키는 전방 시장 신호",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "LLM 학습 효율화 기법이 모델 경량화·메모리 수요 최적화 방향을 제시하나, 메모리 반도체 수요 증가보다는 효율화를 강조하므로 단기 매출 기회보다 장기 시장 구조 변화 신호로 해석 필요",
-      "final_score": 2.25
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17219": {
-    "arxiv_id": "2607.17219",
-    "title": "Auditing Question-Order Effects in Large Language Models with the QQ Equality: Mechanism Characterization and a Saturation Caveat",
-    "abstract": "Human survey respondents exhibit question-order effects that satisfy the QQ (quantum question) equality, an a priori, parameter-free prediction of the projective quantum question-order model. We develop the QQ equality into an audit criterion for sequential judgments of autoregressive large language models (LLMs). Theoretically, we characterize which mechanism classes satisfy it robustly: marginal-independent kernels satisfy QQ iff all four mismatch transition rates coincide (a class containing the 2D rank-1 projective model with a fixed measurement pair under state variation); a polarity- and position-dependent repetition family is characterized by an exact cross-symmetry condition with closed-form violations; QQ-satisfying behaviors are closed under order-matched mixing; and the rank-2 Contextuality-by-Default criterion translates into audit coordinates as $|\\qQQ|\\le\\OSS$, where $\\OSS$ (the order-sensitivity score) totals the order sensitivity of the two marginals. Methodologically, we develop a pre-specified, audit-logged pipeline applicable to any model exposing next-token log-probabilities; it combines worst-case robustness envelopes, sampling-consistency spot checks, full label counterbalancing, and a saturation diagnostic. Empirically, in a first-signal pilot on an open-weight instruction-tuned model under two framings, all pre-specified health gates passed, yet 17/18 and 7/8 item pairs, respectively, were saturated (near-deterministic), and no item was certified residually contextual. Forced-binary next-token log-probabilities were thus inadequate for distribution-level QQ audits under the tested model and prompting conditions; we recommend pre-specified saturation diagnostics whenever next-token distributions are treated as survey-response distributions.",
-    "authors": [
-      "Pilsung Kang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CL",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17219v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "LLM의 질문 순서 효과를 양자 모델로 감사하는 순수 언어모델 행동 분석 논문으로, 메모리 반도체 수요·아키텍처·성능과 직접 연관성이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "LLM의 인지적 편향을 양자 이론으로 진단하는 이론 논문이나, 메모리 수요·효율·아키텍처 변화와 무관하므로 사업 전략 가치 없음.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17188": {
-    "arxiv_id": "2607.17188",
-    "title": "Is Your Model Thinking or Just Stagnating? PUMA: Diagnosing Reasoning Pathology via Phase-Momentum Alignment",
-    "abstract": "Test-time scaling empowers Large Reasoning Models (LRMs) to tackle complex tasks via extensive Chain-of-Thought (CoT). However, this often induces the \"overthinking\" paradox, where redundant reasoning increases computational overhead without guaranteeing accuracy. Existing test-time efficiency optimization methods primarily fall into two categories: information-theoretic approaches, which are prone to \"deceptive convergence\" where low uncertainty masks hallucinations, and latent representation analyses, which are often post-hoc, lacking the real-time sensitivity for dynamic reasoning. To bridge this gap, we first posit the Phase-Momentum Alignment Hypothesis, asserting that reasoning correctness hinges on the temporal synchronization between geometric momentum and uncertainty resolution. We then theoretically formulate the Cognitive-Energy Model to characterize these dynamics through two orthogonal dimensions: Geometric Cognitive Effort, quantified by latent velocity and tortuosity, and Entropic Cognitive Uncertainty. To operationalize this, we introduce PUMA (Phase-Uncertainty Momentum Alignment), a training-free framework employing a tiered diagnostic architecture. By coupling lightweight phase monitoring with event-triggered geometric analysis, PUMA effectively distinguishes active exploration from passive stagnation, enabling precise interventions through adaptive truncation or corrective measures. Extensive experiments on LRMs spanning 1.5B to 32B demonstrate that PUMA consistently outperforms state-of-the-art baselines across diverse benchmarks, achieving a superior accuracy-efficiency trade-off and robust cross-domain generalization.",
-    "authors": [
-      "Cheng Yan",
-      "Guangyang Ye",
-      "Wuyang Zhang",
-      "Fan Xu",
-      "Zhijun Fan",
-      "Xiang Xia",
-      "Yanyong Zhang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17188v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "Test-time 추론 효율화 기법으로 LRM의 메모리·연산 오버헤드를 줄이는 방법론이므로, AI 인프라의 메모리 수요 패턴과 추론 비용 구조를 직접 변화시키는 신호",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "LRM 추론 단계의 '과도한 사고' 문제를 진단·개선하는 소프트웨어 기법으로, 메모리 대역폭·용량 수요를 완화할 가능성이 있지만 반도체 설계나 아키텍처 혁신과는 직접 연결되지 않음.",
-      "final_score": 3.45
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17181": {
-    "arxiv_id": "2607.17181",
-    "title": "Talaria: Session-Aware Serverless Serving of Hundred-Billion-Parameter LLMs",
-    "abstract": "Serverless multi-model LLM systems multiplex popularity-skewed model catalogs over shared GPU pools, yet typically schedule each request independently. Tool-using agents break this abstraction: a session repeatedly calls an LLM across short tool gaps, carries a long reusable KV prefix, and is judged by session completion time (SCT). Load-only routing can separate a continuation from both its model and KV state, while round-based model multiplexing can delay even a correctly placed continuation until the target model's next slot. Both failures are especially costly for hundred-billion-parameter models: their weights constrain residency, while long-context KV is expensive to reconstruct or move.   We present Talaria, a session-aware serverless multi-model serving system that makes session continuity a joint placement-and-admission decision. Its router ranks placements by model residency, KV locality, and instance pressure, while soft reservations account for likely returns in the last serving instance's admission budget. Session-prefill (SP) admits budget-eligible continuations before the active model slot closes. An instance-local substrate keeps HBM addresses stable, preserves host-restorable KV, and stages weights across model switches.   On a single TP=8 server, we replay 30 SWE-Bench model-sessions (960 calls) over three models, each with more than 100B total parameters. Against an otherwise identical round scheduler with SP, host-KV restoration, and D2D staging disabled, Talaria cuts p50 SCT from 1000 s to 189 s and p95 from 2296 s to 867 s, speedups of 5.3x and 2.6x.",
-    "authors": [
-      "Utopia Meng",
-      "Unicornt Zhao",
-      "Derek Li",
-      "Goalen Gao",
-      "Frank Du"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.DC",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17181v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "100B+ 파라미터 LLM의 다중 모델 서빙 시스템에서 HBM/DRAM 메모리 효율성과 KV 캐시 관리 최적화를 다루며, AI 인프라의 메모리 수요 패턴 변화를 반영하는 전방 시장 신호",
-      "scores": {
-        "business": 3,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "Tool-using agent와 장문맥 LLM 추론 시대의 메모리 주소 안정성·KV 캐시 지역성·HBM 활용률 최적화 요구가 증가하고 있으며, 이는 고대역폭 메모리(HBM)와 메모리 확장(CXL) 수요를 견인하는 신호",
-      "final_score": 3.85
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17173": {
-    "arxiv_id": "2607.17173",
-    "title": "KyrgyzLLM-Bench: Benchmarking Kyrgyz Language Understanding",
-    "abstract": "Evaluating large language models (LLMs) across languages remains challenging, as most multilingual benchmarks rely on translated English datasets, often obscuring linguistic and cultural specificity in the target language. This issue is particularly pronounced for less-resourced languages such as Kyrgyz, where reliable natively authored evaluation data are scarce. Building on previously introduced Kyrgyz-language evaluation datasets, this work reports the first systematic and large-scale evaluation of LLMs in Kyrgyz using the KyrgyzLLM-Bench benchmark suite. KyrgyzLLM-Bench comprises two natively authored datasets$-$KyrgyzMMLU and KyrgyzRC$-$together with carefully translated and manually post-edited versions of WinoGrande, HellaSwag, BoolQ, and TruthfulQA. We evaluate 26 open- and closed-source LLMs under zero-shot and few-shot settings, analyzing model performance, cross-lingual transfer, and the impact of translation artifacts on evaluation reliability. Across families and tasks, model rankings transfer broadly from English to Kyrgyz on WinoGrande and BoolQ, and to a lesser extent on MMLU, while HellaSwag exhibits a substantial English-Kyrgyz performance gap consistent with translation-induced plausibility shifts. Few-shot prompting improves several open-source models on reading comprehension but behaves inconsistently for proprietary models on translated tasks. We publicly release all datasets, evaluation code, and per-model results, and integrate the Kyrgyz tasks into a widely used multilingual evaluation framework to support future research on Kyrgyz NLP.",
-    "authors": [
-      "Timur Turatali",
-      "Aida Turdubaeva",
-      "Rustem Izmailov",
-      "Anton M. Alekseev",
-      "Sergey I. Nikolenko"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CL",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17173v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "저자원 언어(키르기즈어) LLM 벤치마크 개발로, 메모리 반도체 수요·기술·경쟁 동향과 직접적 연관성이 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 1
-      },
-      "tag": "중립",
-      "one_line": "순수 NLP 평가 벤치마크 논문으로, 메모리 수요·아키텍처·반도체 기술 전략과 무관하며 언어학적 기여만 있음.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17166": {
-    "arxiv_id": "2607.17166",
-    "title": "Explaining and Tuning Transformer-based LLMs in Arithmetic Tasks with Human Strategies",
-    "abstract": "Transformer-based large language models (LLMs) continue to achieve state-of-the-art performance across various natural language processing tasks. However, their subpar performance on seemingly elementary problems, such as basic arithmetic, raises concerns about model reliability, safety, and ethical deployment. In this study, we demonstrate that the performance of a vanilla Transformer model trained on integer arithmetic tasks can be improved using methods effective for human learners. We begin by decomposing the arithmetic task into well-defined subtasks and conducting loss convergence order analysis together with ablation studies for each subtask. Our findings reveal that LLMs exhibit learning patterns similar to those of human learners, with a faster learning speed for simpler subtasks compared to more complex ones. In addition, we successfully improved the accuracy of LLMs by applying problem-solving strategies and cognitive empowerment methods shown to enhance the performance of human learners. This suggests that transformer-based LLMs may share cognitive processes with human learners in arithmetic. Lastly, we provide a comprehensive demonstration of our method's effectiveness, including significant accuracy improvement experiments, visualization verification, and explanation-based analysis to illuminate the intricacies of LLMs in arithmetic learning. In general, this work explores the potential similarities between transformer-based LLMs and human learners, supported by explainable AI (XAI) verifications, ultimately fostering trust in LLMs for critical and high-stakes applications.",
-    "authors": [
-      "Luyu Qiu",
-      "Jianing Li",
-      "Hwanhee Kim",
-      "Xiaoyong Wei",
-      "Yueyuan Zheng",
-      "Janet Hsiao",
-      "Lei Chen"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17166v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM의 산술 능력 개선 연구는 AI 모델의 신뢰성·효율성 향상으로 이어지며, 이는 AI 인프라의 메모리 수요 패턴(정확도 vs 메모리 트레이드오프)과 최적화 전략에 영향을 미치는 전방 시장 신호",
-      "scores": {
-        "business": 1,
-        "threat": 0,
-        "demand": 2,
-        "maturity": 1,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "LLM의 산술 정확도 개선은 AI 모델 신뢰성 강화 신호이지만, 메모리 반도체 수요·아키텍처 변화와의 직접 연결고리가 약하며 기초 연구 단계로 사업 임팩트는 제한적",
-      "final_score": 1.3
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17154": {
-    "arxiv_id": "2607.17154",
-    "title": "OrderMoE: An expert similarity driven distributed edge MoE inference",
-    "abstract": "Although mixture-of-experts, MoE, models have been increasingly adopted to scale large language models with moderate computation cost, it remains challenging to deploy MoE inference over resource-constrained and bandwidth-limited edge infrastructures. Existing distributed MoE serving methods mainly rely on exact expert placement, caching, replication, or communication scheduling, while overlooking the functional similarity among experts, which provides an opportunity to reduce cross-server token transmission. Therefore, this paper introduces a similarity-aware expert allocation and distributed deployment framework, dubbed OrderMoE, which aims to accelerate edge MoE inference while balancing inference latency, communication overhead, server workload, and inference quality. OrderMoE first constructs an expert similarity model based on router-induced logits representations and partitions experts in each MoE layer into multiple similarity groups. Then, it develops a similarity-aware expert grouping and deployment strategy to improve local similarity coverage across edge servers. Since reducing remote expert invocation and preserving exact inference quality are conflicting objectives, OrderMoE further designs a quality-aware and trajectory-aware runtime server-expert selection algorithm to decide whether a token should invoke its remote target expert or use a feasible local substitute expert. Experimental results on a real distributed edge testbed show that OrderMoE significantly reduces average latency, tail latency, cross-server traffic, and remote expert invocation ratio, while introducing only small and controllable inference quality degradation.",
-    "authors": [
-      "Xin Yuan",
-      "Ning Li",
-      "Quan Chen",
-      "Wenchao Xu",
-      "Athanasios V. Vasilakos",
-      "Song Guo",
-      "Haijun Zhang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.NI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17154v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "엣지 환경에서 MoE 모델 추론 최적화를 통해 메모리·통신 오버헤드를 감소시키는 기법으로, AI 인프라의 메모리 수요 패턴과 분산 메모리 아키텍처 설계에 직접 영향을 미치는 전방 시장 신호",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "엣지 MoE 추론 최적화는 분산 메모리 아키텍처(CXL, 메모리 확장)와 저지연 DRAM/HBM 수요를 견인하는 신호이나, 현재는 소프트웨어 레벨 최적화로 반도체 설계 영향은 제한적",
-      "final_score": 3.55
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17152": {
-    "arxiv_id": "2607.17152",
-    "title": "How Jailbreak Attacks Inform Safety Alignment: A Defender-Centric, Shapley-Based Evaluation of Jailbreak Contributions",
-    "abstract": "Jailbreak attacks on large language models are usually evaluated by attacker-centric metrics such as attack success rate (ASR), yet an attack that breaks a model is not necessarily useful for improving its safety. We propose a defender-centric view of jailbreak evaluation, where attacks are evaluated by the downstream safety improvements they enable when used as red-teaming data for safety training. Building on this view, we introduce A-MESS (Minimal Effective Attack-Subset Selection), a setting-agnostic framework for attributing and selecting jailbreak attacks from black-box subset utility observations. A-MESS estimates AttackSHAP, a Shapley-based score that attributes marginal utility to individual attacks and selects compact attack subsets under user-specified budgets via greedy or surrogate-based optimization. Across controlled utility landscapes and real LLM safety settings, we find that ASR rankings are weakly aligned with defender-centric utility, that AttackSHAP can be estimated accurately with limited utility queries, and that directly optimizing subsets yields stronger safety utility than attacker-centric or attribution-only selection. These results suggest evaluating jailbreak attacks as resources for improving safety, not only as tools for breaking models.",
-    "authors": [
-      "Yukai Zhou",
-      "Feiyang Lu",
-      "Xiaokai Mao",
-      "Jinfei Liu",
-      "Wenjie Wang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CR",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17152v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "LLM 안전성 정렬(Safety Alignment)을 위한 jailbreak 평가 방법론으로, 메모리 반도체 수요·기술·전략과 직접적 연결고리가 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "LLM의 안전성 강화 방법론에 관한 순수 AI 안전 논문으로, SK하이닉스의 메모리 사업 전략·수요 예측·기술 로드맵과 무관함.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17146": {
-    "arxiv_id": "2607.17146",
-    "title": "The Geometry of Semantic Space: A Continuous Geometric Framework for the Transformer Architecture",
-    "abstract": "We present a continuous geometric framework that models the discrete algebraic operations of the Transformer architecture as an integro-differential equation (IDE) on a semantic fiber bundle $\\calE = \\calM \\times \\R^d$. Beginning from a single geometric axiom -- that the token sequence forms a discrete $1$-manifold equipped with a canonical measure lattice -- we translate every core component of the modern Transformer (RMSNorm, RoPE, Softmax Attention, FFN, Residual Stream, SGD, Weight Decay) into a cohesive vocabulary of differential geometry, measure theory, and stochastic calculus. The resulting framework yields quantitative predictions spanning entropic optimal transport (Attention as a Schrödinger bridge) and non-equilibrium thermodynamics (SGD as Itô diffusion violating detailed balance). We conduct a six-part experimental campaign across five architectures (Qwen3, LLaMA\\nobreakdash-3.1, Gemma\\nobreakdash-3, GPT-2, Mistral) spanning $124$M to $8$B parameters. The empirical observables are quantitatively consistent with the geometric predictions: the $ε^{-1/2}$ Lipschitz scaling calibration at machine precision ($R^2 = 1.000$), the Lie--Trotter operator-splitting torsion, the symmetric ablation instability confirming the Dual-Law of Topological Stability, the $\\calO(1/\\sqrt{k})$ thermodynamic suppression of Poincaré recurrence on the RoPE torus, the thermodynamic context-limit phase transition, and the Non-Equilibrium Steady State parameter vortex -- verified across two optimizers (AdamW and Pure SGD) to exclude momentum artifacts. The results demonstrate that analyzing Transformers through the lens of continuous stochastic differential geometry provides a predictive descriptive vocabulary for the stability limits, context bounds, and optimization dynamics of Large Language Models.",
-    "authors": [
-      "Zhihua Liang"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cond-mat.dis-nn",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17146v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "Transformer 아키텍처의 수학적·기하학적 모델링 논문으로, 메모리 반도체 제조·설계·수요와 직접 연결고리가 없음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 1,
-        "maturity": 0,
-        "credibility": 1,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "LLM 내부 동작의 이론적 설명은 흥미롭지만, 메모리 수요·아키텍처·칩 설계에 즉각적 영향을 주지 않으며 순수 기초 이론 연구에 해당함.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17122": {
-    "arxiv_id": "2607.17122",
-    "title": "Scope3Trace: Evidence-Based Identification and Extraction of Scope 3 GHG Emissions from Sustainability Reports",
-    "abstract": "Scope 3 greenhouse gas (GHG) emissions account for the majority of corporate carbon footprints, yet remain difficult to analyze at scale due to sparse disclosures, heterogeneous report document formats, and limited evidence traceability. Existing approaches typically rely on large language models to extract emissions information from ESG reports, but often lack explicit evidence grounding or depend on costly manual annotation and verification to ensure extraction reliability. To address these challenges, we propose Scope3Trace, an evidence-grounded information extraction framework designed to extract interpretable and traceable Scope 3 emissions information from real-world ESG and sustainability reports. The framework integrates a document information extraction pipeline that performs PDF collection and OCR parsing, LLM-assisted page localization and table reconstruction, and hybrid rule-LLM extraction of organization- and building-level emissions disclosures with evidence-grounded verification. Building upon this framework, we further contribute a dual-level, evidence-grounded, multimodal dataset comprising organization-level Scope 3 disclosures extracted from heterogeneous sustainability reports. Scope3Trace enables reliable extraction and transparent integration of heterogeneous sustainability disclosures, achieving high accuracy in extracting Scope 1-3 totals and category-level disclosures from sustainability reports.",
-    "authors": [
-      "Siyuan Zheng",
-      "Yifan Duan",
-      "Chao Xue",
-      "Flora D. Salim"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CL",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17122v1",
-    "analysis": {
-      "is_relevant": false,
-      "relevance_reason": "ESG 보고서 자동 추출 기술로, 메모리 반도체 제조·수요·아키텍처와 직접 연관이 없으며 AI 전방 시장의 메모리 수요 트렌드도 반영하지 않음.",
-      "scores": {
-        "business": 0,
-        "threat": 0,
-        "demand": 0,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "기업 탄소 배출 정보 추출 NLP 기술일 뿐, SK하이닉스의 메모리 사업 전략·AI 수요·경쟁 구도와 무관한 순수 응용 논문.",
-      "final_score": -1.0
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17117": {
-    "arxiv_id": "2607.17117",
-    "title": "Persistent Sparse Autoencoders: Learning Feature Timescales in Language Models",
-    "abstract": "Sparse autoencoders (SAEs) decompose language model activations into sparse features, but standard SAEs encode each token independently and do not expose information that persists across a sequence. We introduce Persistent Sparse Autoencoders (Persistent SAEs), which extend standard SAEs by learning a persistence coefficient for each feature, allowing the model to learn which features should persist and for how long. Our experiments show that they retain competitive reconstruction quality while learning a spectrum of feature timescales: fast features behave as locally interpretable detectors, whereas slow features concentrate topic-level information in a persistent state. Moreover, as shown in a prompt-injection monitoring case study, slow features preserve detection signals and remain causally effective over long contexts. These results suggest that Persistent SAEs open up new opportunities for interpreting and monitoring language models through persistent semantic representations.",
-    "authors": [
-      "Haoyan Luo",
-      "Mateo Espinosa Zarlenga",
-      "Mateja Jamnik"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.LG",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17117v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "AI 모델의 메모리 효율성과 추론 최적화 기법으로서 메모리 대역폭·용량 수요 패턴을 변화시킬 수 있는 전방 시장 트렌드",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 1,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "Persistent SAE는 LLM 추론 시 메모리 접근 패턴(temporal locality)을 재구조화하는 소프트웨어 기법으로, 중기적으로 메모리 계층 설계와 대역폭 요구사항에 영향을 미칠 수 있으나 현재는 학술 단계이고 하드웨어 수요 변화로 직결되지는 않음.",
-      "final_score": 2.2
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17099": {
-    "arxiv_id": "2607.17099",
-    "title": "DepthART: Scaling Foundation Monocular Depth to Tiny Models",
-    "abstract": "Recent geometric foundation models (e.g., Metric3D, Depth Anything and UniDepth) have substantially improved monocular depth estimation (MDE) in both cross-scene generalization and metric-scale prediction, yet these gains have not translated to tiny models. We bridge this gap with DepthART (Depth Anything Rethought for Tiny Models), which is a compact MDE model for on-device deployment across diverse scenes. We first identify two capacity-driven bottlenecks in tiny models: (i) overfitting to dataset-specific distribution bias and (ii) unstable metric adaptation under camera shift, where full fine-tuning easily damages transferable geometry. Accordingly, DepthART combines two simple but effective strategies: a bias-resistant data sampling scheme to reduce distribution bias under the same training budget, and a camera-conditioned fine-tuning protocol that freezes the distilled encoder and adjusts metric scale conditioned on intrinsics while better preserving cross-dataset generalization. Across datasets, DepthART consistently surpasses previous tiny baselines in both zero-shot generalization and metric accuracy (e.g., zero-shot $δ_1$=0.964 for DepthART-S on NYUD v2), and in some cases approaches heavy models. We further provide a scalable model family, with DepthART-S reaching 347/245 FPS (strict FP32) on an RTX A6000 at $224^2/448^2$, 102 FPS (TF32) on a Orin NX 8GB, and over 15 FPS (FP32) on a Jetson Nano 4GB.",
-    "authors": [
-      "Feng Xue",
-      "Wu Chen",
-      "Mingshuai Zhao",
-      "Guofeng Zhong",
-      "Anlong Ming",
-      "Haozhe Wang",
-      "Dianqiao Lei",
-      "Zhaowen Lin",
-      "Haiyang Zhang",
-      "Nicu Sebe"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.CV",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17099v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "엣지/온디바이스 AI 추론의 경량화 트렌드가 저전력 메모리(LPDDR, 임베디드 메모리)와 효율적 메모리 아키텍처 수요를 견인하는 신호",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 2
-      },
-      "tag": "기회",
-      "one_line": "모노큘러 깊이 추정의 경량화는 엣지 AI 추론 확대를 반영하며, 이는 저전력 LPDDR/임베디드 메모리와 온디바이스 추론 최적화 메모리 아키텍처(PIM, CXL 메모리 압축) 수요 증가로 이어질 수 있다.",
-      "final_score": 2.25
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17082": {
-    "arxiv_id": "2607.17082",
-    "title": "Otap:Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories",
-    "abstract": "Large language model agents solve tasks by generating trajectories that interleave planning, tool calls, and intermediate results. Current evaluation metrics reduce such a trajectory to a binary success flag or compare it against a reference by exact matching. A success flag cannot distinguish a sound solution from one that succeeds by luck, and says nothing about why a failed run went wrong. Exact matching penalizes plans that are valid but reordered or decomposed differently from the reference. We reframe trajectory evaluation as a distance between the agent's execution graph and a set of valid solution graphs, and instantiate it via an unbalanced fused Gromov-Wasserstein transport problem over attributed dependency graphs. The resulting score, termed \\otap{} (Optimal Transport for Agentic Planning), is a pseudo-metric that is provably invariant to dependency-preserving reorderings and has bounded sensitivity to redundant steps. Its unbalanced marginals handle missing or hallucinated steps without forcing a match, and its soft coupling accommodates variation in plan granularity. On controlled perturbations and three public benchmarks, \\otap{} separates valid from invalid trajectories in a regime where semantics-only metrics score below chance. Its accuracy is highest when the dependency graph is recovered exactly, and drops only when the graph is inferred heuristically from free-text traces.",
-    "authors": [
-      "Babak Barazandeh",
-      "Subhabrata Majumdar",
-      "George Michailidis"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17082v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "AI 에이전트의 복잡한 실행 궤적 평가 기법으로, 대형 언어모델 기반 AI 인프라의 효율성·신뢰성 향상을 통해 메모리 수요 패턴과 최적화 전략에 영향을 미치는 전방 시장 신호",
-      "scores": {
-        "business": 1,
-        "threat": 0,
-        "demand": 3,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "중립",
-      "one_line": "LLM 에이전트 평가 메트릭 개선은 AI 인프라 신뢰성을 높여 대규모 모델 배포를 가속화하고 메모리 수요를 견인할 수 있으나, 반도체 제조사 전략과의 직접 연관성은 제한적",
-      "final_score": 1.8
-    },
-    "first_seen": "2026-07-22"
-  },
-  "2607.17063": {
-    "arxiv_id": "2607.17063",
-    "title": "When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Language Question Answering",
-    "abstract": "The rapid advancement of large language models (LLMs) has led practitioners to increasingly rely on them for answering questions about hardware description languages (HDLs). Because HDL is ultimately synthesized into physical hardware, an imprecise or redundant answer can propagate into timing violations or non-synthesizable logic that surface only late in the design flow, making the quality of HDL answers especially consequential. However, the quality of LLM-generated responses, particularly in comparison with answers provided by human experts, remains unclear. To investigate this question, we collect 6,246 HDL Q&A posts with accepted answers from Stack Overflow and curate them into a dataset, organized into a taxonomy of four main categories (Conceptual, Debugging, Generation, and Optimization) and ten subcategories. Using this dataset, we design a user study conducted with 19 HDL engineers with one to three years of experience. Our findings reveal a pervasive over answering tendency: LLMs supply correct content but bury it under redundant alternatives (65.7%) and verbose padding (69.1%), while nearly half of answers (49.0%) fail to fully align with expert answers yet participants still preferred LLM responses for readability (58.3%). Motivated by these findings, we propose a multi-agent framework for improving LLM-based HDL question answering. We evaluate answer quality using an LLM-as-Judge and two structural metrics: the number of core answers, which reflects redundancy since LLMs often provide multiple alternative solutions, and the length of non-core content, which reflects verbosity. Evaluated on the four mainstream LLMs, our framework increases the average core-answer quality score from 3.71 to 4.67 (+0.96) and the non-core content quality from 3.72 to 4.23 (+0.51), on a five-point scale.",
-    "authors": [
-      "Ziteng Hu",
-      "Jiachi Chen",
-      "Wenhao Lv",
-      "Huan Zhang",
-      "Yingjie Xia"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AI",
-    "track": "AI",
-    "url": "http://arxiv.org/abs/2607.17063v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "HDL 설계 자동화 및 AI 기반 반도체 설계 도구의 품질 문제를 다루며, 반도체 설계 생산성과 검증 효율성에 영향을 미치는 AI 인프라 트렌드와 연관됨.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 3,
-        "maturity": 3,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "LLM 기반 HDL 설계 자동화의 품질 문제를 체계적으로 분석하여 반도체 설계 생산성 향상 기회를 제시하지만, SK하이닉스의 메모리 제조 사업과의 직접 연관성은 제한적임.",
-      "final_score": 2.4
-    },
-    "first_seen": "2026-07-22"
-  },
   "2607.18916": {
     "arxiv_id": "2607.18916",
     "title": "Bridging distributed quantum materials via multi-hotspot vacuum: remote Cooper pairing and Andreev teleportation",
@@ -3295,97 +2331,6 @@
       "tag": "중립",
       "one_line": "PIM과 in-storage 처리의 에너지 효율성을 실증하는 학술 연구로, 우리의 메모리 확장·PIM 전략에는 기술적 검증 신호이나 질량분석 응용 자체는 메모리 수요 견인력이 제한적",
       "final_score": 2.4
-    },
-    "first_seen": "2026-07-23"
-  },
-  "2607.17371": {
-    "arxiv_id": "2607.17371",
-    "title": "ADEPT: Architecture-Driven Energy-Efficient CNN Fine-Tuning on PIM Accelerators",
-    "abstract": "Processing-in-memory-based (PIM) architectures have emerged as a promising solution for accelerating Convolutional Neural Network (CNN) workloads at the edge. Fine-tuning pre-trained CNNs is a common requirement to enhance the model predictive accuracy after deployment. However, the fine-tuning process is computational and memory-intensive, generating a significant amount of intermediate activations. This leads to frequent off-chip memory access, affecting the overall efficiency of the PIM accelerator. Existing fine-tuning strategies are agnostic to the underlying hardware, as they treat all layers equally. In this paper, we propose a hardware-aware framework called ADEPT to accelerate CNN fine-tuning on PIM architectures. Unlike prior fine-tuning methods, ADEPT adaptively trains the model considering both the training overhead and layer sensitivity. Specifically, ADEPT introduces a novel metric that quantifies the trade-off between a block's gradient-based sensitivity and its hardware architecture-specific Energy-Delay Product (EDP), producing platform-dependent fine-tuning configurations. Overall, ADEPT helps reduce the total trainable parameters and the off-chip data access during fine-tuning, while incurring minimal loss in predictive accuracy compared to full-parameter fine-tuning.",
-    "authors": [
-      "Pratyush Dhingra",
-      "Vibhanshu Sharma",
-      "Janardhan Rao Doppa",
-      "Partha Pratim Pande"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.17371v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "PIM 아키텍처 기반 CNN 파인튜닝 효율화는 엣지 AI 추론 시장에서 메모리 대역폭·전력 수요를 직접 영향하는 기술이며, SK하이닉스의 PIM 사업 포트폴리오와 직결됨.",
-      "scores": {
-        "business": 4,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 2,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "PIM 기반 엣지 AI 추론의 메모리 효율성 개선 사례로서 우리 PIM 제품의 실제 가치 입증 및 고객 채택 가능성을 높이는 신호이나, 아직 학술 단계로 상용화까지는 거리가 있음.",
-      "final_score": 3.95
-    },
-    "first_seen": "2026-07-23"
-  },
-  "2607.17274": {
-    "arxiv_id": "2607.17274",
-    "title": "Inter-Set Correlation-Aware Replacement Policy for Energy Efficient RTM-based Caches",
-    "abstract": "Today's data-centric applications demand cache architectures that can scale with growing workloads while maintaining high performance and energy efficiency. Fundamental issues such as excessive area consumption and leakage power are increasingly challenging traditional SRAM-based caches, thereby motivating the exploration of non-volatile alternatives. Among these, racetrack memory (RTM) stands out due to its remarkable storage density, achieved through nanowires hosting sequential magnetic domains that can be manipulated via domain wall or skyrmion techniques. Despite its advantages, racetrack memory's inherent serialized access introduces considerable shift overhead, leading to elevated energy consumption and latency. In this paper, we analyze the placement strategies in conventional RTM-based last-level caches and identify that current methods trigger redundant shift operations as a shift intended to read one block fails to preposition other blocks subsequently accessed. To resolve this, we introduce an innovative data placement and replacement scheme that intelligently groups correlated blocks, ensuring that a single shift not only retrieves the target block but also aligns subsequent blocks closer to the access port. Our simulation results using the gem5 simulator and the SPEC CPU2017 benchmarks reveal that our scheme reduces shift overhead by 49.0% and cache energy consumption by 35.9% with negligible performance impact. In addition, this scheme exhibits robust scalability to longer nanowire tracks for higher cache density.",
-    "authors": [
-      "Elham Cheshmikhani",
-      "Hamed Farbeh"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.17274v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "비휘발성 메모리(RTM) 기반 캐시 아키텍처의 에너지 효율성 개선 연구로, 차세대 메모리 소자 기술과 캐시 설계 최적화에 관련됨.",
-      "scores": {
-        "business": 2,
-        "threat": 1,
-        "demand": 2,
-        "maturity": 1,
-        "credibility": 1,
-        "novelty": 2
-      },
-      "tag": "중립",
-      "one_line": "RTM 캐시 최적화는 학술적 가치는 있으나 상용화 거리가 멀고, SK하이닉스의 HBM/DRAM/NAND 주력 사업과의 직접 연관성이 낮으며 RTM 자체가 업계 주류 기술이 아니어서 전략적 우선순위는 낮음.",
-      "final_score": 1.65
-    },
-    "first_seen": "2026-07-23"
-  },
-  "2607.17091": {
-    "arxiv_id": "2607.17091",
-    "title": "ThRIve: Thermally Robust CNN Inference via Low-Rank Adaptation in Heterogeneous PIM Architectures",
-    "abstract": "Processing-In-Memory (PIM) has emerged as a promising technology for accelerating machine learning (ML) workloads. Specifically, non-volatile memory-based PIM architectures have enabled effective ML acceleration due to their ability to perform energy-efficient matrix-vector multiplication operations. However, these devices suffer from non-idealities such as thermal noise. This noise alters the stored values in the memory cells which correspond to actual model weights, compromising the inference accuracy. In this work, we introduce ThRIve, a noise-aware training methodology that leverages low-rank adaptation to enable thermally robust inference on heterogeneous PIM architectures. ThRIve selectively stores these low-rank noise-aware parameters on a hardware that is less susceptible to thermal noise, enabling robustness against temperature-induced noise variations. ThRIve mitigates the effects of thermal-noise and prevent the drop in inference accuracy across the entire operating temperature range. Experimental results demonstrate that ThRIve-enabled architectures maintain consistent inference accuracy, with the mean accuracy staying within 2% of the ideal (i.e., noise-free) accuracy, and the variation in accuracy across the entire operating temperature range remaining within 2% of the mean. The proposed methodology achieves accuracy and robustness comparable to thermally-resilient Static Random-Access Memory (SRAM)-based PIM systems, while delivering up to 5.4x reduction in energy-delay product (EDP) during CNN model inferencing.",
-    "authors": [
-      "Vibhanshu Sharma",
-      "Pratyush Dhingra",
-      "Janardhan Rao Doppa",
-      "Partha Pratim Pande"
-    ],
-    "published": "2026-07-19",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2607.17091v1",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "PIM 아키텍처의 열 잡음 문제를 저랭크 적응으로 해결하는 기술로, SK하이닉스의 핵심 사업인 PIM 및 어드밴스드 패키징 전략과 직결되며 AI 추론 효율성 향상을 통해 메모리 수요 창출 신호를 제시한다.",
-      "scores": {
-        "business": 4,
-        "threat": 1,
-        "demand": 4,
-        "maturity": 2,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "PIM의 상용화 장벽인 열 잡음을 소프트웨어 기법으로 극복하는 실용적 솔루션으로, AI 추론 효율성 5.4배 개선은 메모리 기반 가속기 시장 확대의 신호이나 아직 학술 단계이므로 기술 검증 및 파운드리 협력이 필요하다.",
-      "final_score": 4.05
     },
     "first_seen": "2026-07-23"
   },
@@ -39189,44 +38134,6 @@
     },
     "first_seen": "2026-08-18"
   },
-  "2608.13127": {
-    "arxiv_id": "2608.13127",
-    "title": "Potential Applications of HBF in LLM Serving Systems",
-    "abstract": "LLM serving is increasingly constrained by memory capacity as model weights, KV caches, and the number of served model variants continue to grow. This report examines High-Bandwidth Flash (HBF) as a capacity-oriented extension to HBM-based serving systems. We first discuss how HBF can be integrated into the GPU memory hierarchy without undermining the bandwidth expected by the compute die. We then model the system-level value of added capacity as expanded residency for read-mostly model-state objects. Under this view, HBF can improve MoE serving by enabling more expert replicas and can improve multi-model serving by reducing model loading and supporting hot-model replication. Our simulation results show that these benefits depend on preserving the HBM-resident execution path while using HBF to expand the resident set of model weights.",
-    "authors": [
-      "Yihan Yin",
-      "Yinlun Zhao",
-      "Zhixin Yun",
-      "Guanying Wu",
-      "Feng Zhu",
-      "Kai Tao",
-      "Shu Li",
-      "Fei Huang",
-      "Zhe Zhang",
-      "Shuangchen Li",
-      "Hongzhong Zheng"
-    ],
-    "published": "2026-08-13",
-    "primary_category": "cs.AR",
-    "track": "반도체",
-    "url": "http://arxiv.org/abs/2608.13127v2",
-    "analysis": {
-      "is_relevant": true,
-      "relevance_reason": "LLM 서빙 시스템의 메모리 계층 구조 최적화를 통해 HBM 용량 한계를 Flash 확장으로 해결하는 기술로, NAND/SSD와 HBM의 계층적 활용이라는 우리 포트폴리오 전략과 직결됨.",
-      "scores": {
-        "business": 4,
-        "threat": 2,
-        "demand": 5,
-        "maturity": 3,
-        "credibility": 3,
-        "novelty": 3
-      },
-      "tag": "기회",
-      "one_line": "AI 추론 인프라의 메모리 병목(KV 캐시, 모델 가중치 용량)을 HBM-NAND 계층화로 해결하는 아키텍처 제안으로, NAND 플래시 수요 증대와 고대역폭 메모리 솔루션 수요를 동시에 견인하는 신호.",
-      "final_score": 4.6
-    },
-    "first_seen": "2026-08-18"
-  },
   "2608.12865": {
     "arxiv_id": "2608.12865",
     "title": "Digital Twin Satellite Networks: A Paradigm for Intelligent, Efficient, and Resilient Operations",
@@ -42626,5 +41533,163 @@
       "final_score": 2.25
     },
     "first_seen": "2026-08-19"
+  },
+  "2608.18059": {
+    "arxiv_id": "2608.18059",
+    "title": "Achieving Long Retention in Area-Dependent Resistive Memory with Phase-Separated Amorphous Tantalum Oxide",
+    "abstract": "Resistive random-access memory (ReRAM) is a promising future nonvolatile memory technology. Most ReRAM exhibit a fundamental tradeoff: filament-type ReRAM provides long data retention but suffers from poor uniformity and high switching current, whereas nonfilamentary ReRAM shows lower-current, area-dependent switching but generally poor retention. No two-terminal device has been able to overcome this tradeoff. In this work, we present a two-terminal Ta2O5/ TaOX resistive memory cell that achieves both nonfilamentary switching and long retention. Electrical measurements and composition depth profile show that the switching is not confined to a single filament but is instead uniform across the entire switching region. Despite the nonfilamentary switching, this device can retain information for over 22 hours at 190 °C, which is comparable to the best filamentary devices. We propose that this long retention arises from composition phase separation in amorphous tantalum oxide. Our work shows that the fundamental tradeoff between information retention and switching uniformity can be overcome, and thereby provides a pathway toward more uniform and reliable oxide memory devices.",
+    "authors": [
+      "Sangyong Lee",
+      "Anton V. Ievlev",
+      "Dongjae Shin",
+      "Jingxian Li",
+      "Yiyang Li"
+    ],
+    "published": "2026-08-18",
+    "primary_category": "physics.app-ph",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.18059v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "차세대 비휘발성 메모리 기술로서 NAND 플래시의 대체 후보이며, 균일성과 보존성 트레이드오프 극복은 메모리 신뢰성 향상에 직결됨.",
+      "scores": {
+        "business": 2,
+        "threat": 3,
+        "demand": 1,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "위협",
+      "one_line": "ReRAM이 NAND 플래시의 장기 대체 후보로 부상하고 있으나, 현재는 기초연구 단계로 상용화까지 5년 이상 소요될 것으로 예상되므로 중기 모니터링 대상임.",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-08-20"
+  },
+  "2608.17774": {
+    "arxiv_id": "2608.17774",
+    "title": "Edge-Native Embodied Intelligence for Action-Aware Wireless Edge Networks",
+    "abstract": "Embodied intelligence is shifting artificial intelligence from passive digital perception toward active physical interaction. However, foundation-model-enabled embodied agents face a fundamental tension between open-world cognition and resource-constrained deployment. On-device models are limited by computation, memory, and energy budgets, whereas cloud-centric solutions introduce latency and reliability risks over dynamic wireless links. Edge general intelligence provides a promising cognitive backbone, but existing frameworks still lack physical grounding, action awareness, and mechanisms for actively acquiring useful physical experience. To address these limitations, this article introduces edge-native embodied intelligence (ENEI), an action-aware wireless edge framework that integrates embodied agents, the 6G communication and networking fabric, and edge cognitive services into a 6G-mediated bidirectional edge-embodiment loop. Along the edge-to-embodiment axis, confidence-aware assistance and edge-driven generative adaptation enhance local autonomy under out-of-distribution (OOD) conditions. Along the embodiment-to-edge axis, value-of-experience guided active embodied federated learning enables physical actions to generate informative experience for continuous edge model evolution. The 6G fabric supports both directions through goal-oriented transmission and programmable radio-resource allocation. Two case studies on OOD drone navigation and mobility-driven federated learning illustrate the feasibility and communication efficiency of the proposed mechanisms. ENEI provides a unified perspective in which edge cognition strengthens embodied action, while embodied agency actively enriches edge cognition, laying the foundation for scalable, adaptive, and self-evolving embodied wireless systems.",
+    "authors": [
+      "Yiru Wang",
+      "Chuanao Jiang",
+      "Jiahui Cui",
+      "Zide Fan",
+      "Lei Wang",
+      "Zehui Xiong",
+      "Dong In Kim"
+    ],
+    "published": "2026-08-18",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.17774v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "엣지-임베디드 AI 시스템의 메모리·연산 효율성 요구와 6G 기반 분산 학습 아키텍처가 HBM/DRAM/CXL 메모리 수요 패턴을 재정의하는 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "엣지-클라우드 분산 AI 아키텍처의 부상은 저지연·고효율 메모리(특히 엣지 캐시·로컬 DRAM/NAND)와 페더레이션 학습 기반 모델 갱신 주기 단축으로 메모리 수요를 증가시킬 가능성이 있으나, 현재는 개념 단계로 실제 반도체 설계 영향은 제한적",
+      "final_score": 2.1
+    },
+    "first_seen": "2026-08-20"
+  },
+  "2608.16280": {
+    "arxiv_id": "2608.16280",
+    "title": "PANDA: A Matrix-Free Differentiable NMPC Solver via Proximal Averaged Quasi-Newton with Adaptive Linesearch Algorithm",
+    "abstract": "Differentiable nonlinear model predictive control (NMPC) provides a principled way to embed optimal control structure into end-to-end learning paradigms, but its practical use is often limited by the computational and memory costs of both forward optimization and backward sensitivity propagation. This brief proposes PANDA, a matrix-free solver for differentiable NMPC. In the forward pass, PANDA combines proximal-gradient iterations with quasi-Newton acceleration and introduces an adaptive stepsize enlargement mechanism to mitigate the conservativeness of monotone stepsize reduction. The resulting stepsize behavior and its effect on local convergence are theoretically analyzed. In the backward pass, PANDA performs implicit differentiation from the residual equation and computes adjoint sensitivities using Krylov-subspace iterative methods together with automatic-differentiation-based Matrix-Vector product operators, thereby avoiding explicit Hessian and Jacobian construction. The method is evaluated on a nonconvex trailer NMPC problem embedded in an imitation learning task. The results show that PANDA achieves much faster forward and backward computation and lower memory overhead than representative differentiable optimization solvers, while maintaining effective imitation learning performance.",
+    "authors": [
+      "Yuankun Chen",
+      "Zifei Nie",
+      "Xun Gong",
+      "Yunfeng Hu",
+      "Hong Chen"
+    ],
+    "published": "2026-08-17",
+    "primary_category": "eess.SY",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.16280v2",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "AI 모델 학습·추론 파이프라인의 메모리·연산 효율을 개선하는 알고리즘으로, 메모리 오버헤드 감소와 역전파 최적화를 통해 AI 인프라의 메모리 수요 패턴을 변화시키는 신호",
+      "scores": {
+        "business": 2,
+        "threat": 1,
+        "demand": 3,
+        "maturity": 2,
+        "credibility": 2,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "Differentiable NMPC의 메모리·연산 효율화는 AI 제어 시스템 및 엣지 추론 수요를 견인할 수 있으나, 현재는 학술 단계로 HBM/DRAM 수요 변화는 제한적이고 주요 고객사(엔비디아, 테슬라 등) 채택 신호 부재",
+      "final_score": 2.25
+    },
+    "first_seen": "2026-08-20"
+  },
+  "2608.15764": {
+    "arxiv_id": "2608.15764",
+    "title": "Concurrency Response of Plain Global Loads on the NVIDIA H100",
+    "abstract": "The bandwidth a memory-bound GPU kernel sustains is set by how many bytes it keeps in flight. We use Little's Law here as throughput accounting, not as a measured hardware pool. CUDA fills that budget on Hopper through plain loads (ld.global) and asynchronous copies (cp.async), among other paths; we characterize their concurrency response with clean-room microbenchmarks on three H100 SXM5 dies. Our main result concerns the plain-load path: attained LDG bandwidth peaks at a small offered per-thread load (K ~ 2) and then declines, by about 35% from K=2 to K=8 at our primary configuration. The decline survives a fixed-work control matching total issued logical loads across K, ascending and reversed sweep orders, and replication on two dies with the same instrument (-35.0% and -35.2%). Separately profiled counters show DRAM bytes nearly constant over K=2->8 while L2-sector traffic rises, and a 40x nominal allocation-size sweep (512 MB to 20 GB, all above the ~50 MB L2; no address trace) leaves the decline essentially unchanged, disfavoring a simple allocation-size dependence. Because the L2 hit-rate nonetheless rises with K at every allocation, the aggregate request stream does change with K; we report K as offered software ILP and leave the hardware mechanism open. A preliminary survey adds a matched cp.async-versus-plain-load comparison (2.1-2.9x at high offered depth, two dies), a die-B same-CTA two-stream observation whose companion die-C check differs and is not pooled, and a cross-die primitive baseline.",
+    "authors": [
+      "Somashekar Manjunath",
+      "Rahul Ramachandra M"
+    ],
+    "published": "2026-08-16",
+    "primary_category": "cs.AR",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.15764v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "NVIDIA H100 GPU의 메모리 로드 성능 특성을 마이크로벤치마크로 분석한 논문으로, HBM/DRAM 기반 고대역폭 메모리 시스템의 실제 동작 메커니즘과 병목을 규명하는 기초 연구",
+      "scores": {
+        "business": 4,
+        "threat": 1,
+        "demand": 4,
+        "maturity": 2,
+        "credibility": 3,
+        "novelty": 3
+      },
+      "tag": "기회",
+      "one_line": "H100 HBM 메모리 시스템의 로드 동시성 특성(K=2에서 피크, K=8에서 35% 성능 저하)을 정량화하여 차세대 HBM/메모리 최적화 설계와 AI 인프라 성능 튜닝의 기초 인사이트 제공",
+      "final_score": 4.05
+    },
+    "first_seen": "2026-08-20"
+  },
+  "2608.14961": {
+    "arxiv_id": "2608.14961",
+    "title": "Conditional Dynamical Systems for Image Generation",
+    "abstract": "Image generation has been dominated by deep generative models running on GPUs, a paradigm whose computational and energy costs raise growing sustainability concerns. Emerging non-von Neumann computing substrates, including quantum, compute-in-memory, photonic, and thermodynamic platforms, promise greater efficiency, yet much of the existing work ports conventional neural architectures onto them and primarily accelerates operations such as matrix multiplication. This does not fully exploit a native capability of many emerging computing substrates: relaxation toward low-energy states can itself perform computation at negligible cost. We develop a family of continuous dynamical systems for image generation, built around this primitive to better harness its computational power. The proposed generator evolves an internal state under dynamics admitting an explicit Lyapunov energy and then renders the resulting state through a compact, class-agnostic decoder. For conditional generation, we introduce energy tilting: programmed pairwise interactions remain fixed and shared across classes, while a class-dependent linear field reshapes the energy without reprogramming the interaction array. An Ising-inspired design reaches a clean-FID of 9.71 on CIFAR-10 with 4096 spin variables. These results suggest that the energy-descending dynamics can serve directly as a generative computation and offer a promising path toward efficient generative tasks beyond GPUs.",
+    "authors": [
+      "Lianlong Sun",
+      "Chuan Liu",
+      "Tong Geng",
+      "Michael Huang"
+    ],
+    "published": "2026-08-15",
+    "primary_category": "cs.ET",
+    "track": "반도체",
+    "url": "http://arxiv.org/abs/2608.14961v1",
+    "analysis": {
+      "is_relevant": true,
+      "relevance_reason": "Non-von Neumann 컴퓨팅 기반의 생성형 AI 추론 아키텍처로서, 메모리 효율성과 에너지 효율을 근본적으로 재정의하는 신규 컴퓨팅 패러다임을 제시하고 있음.",
+      "scores": {
+        "business": 2,
+        "threat": 3,
+        "demand": 3,
+        "maturity": 1,
+        "credibility": 2,
+        "novelty": 4
+      },
+      "tag": "위협",
+      "one_line": "GPU 기반 생성형 AI 추론을 대체할 수 있는 저에너지 동역학계 기반 아키텍처 제시로, 장기적으로는 메모리 수요 구조 변화와 신규 메모리 기술(CIM/PIM) 수요 창출 기회이나, 단기적으로는 기존 HBM/DRAM 수요 감소 위협 신호.",
+      "final_score": 2.65
+    },
+    "first_seen": "2026-08-20"
   }
 }
