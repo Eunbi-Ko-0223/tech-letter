@@ -4448,5 +4448,12 @@ window.RADAR_DATA = {
       ],
       "reading_order": "먼저 벤치마크 논문으로 FP4·MXFP4·NVFP4의 큰 그림을 잡고 → Four Over Six로 기존 배율 최적화 방식을 이해한 뒤 → FOCUS로 '버려질 배율을 자유롭게 학습한다'는 핵심 통찰을 읽는 순서를 권합니다."
     }
+  },
+  "2026-09-21": {
+    "date": "2026-09-21",
+    "no_recommendation": true,
+    "reason": "품질 기준선 미달",
+    "top_score": 0,
+    "min_score": 2.0
   }
 };
