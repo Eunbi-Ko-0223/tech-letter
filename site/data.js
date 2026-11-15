@@ -4728,5 +4728,12 @@ window.RADAR_DATA = {
     "reason": "품질 기준선 미달",
     "top_score": 0,
     "min_score": 2.0
+  },
+  "2026-11-16": {
+    "date": "2026-11-16",
+    "no_recommendation": true,
+    "reason": "품질 기준선 미달",
+    "top_score": 0,
+    "min_score": 2.0
   }
 };
